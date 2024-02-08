@@ -1,0 +1,49 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Elithat
+    body 
+        header 
+            .header-block#up
+                .header-navigation.flex-between.wrapper     
+                    .logo-block 
+                        form(action="#")
+                            label(for="search")
+                                input(type="search" id="search" name="search" placeholder="Пошук")
+                            button(type="submit").serch
+                        .logo 
+                            a(href="#up") 
+                            picture 
+                                img(src="img/logo.png", alt="Elithat")
+                        .contact-nav
+                            a.cart#cart(href="#")
+                            a.phone(href="tel:+380986546545") 098 654 65 45
+                    .nav-block
+                        nav 
+                            ul 
+                                li
+                                    a(href="#") головна
+                                li
+                                    a(href="#") про нас
+                                li
+                                    a(href="#") каталог
+                                li
+                                    a(href="#") доставка та оплата
+                                li
+                                    a(href="#") контакти
+                .main-bgc
+                    p зручно та стильно
+                    h1 Ми пишаємося широким вибором стильних та зручних головних уборів для всієї сім'ї. Знайдемо ідеальний аксесуар для кожного.
+                    a.catalog-cta(href="#") в каталог
+                    .carousel 
+                        
+        main 
+            section.category#category 
+                .for-girl 
+                    a(href="#") 
+                .for-boy 
+                    a(href="#") 
+                .universal 
+                    a(href="#") 
