@@ -1,0 +1,170 @@
+html
+    font-size: 1px
+
+body
+    margin: 0
+    font-family: "Montserrat"
+a
+    text-decoration: none
+ul
+    margin: 0
+    padding: 0
+
+ul > li
+    list-style: none
+
+header
+    padding-top: 171rem
+
+.wrapper
+    margin: 0 auto
+    max-width: 1100rem
+
+.flex-between
+    display: flex
+    justify-content: space-between
+
+.header-navigation
+    position: fixed
+    top: 0
+    width: 100%
+    background-color: #fff
+    z-index: 2
+
+.logo-block
+    padding: 15rem 0
+    align-items: center
+
+.search-block
+    position: relative
+    width: 250rem
+    height: 30rem
+    input
+        width: 100%
+        padding: 7rem 10rem
+        box-sizing: border-box
+        outline: none
+        border: 1rem solid #000
+        border-radius: 5rem
+
+.serch
+    position: absolute
+    top: 50%
+    right: 2rem
+    background-color: transparent
+    transform: translateY(-50%)
+    border: none
+    cursor: pointer
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        border-left: 1px solid #000
+        height: 25rem
+
+.contact-nav
+    align-items: center
+    justify-content: flex-end
+    column-gap: 30rem
+    width: 250rem
+
+.main-navigation
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+    width: 100%
+    margin-bottom: 20rem
+    border-radius: 10rem
+    border: 1px solid #1e1e1e
+    a
+        display: block
+        width: 100%
+        padding: 15rem 0
+        text-align: center
+        font-size: 16rem
+        color: #1e1e1e
+        font-weight: 500
+    li + li
+        border-left: 1px solid #1e1e1e
+
+.main-bgc
+    position: relative
+    background-color: #ccc
+    background: url("../img/main-bgc.webp") no-repeat center/cover
+    margin-bottom: 90rem
+    overflow-x: hidden
+
+.main-info
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 150rem 0 700rem
+    p
+        margin: 0
+        font-size: 64rem
+        text-transform: uppercase
+        color: #219ebc
+        font-weight: 700
+    h1
+        margin: 0
+        padding: 32rem 0 27rem
+        font-size: 24px
+        color: #1e1e1e
+        font-weight: 400
+        span
+            display: block
+            text-align: center
+
+.catalog-cta
+    display: block
+    width: 280rem
+    padding: 25rem 0
+    text-align: center
+    font-size: 20rem
+    text-transform: uppercase
+    color: #fff
+    font-weight: 600
+    background-color: #bc215f
+    border-radius: 25rem
+
+.carousel-picture
+    align-items: flex-end
+    position: absolute
+    bottom: 0
+    left: 0
+    // img
+    //     width: 100%
+    //     height: 100%
+    //     object-fit: cover
+
+.category
+    margin-bottom: 100rem
+    h2
+        margin: 0
+        padding-bottom: 50rem
+        font-size: 48rem
+        text-transform: uppercase
+        color: #2b2d42
+        font-weight: 700
+        text-align: center
+        
+.category-block
+    column-gap: 40rem
+    img
+        transition: all .5s ease
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+.click-category
+    position: relative
+    a
+        position: absolute
+        width: 100%
+        height: 100%
+        z-index: 3
+        &:hover ~ picture img 
+            transform: scale(1.05)
+            
+
+            

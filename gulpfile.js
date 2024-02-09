@@ -52,8 +52,8 @@ export const css = () => {
     .pipe(autoprefixer(["last 15 versions"], {
         cascade: true
     }))
-    .pipe(gcmq("styles.css"))
-    .pipe(concat("styles.css"))
+    .pipe(gcmq("style.css"))
+    .pipe(concat("style.css"))
     .pipe(cleanCSS ({
         compatibility: "ie8"
     }))
