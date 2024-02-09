@@ -1,4 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
+    //бургер меню
+    const burger = document.querySelector(".burger"),
+        mobileMenu = document.querySelector(".main-navigation"),
+        sections = document.querySelectorAll(".scrollBurger")
+
+    burger.addEventListener('click', function () {
+        this.classList.toggle('active'),
+            mobileMenu.classList.toggle('activemobile')
+    })
+
+    window.addEventListener('scroll', function () {
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect()
+
+            if (rect.top <= 0 && rect.bottom >= 0) {
+                burger.classList.remove('active')
+                mobileMenu.classList.remove('activemobile')
+            }
+        })
+    })
+    
     // карусель на головний екран
 
     const carouselPartners = document.querySelector('.carousel')
@@ -30,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function startAutoScroll() {
         autoScrollInterval = setInterval(() => {
 
-            let distanceImg = itemImgWidth
+            let distanceImg = itemImgWidth + 50
 
             carouselPartners.style.transition = "transform .5s ease"
             carouselPartners.style.transform = `translateX(${distanceImg}rem)`
