@@ -19,8 +19,8 @@ export const browserSyncFunc = () => {
         server: {
             baseDir: "docs"
         },
-        open: false,
-        browser: "chrome"
+        open: true,
+        browser: "Safari"
         //port: 8080
     })
 }

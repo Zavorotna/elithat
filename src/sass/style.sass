@@ -1,6 +1,12 @@
 @import components/mixins
+
+    
 html
     font-size: 1px
+
+figure
+    margin: 0
+    padding: 0
 
 body
     margin: 0
@@ -20,7 +26,17 @@ header
 .wrapper
     margin: 0 auto
     padding: 0 15rem
-    max-width: 1100rem
+    width: 81%
+
+.d-flex
+    display: flex
+
+.items-center
+    align-items: center
+
+.justify-center
+    display: flex
+    justify-content: center
 
 .flex-between
     display: flex
@@ -212,7 +228,7 @@ ul.activemobile
     position: relative
     display: block
     width: 280rem
-    padding: 25rem 0
+    padding: 23rem 0
     text-align: center
     font-size: 20rem
     text-transform: uppercase
@@ -304,3 +320,154 @@ ul.activemobile
     text-decoration: underline
     color: #1e1e1e
     font-weight: bold
+
+
+// карточки товарів
+.products
+    margin-bottom: 150rem
+.products h2
+    margin: 0
+    padding-bottom: 50rem
+    font-size: 48rem
+    text-transform: uppercase
+    color: #2b2d42
+    font-weight: 700
+    text-align: center
+
+.products-list 
+    display: flex
+    width: 100%
+    justify-content: space-around
+    column-gap: 10rem
+    row-gap: 20rem
+    flex-wrap: wrap
+    margin-bottom: 30rem
+
+figure
+    display: block
+    position: relative
+    padding: 20rem 15rem
+    max-width: 360rem
+    box-sizing: border-box
+    border: 1px solid rgb(30, 30, 30)
+    border-radius: 10px
+
+    img
+        width: 100%
+        height: 350rem
+        object-fit: cover
+        border-radius: 10px 10px 0px 0px
+    h3
+        color: rgb(30, 30, 30)
+        font-size: 18rem
+        font-weight: 700
+        line-height: 1.2em
+        text-transform: uppercase
+.cta
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    min-height: 50rem
+    max-width: 330rem
+    border-radius: 10px
+    background: rgb(33, 158, 188)
+    color: rgb(255, 255, 255)
+    font-size: 14rem
+    font-weight: 600
+    line-height: 1.2em
+    text-transform: uppercase
+
+.product-sizes
+    margin-bottom: 10rem
+    span 
+        color: rgb(0, 0, 0)
+        font-size: 14rem
+        font-weight: 600
+        line-height: 1.2em
+    input
+        appearance: none
+.sizes-inputs 
+    display: flex
+
+    input:checked + label 
+        border: 1px solid rgb(43, 45, 66)
+
+    label
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 25rem
+        height: 25rem !important
+        border: 1px solid rgb(217, 217, 217)
+        border-radius: 3rem
+        color: rgb(30, 30, 30)
+        font-size: 12rem
+        font-weight: 300
+        line-height: 1.25em
+
+.price
+    margin-bottom: 15rem
+    column-gap: 17rem
+    b
+        color: rgb(43, 45, 66)
+        font-size: 24rem
+        font-weight: 700
+    span
+        color: rgb(43, 45, 66)
+        font-size: 16rem
+        font-weight: 300
+        text-decoration-line: line-through
+
+.girl-product
+    content: ''
+    display: flex
+    align-items: center
+    justify-content: center
+    position: absolute
+    border-radius: 0px 10px 10px 0px
+    background: rgb(188, 33, 95)
+    width: 100px
+    height: 30px
+    top: 20rem
+    left: 0
+    span
+        color: rgb(255, 255, 255)
+        font-size: 12rem
+        font-weight: 500
+        line-height: 1.2em
+.boy-product
+    content: ''
+    display: flex
+    align-items: center
+    justify-content: center
+    position: absolute
+    border-radius: 0px 10px 10px 0px
+    background: rgb(48, 188, 33)
+    width: 100px
+    height: 30px
+    top: 20rem
+    left: 0
+    span
+        color: rgb(255, 255, 255)
+        font-size: 12rem
+        font-weight: 500
+        line-height: 1.2em
+
+.universal-product
+    content: ''
+    display: flex
+    align-items: center
+    justify-content: center
+    position: absolute
+    border-radius: 0px 10px 10px 0px
+    background: rgb(33, 158, 188)
+    width: 100px
+    height: 30px
+    top: 20rem
+    left: 0
+    span
+        color: rgb(255, 255, 255)
+        font-size: 12rem
+        font-weight: 500
+        line-height: 1.2em
