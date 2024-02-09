@@ -272,9 +272,13 @@ ul.activemobile
 
 .footer-contact
     align-items: center
+    div
+        max-width: 500rem
+        width: 100%
 
 .social
     p
+        text-align: center
         font-size: 18rem
         color: #1e1e1e
         font-weight: 700
@@ -286,6 +290,22 @@ ul.activemobile
         display: inline-block
 
 .footer-menu
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        height: 150rem
+        border-left: 1px solid #1e1e1e 
+        right: 0
+    &::after
+        content: ""
+        position: absolute
+        top: 0
+        right: 0
+        height: 150rem
+        border-left: 1px solid #1e1e1e 
     a
         display: block
         padding-bottom: 15rem
@@ -293,7 +313,7 @@ ul.activemobile
         text-align: center
         color: #1e1e1e
         font-weight: 600
-        
+
 .privacy-police
     text-align: center
 
