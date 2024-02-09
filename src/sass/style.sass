@@ -287,10 +287,18 @@ ul.activemobile
     background-color: #dedbd5
 
 .footer-contact
+    flex-wrap: wrap
     align-items: center
+    row-gap: 50rem
+    +media(768)
+        flex-wrap: nowrap
+    div
+        max-width: 500rem
+        width: 100%
 
 .social
     p
+        text-align: center
         font-size: 18rem
         color: #1e1e1e
         font-weight: 700
@@ -302,6 +310,35 @@ ul.activemobile
         display: inline-block
 
 .footer-menu
+    position: relative
+    padding: 30rem 0 15rem
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        border-bottom: 1px solid #1e1e1e 
+        right: 0
+        +media(768)
+            height: 150rem
+            border: none
+            border-left: 1px solid #1e1e1e 
+    &::after
+        content: ""
+        position: absolute
+        bottom: 0
+        right: 0
+        width: 100%
+        border-bottom: 1px solid #1e1e1e 
+        +media(768)
+            top: 0
+            right: 0
+            height: 150rem
+            border: none
+            border-right: 1px solid #1e1e1e 
+    +media(768)
+        padding: 0
     a
         display: block
         padding-bottom: 15rem
@@ -309,7 +346,7 @@ ul.activemobile
         text-align: center
         color: #1e1e1e
         font-weight: 600
-        
+
 .privacy-police
     text-align: center
 
