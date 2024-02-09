@@ -4,6 +4,10 @@
 html
     font-size: 1px
 
+h1, h2, h3, p, b 
+    margin: 0
+    padding: 0
+
 figure
     margin: 0
     padding: 0
@@ -27,6 +31,9 @@ header
     margin: 0 auto
     padding: 0 15rem
     width: 81%
+
+.d-none
+    display: none
 
 .d-flex
     display: flex
@@ -508,3 +515,41 @@ figure
         font-size: 12rem
         font-weight: 500
         line-height: 1.2em
+
+
+
+
+.propositions
+    position: relative
+    padding: 96rem 0
+    background: rgb(33, 158, 188)
+    .images
+        img
+            position: absolute
+            bottom: 0
+            height: 130%
+        img:first-child
+            left: 5%
+        img:last-child
+            right: 5%
+
+    h2
+        position: relative
+        color: rgb(43, 45, 66)
+        font-size: 48rem
+        font-weight: 700
+        line-height: 1.2em
+        text-transform: uppercase
+        text-align: center
+        z-index: 1
+
+    p
+        position: relative
+        color: rgb(255, 255, 255)
+        font-size: 24rem
+        font-weight: 400
+        line-height: 2.3em
+        text-align: center
+        z-index: 1
+        margin-bottom: 30rem
+    
