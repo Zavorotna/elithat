@@ -557,8 +557,11 @@ figure
     
 
 .advantages 
+    display: block
     padding: 100rem 0
     justify-content: space-between
+    +media(1330)
+        display: flex
     h2 
         color: rgb(43, 45, 66)
         font-size: 48rem
@@ -581,23 +584,31 @@ figure
 
 .advantages-first-block
     min-width: 390rem
+    margin-bottom: 30rem
 
 .advantages-blocks 
-    width: 65%
+    width: 100%
     display: flex
-    justify-content: space-around
+    justify-content: space-between
     flex-wrap: wrap
     column-gap: 20rem
     row-gap: 20rem
+    +media(1330)
+        width: 65%
 
 .advantage-block
-    width: 45%
-    min-width: 320rem
+    width: 100%
+    min-width: 400rem
     box-sizing: border-box
     padding: 40rem
-    max-width: 480rem
     border-radius: 10rem
     background: rgb(222, 219, 213)
+    +media(1015)
+        width: 45%
+        max-width: 480rem
+    +media(1330)
+        width: 45%
+        min-width: 320rem
     p
         font-size: 15rem
         +media(1365)
