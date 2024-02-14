@@ -1,16 +1,11 @@
 @import components/mixins
 
-    
 html
     font-size: 0.8px
     +media(660)
         font-size: 1px
 
-h1, h2, h3, p, b 
-    margin: 0
-    padding: 0
-
-figure
+h1, h2, h3, p, b, figure, ul
     margin: 0
     padding: 0
 
@@ -19,9 +14,6 @@ body
     font-family: "Montserrat"
 a
     text-decoration: none
-ul
-    margin: 0
-    padding: 0
 
 ul > li
     list-style: none
@@ -75,12 +67,11 @@ header
         outline: none
         border: 1rem solid #000
         border-radius: 5rem
-    +media(768)
-        position: relative
-        top: 0
-        left: 50rem
+    +media(425)
         width: 250rem
     +media(1024)
+        position: relative
+        top: 0
         left: 0
 
 .serch
@@ -154,9 +145,9 @@ ul.activemobile
     height: 30rem
     z-index: 5
     cursor: pointer
-    +media(768)
-        position: absolute
-        top: 27%
+    // +media(768)
+    //     position: absolute
+    //     top: 27%
     +media(1024)
         display: none
 
@@ -254,7 +245,7 @@ ul.activemobile
     position: absolute
     column-gap: 50rem
     bottom: 0
-    left: -400rem
+    left: -450rem
     img
         width: 400rem
         height: 100%
@@ -293,83 +284,6 @@ ul.activemobile
         &:hover ~ picture img
             transform: scale(1.05)
 
-.footer-nav
-    padding: 50rem 0 35rem
-    background-color: #dedbd5
-
-.footer-contact
-    flex-wrap: wrap
-    align-items: center
-    row-gap: 50rem
-    +media(768)
-        flex-wrap: nowrap
-    div
-        max-width: 500rem
-        width: 100%
-
-.social
-    p
-        text-align: center
-        font-size: 18rem
-        color: #1e1e1e
-        font-weight: 700
-
-.social-icon
-    justify-content: center
-    column-gap: 15rem
-    a
-        display: inline-block
-
-.footer-menu
-    position: relative
-    padding: 30rem 0 15rem
-    &::before
-        content: ""
-        position: absolute
-        top: 0
-        left: 0
-        width: 100%
-        border-bottom: 1px solid #1e1e1e 
-        right: 0
-        +media(768)
-            height: 150rem
-            border: none
-            border-left: 1px solid #1e1e1e 
-    &::after
-        content: ""
-        position: absolute
-        bottom: 0
-        right: 0
-        width: 100%
-        border-bottom: 1px solid #1e1e1e 
-        +media(768)
-            top: 0
-            right: 0
-            height: 150rem
-            border: none
-            border-right: 1px solid #1e1e1e 
-    +media(768)
-        padding: 0
-    a
-        display: block
-        padding-bottom: 15rem
-        font-size: 16rem
-        text-align: center
-        color: #1e1e1e
-        font-weight: 600
-
-.privacy-police
-    text-align: center
-
-.privacy
-    display: inline-block
-    padding-bottom: 30rem
-    font-size: 16rem
-    text-decoration: underline
-    color: #1e1e1e
-    font-weight: bold
-
-
 // карточки товарів
 .products
     margin-bottom: 150rem
@@ -382,7 +296,7 @@ ul.activemobile
     font-weight: 700
     text-align: center
 
-.products-list 
+.products-list
     display: flex
     width: 100%
     justify-content: space-around
@@ -430,17 +344,17 @@ figure
 
 .product-sizes
     margin-bottom: 10rem
-    span 
+    span
         color: rgb(0, 0, 0)
         font-size: 14rem
         font-weight: 600
         line-height: 1.2em
     input
         appearance: none
-.sizes-inputs 
+.sizes-inputs
     display: flex
 
-    input:checked + label 
+    input:checked + label
         border: 1px solid rgb(43, 45, 66)
 
     label
@@ -522,9 +436,6 @@ figure
         font-weight: 500
         line-height: 1.2em
 
-
-
-
 .propositions
     position: relative
     padding: 96rem 0
@@ -570,22 +481,21 @@ figure
         margin-bottom: 30rem
         +media(500)
             font-size: 24rem
-    
 
-.advantages 
+.advantages
     display: block
     padding: 100rem 0
     justify-content: space-between
     +media(1330)
         display: flex
-    h2 
+    h2
         color: rgb(43, 45, 66)
         font-size: 48rem
         font-weight: 700
         line-height: 1.2em
         text-transform: uppercase
         margin-bottom: 12rem
-        span 
+        span
             display: block
             color: rgb(188, 33, 95)
     p
@@ -594,15 +504,15 @@ figure
         font-weight: 400
         line-height: 1.2em
         margin-bottom: 40rem
-    
-    .catalog-cta 
+
+    .catalog-cta
         background: rgb(33, 158, 188)
 
 .advantages-first-block
     min-width: 390rem
     margin-bottom: 30rem
 
-.advantages-blocks 
+.advantages-blocks
     width: 100%
     display: flex
     justify-content: space-between
@@ -644,10 +554,8 @@ figure
         border: 1px solid rgb(33, 158, 188)
         margin-bottom: 20rem
 
-
 .relative
     position: relative
-
 
 .mobile-to-catalog
     padding-top: 20px
@@ -655,9 +563,85 @@ figure
     +media(500)
         display: none
 
-
-
 .propositions-btn
     display: none
     +media(500)
         display: flex
+
+//footer 
+.footer-nav
+    padding: 50rem 0 35rem
+    background-color: #dedbd5
+
+.footer-contact
+    flex-wrap: wrap
+    align-items: center
+    row-gap: 50rem
+    +media(768)
+        flex-wrap: nowrap
+    div
+        max-width: 500rem
+        width: 100%
+
+.social
+    p
+        text-align: center
+        font-size: 18rem
+        color: #1e1e1e
+        font-weight: 700
+
+.social-icon
+    padding-top: 30rem
+    justify-content: center
+    column-gap: 15rem
+    a
+        display: inline-block
+
+.footer-menu
+    position: relative
+    padding: 30rem 0 15rem
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        border-bottom: 1px solid #1e1e1e
+        right: 0
+        +media(768)
+            height: 150rem
+            border: none
+            border-left: 1px solid #1e1e1e
+    &::after
+        content: ""
+        position: absolute
+        bottom: 0
+        right: 0
+        width: 100%
+        border-bottom: 1px solid #1e1e1e
+        +media(768)
+            top: 0
+            right: 0
+            height: 150rem
+            border: none
+            border-right: 1px solid #1e1e1e
+    +media(768)
+        padding: 0
+    a
+        display: block
+        padding-bottom: 15rem
+        font-size: 16rem
+        text-align: center
+        color: #1e1e1e
+        font-weight: 600
+
+.privacy-police
+    text-align: center
+
+.privacy
+    display: inline-block
+    padding-bottom: 30rem
+    font-size: 16rem
+    text-decoration: underline
+    color: #1e1e1e
+    font-weight: bold

@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         itemsImg.push(itemsImg.shift())
 
         const firstImg = itemsImg[itemsImg.length - 1].cloneNode(true)
-        firstImg.style.left = `${itemImgWidth}rem`
+        firstImg.style.left = `${-itemImgWidth}rem`
         carouselPartners.insertAdjacentElement("afterbegin", firstImg)
 
         for (let i = 0; i < itemsImg.length; i++) {
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function startAutoScroll() {
         autoScrollInterval = setInterval(() => {
 
-            let distanceImg = -itemImgWidth + 50
+            let distanceImg = -itemImgWidth - 50
 
             carouselPartners.style.transition = "transform .5s cubic-bezier(0,.8,.45,1.19)"
             carouselPartners.style.transform = `translateX(${distanceImg}rem)`
@@ -67,18 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }, 2000)
     }
-
-    // function stopAutoScroll() {
-    //     clearInterval(autoScrollInterval)
-    // }
-
-    // carouselPartners.addEventListener('mouseenter', () => {
-    //     stopAutoScroll()
-    // })
-
-    // carouselPartners.addEventListener('mouseleave', () => {
-    //     startAutoScroll()
-    // })
 
     startAutoScroll()
 })

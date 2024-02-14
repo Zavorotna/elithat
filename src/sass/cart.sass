@@ -1,0 +1,196 @@
+@import components/mixins
+.cart-block
+    padding-top: 36rem
+    h1
+        padding-bottom: 18rem
+        color: rgb(43, 45, 66)
+        font-size: 48rem
+        font-weight: 700
+        text-align: center
+        text-transform: uppercase
+
+.cart-box
+    padding-bottom: 100rem
+    column-gap: 40rem
+    align-items: flex-start
+    flex-wrap: wrap
+    +media(1024)
+        flex-wrap: nowrap
+
+.product-block
+    padding-bottom: 40rem
+    width: 100%  
+.product-card
+    +media(1024)
+        max-width: 500rem
+    +media(1240)
+        width: 100%
+        max-width: none
+
+.product-card,
+.order-block
+    position: relative
+    justify-content: center
+    flex-wrap: wrap
+    column-gap: 30rem
+    row-gap: 15rem
+    margin-bottom: 10rem
+    padding: 15rem
+    border: 1px solid rgb(30, 30, 30)
+    border-radius: 10rem
+    box-sizing: border-box
+    +media(463)
+        justify-content: space-evenly
+    +media(768)
+        padding: 20rem 30rem
+        justify-content: space-between
+        flex-wrap: nowrap
+
+.delete
+    position: absolute
+    top: 20rem
+    right: 30rem
+
+.img-cart_block
+    width: 150rem
+    height: 180rem
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        border-radius: 5rem
+
+.info-cart_block
+    h2
+        max-width: 257rem
+        padding-bottom: 15rem
+        color: rgb(30, 30, 30)
+        font-size: 14rem
+        font-weight: 700
+        line-height: 1.2em
+        text-transform: uppercase
+        +media(1200)
+            font-size: 18rem
+            padding-bottom: 35rem
+    p
+        margin-bottom: 18rem
+
+.code,
+.size-cart,
+.color-cart
+    color: rgb(30, 30, 30)
+    font-size: 12rem
+    font-weight: 500
+    text-transform: uppercase
+    +media(1200)
+        font-size: 14rem
+
+.size-cart,
+.color-cart
+    font-weight: bold
+    text-transform: lowercase
+    span
+        font-weight: normal
+
+.count-cart_block
+    column-gap: 10rem
+    a
+        display: block
+        padding: 8rem 12rem
+        max-width: 40rem
+        max-height: 40rem
+        color: rgb(30, 30, 30)
+        font-size: 12rem
+        font-weight: 500
+        border: 1px solid rgb(217, 217, 217)
+        border-radius: 3px
+        box-sizing: border-box
+        +media(1200)
+            padding: 12rem 17rem
+
+.sum-cart_block
+    width: 180rem
+    column-gap: 17rem
+
+.full-price
+    color: rgb(43, 45, 66)
+    font-size: 14rem
+    font-weight: 700
+    +media(1600)
+        font-size: 24rem
+
+.sale-price
+    color: rgb(43, 45, 66)
+    font-size: 12rem
+    font-weight: 300
+    text-decoration-line: line-through
+    +media(1600)
+        font-size: 16rem
+
+.order-block
+    width: 100%
+    padding: 35rem 20rem
+    +media(1024)
+        max-width: 400rem
+        box-sizing: border-box
+    h2
+        color: rgb(33, 158, 188)
+        margin-bottom: 10rem
+        font-size: 24rem
+        font-weight: 700
+        text-transform: uppercase
+    p
+        margin-bottom: 20rem
+        color: rgb(30, 30, 30)
+        font-size: 14rem
+        font-weight: 600
+    hr
+        margin: 26rem 0
+        border: none
+        border-top: 1px solid rgb(217, 217, 217)
+
+.without-sale_price
+    p
+        margin-bottom: 13rem
+
+.sum-block
+    .price-order
+        color: rgb(180, 180, 180)
+        font-size: 14px
+        font-weight: 500
+
+.order-sum
+    p
+        color: rgb(33, 158, 188)
+        font-size: 18rem
+        font-weight: 700
+
+.flex-btn
+    +media(768)
+        display: flex
+        justify-content: space-between
+        flex-direction: row-reverse
+    +media(1024)
+        display: block
+
+.issue-order,
+.back
+    display: block
+    max-width: 440rem
+    margin-bottom: 10rem
+    padding: 16rem
+    font-size: 14rem
+    font-weight: 600
+    text-align: center
+    text-transform: uppercase
+    border-radius: 25rem
+    box-sizing: border-box
+
+.issue-order
+    color: rgb(255, 255, 255)
+    background: rgb(33, 158, 188)
+
+.back
+    color: rgb(33, 158, 188)
+    background-color: #fff
+    border: 2px solid rgb(33, 158, 188)
