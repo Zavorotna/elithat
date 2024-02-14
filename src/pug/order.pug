@@ -1,0 +1,24 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")   
+        link(rel="stylesheet", href="css/style.css")
+        title Elithat contacts
+    body 
+        include components/mixins
+        header
+            .header-block#up
+                +headerNavigation(navigation)
+        main
+            section.wrapper
+                .order-page 
+                    h1 оформлення замовлення
+                    form.main-block_order(action="#")  
+                        .contact-form 
+                        .choise-form
+
+                        +orderCart(order)
+        footer 
+            +footerNavigation(footerNav)
+    script(src="js/scripts.js")
