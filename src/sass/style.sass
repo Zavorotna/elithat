@@ -287,7 +287,8 @@ ul.activemobile
 // карточки товарів
 .products
     margin-bottom: 150rem
-.products h2
+.products h2,
+.catalog h2
     margin: 0
     padding-bottom: 50rem
     font-size: 48rem
@@ -645,3 +646,51 @@ figure
     text-decoration: underline
     color: #1e1e1e
     font-weight: bold
+
+
+// каталог
+
+.category-block
+    column-gap: 10rem
+
+.catalog 
+    padding-top: 50rem
+
+.catalog-season-block
+    position: relative
+    width: 25%
+    border-radius: 10px
+    background-color: #ccc
+    padding: 63rem 0rem 63rem 50rem
+    span
+        color: rgb(255, 255, 255)
+        font-size: 36px
+        font-weight: 700
+        line-height: 1.2em
+        text-transform: uppercase
+        z-index: 2
+    img
+        width: 110px
+        height: 146px
+        position: absolute
+        bottom: 0
+        right: 5%
+
+
+.catalog-summer,
+.catalog-autumn,
+.catalog-winter,
+.catalog-spring
+    background-size: cover
+
+.catalog-summer
+    background-image: url(../img/catalog-season-1.webp)
+
+.catalog-autumn
+    background-image: url(../img/catalog-season-2.webp)
+
+.catalog-winter
+    background-image: url(../img/catalog-season-3.webp)
+
+.catalog-spring
+    background-image: url(../img/catalog-season-4.webp)

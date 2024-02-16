@@ -1,0 +1,33 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")   
+        link(rel="stylesheet", href="css/style.css")
+        title Elithat
+    body 
+        include components/mixins
+        header 
+            .header-block#up
+                +headerNavigation(navigation)
+        main 
+            section.wrapper.catalog
+                h2 Каталог
+                .flex-between.category-block
+                    .catalog-season-block.catalog-summer
+                        span літо
+                        img(src="img/catalog-season-summer.webp", alt="")
+                    .catalog-season-block.catalog-autumn
+                        span осінь
+                        img(src="img/autumn-proposition2.webp", alt="")
+                    .catalog-season-block.catalog-winter
+                        span зима
+                        img(src="img/winter-proposition-2.webp", alt="")
+                    .catalog-season-block.catalog-spring
+                        span весна
+                        img(src="img/spring-proposition-2.webp", alt="")
+                    
+
+        footer 
+            +footerNavigation(footerNav)
+    script(src="js/scripts.js")
