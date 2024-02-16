@@ -1,0 +1,55 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")   
+        link(rel="stylesheet", href="css/style.css")
+        title Elithat delivery
+    body 
+        include components/mixins
+        header
+            .header-block#up
+                +headerNavigation(navigation)
+        main.wrapper
+            h1 Доставка та оплата
+            .main-info_payDelivery
+                .info-delivery.flex-between
+                    .text-block
+                        h2 обирайте зручний спосіб доставки:
+                        nav 
+                            ul 
+                                li Нова пошта.
+                                    span Доставку сплачує покупець за тарифами транспортної компанії. Термін доставки 1-3 дні. Вартість доставки може змінюватись в залежності від тарифів перевізника.
+                                li Укрпошта.
+                                    span Доставку сплачує покупець за тарифами транспортної компанії. Термін доставки 1-3 дні. Вартість доставки може змінюватись в залежності від тарифів перевізника.
+                                li Meestexpres. 
+                                    span Доставку сплачує покупець за тарифами транспортної компанії. Термін доставки 1-3 дні. Вартість доставки може змінюватись в залежності від тарифів перевізника.
+                                li Доставка по м. Хмельницький
+                                    span (по домовленості)
+                                li Самовивіз
+                                li Відправимо будь-яким транспортом 
+                                    span (автобус, потяг, маршрутне таксі)
+                    .img-block
+                        picture 
+                            source(srcset="img/delivery.jpg" type="image/jpg")
+                            img(src="img/delivery.webp", alt="")
+                .info-pay.flex-between
+                    .img-block
+                        picture 
+                            source(srcset="img/pay-block.jpg" type="image/jpg")
+                            img(src="img/pay-block.webp", alt="")
+                    .text-block
+                        h2 обирайте зручний спосіб оплати:
+                        nav 
+                            ul 
+                                li Оплата на рахунок ФОП.
+                                    span Реквізити на оплату відправить менеджер після оформлення замовлення.
+                                li Оплата за реквізитами. 
+                                    span Передоплата на картку Приватбанку (сума замовлення + 0,5% комісія за перерахунок коштів)
+                                li Накладений платіж.
+                                    span Оплачуйте товар в момент його отримання на пошті. Нова пошта бере собі як комісію 20 грн+2% вартості товару.(обовʼязково предоплата)
+                                li Готівкою.
+                
+        footer 
+            +footerNavigation(footerNav)
+    script(src="js/scripts.js")

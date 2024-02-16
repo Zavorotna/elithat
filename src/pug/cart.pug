@@ -82,7 +82,23 @@ html(lang="uk")
                                 .sum-cart_block.flex-between.items-center
                                     p.full-price 459 грн
                                     p.sale-price 560 грн
-                        +orderCart(order)
+                        .order-block
+                            h2 Ваше замовлення:
+                            p 3 товари в корзині
+                            .sum-block 
+                                .without-sale_price.flex-between.items-center
+                                    p Сума без знижки:
+                                    p.price-order.all-price 1000 грн
+                                .sale_price.flex-between.items-center
+                                    p Знижка: 
+                                    p.price-order.sale 200 грн
+                            hr
+                            .order-sum.flex-between.items-center
+                                p До сплати:
+                                p.order-price_sum 800 грн
+                            .flex-btn
+                                a.issue-order(href="order.html") оформити замовлення
+                                a.back(href="#") продовжити покупки
         footer 
             +footerNavigation(footerNav)
     script(src="js/scripts.js")
