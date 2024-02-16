@@ -43,6 +43,7 @@ h1
     display: flex
 
 .items-center
+    display: flex
     align-items: center
 
 .justify-center
@@ -67,7 +68,8 @@ h1
     &::before
         content: ""
         position: absolute
-        top: 0
+        top: 50%
+        transform: translateY(-50%)
         left: 0
         width: 15rem
         height: 15rem
@@ -81,7 +83,8 @@ h1
     &::before
         content: ""
         position: absolute
-        top: 0
+        top: 50%
+        transform: translateY(-50%)
         left: 0
         width: 15rem
         height: 15rem
@@ -331,7 +334,8 @@ ul.activemobile
 // карточки товарів
 .products
     margin-bottom: 150rem
-.products h2
+.products h2,
+.catalog h2
     margin: 0
     padding-bottom: 50rem
     font-size: 48rem
@@ -395,9 +399,9 @@ figure
         line-height: 1.2em
     input
         appearance: none
+        position: absolute
 .sizes-inputs
     display: flex
-
     input:checked + label
         border: 1px solid rgb(43, 45, 66)
 
@@ -413,6 +417,9 @@ figure
         font-size: 12rem
         font-weight: 300
         line-height: 1.25em
+        &:not(label:first-child)
+            
+            margin-right: 5rem
 
 .price
     margin-bottom: 15rem
@@ -692,3 +699,215 @@ figure
     text-decoration: underline
     color: #1e1e1e
     font-weight: bold
+
+
+// каталог
+
+.category-block
+    column-gap: 10rem
+
+.catalog 
+    margin-bottom: 40rem
+    padding-top: 50rem
+
+.catalog-season-block
+    position: relative
+    width: 25%
+    border-radius: 10px
+    background-color: #ccc
+    padding: 63rem 0rem 63rem 50rem
+    span
+        color: rgb(255, 255, 255)
+        font-size: 36px
+        font-weight: 700
+        line-height: 1.2em
+        text-transform: uppercase
+        z-index: 2
+    img
+        width: 110px
+        height: 146px
+        position: absolute
+        bottom: 0
+        right: 5%
+
+
+.catalog-summer,
+.catalog-autumn,
+.catalog-winter,
+.catalog-spring
+    background-size: cover
+
+.catalog-summer
+    background-image: url(../img/catalog-season-1.webp)
+
+.catalog-autumn
+    background-image: url(../img/catalog-season-2.webp)
+
+.catalog-winter
+    background-image: url(../img/catalog-season-3.webp)
+
+.catalog-spring
+    background-image: url(../img/catalog-season-4.webp)
+
+.filter
+    width: 25%
+    min-width: 300px
+
+.filter-item
+    position: relative
+    span
+        color: rgb(30, 30, 30)
+        font-size: 18rem
+        font-weight: 700
+        line-height: 1.2em
+
+.filter h3
+    color: rgb(33, 158, 188)
+    font-size: 36rem
+    font-weight: 700
+    line-height: 1.2em
+    text-transform: uppercase
+    margin-bottom: 20rem
+
+.filter-inputs
+    display: flex
+    row-gap: 10rem
+    flex-wrap: wrap
+    padding-top: 25rem
+    margin-bottom: 30rem
+
+.filter-arrow
+    position: absolute
+    width: 15px
+    height: 10px
+    background-image: url(../img/filter-arrow.svg)
+    background-repeat: no-repeat
+    top: 50%
+    transform: translateY(-50%)
+    right: 0
+    cursor: pointer
+
+.filter-and-catalog hr 
+    border: none
+    width: 100%
+    border-top: 1px solid #d9d9d9
+    margin-bottom: 25rem
+    column-gap: 30rem
+
+
+
+
+
+.range-slider
+    width: 100px
+    max-width: 100px
+
+
+.range-slider input[type="range"]
+    width: 100%
+    pointer-events: none
+    position: absolute
+    overflow: hidden
+    outline: none
+    border-radius: 10px
+
+
+.range-slider input[type="range"]::-webkit-slider-thumb 
+    pointer-events: all
+    position: relative
+    z-index: 1
+    width: 15px
+    height: 15px
+
+
+.range-slider input[type="range"]::-moz-range-thumb 
+    position: relative
+    z-index: 1
+
+
+    
+
+
+.range-slider input[type="range"]::-ms-thumb 
+    position: relative
+    z-index: 1
+    background: transparent
+
+
+input[type=range]::-webkit-slider-runnable-track 
+    border: 0
+    background: linear-gradient(to bottom, #fff 6.5px, rgb(33, 158, 188) 6.5px, rgb(33, 158, 188) 8.5px, #fff 8.5px)
+
+
+.range-info   
+    width: 100%
+    display: flex
+    justify-content: space-between
+    padding-top: 20rem
+    label 
+        color: rgb(30, 30, 30)
+        font-size: 12rem
+        font-weight: 400
+        line-height: 1.2em
+        
+.filter-inputs
+    span.how-many-products
+        color: rgb(180, 180, 180)
+        font-size: 14rem
+        font-weight: 300
+        line-height: 17px
+    .style-label
+        &:before 
+            top: 50%
+            transform: translateY(-50%)
+
+.sorting-filters
+    justify-content: space-around
+    width: 75%
+    a
+        color: rgb(188, 33, 95)
+        font-size: 18rem
+        font-weight: 700
+        line-height: 1.2em
+        text-transform: uppercase
+    .green
+        color: rgb(48, 188, 33)
+    .blue
+        color: rgb(33, 158, 188)
+    .violet
+        color: rgb(188, 33, 95)
+
+.sorting-filters
+    .d-flex
+        column-gap: 30rem
+
+.sort
+    margin-bottom: 20rem
+
+
+.sort-select
+    color: rgb(30, 30, 30)
+    font-size: 18rem
+    font-weight: 500
+    line-height: 1.2em
+
+.sort-select
+    select
+        position: relative
+        display: flex
+        appearance: none
+        box-sizing: border-box
+        border: 1px solid rgb(217, 217, 217)
+        border-radius: 5px
+        padding: 12px 130px 12px 10px
+        align-items: center
+        font-size: 12rem
+        outline: none
+        background: url("../img/filter-arrow-rotated.svg") no-repeat right 10px center
+
+// .catalog-products
+//     .products-list
+//         justify-content: space-between
+
+.catalog-products
+    width: 75%

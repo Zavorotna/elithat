@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
     })
-    
+
     // карусель на головний екран
 
     const carouselPartners = document.querySelector('.carousel')
@@ -70,3 +70,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     startAutoScroll()
 })
+
+
+var min = document.getElementById('min');
+var max = document.getElementById('max');
+var min_l = document.getElementById('min-lbl');
+var max_l = document.getElementById('max-lbl');
+
+min.onchange = (ev) => {
+	min_l.innerText = min.value + " грн";
+}
+
+max.onchange = (ev) => {
+	max_l.innerText = max.value + " грн";
+}
