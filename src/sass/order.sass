@@ -1,3 +1,46 @@
 @import components/mixins
 .order-page
-    padding: 100rem 0 
+    padding: 50rem 0 100rem
+    h2
+        margin-bottom: 22rem
+        color: rgb(33, 158, 188)
+        font-size: 20rem
+        font-weight: 700
+        text-transform: uppercase
+        +media(1440)
+            font-size: 24rem
+
+.main-block_order
+    flex-wrap: wrap
+    column-gap: 30rem
+
+.input-order
+    flex-direction: column
+    
+.contact-form,
+.choise-form
+    padding-top: 20rem
+
+.contact-form
+    width: 100%
+    max-width: 360rem
+    label
+        margin-bottom: 10rem
+        color: rgb(30, 30, 30)
+        font-size: 16rem
+        font-weight: 600
+    input
+        width: 100%
+        height: 40rem
+        margin-bottom: 10rem
+        padding: 20rem
+        box-sizing: border-box
+        border: 1px solid rgb(217, 217, 217)
+        border-radius: 5px
+        outline: none
+        
+.pay-method,
+.delivery-method
+    padding-bottom: 24rem
+    p
+        margin-bottom: 10rem

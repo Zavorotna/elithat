@@ -14,11 +14,67 @@ html(lang="uk")
             section.wrapper
                 .order-page 
                     h1 оформлення замовлення
-                    form.main-block_order(action="#")  
+                    form.main-block_order.flex-between(action="#")  
                         .contact-form 
+                            h2 ваші контактні дані
+                            p.d-flex.input-order
+                                label Мобільний телефон*
+                                input(type="tel" name="phone")
+                            p.d-flex.input-order
+                                label Імʼя*
+                                input(type="text" name="name")
+                            p.d-flex.input-order
+                                label Прізвище*
+                                input(type="text" name="lastName") 
+                            p.d-flex.input-order
+                                label Електронна пошта
+                                input(type="email" name="email")
                         .choise-form
-
-                        +orderCart(order)
+                            .pay-method
+                                h2 оберіть спосіб оплати
+                                p 
+                                    input.style-input(type="radio" name="payMethod" id="nacladenyi")
+                                    label.style-label(for="nacladenyi") накладений платіж
+                                p 
+                                    input.style-input(type="radio" name="payMethod" id="cash")
+                                    label.style-label(for="cash") готівкою при отримані
+                                p 
+                                    input.style-input(type="radio" name="payMethod" id="cardPay")
+                                    label.style-label(for="cardPay") оплата на карту
+                            .delivery-method
+                                h2 оберіть спосіб доставки
+                                p
+                                    input.style-input(type="radio" name="deliveryMethod" id="novaPoshta")
+                                    label.style-label(for="novaPoshta") Нова Пошта
+                                p
+                                    input.style-input(type="radio" name="deliveryMethod" id="ukrPoshta")
+                                    label.style-label(for="ukrPoshta") Укрпошта
+                                p
+                                    input.style-input(type="radio" name="deliveryMethod" id="meestexpres")
+                                    label.style-label(for="meestexpres") Meestexpres
+                                p
+                                    input.style-input(type="radio" name="deliveryMethod" id="samovyviz")
+                                    label.style-label(for="samovyviz") Самовивіз
+                                p
+                                    input.style-input(type="radio" name="deliveryMethod" id="transport")
+                                    label.style-label(for="transport") Транспортом
+                        .order-block
+                            h2 Ваше замовлення:
+                            p 3 товари в корзині
+                            .sum-block 
+                                .without-sale_price.flex-between.items-center
+                                    p Сума без знижки:
+                                    p.price-order.all-price 1000 грн
+                                .sale_price.flex-between.items-center
+                                    p Знижка: 
+                                    p.price-order.sale 200 грн
+                            hr
+                            .order-sum.flex-between.items-center
+                                p До сплати:
+                                p.order-price_sum 800 грн
+                            .flex-btn
+                                a.issue-order(href="#") підтвердити
+                                a.back(href="cart.html") повернутися у корзину
         footer 
             +footerNavigation(footerNav)
     script(src="js/scripts.js")
