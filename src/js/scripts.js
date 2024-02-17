@@ -2,11 +2,26 @@ document.addEventListener("DOMContentLoaded", function () {
     //бургер меню
     const burger = document.querySelector(".burger"),
         mobileMenu = document.querySelector(".main-navigation"),
-        sections = document.querySelectorAll(".scrollBurger")
+        sections = document.querySelectorAll(".scrollBurger"),
+        phoneMobile = document.querySelector(".phone-mobile"),
+        blurPage = document.querySelector(".blur-page")
+
 
     burger.addEventListener('click', function () {
-        this.classList.toggle('active'),
-            mobileMenu.classList.toggle('activemobile')
+        burger.classList.toggle('active'),
+        mobileMenu.classList.toggle('activemobile')
+        if (mobileMenu.classList.contains('activemobile') && burger.classList.contains("active")) {
+            mobileMenu.style.left = "0"
+            burger.style.left = "55%"
+            phoneMobile.style.left = "20px"
+            blurPage.style.display = "block"
+            blurPage.style.display = "block"
+        } else {
+            mobileMenu.style.left = "-100%" 
+            burger.style.left = "0"
+            phoneMobile.style.left = "-100%"
+            blurPage.style.display = "none"
+        }
     })
 
     window.addEventListener('scroll', function () {
