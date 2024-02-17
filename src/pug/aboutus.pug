@@ -1,0 +1,61 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")   
+        link(rel="stylesheet", href="css/style.css")
+        title Elithat
+    body 
+        include components/mixins
+        header 
+            .header-block#up
+                +headerNavigation(navigation)
+        main 
+            section.wrapper.aboutus
+                h2 про нас
+                .flex-between.aboutus-gallery
+                    .description 
+                        h2 обирайте найкраще для 
+                            span ваших дітей
+                        p Компанія Elithat працює більше 20 років на ринку.  Маємо сотні задоволених клієнтів по Україні.
+                        p Elithat - інтернет-крамниця по оптовому продажу за доступними цінами. Широкий вибір головних уборів для дітей на будь-який сезон.
+                        p Цілодобове приймання замовлень через кошик сайту.
+                        .btn
+                            a(href="").catalog-cta в каталог
+                    .gallery.flex-between 
+                        img(src="img/about-us-gallery1.webp", alt="")
+                        img(src="img/about-us-gallery2.webp", alt="")
+            section.advantages-bg 
+                .aboutus-advantage
+                    h2 Наш магазин постійно оновлює асортимент
+                    p Наші менеджери допоможуть при виборі розмірів і моделей, нададуть докладну інформацію про склад тканини, зручні способи оплати і доставку.
+            section.wrapper.aboutus
+                h2 про нас
+                .flex-between.aboutus-gallery
+                    .gallery.flex-between 
+                        img(src="img/about-us-advantage-3.webp", alt="")
+                        img(src="img/about-us-advantage-4.webp", alt="")
+                    .description 
+                        h2 чому варто звернутися 
+                            span до нас?
+                        
+                        ul
+                            li
+                                p
+                                    span Ввічливі і компетентні менеджери, 
+                                    | допомога у виборі розмірів, моделей;
+                            li
+                                p
+                                    span Зручні методи оплати товару, 
+                                    | можна оплатити як накладеним платежем, так і на карту;
+                            li
+                                p
+                                    span Регулярне проведення розпродажів, 
+                                    | що дозволяє ще більш вигідно замовити товар.
+                        .btn
+                            a(href="").catalog-cta в каталог
+
+        footer 
+            +footerNavigation(footerNav)
+            
+        script(src="js/scripts.js")
