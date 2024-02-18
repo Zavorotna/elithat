@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         closeFilter.addEventListener("click", filterToggle)
 
     } 
+
     //бургер меню
     const burger = document.querySelector(".burger"),
         mobileMenu = document.querySelector(".main-navigation"),
@@ -37,6 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
     })
+
+
+    if (document.querySelector(".products-sm")) {
+
+        // console.log(document.querySelector(".general-img img").getBoundingClientRect().height + "px");
+        document.querySelector(".products-sm").style.height = document.querySelector(".general-img img").getBoundingClientRect().height + "px"
+    }
 
     // карусель на головний екран
 
@@ -88,18 +96,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     startAutoScroll()
 
+
+
 })
 
-
-var min = document.getElementById('min');
-var max = document.getElementById('max');
-var min_l = document.getElementById('min-lbl');
-var max_l = document.getElementById('max-lbl');
-
-min.onchange = (ev) => {
-	min_l.innerText = min.value + " грн";
-}
-
-max.onchange = (ev) => {
-	max_l.innerText = max.value + " грн";
+if (document.getElementById('min')) {
+    var min = document.getElementById('min');
+    var max = document.getElementById('max');
+    var min_l = document.getElementById('min-lbl');
+    var max_l = document.getElementById('max-lbl');
+    
+    min.onchange = (ev) => {
+        min_l.innerText = min.value + " грн";
+    }
+    
+    max.onchange = (ev) => {
+        max_l.innerText = max.value + " грн";
+    }
 }

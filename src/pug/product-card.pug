@@ -11,51 +11,172 @@ html(lang="uk")
             .header-block#up
                 +headerNavigation(navigation)
         main 
-            section.wrapper.aboutus
-                h2 про нас
-                .flex-between.aboutus-gallery
-                    .description 
-                        h2 обирайте найкраще для 
-                            span ваших дітей
-                        p Компанія Elithat працює більше 20 років на ринку.  Маємо сотні задоволених клієнтів по Україні.
-                        p Elithat - інтернет-крамниця по оптовому продажу за доступними цінами. Широкий вибір головних уборів для дітей на будь-який сезон.
-                        p Цілодобове приймання замовлень через кошик сайту.
-                        .btn
-                            a(href="").catalog-cta в каталог
-                    .gallery.flex-between 
-                        img(src="img/about-us-gallery1.webp", alt="")
-                        img(src="img/about-us-gallery2.webp", alt="")
-            section.advantages-bg 
-                .aboutus-advantage
-                    h2 Наш магазин постійно оновлює асортимент
-                    p Наші менеджери допоможуть при виборі розмірів і моделей, нададуть докладну інформацію про склад тканини, зручні способи оплати і доставку.
-            section.wrapper.aboutus
-                h2 про нас
-                .flex-between.aboutus-gallery
-                    .gallery.flex-between 
-                        img(src="img/about-us-advantage-3.webp", alt="")
-                        img(src="img/about-us-advantage-4.webp", alt="")
-                    .description 
-                        h2 чому варто звернутися 
-                            span до нас?
-                        
-                        ul
-                            li
-                                p
-                                    span Ввічливі і компетентні менеджери, 
-                                    | допомога у виборі розмірів, моделей;
-                            li
-                                p
-                                    span Зручні методи оплати товару, 
-                                    | можна оплатити як накладеним платежем, так і на карту;
-                            li
-                                p
-                                    span Регулярне проведення розпродажів, 
-                                    | що дозволяє ще більш вигідно замовити товар.
-                        .btn
-                            a(href="").catalog-cta в каталог
+            section.wrapper.product-popup 
+                .product-gallery.flex-between
+                    .products-sm 
+                        img(src="img/product-image.jpg", alt="")
+                        img(src="img/product-image.jpg", alt="")
+                        img(src="img/product-image.jpg", alt="")
+                    .general-img
+                        img(src="img/product-image.jpg", alt="")
+                .product-description
+                    .girl-product 
+                        span для дівчинки
+                    .boy-product
+                        span для хлопчика
+                    .universal-product
+                        span універсальна
+                    h1 Зимова шапка-шолом дитяча 
+                    span.code код 456789
+                    .product-price 
+                        span.current-price 459 грн
+                        span.old-price 560 грн
+                    .characteristics.select-product-block 
+                        b характеристики
+                        .characteristics-list 
+                            ul
+                                li
+                                    p Країна - виробник 
+                                        span Китай
+                                li
+                                    p Фабрика - виробник 
+                                        span назва заводу
+                                li
+                                    p Склад - 
+                                        span назва матеріалу
+                                li
+                                    p Сировина - 
+                                        span якась сировина
+                                li
+                                    p Сезонність - 
+                                        span холодна осінь, зима.
+                    .size.select-product-block.flex-between.items-center 
+                        .d-flex.items-center 
+                            b оберіть розмір: &nbsp;
+                            .sizes-inputs
+                                input(type="checkbox", name="size" id="product3-size38")
+                                label(for="product3-size38") 38
+                                input(type="checkbox", name="size" id="product3-size39")
+                                label(for="product3-size39") 39
+                                input(type="checkbox", name="size" id="product3-size40")
+                                label(for="product3-size40") 40
+                                input(type="checkbox", name="size" id="product3-size41")
+                                label(for="product3-size41") 41
+                                input(type="checkbox", name="size" id="product3-size42")
+                                label(for="product3-size42") 42
+                                input(type="checkbox", name="size" id="product3-size43")
+                                label(for="product3-size43") 43
+                                input(type="checkbox", name="size" id="product3-size44")
+                                label(for="product3-size44") 44
+                        a.size-cell(href="#") розмірна сітка
+                    .color.select-product-block
+                        .d-flex.items-center 
+                            b оберіть розмір: &nbsp;
+                            .color-inputs
+                                input(type="radio", name="color", value="#dfa0f5", id="color1")
+                                label(for="color1").pink
+                                input(type="radio", name="color", value="#dfa0f5", id="color2")
+                                label(for="color2").pink
+                                input(type="radio", name="color", value="#dfa0f5", id="color3")
+                                label(for="color3").pink
+                                
+                    .quantity.select-product-block 
+                        .d-flex.items-center 
+                            b оберіть кількість: &nbsp;
+                            .quantity-btns.d-flex
+                                .change-quantity-btns -
+                                .quantity-num  1
+                                .change-quantity-btns +
+                    .buy-btns.d-flex 
+                        a.catalog-cta(href="#") в корзину
+                        a.catalog-cta(href="#") доставка та оплата
+            section.wrapper.similar-products 
+                h2 схожі товари
+                .products-list 
+                    figure
+                        .girl-product 
+                            span для дівчинки
+                        img(src="img/card-image1.jpg", alt="")
+                        figcaption 
+                            h3 Зимова шапка-шолом дитяча 
+                            .flex-between.product-sizes.items-center
+                                span розміри:
+                                .sizes-inputs
+                                    input(type="checkbox", name="size" id="product-size38")
+                                    label(for="product-size38") 38
+                                    input(type="checkbox", name="size" id="product-size39")
+                                    label(for="product-size39") 39
+                                    input(type="checkbox", name="size" id="product-size40")
+                                    label(for="product-size40") 40
+                                    input(type="checkbox", name="size" id="product-size41")
+                                    label(for="product-size41") 41
+                                    input(type="checkbox", name="size" id="product-size42")
+                                    label(for="product-size42") 42
+                                    input(type="checkbox", name="size" id="product-size43")
+                                    label(for="product-size43") 43
+                                    input(type="checkbox", name="size" id="product-size44")
+                                    label(for="product-size44") 44
+                            .price.d-flex.items-center
+                                b 459 грн
+                                span.old-price 560 грн
+                            a(href="#").cta до кошика
+                    figure 
+                        .boy-product
+                            span для хлопчика
+                        img(src="img/card-image-2.jpg", alt="")
+                        figcaption 
+                            h3 літня шапка-панамка дитяча
+                            .flex-between.product-sizes.items-center
+                                span розміри:
+                                .sizes-inputs
+                                    input(type="checkbox", name="size" id="product2-size38")
+                                    label(for="product2-size38") 38
+                                    input(type="checkbox", name="size" id="product-size39")
+                                    label(for="product2-size39") 39
+                                    input(type="checkbox", name="size" id="product2-size40")
+                                    label(for="product2-size40") 40
+                                    input(type="checkbox", name="size" id="product2-size41")
+                                    label(for="product2-size41") 41
+                                    input(type="checkbox", name="size" id="product2-size42")
+                                    label(for="product2-size42") 42
+                                    input(type="checkbox", name="size" id="product2-size43")
+                                    label(for="product2-size43") 43
+                                    input(type="checkbox", name="size" id="product2-size44")
+                                    label(for="product2-size44") 44
+                            .price.d-flex.items-center
+                                b 459 грн
+                                span.old-price 560 грн
+                            a(href="#").cta до кошика
+                    figure 
+                        .universal-product
+                            span універсальна
+                        img(src="img/card-image-3.jpg", alt="")
+                        figcaption 
+                            h3 Зимова шапка-шолом дитяча 
+                            .flex-between.product-sizes.items-center
+                                span розміри:
+                                .sizes-inputs
+                                    input(type="checkbox", name="size" id="product3-size38")
+                                    label(for="product3-size38") 38
+                                    input(type="checkbox", name="size" id="product3-size39")
+                                    label(for="product3-size39") 39
+                                    input(type="checkbox", name="size" id="product3-size40")
+                                    label(for="product3-size40") 40
+                                    input(type="checkbox", name="size" id="product3-size41")
+                                    label(for="product3-size41") 41
+                                    input(type="checkbox", name="size" id="product3-size42")
+                                    label(for="product3-size42") 42
+                                    input(type="checkbox", name="size" id="product3-size43")
+                                    label(for="product3-size43") 43
+                                    input(type="checkbox", name="size" id="product3-size44")
+                                    label(for="product3-size44") 44
+                            .price.d-flex.items-center
+                                b 459 грн
+                                span.old-price 560 грн
+                            a(href="#").cta до кошика
+            
+                .justify-center
+                    a(href="#").catalog-cta в каталог 
 
-        footer 
-            +footerNavigation(footerNav)
             
         script(src="js/scripts.js")

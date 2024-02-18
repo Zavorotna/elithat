@@ -340,7 +340,8 @@ ul.activemobile
 .products
     margin-bottom: 150rem
 .products h2,
-.catalog h2
+.catalog h2,
+.similar-products h2
     margin: 0
     padding-bottom: 50rem
     font-size: 48rem
@@ -1095,3 +1096,153 @@ input[type=range]::-webkit-slider-runnable-track
     z-index: 8
     +media(913)
         display: none
+
+
+
+// картка товару
+.product-popup 
+    // display: flex
+    justify-content: space-between
+    margin-bottom: 85rem
+    padding-top: 50rem
+.product-gallery
+    column-gap: 10rem
+    width: 40%
+    img
+        width: 100%
+        border-radius: 10rem
+    .products-sm 
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        width: 22%
+        img
+            border-radius: 5rem
+.general-img
+    width: 75%
+
+.product-description 
+    h1
+        padding: 0
+        text-align: left
+        margin-bottom: 25rem
+
+.code
+    color: rgb(30, 30, 30)
+    font-size: 18rem
+    font-weight: 500
+    line-height: 1.2em
+    text-align: center
+    text-transform: uppercase
+
+.product-price
+    display: flex
+    align-items: center
+    padding-top: 20rem
+    margin-bottom: 25rem
+    column-gap: 20rem
+    .current-price
+        color: rgb(33, 158, 188)
+        font-size: 36rem
+        font-weight: 700
+        line-height: 1.2em
+    .old-price
+        color: rgb(43, 45, 66)
+        font-size: 24rem
+        font-weight: 300
+        line-height: 1.2em
+        text-decoration-line: line-through
+    
+.select-product-block
+    width: 100%
+    box-sizing: border-box
+    border: 1px solid rgb(217, 217, 217)
+    border-radius: 10rem
+    padding: 25rem 20rem
+    margin-bottom: 20rem
+    b
+        display: block
+        color: rgb(33, 158, 188)
+        font-size: 18rem
+        font-weight: 700
+        line-height: 1.2em
+        text-transform: uppercase
+    ul
+        padding-top: 20rem
+        p
+            color: rgb(30, 30, 30)
+            font-size: 18rem
+            font-weight: 400
+            line-height: 1.2em
+            span
+                font-weight: 500
+                color: rgb(33, 158, 188)
+                text-decoration: underline
+            
+.size.select-product-block
+    input
+        appearance: none
+
+.size-cell
+    color: rgb(30, 30, 30)
+    font-size: 12rem
+    font-weight: 300
+    line-height: 1.2em
+    text-decoration: underline
+
+.similar-products
+    padding-bottom: 200rem
+
+.buy-btns
+    column-gap: 20rem
+    a
+        transition: 0.5s
+    a:hover
+        transform: scale(1.05)
+    a:first-child
+        background: rgb(33, 158, 188)
+    a:last-child
+        background: #fff
+        border: 2px solid rgb(33, 158, 188)
+        color: rgb(33, 158, 188)
+
+.color-inputs
+    input
+        appearance: none
+    label
+        position: relative
+    .pink
+        display: inline-block
+        width: 25rem
+        height: 25rem
+        border-radius: 3px
+        background: rgb(223, 160, 245)
+    input:checked + label:before 
+        content: ""
+        position: absolute
+        left: -3px
+        top: -3px
+        width: 29rem
+        height: 29rem
+        border: 1px solid #191919
+        border-radius: 3rem
+
+.quantity-btns 
+    column-gap: 10px
+    div
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 25px
+        height: 25px
+        border: 1px solid rgb(217, 217, 217)
+        border-radius: 3px
+        color: rgb(30, 30, 30)
+        font-size: 12px
+        font-weight: 500
+        line-height: 1.2em
+        text-align: center
+        cursor: pointer
+
+
+        
