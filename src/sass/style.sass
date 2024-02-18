@@ -38,6 +38,16 @@ h1
 
 .d-block
     display: block
+.blur-page
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.15)
+    backdrop-filter: blur(4px)
+    z-index: 2
 
 .d-none
     display: none
@@ -104,28 +114,31 @@ h1
     z-index: 2
 
 .logo-block
-    padding: 15rem 0
+    position: relative
+    padding: 15rem 0 30rem
+    justify-content: space-between
     align-items: center
+    +media(1024)
+        justify-content: space-between
 
 .search-block
     position: absolute
-    bottom: 18%
-    right: 15rem
-    width: 200rem
-    height: 30rem
+    bottom: -20%
+    left: 0
+    width: 100%
+    height: 30px
     input
         width: 100%
-        padding: 7rem 10rem
+        padding: 7px 10px
         box-sizing: border-box
         outline: none
         border: 1rem solid #000
         border-radius: 5rem
-    +media(425)
-        width: 250rem
     +media(1024)
         position: relative
         top: 0
         left: 0
+        width: 250rem
 
 .serch
     position: absolute
@@ -142,60 +155,95 @@ h1
         left: 0
         border-left: 1px solid #000
         height: 100%
-
+.logo 
+    width: 60px
+    height: 45px
+    +media(1024)
+        width: 90rem
+        height: 70rem
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
 .contact-nav
     align-items: center
-    justify-content: flex-end
     column-gap: 30rem
-    width: 250rem
+    +media(1024)
+        width: 250rem
+        justify-content: flex-end
+    svg
+        width: 15
+        +media(1024)
+            width: 105
+.phone
+    display: none
+    +media(1024)
+        display: block
 
 .nav-block
     padding-bottom: 30rem
 
 .main-navigation
-    display: none
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
-    width: 100%
-    margin-bottom: 20rem
-    border: 1px solid #1e1e1e
-    a
-        display: block
-        width: 100%
-        padding: 15rem 0
-        text-align: center
-        font-size: 16rem
-        color: #1e1e1e
-        font-weight: 500
-    li + li
-        border-left: 1px solid #1e1e1e
     +media(1024)
         border-radius: 10rem
         display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+        width: 100%
+        margin-bottom: 20rem
+        border: 1px solid #1e1e1e
+        a
+            display: block
+            width: 100%
+            padding: 15rem 0
+            text-align: center
+            font-size: 16rem
+            color: #1e1e1e
+            font-weight: 500
+        li + li
+            border-left: 1px solid #1e1e1e
 
 ul.activemobile
-    transition: all 1s ease
     position: absolute
-    top: 100%
-    left: 0
-    display: block
-    width: 100vw
+    top: 0
+    width: 60vw
     height: 100vh
-    background-color: #219ebc
+    padding: 58rem 20rem 0 
+    background-color: #fff
     border: none
+    transition: all .5s ease
+    z-index: 4
     li
         border: none
         a
-            display: inline-block
-            color: #fff
-            font-size: 16rem
-            transition: all .25s ease
+            position: relative
+            display: block
+            padding: 15rem 0
+            text-align: left
+            color: rgb(30, 30, 30)
+            font-size: 16px
+            font-weight: 500
+            line-height: 1.4em
+            &::before
+                content: ''
+                position: absolute
+                bottom: 0
+                left: 0
+                width: 100%
+                border-bottom: 1px solid rgb(180, 180, 180)
+
+a.phone-mobile
+    position: absolute
+    bottom: 50px
+    left: -100%
+    text-align: left
+    +media(1023)
+        display: none
 
 .burger
     position: relative
     display: block
-    margin: 0 15rem 0 0
-    width: 30rem
-    height: 30rem
+    width: 40rem
+    height: 40rem
     z-index: 5
     cursor: pointer
     +media(1024)
@@ -205,19 +253,20 @@ ul.activemobile
     position: absolute
     top: 50%
     left: 0
-    background-color: #25445E
     width: 100%
-    height: 2rem
-    filter: drop-shadow(0rem 0rem 3rem #fff)
+    height: 4rem
+    background: rgb(33, 158, 188)
+    border-radius: 5px
     transform: translateY(-50%)
     z-index: 5
     &::before,
     &::after
         position: absolute
         content: ""
-        background-color: #25445E
         width: 100%
-        height: 2rem
+        height: 4rem
+        background: rgb(33, 158, 188)
+        border-radius: 5px
         z-index: 5
     &::before
         top: 10rem
@@ -227,7 +276,10 @@ ul.activemobile
         bottom: 10rem
 
 .active
+    transition: all .5s ease
+    position: relative
     padding: 0
+    left: -45%
     .bord
         background-color: transparent
         box-shadow: 0 0 0 0
@@ -339,6 +391,7 @@ ul.activemobile
 // карточки товарів
 .products
     margin-bottom: 150rem
+
 .products h2,
 .catalog h2,
 .similar-products h2
@@ -427,7 +480,7 @@ ul.activemobile
         font-weight: 300
         line-height: 1.25em
         &:not(label:first-child)
-            
+
             margin-right: 5rem
 
 .price
@@ -709,13 +762,12 @@ ul.activemobile
     color: #1e1e1e
     font-weight: bold
 
-
 // каталог
 
 .category-block
     column-gap: 10rem
 
-.catalog 
+.catalog
     margin-bottom: 40rem
     padding-top: 50rem
 
@@ -743,7 +795,6 @@ ul.activemobile
         position: absolute
         bottom: 0
         right: 5%
-
 
 .catalog-summer,
 .catalog-autumn,
@@ -845,14 +896,9 @@ ul.activemobile
     margin-bottom: 25rem
     column-gap: 30rem
 
-
-
-
-
 .range-slider
     width: 100px
     max-width: 100px
-
 
 .range-slider input[type="range"]
     width: 100%
@@ -862,45 +908,37 @@ ul.activemobile
     outline: none
     border-radius: 10px
 
-
-.range-slider input[type="range"]::-webkit-slider-thumb 
+.range-slider input[type="range"]::-webkit-slider-thumb
     pointer-events: all
     position: relative
     z-index: 1
     width: 15px
     height: 15px
 
-
-.range-slider input[type="range"]::-moz-range-thumb 
+.range-slider input[type="range"]::-moz-range-thumb
     position: relative
     z-index: 1
 
-
-    
-
-
-.range-slider input[type="range"]::-ms-thumb 
+.range-slider input[type="range"]::-ms-thumb
     position: relative
     z-index: 1
     background: transparent
 
-
-input[type=range]::-webkit-slider-runnable-track 
+input[type=range]::-webkit-slider-runnable-track
     border: 0
     background: linear-gradient(to bottom, #fff 6.5px, rgb(33, 158, 188) 6.5px, rgb(33, 158, 188) 8.5px, #fff 8.5px)
 
-
-.range-info   
+.range-info
     width: 100%
     display: flex
     justify-content: space-between
     padding-top: 20rem
-    label 
+    label
         color: rgb(30, 30, 30)
         font-size: 12rem
         font-weight: 400
         line-height: 1.2em
-        
+
 .filter-inputs
     span.how-many-products
         color: rgb(180, 180, 180)
@@ -908,7 +946,7 @@ input[type=range]::-webkit-slider-runnable-track
         font-weight: 300
         line-height: 17px
     .style-label
-        &:before 
+        &:before
             top: 50%
             transform: translateY(-50%)
 
@@ -948,7 +986,6 @@ input[type=range]::-webkit-slider-runnable-track
             display: block
     +media(1285)
         justify-content: space-between
-
 
 .sort-select
     color: rgb(30, 30, 30)
