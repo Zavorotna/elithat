@@ -11,6 +11,8 @@ html(lang="uk")
             .header-block#up
                 +headerNavigation(navigation)
         main 
+            .mobile-filter 
+                a(href="#") Фільтр
             section.wrapper.catalog
                 h2 Каталог
                 .flex-between.category-block
@@ -38,7 +40,8 @@ html(lang="uk")
                         select(name="")
                             option(value="actual") найактуальніші
             section.wrapper.filter-and-catalog.flex-between 
-                .filter
+                .filter#filter
+                    .close-filter-btn
                     h3 Фільтр
                     .filter-item
                         .relative

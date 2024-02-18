@@ -36,6 +36,9 @@ h1
     +media(1024)
         font-size: 48rem
 
+.d-block
+    display: block
+
 .d-none
     display: none
 
@@ -313,13 +316,15 @@ ul.activemobile
     column-gap: 40rem
     row-gap: 30rem
     flex-wrap: wrap
-    +media(768)
-        flex-wrap: nowrap
+    width: 100%
     img
         transition: all .5s ease
         width: 100%
         height: 100%
         object-fit: cover
+
+
+
 
 .click-category
     position: relative
@@ -347,34 +352,37 @@ ul.activemobile
 .products-list
     display: flex
     width: 100%
-    justify-content: space-around
+    justify-content: space-between
     column-gap: 10rem
     row-gap: 20rem
     flex-wrap: wrap
     margin-bottom: 30rem
 
-figure
-    display: block
-    position: relative
-    padding: 20rem 15rem
-    max-width: 360rem
-    box-sizing: border-box
-    border: 1px solid rgb(30, 30, 30)
-    border-radius: 10px
+    figure
+        display: block
+        position: relative
+        padding: 20rem 15rem
+        max-width: 360rem
+        box-sizing: border-box
+        border: 1px solid rgb(30, 30, 30)
+        border-radius: 10px
+        margin: auto
+        +media(1296)
+            margin: 0
 
-    img
-        width: 100%
-        height: 350rem
-        object-fit: cover
-        border-radius: 10px 10px 0px 0px
-        margin-bottom: 15rem
-    h3
-        color: rgb(30, 30, 30)
-        font-size: 18rem
-        font-weight: 700
-        line-height: 1.2em
-        text-transform: uppercase
-        margin-bottom: 5px
+        img
+            width: 100%
+            height: 350rem
+            object-fit: cover
+            border-radius: 10px 10px 0px 0px
+            margin-bottom: 15rem
+        h3
+            color: rgb(30, 30, 30)
+            font-size: 18rem
+            font-weight: 700
+            line-height: 1.2em
+            text-transform: uppercase
+            margin-bottom: 5px
 .cta
     display: flex
     align-items: center
@@ -712,17 +720,22 @@ figure
 
 .catalog-season-block
     position: relative
-    width: 25%
+    width: 100%
+    min-width: 200rem
     border-radius: 10px
     background-color: #ccc
     padding: 63rem 0rem 63rem 50rem
+    +media(505)
+        width: 19%
     span
+        position: relative
         color: rgb(255, 255, 255)
         font-size: 36px
         font-weight: 700
         line-height: 1.2em
         text-transform: uppercase
-        z-index: 2
+        z-index: 1
+        
     img
         width: 110px
         height: 146px
@@ -749,9 +762,43 @@ figure
 .catalog-spring
     background-image: url(../img/catalog-season-4.webp)
 
-.filter
-    width: 25%
-    min-width: 300px
+.sort
+    column-gap: 20px
+    .filter
+        width: 25%
+.filter-and-catalog
+    .filter
+        position: fixed
+        display: none
+        background-color: #fff
+        padding: 45px 15px
+        height: 90vh
+        top: 0
+        left: 0
+        z-index: 15
+        width: 25%
+        min-width: 310px
+        overflow-y: scroll
+        overflow-x: hidden
+        // box-sizing: border-box
+        +media(913)
+            display: block
+            position: static
+            height: auto
+            padding: 0
+            padding-right: 3px
+            z-index: 1
+        &.d-block
+            display: block
+
+.close-filter-btn
+    position: absolute
+    top: 25px
+    right: 25px
+    width: 25px
+    height: 25px
+    background-color: #219ebc
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%)
 
 .filter-item
     position: relative
@@ -786,6 +833,9 @@ figure
     transform: translateY(-50%)
     right: 0
     cursor: pointer
+
+.filter-and-catalog
+    column-gap: 20px
 
 .filter-and-catalog hr 
     border: none
@@ -865,8 +915,12 @@ input[type=range]::-webkit-slider-runnable-track
     flex-wrap: wrap
     column-gap: 10rem
     row-gap: 20rem
-    justify-content: space-around
-    width: 75%
+    justify-content: center
+    width: 100%
+    
+    +media(1285)
+        width: 75%
+        justify-content: space-between
     a
         color: rgb(188, 33, 95)
         font-size: 18rem
@@ -885,7 +939,14 @@ input[type=range]::-webkit-slider-runnable-track
         column-gap: 30rem
 
 .sort
+    justify-content: center
     margin-bottom: 20rem
+    .filter
+        display: none
+        +media(1285)
+            display: block
+    +media(1285)
+        justify-content: space-between
 
 
 .sort-select
@@ -902,7 +963,7 @@ input[type=range]::-webkit-slider-runnable-track
         box-sizing: border-box
         border: 1px solid rgb(217, 217, 217)
         border-radius: 5px
-        padding: 12px 130px 12px 10px
+        padding: 12rem 130rem 12rem 10rem
         align-items: center
         font-size: 12rem
         outline: none
@@ -913,7 +974,9 @@ input[type=range]::-webkit-slider-runnable-track
 //         justify-content: space-between
 
 .catalog-products
-    width: 75%
+    width: 100%
+    +media(913)
+        width: 75%
 
 .aboutus
     padding-top: 50rem
@@ -930,11 +993,16 @@ input[type=range]::-webkit-slider-runnable-track
             color: rgb(188, 33, 95)
 
 .aboutus-gallery
-    flex-wrap: wrap
+    display: block
     column-gap: 15rem
+    +media(1185)
+        display: flex
     .description
-        width: 35%
-        max-width: 480rem
+        width: 100%
+        margin-bottom: 40rem
+        +media(1185)
+            width: 35%
+            max-width: 480rem
         h2
             text-align: left
             margin-bottom: 45rem
@@ -973,13 +1041,19 @@ input[type=range]::-webkit-slider-runnable-track
 .gallery
     display: flex
     justify-content: space-between
-    width: 60%
+    width: 100%
     column-gap: 40rem
+    row-gap: 40rem
+    margin-bottom: 40rem
+    flex-wrap: wrap
+    +media(1185)
+       width: 60% 
     img
         border-radius: 10px
-        width: 50%
-        min-width: 300rem
+        width: 100%
         object-fit: cover
+        +media(800)
+            width: 45%
 
 .aboutus-advantage
     max-width: 990rem
@@ -1003,3 +1077,21 @@ input[type=range]::-webkit-slider-runnable-track
     background-size: cover
     background-repeat: no-repeat
     padding: 100px 0
+
+.mobile-filter a
+    position: fixed
+    top: 250rem
+    left: -22rem
+    -webkit-transform: rotate(-90deg)
+    -ms-transform: rotate(-90deg)
+    transform: rotate(-90deg)
+    display: block
+    color: #fff
+    font-size: 16rem
+    padding: 5rem
+    text-transform: uppercase
+    background-color: #4e98b6
+    border-radius: 3rem 0 0 3rem
+    z-index: 8
+    +media(913)
+        display: none

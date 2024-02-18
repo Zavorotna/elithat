@@ -1,4 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+    if (document.querySelector(".mobile-filter a")) {
+
+        const openSMFilter = document.querySelector(".mobile-filter a"),
+            filter = document.querySelector("#filter"),
+            closeFilter = document.querySelector(".close-filter-btn")
+        function filterToggle () {
+            filter.classList.toggle("d-block")
+        }
+        console.log(openSMFilter);
+        openSMFilter.addEventListener("click", function(e) {
+            e.preventDefault()
+            filterToggle()
+        })
+
+        closeFilter.addEventListener("click", filterToggle)
+
+    } 
     //бургер меню
     const burger = document.querySelector(".burger"),
         mobileMenu = document.querySelector(".main-navigation"),
@@ -69,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     startAutoScroll()
+
 })
 
 
