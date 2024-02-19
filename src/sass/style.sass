@@ -13,6 +13,7 @@ body
     margin: 0
     font-family: "Montserrat"
 a
+    transition: all .25s ease
     text-decoration: none
 
 ul > li
@@ -20,6 +21,16 @@ ul > li
 
 header
     padding-top: 171rem
+
+.hover-svg
+    transition: all .5s ease
+    path
+        transition: all .5s ease
+        fill: rgb(33, 158, 188)
+    &:hover
+        fill: rgb(188, 33, 95)
+    &:hover > path
+        fill: rgb(188, 33, 95)
 
 .wrapper
     margin: 0 auto
@@ -115,7 +126,7 @@ h1
 
 .logo-block
     position: relative
-    padding: 15rem 0 30rem
+    padding: 15rem 0
     justify-content: space-between
     align-items: center
     +media(1024)
@@ -123,13 +134,13 @@ h1
 
 .search-block
     position: absolute
-    bottom: -20%
+    bottom: -30%
     left: 0
     width: 100%
     height: 30px
     input
         width: 100%
-        padding: 7px 10px
+        padding: 7px 40px 7px 10px
         box-sizing: border-box
         outline: none
         border: 1rem solid #000
@@ -155,16 +166,7 @@ h1
         left: 0
         border-left: 1px solid #000
         height: 100%
-<<<<<<< HEAD
 .logo
-=======
-.logo 
-    width: 60px
-    height: 45px
-    +media(1024)
-        width: 90rem
-        height: 70rem
->>>>>>> 57e5f5ab5acd396eb4fc3e5f0762ba3527d8928d
     img
         width: 100%
         height: 100%
@@ -179,26 +181,32 @@ h1
         width: 15
         +media(1024)
             width: 105
+
+.cart
+    position: relative
+    span
+        position: absolute
+        bottom: -30%
+        right: 20%
+        color: rgb(30, 30, 30)
+        font-family: Montserrat
+        font-size: 10px
+        font-weight: 400
+
 .phone
     display: none
     +media(1024)
         display: block
 
 .nav-block
-    padding-bottom: 30rem
+    padding-bottom: 15rem
 
 .main-navigation
     +media(1024)
         display: grid
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr
         width: 100%
-<<<<<<< HEAD
-=======
-        margin-bottom: 20rem
-        border: 1px solid #1e1e1e
->>>>>>> 57e5f5ab5acd396eb4fc3e5f0762ba3527d8928d
         a
-            transition: all .5s ease
             display: block
             width: 100%
             padding: 15rem 0
@@ -218,7 +226,7 @@ h1
     border-radius: 10rem 0 0 10rem
 .last-child
     border-radius: 0 10rem 10rem 0
-                
+
 ul.activemobile
     position: absolute
     top: 0
@@ -354,10 +362,15 @@ a.phone-mobile
     color: #fff
     font-weight: 600
     background-color: #bc215f
+    border: 2px solid transparent
     border-radius: 25px
     z-index: 1
     +media(550)
         width: 280rem
+    &:hover
+        background-color: #fff
+        border: 2px solid #bc215f
+        color: #bc215f
 
 .carousel-picture
     align-items: flex-end
@@ -655,8 +668,16 @@ a.phone-mobile
         line-height: 1.2em
         margin-bottom: 40rem
 
+.buy-btns,
+.advantages
     .catalog-cta
+        box-shadow: border-box
         background: rgb(33, 158, 188)
+        border: 2px solid transparent
+        &:hover
+            background-color: #fff
+            color: rgb(33, 158, 188)
+            border: 2px solid rgb(33, 158, 188)
 
 .advantages-first-block
     // min-width: 390rem
@@ -780,13 +801,32 @@ a.phone-mobile
     ul
         position: relative
         z-index: 3
+    li
+        text-align: center
     a
-        display: block
+        position: relative
+        display: inline-block
         padding-bottom: 15rem
         font-size: 16rem
-        text-align: center
         color: #1e1e1e
         font-weight: 600
+        &::after
+            content: ""
+            position: absolute
+            bottom: 15rem
+            left: 0
+            display: inline-block
+            width: 100%
+            height: 1rem
+            border-bottom: 2rem solid rgb(33, 158, 188)
+            opacity: 0
+            transition: opacity 0.35s, transform 0.35s
+            transform: scale(0.1)
+        &:hover
+            color: rgb(33, 158, 188)
+        &:hover::after
+            opacity: 1
+            transform: scale(1)
 
 .privacy-police
     text-align: center
@@ -1393,28 +1433,16 @@ input[type=range]::-webkit-slider-runnable-track
     height: 100%
     top: 0
     left: 0
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
 
 input[type="range"]
-  appearance: none
-  background-color: transparent
-
-
-  &::-webkit-slider-thumb
-    box-sizing: border-box
     appearance: none
-    position: relative
-    background-color: #fff
-    border: 2px solid rgb(33, 158, 188)
-    border-radius: 8px
-    width: 15px
-    height: 15px
-
->>>>>>> 57e5f5ab5acd396eb4fc3e5f0762ba3527d8928d
+    background-color: transparent
+    &::-webkit-slider-thumb
+        box-sizing: border-box
+        appearance: none
+        position: relative
+        background-color: #fff
+        border: 2px solid rgb(33, 158, 188)
+        border-radius: 8px
+        width: 15px
+        height: 15px

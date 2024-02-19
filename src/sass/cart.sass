@@ -12,7 +12,7 @@
 
 .product-block
     padding-bottom: 40rem
-    width: 100%  
+    width: 100%
 .product-card
     +media(1024)
         max-width: 500rem
@@ -88,6 +88,7 @@
 .count-cart_block
     column-gap: 10rem
     a
+        transition: all .25s ease
         display: block
         padding: 8rem 12rem
         max-width: 40rem
@@ -100,7 +101,12 @@
         box-sizing: border-box
         +media(1200)
             padding: 12rem 17rem
-
+    .min,
+    .plus
+        &:hover
+            border: 1px solid rgb(33, 158, 188)
+            background: rgb(33, 158, 188)
+            color: #fff
 .sum-cart_block
     width: 180rem
     column-gap: 17rem
@@ -170,6 +176,7 @@
 
 .issue-order,
 .back
+    transition: all .5s ease
     display: block
     max-width: 440rem
     margin-bottom: 10rem
@@ -184,8 +191,17 @@
 .issue-order
     color: rgb(255, 255, 255)
     background: rgb(33, 158, 188)
+    border: 2px solid transparent
+    &:hover
+        background-color: #bc215f
+        border: 2px solid #bc215f
+        color: #fff
 
 .back
     color: rgb(33, 158, 188)
     background-color: #fff
     border: 2px solid rgb(33, 158, 188)
+    &:hover
+        background-color: #fff
+        border: 2px solid #bc215f
+        color: #bc215f
