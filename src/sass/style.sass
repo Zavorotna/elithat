@@ -1297,3 +1297,49 @@ input[type=range]::-webkit-slider-runnable-track
 
 .row-product-block
     row-gap: 20px
+
+.pagination-btns
+    justify-content: center
+    button
+        color: rgb(30, 30, 30)
+        font-size: 12rem
+        font-weight: 300
+        line-height: 1.2em
+        text-align: center
+        &:checked
+            color: rgb(33, 158, 188)
+
+.pagination-to-left,
+.pagination-to-right
+    position: relative
+    width: 25px
+    height: 25px
+    border: 1px solid rgb(30, 30, 30)
+    background-color: #fff
+    border-radius: 3px
+    &::before
+        content: ''
+        position: absolute
+        width: 10px
+        height: 10px
+        border-right: 3px solid rgb(33, 158, 188)
+        border-bottom: 3px solid rgb(33, 158, 188)
+
+
+.pagination-to-left
+    &:before
+        top: 6px
+        left: 8px
+        transform: rotate(135deg)
+.pagination-to-right
+    &:before
+        top: 6px
+        right: 8px
+        transform: rotate(-45deg)
+        
+.page-num
+    appearance: none
+    border: none
+    background-color: #fff
+    &.current-pagination-page
+        color: rgb(33, 158, 188)
