@@ -1,39 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
     if (document.querySelector('.filter-item')) {
-        const filterItems = document.querySelectorAll('.filter-item');
-        // Додавання обробника подій для кожного елемента
+        const filterItems = document.querySelectorAll('.filter-item')
+
         filterItems.forEach(function (item) {
             item.querySelector('.relative').addEventListener('click', function () {
-                toggleActiveClass(item);
-            });
-        });
+                toggleActiveClass(item)
+            })
+        })
 
         function toggleActiveClass(item) {
-            // Отримання сусіднього елемента .filter-inputs для конкретного .filter-item
+
             const filterInputs = item.querySelector('.filter-inputs'),
                 filterArrow = item.querySelector(".filter-arrow")
 
-            // Додавання або видалення класу active
             filterArrow.classList.toggle('active-filter')
-            filterInputs.classList.toggle('active-filter');
+            filterInputs.classList.toggle('active-filter')
         }
     }
 
 
     if (document.querySelector(".product-gallery")) {
-        var productImages = document.querySelectorAll('.products-sm img');
-        var generalImg = document.querySelector('.general-img img');
+        let productImages = document.querySelectorAll('.products-sm img'),
+            generalImg = document.querySelector('.general-img img')
 
         productImages.forEach(function (image) {
             image.addEventListener('click', function () {
                 let clickedImageUrl = this.src,
                     generalSrc = generalImg.src
 
-                // Замінити картинку в .general-img на клікнуту картинку
-                generalImg.src = clickedImageUrl;
+
+                generalImg.src = clickedImageUrl
                 
-                // Замінити картинку в .products-sm на ту, яка була в .general-img
-                this.src = generalSrc;
+                this.src = generalSrc
             });
         });
     }
@@ -161,10 +159,10 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 if (document.getElementById('min')) {
-    var min = document.getElementById('min');
-    var max = document.getElementById('max');
-    var min_l = document.getElementById('min-lbl');
-    var max_l = document.getElementById('max-lbl');
+    let min = document.getElementById('min'),
+        max = document.getElementById('max'),
+        min_l = document.getElementById('min-lbl'),
+        max_l = document.getElementById('max-lbl')
 
     min.onchange = (ev) => {
         min_l.innerText = min.value + " грн";
