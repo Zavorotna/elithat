@@ -12,13 +12,14 @@ html(lang="uk")
                 +headerNavigation(navigation)
         main 
             section.wrapper.product-popup 
-                .product-gallery.flex-between
-                    .products-sm 
-                        img(src="img/product-image.jpg", alt="")
-                        img(src="img/product-image.jpg", alt="")
-                        img(src="img/product-image.jpg", alt="")
-                    .general-img
-                        img(src="img/product-image.jpg", alt="")
+                .product-gallery
+                    .gallery-wrapper.flex-between
+                        .products-sm 
+                            img(src="img/product-image.jpg", alt="")
+                            img(src="img/product-image.jpg", alt="")
+                            img(src="img/product-image.jpg", alt="")
+                        .general-img
+                            img(src="img/product-image.jpg", alt="")
                 .product-description
                     .girl-product 
                         span для дівчинки
@@ -31,7 +32,7 @@ html(lang="uk")
                     .product-price 
                         span.current-price 459 грн
                         span.old-price 560 грн
-                    .characteristics.select-product-block 
+                    .characteristics.select-product-block.d-block 
                         b характеристики
                         .characteristics-list 
                             ul
@@ -51,7 +52,7 @@ html(lang="uk")
                                     p Сезонність - 
                                         span холодна осінь, зима.
                     .size.select-product-block.flex-between.items-center 
-                        .d-flex.items-center 
+                        .d-flex.items-center.flex-wrap.row-product-block 
                             b оберіть розмір: &nbsp;
                             .sizes-inputs
                                 input(type="checkbox", name="size" id="product3-size38")
@@ -70,7 +71,7 @@ html(lang="uk")
                                 label(for="product3-size44") 44
                         a.size-cell(href="#") розмірна сітка
                     .color.select-product-block
-                        .d-flex.items-center 
+                        .d-flex.items-center.row-product-block.flex-wrap 
                             b оберіть розмір: &nbsp;
                             .color-inputs
                                 input(type="radio", name="color", value="#dfa0f5", id="color1")
@@ -87,7 +88,7 @@ html(lang="uk")
                                 .change-quantity-btns -
                                 .quantity-num  1
                                 .change-quantity-btns +
-                    .buy-btns.d-flex 
+                    .buy-btns.flex-wrap.d-flex.row-product-block 
                         a.catalog-cta(href="#") в корзину
                         a.catalog-cta(href="#") доставка та оплата
             section.wrapper.similar-products 

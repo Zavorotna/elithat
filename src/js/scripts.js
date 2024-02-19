@@ -54,12 +54,18 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
 
+    // function galleryImgHeight () {
+    //     if (document.querySelector(".products-sm")) {
+    
+    //         // console.log(document.querySelector(".general-img img").getBoundingClientRect().height + "px");
+    //         document.querySelector(".products-sm").style.height = document.querySelector(".general-img img").clientHeight + "px"
+    //     }
 
-    if (document.querySelector(".products-sm")) {
+    // }
 
-        // console.log(document.querySelector(".general-img img").getBoundingClientRect().height + "px");
-        document.querySelector(".products-sm").style.height = document.querySelector(".general-img img").getBoundingClientRect().height + "px"
-    }
+    // galleryImgHeight()
+
+    // document.addEventListener("resize", galleryImgHeight)
 
     // карусель на головний екран
 
