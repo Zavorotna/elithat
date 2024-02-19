@@ -1,0 +1,190 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")   
+        link(rel="stylesheet", href="css/style.css")
+        title Elithat
+    body 
+        include components/mixins
+        header 
+            .header-block#up
+                +headerNavigation(navigation)
+        main 
+            section.wrapper.product-popup 
+                .product-gallery
+                    .gallery-wrapper.flex-between
+                        .products-sm 
+                            img(src="img/card-image-3.jpg", alt="")
+                            img(src="img/card-image-2.jpg", alt="")
+                            img(src="img/bgc-kid4.png", alt="")
+                        .general-img
+                            img(src="img/product-image.jpg", alt="")
+                .product-description.relative
+                    .girl-product 
+                        span для дівчинки
+                    //- .boy-product
+                    //-     span для хлопчика
+                    //- .universal-product
+                    //-     span універсальна
+                    h1 Зимова шапка-шолом дитяча 
+                    span.code код 456789
+                    .product-price 
+                        span.current-price 459 грн
+                        span.old-price 560 грн
+                    .characteristics.select-product-block.d-block.filter-item 
+                        .relative 
+                            b характеристики
+                            .filter-arrow
+                        .characteristics-list.filter-inputs 
+                            ul
+                                li
+                                    p Країна - виробник 
+                                        span Китай
+                                li
+                                    p Фабрика - виробник 
+                                        span назва заводу
+                                li
+                                    p Склад - 
+                                        span назва матеріалу
+                                li
+                                    p Сировина - 
+                                        span якась сировина
+                                li
+                                    p Сезонність - 
+                                        span холодна осінь, зима.
+                    .size.select-product-block.flex-between.items-center 
+                        .d-flex.items-center.flex-wrap.row-product-block 
+                            b оберіть розмір: &nbsp;
+                            .sizes-inputs
+                                input(type="checkbox", name="size" id="product3-size38")
+                                label(for="product3-size38") 38
+                                input(type="checkbox", name="size" id="product3-size39")
+                                label(for="product3-size39") 39
+                                input(type="checkbox", name="size" id="product3-size40")
+                                label(for="product3-size40") 40
+                                input(type="checkbox", name="size" id="product3-size41")
+                                label(for="product3-size41") 41
+                                input(type="checkbox", name="size" id="product3-size42")
+                                label(for="product3-size42") 42
+                                input(type="checkbox", name="size" id="product3-size43")
+                                label(for="product3-size43") 43
+                                input(type="checkbox", name="size" id="product3-size44")
+                                label(for="product3-size44") 44
+                        a.size-cell(href="#") розмірна сітка
+                    .color.select-product-block
+                        .d-flex.items-center.row-product-block.flex-wrap 
+                            b оберіть колір: &nbsp;
+                            .color-inputs
+                                input(type="radio", name="color", value="#dfa0f5", id="color1")
+                                label(for="color1").pink
+                                input(type="radio", name="color", value="#dfa0f5", id="color2")
+                                label(for="color2").pink
+                                input(type="radio", name="color", value="#dfa0f5", id="color3")
+                                label(for="color3").pink
+                                
+                    .quantity.select-product-block 
+                        .d-flex.items-center 
+                            b оберіть кількість: &nbsp;
+                            .quantity-btns.d-flex
+                                .change-quantity-btns -
+                                .quantity-num  1
+                                .change-quantity-btns +
+                    .buy-btns.flex-wrap.d-flex.row-product-block 
+                        a.catalog-cta(href="#") в корзину
+                        a.catalog-cta(href="#") доставка та оплата
+            section.wrapper.similar-products 
+                h2 схожі товари
+                .products-list 
+                    figure 
+                        .relative
+                            a.product-redirect(href="product-card.html") 
+                            .girl-product 
+                                span для дівчинки
+                            img(src="img/card-image1.jpg", alt="")
+                        figcaption 
+                            h3 Зимова шапка-шолом дитяча 
+                            .flex-between.product-sizes.items-center
+                                span розміри:
+                                .sizes-inputs
+                                    input(type="checkbox", name="size" id="product-size38")
+                                    label(for="product-size38") 38
+                                    input(type="checkbox", name="size" id="product-size39")
+                                    label(for="product-size39") 39
+                                    input(type="checkbox", name="size" id="product-size40")
+                                    label(for="product-size40") 40
+                                    input(type="checkbox", name="size" id="product-size41")
+                                    label(for="product-size41") 41
+                                    input(type="checkbox", name="size" id="product-size42")
+                                    label(for="product-size42") 42
+                                    input(type="checkbox", name="size" id="product-size43")
+                                    label(for="product-size43") 43
+                                    input(type="checkbox", name="size" id="product-size44")
+                                    label(for="product-size44") 44
+                            .price.d-flex.items-center
+                                b 459 грн
+                                span.old-price 560 грн
+                            a(href="#").cta до кошика
+                    figure 
+                        .relative
+                            a.product-redirect(href="product-card.html") 
+                            .boy-product
+                                span для хлопчика
+                            img(src="img/card-image-2.jpg", alt="")
+                        figcaption 
+                            h3 літня шапка-панамка дитяча
+                            .flex-between.product-sizes.items-center
+                                span розміри:
+                                .sizes-inputs
+                                    input(type="checkbox", name="size" id="product2-size38")
+                                    label(for="product2-size38") 38
+                                    input(type="checkbox", name="size" id="product-size39")
+                                    label(for="product2-size39") 39
+                                    input(type="checkbox", name="size" id="product2-size40")
+                                    label(for="product2-size40") 40
+                                    input(type="checkbox", name="size" id="product2-size41")
+                                    label(for="product2-size41") 41
+                                    input(type="checkbox", name="size" id="product2-size42")
+                                    label(for="product2-size42") 42
+                                    input(type="checkbox", name="size" id="product2-size43")
+                                    label(for="product2-size43") 43
+                                    input(type="checkbox", name="size" id="product2-size44")
+                                    label(for="product2-size44") 44
+                            .price.d-flex.items-center
+                                b 459 грн
+                                span.old-price 560 грн
+                            a(href="#").cta до кошика
+                    figure 
+                        .relative
+                            a.product-redirect(href="product-card.html") 
+                            .universal-product
+                                span універсальна
+                            img(src="img/card-image-3.jpg", alt="")
+                        figcaption 
+                            h3 Зимова шапка-шолом дитяча 
+                            .flex-between.product-sizes.items-center
+                                span розміри:
+                                .sizes-inputs
+                                    input(type="checkbox", name="size" id="product3-size38")
+                                    label(for="product3-size38") 38
+                                    input(type="checkbox", name="size" id="product3-size39")
+                                    label(for="product3-size39") 39
+                                    input(type="checkbox", name="size" id="product3-size40")
+                                    label(for="product3-size40") 40
+                                    input(type="checkbox", name="size" id="product3-size41")
+                                    label(for="product3-size41") 41
+                                    input(type="checkbox", name="size" id="product3-size42")
+                                    label(for="product3-size42") 42
+                                    input(type="checkbox", name="size" id="product3-size43")
+                                    label(for="product3-size43") 43
+                                    input(type="checkbox", name="size" id="product3-size44")
+                                    label(for="product3-size44") 44
+                            .price.d-flex.items-center
+                                b 459 грн
+                                span.old-price 560 грн
+                            a(href="#").cta до кошика
+                .justify-center
+                    a(href="#").catalog-cta в каталог 
+
+            
+        script(src="js/scripts.js")

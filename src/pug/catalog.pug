@@ -11,6 +11,8 @@ html(lang="uk")
             .header-block#up
                 +headerNavigation(navigation)
         main 
+            .mobile-filter 
+                a(href="#") Фільтр
             section.wrapper.catalog
                 h2 Каталог
                 .flex-between.category-block
@@ -38,7 +40,8 @@ html(lang="uk")
                         select(name="")
                             option(value="actual") найактуальніші
             section.wrapper.filter-and-catalog.flex-between 
-                .filter
+                .filter#filter
+                    .close-filter-btn
                     h3 Фільтр
                     .filter-item
                         .relative
@@ -113,10 +116,12 @@ html(lang="uk")
                     hr
                 .catalog-products
                     .products-list
-                        figure
-                            .girl-product 
-                                span для дівчинки
-                            img(src="img/card-image1.jpg", alt="")
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .girl-product 
+                                    span для дівчинки
+                                img(src="img/card-image1.jpg", alt="")
                             figcaption 
                                 h3 Зимова шапка-шолом дитяча 
                                 .flex-between.product-sizes.items-center
@@ -141,9 +146,11 @@ html(lang="uk")
                                     span.old-price 560 грн
                                 a(href="#").cta до кошика
                         figure 
-                            .boy-product
-                                span для хлопчика
-                            img(src="img/card-image-2.jpg", alt="")
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .boy-product
+                                    span для хлопчика
+                                img(src="img/card-image-2.jpg", alt="")
                             figcaption 
                                 h3 літня шапка-панамка дитяча
                                 .flex-between.product-sizes.items-center
@@ -168,9 +175,11 @@ html(lang="uk")
                                     span.old-price 560 грн
                                 a(href="#").cta до кошика
                         figure 
-                            .universal-product
-                                span універсальна
-                            img(src="img/card-image-3.jpg", alt="")
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .universal-product
+                                    span універсальна
+                                img(src="img/card-image-3.jpg", alt="")
                             figcaption 
                                 h3 Зимова шапка-шолом дитяча 
                                 .flex-between.product-sizes.items-center
@@ -194,6 +203,14 @@ html(lang="uk")
                                     b 459 грн
                                     span.old-price 560 грн
                                 a(href="#").cta до кошика
+                    .pagination-btns.d-flex.items-center 
+                        button.pagination-to-left  
+                        button.page-num.current-pagination-page 1
+                        button.page-num 2
+                        button.page-num 3
+                        button.page-num ...
+                        button.page-num 20
+                        button.pagination-to-right  
 
         footer 
             +footerNavigation(footerNav)
