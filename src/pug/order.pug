@@ -19,7 +19,12 @@ html(lang="uk")
                             h2 ваші контактні дані
                             p.d-flex.input-order
                                 label Мобільний телефон*
-                                input(type="tel" name="phone")
+                                //- .correct-number - коректний номер телефону
+                                //- .incorrect-number - некоректний номер телефону
+
+                                input.phone-validation#phoneValidation(type="tel" name="phone")
+                                .incorect-number-test.d-none 
+                                    p *невірний формат вводу даних 
                             p.d-flex.input-order
                                 label Імʼя*
                                 input(type="text" name="name")
