@@ -16,18 +16,26 @@ html(lang="uk")
             section.wrapper.catalog
                 h2 Каталог
                 .flex-between.category-block
-                    .catalog-season-block.catalog-summer
-                        span літо
-                        img(src="img/catalog-season-summer.webp", alt="")
-                    .catalog-season-block.catalog-autumn
-                        span осінь
-                        img(src="img/autumn-proposition2.webp", alt="")
-                    .catalog-season-block.catalog-winter
-                        span зима
-                        img(src="img/winter-proposition-2.webp", alt="")
-                    .catalog-season-block.catalog-spring
-                        span весна
-                        img(src="img/spring-proposition-2.webp", alt="")
+                    input(type="radio", name="season", id="summerSeason")
+                    label(for="summerSeason") 
+                        .catalog-season-block.catalog-summer
+                            span літо
+                            img(src="img/catalog-season-summer.webp", alt="")
+                    input(type="radio", name="season", id="autumnSeason")
+                    label(for="autumnSeason") 
+                        .catalog-season-block.catalog-autumn
+                            span осінь
+                            img(src="img/autumn-proposition2.webp", alt="")
+                    input(type="radio", name="season", id="winterSeason")
+                    label(for="winterSeason") 
+                        .catalog-season-block.catalog-winter
+                            span зима
+                            img(src="img/winter-proposition-2.webp", alt="")
+                    input(type="radio", name="season", id="springSeason")
+                    label(for="springSeason") 
+                        .catalog-season-block.catalog-spring
+                            span весна
+                            img(src="img/spring-proposition-2.webp", alt="")
             section.wrapper.d-flex.sort
                 .filter 
                 .sorting-filters.items-center
