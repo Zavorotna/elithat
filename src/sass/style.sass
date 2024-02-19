@@ -437,7 +437,7 @@ a.phone-mobile
         border: 2px solid transparent
         +media(505)
             width: 20%
-    input:checked + label
+    input:checked + label > .catalog-season-block
         border-radius: 10px
         border: 2px solid #000
 
@@ -884,7 +884,7 @@ a.phone-mobile
     position: relative
     width: 100%
     border-radius: 10px
-    background-color: #ccc
+    border: 2px solid rgba(1, 1, 1, 0)
     padding: 63rem 0rem 63rem 50rem
     box-sizing: border-box
 
@@ -909,6 +909,7 @@ a.phone-mobile
 .catalog-winter,
 .catalog-spring
     background-size: cover
+    background-repeat: no-repeat
 
 .catalog-summer
     background-image: url(../img/catalog-season-1.webp)
