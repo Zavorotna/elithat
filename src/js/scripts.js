@@ -37,6 +37,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    
+    function isValidPhoneNumber(phoneNumber) {
+        // Регулярний вираз для перевірки формату номеру телефону +380xxxxxxxxx
+        const phoneRegex = /\+380[0-9]{9}$/;
+        return phoneRegex.test(phoneNumber);
+    }
+
+    const userPhoneInput = document.querySelector("#phoneValidation") //інпут для введення номеру телефону
+    
+
+
+
 
     if (document.querySelector(".product-gallery")) {
         let productImages = document.querySelectorAll('.products-sm img'),
