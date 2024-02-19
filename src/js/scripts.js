@@ -1,4 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
+    //прокрутка хедера доверху і донизу
+    let lastScrollTop = 0
+
+    window.addEventListener("scroll", function () {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop
+        const header = document.querySelector(".header-navigation")
+        if (currentScroll > 180) {
+            if (currentScroll > lastScrollTop) {
+                header.style.top = "-100%"
+            } else {
+                header.style.top = "0"
+            }
+        } else {
+            header.style.top = "0"
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll
+    }, false)
+
+
     if (document.querySelector('.filter-item')) {
         const filterItems = document.querySelectorAll('.filter-item')
 
@@ -30,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 generalImg.src = clickedImageUrl
-                
+
                 this.src = generalSrc
             });
         });
