@@ -185,13 +185,13 @@ h1
 
 .main-navigation
     +media(1024)
-        border-radius: 10rem
         display: grid
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr
         width: 100%
         margin-bottom: 20rem
         border: 1px solid #1e1e1e
         a
+            transition: all .5s ease
             display: block
             width: 100%
             padding: 15rem 0
@@ -199,15 +199,25 @@ h1
             font-size: 16rem
             color: #1e1e1e
             font-weight: 500
-        li + li
-            border-left: 1px solid #1e1e1e
-
+            border-top: 1px solid #1e1e1e
+            border-bottom: 1px solid #1e1e1e
+            border-right: 1px solid #1e1e1e
+            &:hover
+                color: #fff
+                border: 1px solid rgb(33, 158, 188)
+                background: rgb(33, 158, 188)
+.first-child
+    border-left: 1px solid #1e1e1e
+    border-radius: 10rem 0 0 10rem
+.last-child
+    border-radius: 0 10rem 10rem 0
+                
 ul.activemobile
     position: absolute
     top: 0
     width: 60vw
     height: 100vh
-    padding: 58rem 20rem 0 
+    padding: 58rem 20rem 0
     background-color: #fff
     border: none
     transition: all .5s ease
@@ -387,8 +397,6 @@ a.phone-mobile
         border-radius: 10px
         border: 2px solid #000
 
-
-
 .click-category
     position: relative
     a
@@ -460,8 +468,13 @@ a.phone-mobile
     color: rgb(255, 255, 255)
     font-size: 14rem
     font-weight: 600
+    border: 1px solid transparent
     line-height: 1.2em
     text-transform: uppercase
+    &:hover
+        background-color: #fff
+        border: 1px solid rgb(33, 158, 188)
+        color: rgb(33, 158, 188)
 
 .product-sizes
     margin-bottom: 10rem
@@ -559,7 +572,6 @@ a.phone-mobile
         font-size: 12rem
         font-weight: 500
         line-height: 1.2em
-
 
 .product-description
     padding-top: 40px
@@ -797,7 +809,7 @@ a.phone-mobile
     background-color: #ccc
     padding: 63rem 0rem 63rem 50rem
     box-sizing: border-box
-    
+
     span
         position: relative
         color: rgb(255, 255, 255)
@@ -806,7 +818,7 @@ a.phone-mobile
         line-height: 1.2em
         text-transform: uppercase
         z-index: 1
-        
+
     img
         width: 110px
         height: 146px
@@ -915,7 +927,7 @@ a.phone-mobile
 .filter-and-catalog
     column-gap: 20px
 
-.filter-and-catalog hr 
+.filter-and-catalog hr
     border: none
     width: 100%
     border-top: 1px solid #d9d9d9
@@ -982,7 +994,7 @@ input[type=range]::-webkit-slider-runnable-track
     row-gap: 20rem
     justify-content: center
     width: 100%
-    
+
     +media(1285)
         width: 75%
         justify-content: space-between
@@ -1045,7 +1057,7 @@ input[type=range]::-webkit-slider-runnable-track
 .aboutus
     padding-top: 50rem
     margin-bottom: 90rem
-    h2 
+    h2
         color: rgb(43, 45, 66)
         font-size: 48rem
         font-weight: 700
@@ -1111,7 +1123,7 @@ input[type=range]::-webkit-slider-runnable-track
     margin-bottom: 40rem
     flex-wrap: wrap
     +media(1185)
-       width: 60% 
+        width: 60%
     img
         border-radius: 10px
         width: 100%
@@ -1161,10 +1173,8 @@ input[type=range]::-webkit-slider-runnable-track
     +media(913)
         display: none
 
-
-
 // картка товару
-.product-popup 
+.product-popup
     display: block
     // justify-content: space-between
     column-gap: 20px
@@ -1181,7 +1191,7 @@ input[type=range]::-webkit-slider-runnable-track
     img
         width: 100%
         border-radius: 10rem
-    .products-sm 
+    .products-sm
         display: flex
         flex-direction: column
         justify-content: space-between
@@ -1197,7 +1207,7 @@ input[type=range]::-webkit-slider-runnable-track
         object-fit: cover
         +media(1280)
             height: 31.25vw
-.product-description 
+.product-description
     h1
         padding: 0
         text-align: left
@@ -1228,7 +1238,7 @@ input[type=range]::-webkit-slider-runnable-track
         font-weight: 300
         line-height: 1.2em
         text-decoration-line: line-through
-    
+
 .select-product-block
     display: flex
     flex-wrap: wrap
@@ -1257,7 +1267,7 @@ input[type=range]::-webkit-slider-runnable-track
                 font-weight: 500
                 color: rgb(33, 158, 188)
                 text-decoration: underline
-            
+
 .size.select-product-block
     input
         appearance: none
@@ -1292,7 +1302,7 @@ input[type=range]::-webkit-slider-runnable-track
         height: 25px
         border-radius: 3px
         background: rgb(223, 160, 245)
-    input:checked + label:before 
+    input:checked + label:before
         content: ""
         position: absolute
         left: -3px
@@ -1302,7 +1312,7 @@ input[type=range]::-webkit-slider-runnable-track
         border: 1px solid #191919
         border-radius: 3rem
 
-.quantity-btns 
+.quantity-btns
     column-gap: 10px
     div
         display: flex
@@ -1318,7 +1328,6 @@ input[type=range]::-webkit-slider-runnable-track
         line-height: 1.2em
         text-align: center
         cursor: pointer
-
 
 .flex-wrap
     flex-wrap: wrap
@@ -1354,7 +1363,6 @@ input[type=range]::-webkit-slider-runnable-track
         border-right: 3px solid rgb(33, 158, 188)
         border-bottom: 3px solid rgb(33, 158, 188)
 
-
 .pagination-to-left
     &:before
         top: 6px
@@ -1365,7 +1373,7 @@ input[type=range]::-webkit-slider-runnable-track
         top: 6px
         right: 8px
         transform: rotate(-45deg)
-        
+
 .page-num
     appearance: none
     border: none

@@ -1,10 +1,10 @@
 -
     let mainNavigation = [
-            ["головна", "index.html"],
+            ["головна", "index.html", "first-child"],
             ["про нас", "aboutus.html"],
             ["каталог", "catalog.html"],
             ["доставка та оплата", "pay-delivery.html"],
-            ["контакти", "contact.html"],
+            ["контакти", "contact.html", "last-child"],
     ]
 mixin headerNavigation(navigation)
     .header-navigation 
@@ -40,7 +40,7 @@ mixin headerNavigation(navigation)
                     ul.main-navigation
                         for item in mainNavigation 
                             li
-                                a(href=item[1] data-href=item[1]) #{item[0]}
+                                a(href=item[1] data-href=item[1] class=`${item[2]}`) #{item[0]}
                         a.phone-mobile(href="tel:+380986546545")
                             <svg height="15" viewBox="0 0 105 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3.90721 11.0928C8.83913 16.0247 12.6751 15.4767 14.319 13.8327C15.227 12.9248 15.227 11.4527 14.319 10.5448L13.2068 9.43259C12.6105 8.83626 11.6437 8.83626 11.0473 9.43259C10.3657 10.1142 9.35063 10.35 8.53007 9.84408C7.97455 9.50159 7.31086 9.01652 6.64717 8.35283C5.98348 7.68914 5.49841 7.02545 5.15592 6.46993C4.65002 5.64937 4.88578 4.63431 5.56741 3.95268C6.16374 3.35634 6.16374 2.3895 5.56741 1.79317L4.4552 0.680956C3.54726 -0.226985 2.0752 -0.226985 1.16726 0.680956C-0.476717 2.32493 -1.02471 6.16087 3.90721 11.0928Z" fill="#219EBC"/>
