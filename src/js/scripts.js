@@ -1,22 +1,61 @@
 document.addEventListener("DOMContentLoaded", function () {
+    if (document.querySelector('.filter-item')) {
+        const filterItems = document.querySelectorAll('.filter-item');
+        // Додавання обробника подій для кожного елемента
+        filterItems.forEach(function (item) {
+            item.querySelector('.relative').addEventListener('click', function () {
+                toggleActiveClass(item);
+            });
+        });
+
+        function toggleActiveClass(item) {
+            // Отримання сусіднього елемента .filter-inputs для конкретного .filter-item
+            const filterInputs = item.querySelector('.filter-inputs'),
+                filterArrow = item.querySelector(".filter-arrow")
+
+            // Додавання або видалення класу active
+            filterArrow.classList.toggle('active-filter')
+            filterInputs.classList.toggle('active-filter');
+        }
+    }
+
+
+    if (document.querySelector(".product-gallery")) {
+        var productImages = document.querySelectorAll('.products-sm img');
+        var generalImg = document.querySelector('.general-img img');
+
+        productImages.forEach(function (image) {
+            image.addEventListener('click', function () {
+                let clickedImageUrl = this.src,
+                    generalSrc = generalImg.src
+
+                // Замінити картинку в .general-img на клікнуту картинку
+                generalImg.src = clickedImageUrl;
+                
+                // Замінити картинку в .products-sm на ту, яка була в .general-img
+                this.src = generalSrc;
+            });
+        });
+    }
 
     if (document.querySelector(".mobile-filter a")) {
 
         const openSMFilter = document.querySelector(".mobile-filter a"),
             filter = document.querySelector("#filter"),
             closeFilter = document.querySelector(".close-filter-btn")
-        function filterToggle () {
+
+        function filterToggle() {
             filter.classList.toggle("d-block")
         }
         console.log(openSMFilter);
-        openSMFilter.addEventListener("click", function(e) {
+        openSMFilter.addEventListener("click", function (e) {
             e.preventDefault()
             filterToggle()
         })
 
         closeFilter.addEventListener("click", filterToggle)
 
-    } 
+    }
 
     //бургер меню
     const burger = document.querySelector(".burger"),
@@ -28,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     burger.addEventListener('click', function () {
         burger.classList.toggle('active'),
-        mobileMenu.classList.toggle('activemobile')
+            mobileMenu.classList.toggle('activemobile')
         if (mobileMenu.classList.contains('activemobile') && burger.classList.contains("active")) {
             mobileMenu.style.left = "0"
             burger.style.left = "55%"
@@ -36,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
             blurPage.style.display = "block"
             blurPage.style.display = "block"
         } else {
-            mobileMenu.style.left = "-100%" 
+            mobileMenu.style.left = "-100%"
             burger.style.left = "0"
             phoneMobile.style.left = "-100%"
             blurPage.style.display = "none"
@@ -56,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // function galleryImgHeight () {
     //     if (document.querySelector(".products-sm")) {
-    
+
     //         // console.log(document.querySelector(".general-img img").getBoundingClientRect().height + "px");
     //         document.querySelector(".products-sm").style.height = document.querySelector(".general-img img").clientHeight + "px"
     //     }
@@ -126,11 +165,11 @@ if (document.getElementById('min')) {
     var max = document.getElementById('max');
     var min_l = document.getElementById('min-lbl');
     var max_l = document.getElementById('max-lbl');
-    
+
     min.onchange = (ev) => {
         min_l.innerText = min.value + " грн";
     }
-    
+
     max.onchange = (ev) => {
         max_l.innerText = max.value + " грн";
     }

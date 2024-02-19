@@ -15,9 +15,9 @@ html(lang="uk")
                 .product-gallery
                     .gallery-wrapper.flex-between
                         .products-sm 
-                            img(src="img/product-image.jpg", alt="")
-                            img(src="img/product-image.jpg", alt="")
-                            img(src="img/product-image.jpg", alt="")
+                            img(src="img/card-image-3.jpg", alt="")
+                            img(src="img/card-image-2.jpg", alt="")
+                            img(src="img/bgc-kid4.png", alt="")
                         .general-img
                             img(src="img/product-image.jpg", alt="")
                 .product-description
@@ -32,9 +32,11 @@ html(lang="uk")
                     .product-price 
                         span.current-price 459 грн
                         span.old-price 560 грн
-                    .characteristics.select-product-block.d-block 
-                        b характеристики
-                        .characteristics-list 
+                    .characteristics.select-product-block.d-block.filter-item 
+                        .relative 
+                            b характеристики
+                            .filter-arrow
+                        .characteristics-list.filter-inputs 
                             ul
                                 li
                                     p Країна - виробник 
@@ -72,7 +74,7 @@ html(lang="uk")
                         a.size-cell(href="#") розмірна сітка
                     .color.select-product-block
                         .d-flex.items-center.row-product-block.flex-wrap 
-                            b оберіть розмір: &nbsp;
+                            b оберіть колір: &nbsp;
                             .color-inputs
                                 input(type="radio", name="color", value="#dfa0f5", id="color1")
                                 label(for="color1").pink

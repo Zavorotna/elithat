@@ -854,11 +854,14 @@ a.phone-mobile
 
 .filter-item
     position: relative
+    padding-bottom: 18px
     span
+        display: inline-block
         color: rgb(30, 30, 30)
         font-size: 18rem
         font-weight: 700
         line-height: 1.2em
+        cursor: pointer
 
 .filter h3
     color: rgb(33, 158, 188)
@@ -869,11 +872,13 @@ a.phone-mobile
     margin-bottom: 20rem
 
 .filter-inputs
-    display: flex
+    display: none
     row-gap: 10rem
     flex-wrap: wrap
     padding-top: 25rem
-    margin-bottom: 30rem
+
+.filter-inputs.active-filter
+    display: flex
 
 .filter-arrow
     position: absolute
@@ -885,6 +890,9 @@ a.phone-mobile
     transform: translateY(-50%)
     right: 0
     cursor: pointer
+    transition: 0.5s
+.filter-arrow.active-filter
+    transform: translateY(-50%) rotate(180deg)
 
 .filter-and-catalog
     column-gap: 20px
@@ -1160,10 +1168,16 @@ input[type=range]::-webkit-slider-runnable-track
         justify-content: space-between
         width: 22%
         img
+            height: 30%
+            object-fit: cover
             border-radius: 5rem
 .general-img
     width: 75%
-
+    img
+        height: 70vw
+        object-fit: cover
+        +media(1280)
+            height: 31.25vw
 .product-description 
     h1
         padding: 0
@@ -1215,7 +1229,6 @@ input[type=range]::-webkit-slider-runnable-track
         line-height: 1.2em
         text-transform: uppercase
     ul
-        padding-top: 20rem
         p
             color: rgb(30, 30, 30)
             font-size: 18rem
@@ -1260,8 +1273,8 @@ input[type=range]::-webkit-slider-runnable-track
         position: relative
     .pink
         display: inline-block
-        width: 25rem
-        height: 25rem
+        width: 25px
+        height: 25px
         border-radius: 3px
         background: rgb(223, 160, 245)
     input:checked + label:before 
@@ -1269,8 +1282,8 @@ input[type=range]::-webkit-slider-runnable-track
         position: absolute
         left: -3px
         top: -3px
-        width: 29rem
-        height: 29rem
+        width: 29px
+        height: 29px
         border: 1px solid #191919
         border-radius: 3rem
 
