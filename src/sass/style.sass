@@ -369,7 +369,19 @@ a.phone-mobile
         width: 100%
         height: 100%
         object-fit: cover
-
+        border-radius: 10px
+    input
+        appearance: none
+        position: absolute
+    label
+        width: 100%
+        min-width: 200px
+        border: 2px solid transparent
+        +media(505)
+            width: 20%
+    input:checked + label
+        border-radius: 10px
+        border: 2px solid #000
 
 
 
@@ -777,12 +789,11 @@ a.phone-mobile
 .catalog-season-block
     position: relative
     width: 100%
-    min-width: 200rem
     border-radius: 10px
     background-color: #ccc
     padding: 63rem 0rem 63rem 50rem
-    +media(505)
-        width: 19%
+    box-sizing: border-box
+    
     span
         position: relative
         color: rgb(255, 255, 255)
