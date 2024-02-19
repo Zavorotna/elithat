@@ -856,6 +856,8 @@ a.phone-mobile
             display: block
             position: static
             height: auto
+            overflow-y: hidden
+            overflow-x: hidden
             padding: 0
             padding-right: 3px
             z-index: 1
@@ -906,12 +908,12 @@ a.phone-mobile
     background-image: url(../img/filter-arrow.svg)
     background-repeat: no-repeat
     top: 50%
-    transform: translateY(-50%)
+    transform: translateY(-50%) rotate(180deg)
     right: 0
     cursor: pointer
     transition: 0.5s
 .filter-arrow.active-filter
-    transform: translateY(-50%) rotate(180deg)
+    transform: translateY(-50%) rotate(0deg)
 
 .filter-and-catalog
     column-gap: 20px
