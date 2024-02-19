@@ -37,14 +37,46 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    
-    function isValidPhoneNumber(phoneNumber) {
-        // Регулярний вираз для перевірки формату номеру телефону +380xxxxxxxxx
-        const phoneRegex = /\+380[0-9]{9}$/;
-        return phoneRegex.test(phoneNumber);
-    }
+    if (document.querySelector(".issue-order")) {
+        function isValidPhoneNumber(phoneNumber) {
+            // Регулярний вираз для перевірки формату номеру телефону +380xxxxxxxxx
+            const phoneRegex = /\+380[0-9]{9}$/;
+            return phoneRegex.test(phoneNumber);
+        }
 
-    const userPhoneInput = document.querySelector("#phoneValidation") //інпут для введення номеру телефону
+        let userPhoneInput = document.querySelector("#phoneValidation") //інпут для введення номеру телефону
+
+        userPhoneInput.addEventListener("change", function() {
+            let validateNum = isValidPhoneNumber(userPhoneInput.value)
+            console.log(validateNum);
+            if (validateNum) {
+                if (document.querySelector(".incorrect-number")) {
+                    userPhoneInput.classList.remove("incorrect-number")
+                    document.querySelector(".incorect-number-test").classList.add("d-none")
+                    userPhoneInput.classList.add("correct-number")
+                } else {
+                    if (!document.querySelector(".correct-number")) {
+                        userPhoneInput.classList.add("correct-number")
+                    }
+
+                }
+            } else {
+                document.querySelector(".incorect-number-test").classList.remove("d-none")
+                if (document.querySelector(".correct-number")) {
+                    userPhoneInput.classList.remove("correct-number")
+                    document.querySelector(".incorect-number-test").classList.remove("d-none")
+                    userPhoneInput.classList.add("incorrect-number")
+                } else {
+                    if (!document.querySelector(".incorrect-number")) {
+                        userPhoneInput.classList.add("incorrect-number")
+                    }
+                    
+
+                }
+            }
+
+        })
+    }
     
 
 
