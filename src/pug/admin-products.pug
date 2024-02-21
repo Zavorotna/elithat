@@ -1,0 +1,40 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")   
+        link(rel="stylesheet", href="css/style.css")
+        title Elithat
+    body 
+        include components/mixins
+        header 
+            
+        main.wrapper.admin-main
+            .aside-menu 
+                .aside-items 
+                    .aside-item
+                        .aside-logo
+                            img(src="img/cap.svg", alt="")
+                        span Товари
+                    .aside-item
+                        .aside-logo
+                            img(src="img/category.svg", alt="")
+                        span Категорії
+                    .aside-item
+                        .aside-logo
+                            img(src="img/sub-categories.svg", alt="")
+                        span Підкатегорії
+                    .aside-item
+                        .aside-logo
+                            img(src="img/filters.svg", alt="")
+                        span Фільтри
+                    .aside-item
+                        .aside-logo
+                            img(src="img/modules.svg", alt="")
+                        span Модулі
+                .hashtag-developers-copy 
+                    span розробка
+                    img(src="img/hashtag-dev-copy.webp", alt="")
+
+            
+        script(src="js/scripts.js")
