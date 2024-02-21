@@ -1524,15 +1524,39 @@ input[type="range"]
 // admin
 
 .aside-menu
+    position: fixed
     display: flex
     flex-wrap: wrap
     justify-content: space-between
-    width: 100%
+    width: 100vw
+    height: 100vh
+    background-color: #fff
+    top: 0
+    left: 0
+    z-index: 10
     min-width: 250rem
+    box-sizing: border-box
+    padding: 70px 20px 30px 20px
     +media(700)
+        position: static
+        padding: 0
         width: 25%
+        height: auto
         flex-direction: column
         margin-bottom: 0
+.close-aside-menu
+    content: ''
+    position: absolute
+    top: 25px
+    right: 25px
+    width: 25px
+    height: 25px
+    background-color: #219ebc
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%)
+    z-index: 15
+    +media(700)
+        display: none
+    
 
 .aside-items
     display: flex
@@ -1577,6 +1601,7 @@ input[type="range"]
     justify-content: center
     column-gap: 20rem
     width: 100%
+    max-height: 60rem
     box-sizing: border-box
     border: 1px solid rgb(30, 30, 30)
     border-radius: 10rem
