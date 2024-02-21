@@ -8,7 +8,28 @@ html(lang="uk")
     body 
         include components/mixins
         header 
-            
+            .wrapper 
+                .flex-between.admin-header.items-center
+                    .logo-admin
+                        a(href="#up") 
+                            picture 
+                                img(src="img/logo.png", alt="Elithat")
+                    form(action="#") 
+                        .info-header_admin.flex-between.items-center
+                            .season-year.sort-select.d-flex.items-center
+                                label(for="season") пора року
+                                p.season-year-block
+                                    select#season(name="season")  
+                                        option(value="winter") зима
+                                        option(value="spring") весна
+                                        option(value="summer") літо
+                                        option(value="fall") осінь
+                            .d-flex.items-center
+                                .d-flex.items-center.curs-dollar
+                                    label(for="curs") курс долара
+                                    .curs-text-block
+                                        input(type="text")
+                                button.change-curs
         main.wrapper.admin-main.flex-between
             .mobile-filter 
                 a(href="#") Фільтр
