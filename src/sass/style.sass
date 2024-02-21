@@ -19,7 +19,11 @@ a
 ul > li
     list-style: none
 
-header
+select,
+input
+    width: 100%
+
+.header
     padding-top: 161rem
 
 .hover-svg
@@ -50,7 +54,7 @@ header
     padding: 0 15rem
     width: 81%
 
-h1
+.h1
     padding: 45rem
     color: rgb(43, 45, 66)
     font-size: 38rem
@@ -62,6 +66,7 @@ h1
 
 .d-block
     display: block !important
+
 .blur-page
     display: none
     position: fixed
@@ -1480,9 +1485,9 @@ input[type="range"]
         width: 15px
         height: 15px
 
-
-.phone-validation:hover
-    background-color: #D9D9D9
+.phone-validation
+    &:hover
+        background-color: #D9D9D9
 
 .phone-validation.correct-number
     border: 1px solid #30BC21
@@ -1490,7 +1495,7 @@ input[type="range"]
 .phone-validation.incorrect-number
     border: 1px solid #DE1A1A
 
-.incorect-number-test 
+.incorect-number-test
     // display: none
     p
         font-size: 12px
@@ -1498,7 +1503,6 @@ input[type="range"]
         color: #DE1A1A
         margin-top: -5px
         margin-bottom: 10px
-
 
 // admin
 
@@ -1508,12 +1512,11 @@ input[type="range"]
     justify-content: space-between
     width: 100%
     min-width: 250rem
-    margin-bottom: 30rem
     +media(700)
         width: 25%
         flex-direction: column
 
-.aside-items 
+.aside-items
     display: flex
     flex-wrap: wrap
     +media(700)
@@ -1549,7 +1552,7 @@ input[type="range"]
     border-radius: 5px
     background: rgb(33, 158, 188)
 
-.hashtag-developers-copy 
+.hashtag-developers-copy
     display: flex
     flex-wrap: wrap
     align-items: center
@@ -1584,7 +1587,7 @@ input[type="range"]
     +media(913)
         width: 70%
 
-.admin-products-list 
+.admin-products-list
     width: 100%
     +media(700)
         width: 73%
@@ -1638,7 +1641,7 @@ input[type="range"]
         font-weight: 600
         line-height: 1.2em
 
-.admin-product-title 
+.admin-product-title
     max-width: 220rem
 
 .admin-prod-description
@@ -1670,7 +1673,7 @@ input[type="range"]
 .delete-product:before
     background-image: url(../img/delete.svg)
 
-.admin-products > .admin-prod:nth-child(2n) 
+.admin-products > .admin-prod:nth-child(2n)
     background-color: rgb(236, 236, 236)
 
 .admin-products .cta
@@ -1698,3 +1701,199 @@ h3.admin-prod-about
         width: 70%
     +media(1645)
         width: 77%
+
+//admin add product
+.admin-page-product
+    .flex-between
+        flex-wrap: wrap
+        justify-content: center
+        row-gap: 30rem
+        +media(1200)
+            justify-content: space-between
+            flex-wrap: nowrap
+            
+.admin-header
+    padding: 15rem 0 45rem
+    color: rgb(30, 30, 30)
+    font-size: 18rem
+    font-weight: 500
+    line-height: 1.2em
+
+.info-header_admin
+    column-gap: 50rem
+
+.season-year,
+.curs-dollar
+    column-gap: 30rem
+
+.season-year-block
+    width: 120px
+    box-sizing: border-box
+    select
+        padding: 10rem
+
+.curs-text-block
+    width: 50rem
+    height: 30rem
+    input
+        color: rgb(33, 158, 188)
+        font-family: Montserrat
+        font-size: 12rem
+        font-weight: 700
+        padding: 8rem
+        box-sizing: border-box
+        border: 1px solid rgb(217, 217, 217)
+        border-radius: 5rem
+        outline: none
+
+.change-curs
+    position: relative
+    margin-left: 10rem
+    width: 30px
+    height: 30px
+    background-color: #fff
+    border-radius: 5rem
+    cursor: pointer
+    &::before
+        content: ""
+        position: absolute
+        width: 15px
+        height: 15px
+        background: url(../img/pencil.svg) no-repeat
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+.head-admin
+    color: rgb(30, 30, 30)
+    font-size: 24rem
+    font-weight: 700
+    text-transform: uppercase
+
+.main-admin
+    padding-bottom: 100px
+
+.main-info_admin
+    hr
+        border: none
+        border-top: 1px solid rgb(30, 30, 30)
+    label, p
+        color: rgb(30, 30, 30)
+        font-size: 16px
+        font-weight: 600
+    
+.download-photo
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    padding: 30rem 0 20rem
+    input + label
+        width: 84px
+        height: 75px
+        position: relative
+        &::before
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            width: 84px
+            height: 75px
+            background: url(../img/add-file.svg) no-repeat
+            cursor: pointer
+
+.text-info_admin
+    margin-bottom: 50rem
+
+.text-info_admin,
+.any-sizes-block
+    column-gap: 18px
+
+.block-text
+    width: 250rem
+    +media(1440)
+        max-width: 360rem
+    label
+        display: block
+        margin-bottom: 10rem
+        span
+            display: inline-block
+            margin-bottom: 10rem
+    input
+        padding: 11px 
+        margin-bottom: 20rem
+        box-sizing: border-box
+        border: 1px solid rgb(217, 217, 217)
+        border-radius: 5px
+        outline: none
+    select
+        padding: 13rem 10rem
+    .sort-select,
+    .sizeFromTo_admin,
+    .any-sizes
+        margin-bottom: 20rem
+
+.sizeFromTo_admin
+    p
+        margin-bottom: 10px
+
+.size-admin,
+.sizes-button,
+.sizeFromTo_admin-block
+    column-gap: 10px
+    label
+        margin: 0
+
+.size-from,
+.size-to
+    width: 40px
+    height: 40px
+    input
+        padding: 12px
+
+.addSize,
+.deleteSize
+    position: relative
+    width: 30px
+    height: 30px
+    border: none
+    background-color: #fff
+    border: 1px solid rgb(30, 30, 30)
+    border-radius: 5px
+    &::before
+        content: ""
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+.addSize
+    &::before
+        width: 10px
+        height: 10px
+        background: url(../img/add-admin.svg) no-repeat center/cover
+
+.deleteSize
+    &::before
+        width: 15px
+        height: 15px
+        background: url(../img/delete-admin.svg) no-repeat center/cover
+
+.any-sizes
+    input
+        margin: 0
+
+.admin-cta
+    transition: all .25s ease
+    position: relative
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    color: rgb(255, 255, 255)
+    font-size: 20px
+    font-weight: 600
+    text-transform: uppercase
+    max-width: 370px
+    height: 70px
+    border-radius: 25px
+    cursor: pointer

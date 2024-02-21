@@ -7,14 +7,14 @@ html(lang="uk")
         title Elithat
     body 
         include components/mixins
-        header 
+        header.header
             .header-block#up
                 +headerNavigation(navigation)
         main 
             .mobile-filter 
                 a(href="#") Фільтр
             section.wrapper.catalog
-                h2 Каталог
+                h1.h1 Каталог
                 .flex-between.category-block
                     input(type="radio", name="season", id="summerSeason")
                     label(for="summerSeason") 

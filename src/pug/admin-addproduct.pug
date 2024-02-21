@@ -1,0 +1,148 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
+        link(rel="stylesheet", href="css/style.css")
+        title Elithat admin
+    body.admin-page-product
+        header 
+            .wrapper 
+                .flex-between.admin-header.items-center
+                    .logo-admin
+                        a(href="#up") 
+                            picture 
+                                img(src="img/logo.png", alt="Elithat")
+                    form(action="#") 
+                        .info-header_admin.flex-between.items-center
+                            .season-year.sort-select.d-flex.items-center
+                                label(for="season") пора року
+                                p.season-year-block
+                                    select#season(name="season")  
+                                        option(value="winter") зима
+                                        option(value="spring") весна
+                                        option(value="summer") літо
+                                        option(value="fall") осінь
+                            .d-flex.items-center
+                                .d-flex.items-center.curs-dollar
+                                    label(for="curs") курс долара
+                                    .curs-text-block
+                                        input(type="text")
+                                button.change-curs
+        main.flex-between.wrapper.main-admin
+            .aside-menu
+                .aside-items
+                    .aside-item
+                        a(href="#") 
+                        .aside-logo
+                            img(src="img/cap.svg", alt="")
+                        span Товари
+                    .aside-item
+                        a(href="#")
+                        .aside-logo
+                            img(src="img/category.svg", alt="")
+                        span Категорії
+                    .aside-item
+                        a(href="#")
+                        .aside-logo
+                            img(src="img/sub-categories.svg", alt="")
+                        span Підкатегорії
+                    .aside-item
+                        a(href="#")
+                        .aside-logo
+                            img(src="img/filters.svg", alt="")
+                        span Фільтри
+                    .aside-item
+                        a(href="#")
+                        .aside-logo
+                            img(src="img/modules.svg", alt="")
+                        span Модулі
+                .hashtag-developers-copy 
+                    span розробка
+                    img(src="img/hashtag-dev-copy.webp", alt="")
+            .main-info_admin
+                h1.head-admin додати товар
+                hr
+                form(action="#")
+                    .download-photo 
+                        input.d-none(type="file" id="photoFile" name="photoFile")
+                        label(for="photoFile") 
+                    .text-info_admin.flex-between
+                        .block-text
+                            p 
+                                label.text-label_admin(for="name-product") Назва
+                                input(type="text" id="name-product") 
+                            P 
+                                label.sort-select(for="select-sex") 
+                                    span Стать
+                                    select#select-sex(name="sexSelect")
+                                        option(value="girl")   
+                                        option(value="boy")       
+                                        option(value="universal")   
+                            P 
+                                label.sort-select(for="select-availability") 
+                                    span Наявність
+                                    select#select-availability(name="availability")
+                                        option(value="availability")   
+                                        option(value="noAvailability")
+                            p 
+                                label.sort-select(for="select-category") 
+                                    span Категорія
+                                    select#select-category(name="category")
+                                        option(value="category")
+                        .block-text
+                            p 
+                                label(for="descriptionAdmin") Опис
+                                input(type="text" id="descriptionAdmin" name="descriptionAdmin") 
+                            p 
+                                label(for="priceAdmin") Ціна
+                                input(type="text" id="priceAdmin" name="priceAdmin") 
+                            p 
+                                label.sort-select(for="select-country") 
+                                    span Країна
+                                    select#sex(name="country")
+                                        option(value="china")
+                            .sizeFromTo_admin
+                                p Розмір
+                                .d-flex.sizeFromTo_admin-block
+                                    .d-flex.size-admin.items-center
+                                        label(for="sizeAdminFrom") від
+                                        .size-from
+                                            input(type="text" id="sizeAdminFrom" name="sizeAdminFrom") 
+                                    .d-flex.size-admin.items-center
+                                        label(for="sizeAdminTo") до
+                                        .size-to
+                                            input(type="text" id="sizeAdminTo" name="sizeAdminTo")
+                                    .d-flex.items-center.sizes-button
+                                        button.addSize
+                                        button.deleteSize
+                            .any-sizes
+                                label(for="sizeSm") Розмір, см
+                                .d-flex.items-center.any-sizes-block
+                                    input#sizeSm(type="text", name="sizeSm")
+                                    .d-flex.items-center.sizes-button
+                                        button.addSize
+                                        button.deleteSize
+                            .any-sizes 
+                                label(for="sizeSML") Розмір
+                                .d-flex.items-center.any-sizes-block
+                                    input(type="text" id="sizeSML" name="sizeSML")
+                                    .d-flex.items-center.sizes-button
+                                        button.addSize
+                                        button.deleteSize
+                        .block-text
+                            p 
+                                label(for="article") Артикул
+                                input(type="text" id="article" name="article")
+                            p 
+                                label.sort-select(for="money") 
+                                    span Валюта
+                                    select#money(name="money")
+                                        option(value="gryvnia")  
+                                        option(value="dollar")
+                            p 
+                                label.sort-select(for="producer") 
+                                    span Виробник
+                                    select#producer(name="producer")
+                                        option(value="producer1")
+                    button.cta.admin-cta(type="submit") зберегти
