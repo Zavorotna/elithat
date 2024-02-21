@@ -546,7 +546,8 @@ a.phone-mobile
         display: flex
         align-items: center
         justify-content: center
-        width: 25rem
+        min-width: 25rem
+        max-width: 25rem
         height: 25rem !important
         border: 1px solid rgb(217, 217, 217)
         border-radius: 3rem
@@ -554,6 +555,7 @@ a.phone-mobile
         font-size: 12rem
         font-weight: 300
         line-height: 1.25em
+        box-sizing: border-box
         &:not(label:first-child)
 
             margin-right: 5rem
@@ -1928,3 +1930,39 @@ h3.admin-prod-about
     height: 70px
     border-radius: 25px
     cursor: pointer
+
+
+.w-100
+    width: 100%
+
+p.add-more 
+    color: rgb(180, 180, 180)
+    font-size: 14rem
+    font-weight: 500
+    line-height: 1.2em
+    cursor: pointer
+
+.title-input 
+    p
+        color: rgb(30, 30, 30)
+        font-size: 16rem
+        font-weight: 600
+        line-height: 1.2em
+        margin-bottom: 10rem
+    input
+        width: 100%
+        box-sizing: border-box
+        border: 1px solid rgb(217, 217, 217)
+        border-radius: 5px
+        padding: 10px
+        outline: none
+
+.admin-inputs,
+.admin-sizes > .filter-inputs
+    p
+        margin-bottom: 10rem
+
+.top-confirm
+    position: absolute
+    top: 20rem
+    right: 20rem
