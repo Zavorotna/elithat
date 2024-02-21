@@ -532,6 +532,8 @@ a.phone-mobile
         position: absolute
 .sizes-inputs
     display: flex
+    input
+        appearance: none
     input:checked + label
         border: 1px solid rgb(43, 45, 66)
 
@@ -1610,6 +1612,7 @@ input[type="range"]
         border-bottom: 1px solid rgb(30, 30, 30)
 
 .admin-prod
+    position: relative
     width: 100%
     box-sizing: border-box
     border: 1px solid rgb(30, 30, 30)
@@ -1646,7 +1649,8 @@ input[type="range"]
     row-gap: 20rem
 
 .correct-product,
-.delete-product
+.delete-product,
+.confirm-product
     position: relative
     width: 25rem
     height: 25rem
@@ -1655,7 +1659,8 @@ input[type="range"]
     border-radius: 5rem
 
 .correct-product:before,
-.delete-product:before
+.delete-product:before,
+.confirm-product:before
     content: ''
     position: absolute
     width: 15px
@@ -1669,6 +1674,9 @@ input[type="range"]
 
 .delete-product:before
     background-image: url(../img/delete.svg)
+
+.confirm-product:before
+    background-image: url(../img/confirm.svg)
 
 .admin-products > .admin-prod:nth-child(2n) 
     background-color: rgb(236, 236, 236)
@@ -1698,3 +1706,48 @@ h3.admin-prod-about
         width: 70%
     +media(1645)
         width: 77%
+
+
+.padding-none
+    padding: 0
+
+p.add-more 
+    color: rgb(180, 180, 180)
+    font-size: 14rem
+    font-weight: 500
+    line-height: 1.2em
+    cursor: pointer
+
+.admin-inputs
+    p
+        margin-bottom: 10rem
+
+
+.top-confirm
+    position: absolute
+    top: 20px
+    right: 20px
+
+.title-input 
+    p
+        color: rgb(30, 30, 30)
+        font-size: 16rem
+        font-weight: 600
+        line-height: 1.2em
+        margin-bottom: 10rem
+    input
+        width: 100%
+        box-sizing: border-box
+        border: 1px solid rgb(217, 217, 217)
+        border-radius: 5px
+        padding: 10px
+        outline: none
+
+.w-100
+    width: 100%
+
+.admin-sizes 
+    p
+        margin-bottom: 10px
+    input
+        position: absolute

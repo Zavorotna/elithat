@@ -12,36 +12,7 @@ html(lang="uk")
         main.wrapper.admin-main.flex-between
             .mobile-filter 
                 a(href="#") Фільтр
-            .aside-menu 
-                .aside-items 
-                    .aside-item
-                        a(href="#") 
-                        .aside-logo
-                            img(src="img/cap.svg", alt="")
-                        span Товари
-                    .aside-item
-                        a(href="#")
-                        .aside-logo
-                            img(src="img/category.svg", alt="")
-                        span Категорії
-                    .aside-item
-                        a(href="#")
-                        .aside-logo
-                            img(src="img/sub-categories.svg", alt="")
-                        span Підкатегорії
-                    .aside-item
-                        a(href="#")
-                        .aside-logo
-                            img(src="img/filters.svg", alt="")
-                        span Фільтри
-                    .aside-item
-                        a(href="#")
-                        .aside-logo
-                            img(src="img/modules.svg", alt="")
-                        span Модулі
-                .hashtag-developers-copy 
-                    span розробка
-                    img(src="img/hashtag-dev-copy.webp", alt="")
+            +asideMenu()
             .admin-products-list
                 .flex-between.items-center.flex-wrap.admin-prod-description 
                     h2 Список товарів
