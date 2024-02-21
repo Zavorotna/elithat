@@ -537,6 +537,8 @@ a.phone-mobile
         position: absolute
 .sizes-inputs
     display: flex
+    input
+        appearance: none
     input:checked + label
         border: 1px solid rgb(43, 45, 66)
 
@@ -881,6 +883,11 @@ a.phone-mobile
 .category-block
     column-gap: 10rem
 
+.category-block > div
+    width: 100%
+    +media(505)
+        width: auto
+
 .catalog
     margin-bottom: 40rem
     padding-top: 50rem
@@ -888,6 +895,7 @@ a.phone-mobile
 .catalog-season-block
     position: relative
     width: 100%
+    min-width: 250rem
     border-radius: 10px
     border: 2px solid rgba(1, 1, 1, 0)
     padding: 63rem 0rem 63rem 50rem
@@ -965,6 +973,8 @@ a.phone-mobile
     height: 25px
     background-color: #219ebc
     clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%)
+    +media(913)
+        display: none
 
 .filter-item
     position: relative
@@ -1074,7 +1084,7 @@ input[type=range]::-webkit-slider-runnable-track
 
 .sorting-filters
     flex-wrap: wrap
-    column-gap: 10rem
+    column-gap: 30rem
     row-gap: 20rem
     justify-content: center
     width: 100%
@@ -1115,15 +1125,20 @@ input[type=range]::-webkit-slider-runnable-track
     font-weight: 500
     line-height: 1.2em
 
+.select-parent
+    width: 240rem
+
+
 .sort-select
     select
         position: relative
         display: flex
         appearance: none
         box-sizing: border-box
+        width: 100%
         border: 1px solid rgb(217, 217, 217)
         border-radius: 5px
-        padding: 12rem 130rem 12rem 10rem
+        padding: 12rem 10rem
         align-items: center
         font-size: 12rem
         outline: none
@@ -1515,6 +1530,7 @@ input[type="range"]
     +media(700)
         width: 25%
         flex-direction: column
+        margin-bottom: 0
 
 .aside-items
     display: flex
@@ -1596,6 +1612,10 @@ input[type="range"]
     .filter
         min-width: 150rem
         width: 27%
+        +media(1350)
+            min-width: 220rem
+        +media(1500)
+            min-width: 280px
         hr
             border: none
             border-bottom: 1px solid rgb(217, 217, 217)
@@ -1613,6 +1633,7 @@ input[type="range"]
         border-bottom: 1px solid rgb(30, 30, 30)
 
 .admin-prod
+    position: relative
     width: 100%
     box-sizing: border-box
     border: 1px solid rgb(30, 30, 30)
@@ -1649,7 +1670,8 @@ input[type="range"]
     row-gap: 20rem
 
 .correct-product,
-.delete-product
+.delete-product,
+.confirm-product
     position: relative
     width: 25rem
     height: 25rem
@@ -1658,7 +1680,8 @@ input[type="range"]
     border-radius: 5rem
 
 .correct-product:before,
-.delete-product:before
+.delete-product:before,
+.confirm-product:before
     content: ''
     position: absolute
     width: 15px
@@ -1666,6 +1689,9 @@ input[type="range"]
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
+    background-size: 100%
+    background-position: center
+    background-repeat: no-repeat
 
 .correct-product:before
     background-image: url(../img/correct.svg)
@@ -1673,7 +1699,14 @@ input[type="range"]
 .delete-product:before
     background-image: url(../img/delete.svg)
 
+<<<<<<< HEAD
 .admin-products > .admin-prod:nth-child(2n)
+=======
+.confirm-product:before
+    background-image: url(../img/confirm.svg)
+
+.admin-products > .admin-prod:nth-child(2n) 
+>>>>>>> 6ceb23cef02561c3ada82a48578b32910fa5166a
     background-color: rgb(236, 236, 236)
 
 .admin-products .cta
@@ -1681,12 +1714,14 @@ input[type="range"]
 
 h3.admin-prod-about
     color: rgb(180, 180, 180)
-    font-size: 16rem
+    font-size: 14rem
     font-weight: 500
     line-height: 1.2em
     text-transform: lowercase
     text-align: center
     margin-bottom: 20rem
+    +media(960)
+        font-size: 16rem
 
 .products-about-nav
     justify-content: space-around
@@ -1697,7 +1732,7 @@ h3.admin-prod-about
     box-sizing: border-box
     +media(1100)
         width: 60%
-    +media(1300)
+    +media(1400)
         width: 70%
     +media(1645)
         width: 77%
