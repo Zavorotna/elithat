@@ -1595,6 +1595,8 @@ input[type="range"]
     .filter
         min-width: 150rem
         width: 27%
+        +media(1350)
+            min-width: 220rem
         +media(1500)
             min-width: 280px
         hr
@@ -1670,6 +1672,9 @@ input[type="range"]
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
+    background-size: 100%
+    background-position: center
+    background-repeat: no-repeat
 
 .correct-product:before
     background-image: url(../img/correct.svg)
@@ -1753,3 +1758,7 @@ p.add-more
         margin-bottom: 10px
     input
         position: absolute
+
+
+.body-overflow
+    overflow-x: hidden
