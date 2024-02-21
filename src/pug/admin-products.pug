@@ -9,7 +9,9 @@ html(lang="uk")
         include components/mixins
         header 
             
-        main.wrapper.admin-main
+        main.wrapper.admin-main.flex-between
+            .mobile-filter 
+                a(href="#") Фільтр
             .aside-menu 
                 .aside-items 
                     .aside-item
@@ -40,6 +42,136 @@ html(lang="uk")
                 .hashtag-developers-copy 
                     span розробка
                     img(src="img/hashtag-dev-copy.webp", alt="")
+            .admin-products-list
+                .flex-between.items-center.flex-wrap.admin-prod-description 
+                    h2 Список товарів
+                    .search-block
+                        form(action="#")
+                            label(for="search")
+                                input(type="text" id="search" name="search" placeholder="Пошук")
+                            button(type="submit").serch
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.382 11.382L16 16M13.1429 7.09196C13.1429 10.4565 10.4246 13.1839 7.07143 13.1839C3.71827 13.1839 1 10.4565 1 7.09196C1 3.72746 3.71827 1 7.07143 1C10.4246 1 13.1429 3.72746 13.1429 7.09196Z" stroke="#219EBC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                hr.hr-list
+                .flex-between.admin-prod-description
+                    .filter-and-catalog
+                        .filter#filter
+                            h3.admin-prod-about фільтри
+                            .close-filter-btn
+                            .filter-item
+                                .relative
+                                    span Стать
+                                    .filter-arrow
+                                .filter-inputs
+                                    p
+                                        input.style-input(type="checkbox" name="gender" id="old")
+                                        label.style-label(for="old") Дівчинка  
+                                            span.how-many-products (140)
+                            hr
+                            .filter-item
+                                .relative
+                                    span Виробник
+                                    .filter-arrow
+                                .filter-inputs
+                                    p
+                                        input.style-input(type="checkbox" name="brand" id="brand1")
+                                        label.style-label(for="brand1") Appaman   
+                                            span.how-many-products (140)
+                            hr
+                            .filter-item
+                                .relative
+                                    span Країна виробник
+                                    .filter-arrow
+                                .filter-inputs
+                                    p
+                                        input.style-input(type="checkbox" name="country" id="ukraine")
+                                        label.style-label(for="ukraine") Україна    
+                                            span.how-many-products (140)
+                            hr
+                            .filter-item
+                                .relative
+                                    span Розмір
+                                    .filter-arrow
+                                .filter-inputs.product-sizes.sizes-inputs
+                                    input(type="checkbox", name="size" id="product3-size38")
+                                    label(for="product3-size38") 38
+                                    
+                            hr
+                            .filter-item
+                                .relative
+                                    span Ціна
+                                    .filter-arrow
+                                .filter-inputs.relative
+                                    section.range-slider
+                                        input#min.form-range(value='500' min='500' max='50000' step='500' type='range')
+                                        input#max.form-range(value='50000' min='500' max='50000' step='500' type='range')
+                                    .range-info
+                                        label#min-lbl 0 грн
+                                        label#max-lbl 10000 грн
+                            hr
+                            .filter-item
+                                .relative
+                                    span Вік
+                                    .filter-arrow
+                                .filter-inputs
+                                    p
+                                        input.style-input(type="checkbox" name="old" id="old1")
+                                        label.style-label(for="old1") 0-6 місяців 
+                                            span.how-many-products (140)
+                            hr
+                            .filter-item
+                                .relative
+                                    span Вид
+                                    .filter-arrow
+                                .filter-inputs
+                                    p
+                                        input.style-input(type="checkbox" name="type" id="type1")
+                                        label.style-label(for="type1") Шапки  
+                                            span.how-many-products (140)
+                            hr
+                    .admin-products
+                        .products-about-nav.admin-prod-description.items-center.flex-wrap
+                            h3.admin-prod-about фото
+                            h3.admin-prod-about назва
+                            h3.admin-prod-about ціна/наявність
+                            h3.admin-prod-about дія
 
+                        .admin-prod.flex-between.admin-prod-description.items-center.flex-wrap
+                            img(src="img/card-image1.jpg", alt="")
+                            div.description-min-width.d-flex.flex-between.admin-prod-description.items-center.flex-wrap
+                                div.d-flex.flex-between.admin-prod-description.flex-wrap
+                                    .admin-product-title 
+                                        h3 Зимова шапка-шолом дитяча
+                                    span 550грн/в наявності
+                                div.d-flex.flex-between.admin-prod-description
+                                    .correct-product 
+                                    .delete-product 
+                        .admin-prod.flex-between.admin-prod-description.items-center.flex-wrap
+                            img(src="img/card-image1.jpg", alt="")
+                            div.description-min-width.d-flex.flex-between.admin-prod-description.items-center.flex-wrap
+                                div.d-flex.flex-between.admin-prod-description.flex-wrap
+                                    .admin-product-title 
+                                        h3 Зимова шапка-шолом дитяча
+                                    span 550грн/в наявності
+                                div.d-flex.flex-between.admin-prod-description
+                                    .correct-product 
+                                    .delete-product 
+                        .admin-prod.flex-between.admin-prod-description.items-center.flex-wrap
+                            img(src="img/card-image1.jpg", alt="")
+                            div.description-min-width.d-flex.flex-between.admin-prod-description.items-center.flex-wrap
+                                div.d-flex.flex-between.admin-prod-description.flex-wrap
+                                    .admin-product-title 
+                                        h3 Зимова шапка-шолом дитяча
+                                    span 550грн/в наявності
+                                div.d-flex.flex-between.admin-prod-description
+                                    .correct-product 
+                                    .delete-product 
+                        
+                        
+                        
+
+                        .justify-content-center 
+                            a.cta(href="#") додати товар
             
         script(src="js/scripts.js")
