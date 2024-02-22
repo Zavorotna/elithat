@@ -1781,10 +1781,8 @@ h3.admin-prod-about
         border-radius: 5px
     .flex-between
         flex-wrap: wrap
-        // justify-content: center
         row-gap: 30rem
-        +media(1200)
-            // justify-content: space-between
+        +media(1024)
             flex-wrap: nowrap
     .info-header_admin
         justify-content: center
@@ -1850,6 +1848,8 @@ h3.admin-prod-about
     padding-bottom: 100px
 
 .main-info_admin
+    +media(1024)
+        width: 65%
     hr
         border: none
         border-top: 1px solid rgb(30, 30, 30)
@@ -2013,7 +2013,10 @@ p.add-more
 .main-modul-info
     width: 100%
     +media(1024)
-        width: 59vw
+        width: 67%
+    +media(1440)
+        width: 70%
+
 .slaider-module
     padding-left: 66rem
     margin-bottom: 20px
@@ -2032,21 +2035,21 @@ p.add-more
     border: 1px solid rgb(30, 30, 30)
     border-radius: 10px
     background: rgb(255, 255, 255)
+    justify-content: center
     +media(1024)
+        justify-content: space-between
+    +media(1200)
         padding: 20px
 
 .file-module
-    width: 250rem
+    width: 100%
+    max-width: 300rem
     height: 120rem
     border: 1rem solid rgb(30, 30, 30)
     border-radius: 5px
     overflow: hidden
     +media(425)
-        width: 300rem
-        height: 120rem
-    +media(1024)
-        border: none
-        border-radius: 0
+        max-width: 300rem
     input + label
         position: relative
         &::before
@@ -2054,7 +2057,7 @@ p.add-more
             content: ""
             top: 0
             left: 0
-            width: 250rem
+            width: 300rem
             height: 120rem
             +media(425)
                 width: 300rem
@@ -2063,7 +2066,7 @@ p.add-more
 .summer-module
     input + label
         &::before
-            background: url(../img/summer.svg) no-repeat center/cover
+            background: url(../img/summer.svg) no-repeat left/cover
 .fall-module
     input + label
         &::before
