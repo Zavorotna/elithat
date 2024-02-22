@@ -57,13 +57,14 @@ input
     width: 81%
 
 .h1
-    padding: 45rem
+    padding: 15rem
     color: rgb(43, 45, 66)
     font-size: 38rem
     font-weight: 700
     text-align: center
     text-transform: uppercase
     +media(1024)
+        padding: 45rem
         font-size: 48rem
 
 .d-block
@@ -788,9 +789,11 @@ a.phone-mobile
 
 .footer-contact
     flex-wrap: wrap
+    justify-content: center
     align-items: center
     row-gap: 50rem
     +media(768)
+        justify-content: space-between
         flex-wrap: nowrap
     div
         max-width: 500rem

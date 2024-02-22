@@ -7,17 +7,18 @@
     column-gap: 40rem
     align-items: flex-start
     flex-wrap: wrap
-    +media(1024)
+    +media(1100)
         flex-wrap: nowrap
 
 .product-block
     padding-bottom: 40rem
     width: 100%
+
 .product-card
-    +media(1024)
-        max-width: 500rem
+    // +media(1024)
+    //     max-width: 53vw
     +media(1240)
-        width: 100%
+        width: 55vw
         max-width: none
 
 .product-card,
@@ -54,8 +55,8 @@
         border-radius: 5rem
 
 .info-cart_block
+    width: 300rem
     h2
-        max-width: 257rem
         padding-bottom: 15rem
         color: rgb(30, 30, 30)
         font-size: 14rem
@@ -128,18 +129,22 @@
 
 .order-block
     width: 100%
+    text-align: center
     padding: 35rem 20rem
-    +media(1200)
-        max-width: 350rem
+    +media(1100)
+        text-align: left
+        width: 35vw
     +media(1440)
         max-width: 400rem
         box-sizing: border-box
     h2
         color: rgb(33, 158, 188)
         margin-bottom: 10rem
-        font-size: 24rem
+        font-size: 18rem
         font-weight: 700
         text-transform: uppercase
+        +media(1440)
+            font-size: 24rem
     p
         margin-bottom: 20rem
         color: rgb(30, 30, 30)
@@ -167,26 +172,33 @@
         font-weight: 700
 
 .flex-btn
-    +media(768)
+    +media(500)
         display: flex
+        flex-wrap: nowrap
+        column-gap: 30rem
+    +media(768)
         justify-content: space-between
         flex-direction: row-reverse
-    +media(1024)
+    +media(1100)
         display: block
 
 .issue-order,
 .back
     transition: all .5s ease
     display: block
+    width: 100%
     max-width: 440rem
     margin-bottom: 10rem
-    padding: 16rem
-    font-size: 14rem
+    font-size: 10rem
+    padding: 10rem
     font-weight: 600
     text-align: center
     text-transform: uppercase
     border-radius: 25rem
     box-sizing: border-box
+    +media(1440)
+        padding: 16rem
+        font-size: 14rem
 
 .issue-order
     color: rgb(255, 255, 255)
