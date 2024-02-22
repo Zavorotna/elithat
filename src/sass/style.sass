@@ -1771,11 +1771,16 @@ h3.admin-prod-about
         border-radius: 5px
     .flex-between
         flex-wrap: wrap
-        justify-content: center
+        // justify-content: center
         row-gap: 30rem
         +media(1200)
-            justify-content: space-between
+            // justify-content: space-between
             flex-wrap: nowrap
+    .info-header_admin
+        justify-content: center
+        +media(1200)
+            justify-content: space-between
+
             
 .admin-header
     padding: 15rem 0 45rem
@@ -1995,6 +2000,10 @@ p.add-more
     right: 20rem
 
 //module admin
+.main-modul-info
+    width: 100%
+    +media(1024)
+        width: 59vw
 .slaider-module
     padding-left: 66rem
     margin-bottom: 20px
@@ -2062,7 +2071,7 @@ p.add-more
 .phone-module,
 .footer-text_module
     padding-right: 0
-    +media(1440)
+    +media(1200)
         padding-right: 100px
     p
         max-width: 511rem
@@ -2117,6 +2126,7 @@ p.add-more
         color: rgb(30, 30, 30)
         font-size: 16px
         font-weight: 600
+
 .icons-module
     .social-icon
         padding: 0
