@@ -686,7 +686,7 @@ a.phone-mobile
     display: block
     padding: 100rem 0
     justify-content: space-between
-    +media(1270)
+    +media(1240)
         display: flex
     h2
         color: rgb(43, 45, 66)
@@ -733,7 +733,9 @@ a.phone-mobile
     flex-wrap: wrap
     column-gap: 10rem
     row-gap: 20rem
-    +media(1270)
+    +media(1240)
+        width: 60%
+    +media(13300)
         width: 65%
 
 .advantage-block
@@ -746,8 +748,11 @@ a.phone-mobile
     +media(1015)
         width: 45%
         min-width: 400rem
-    +media(1270)
-        width: 48%
+    +media(1240)
+        width: 45%
+        min-width: 295rem
+    +media(1330)
+        width: 45%
         min-width: 320rem
     p
         font-size: 15rem
@@ -755,10 +760,12 @@ a.phone-mobile
             font-size: 18rem
     h3
         color: rgb(30, 30, 30)
-        font-size: 18rem
+        font-size: 15rem
         font-weight: 700
         line-height: 1.2em
         text-transform: uppercase
+        +media(1330)
+            font-size: 18rem
     .d-flex
         align-items: center
         column-gap: 20rem
@@ -1173,6 +1180,10 @@ input[type=range]::-webkit-slider-runnable-track
         margin-bottom: 30rem
         span
             color: rgb(188, 33, 95)
+    h1
+        margin-bottom: 40rem
+        +media(1024)
+            margin-bottom: 0rem
 
 .aboutus-gallery
     display: block
