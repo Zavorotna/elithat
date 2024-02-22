@@ -642,6 +642,11 @@ a.phone-mobile
     .universal-product
         top: 0
 
+
+.overflow-x-propositions
+    padding-top: 60rem
+    overflow-x: hidden
+
 .propositions
     position: relative
     padding: 96rem 0
@@ -653,16 +658,43 @@ a.phone-mobile
         img
             position: absolute
             bottom: 0
-            height: 70%
+            height: 50%
+            +media(380)
+                height: 70%
             +media(600)
+                height: 70%
+            +media(960)
                 height: 90%
-            +media(920)
+            +media(1024)
+                height: 120%
+            +media(1240)
                 height: 130%
         img:first-child
             transform: rotateY(-180deg)
-            left: 5%
+            left: 0
+            +media(700)
+                left: -100px
+            +media(1270)
+                left: -50px
+            +media(1440)
+                left: 0
+            +media(1635)
+                left: 2%
+            +media(1810)
+                left: 5%
         img:last-child
-            right: 5%
+            right: 0
+            +media(700)
+                right: -100px
+            +media(1270)
+                right: -50px
+            +media(1440)
+                right: 0
+            +media(1635)
+                right: 2%
+            +media(1810)
+                right: 5%
+                
 
     h2
         position: relative
@@ -687,6 +719,15 @@ a.phone-mobile
         margin-bottom: 30rem
         +media(500)
             font-size: 24rem
+
+.summer
+    .images
+        img:first-child
+            +media(700)
+                left: 0
+        img:last-child
+            +media(700)
+                right: 0
 
 .advantages
     display: block
