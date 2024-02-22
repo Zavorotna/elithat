@@ -35,8 +35,7 @@ html(lang="uk")
                     .characteristics.select-product-block.d-block.filter-item 
                         .relative 
                             b характеристики
-                            .filter-arrow
-                        .characteristics-list.filter-inputs 
+                        .characteristics-list.filter-inputs.d-block 
                             ul
                                 li
                                     p Країна - виробник 
@@ -45,11 +44,8 @@ html(lang="uk")
                                     p Фабрика - виробник 
                                         span назва заводу
                                 li
-                                    p Склад - 
-                                        span назва матеріалу
-                                li
-                                    p Сировина - 
-                                        span якась сировина
+                                    p Матеріал - 
+                                        span матеріал
                                 li
                                     p Сезонність - 
                                         span холодна осінь, зима.
@@ -72,18 +68,6 @@ html(lang="uk")
                                     label(for="product3-size43") 43
                                     input(type="checkbox", name="size" id="product3-size44")
                                     label(for="product3-size44") 44
-                        a.size-cell(href="#") розмірна сітка
-                    .color.select-product-block
-                        .d-flex.items-center.row-product-block.flex-wrap 
-                            b оберіть колір: &nbsp;
-                            form(action="") 
-                                .color-inputs
-                                    input(type="radio", name="color", value="#dfa0f5", id="color1")
-                                    label(for="color1").pink
-                                    input(type="radio", name="color", value="#dfa0f5", id="color2")
-                                    label(for="color2").pink
-                                    input(type="radio", name="color", value="#dfa0f5", id="color3")
-                                    label(for="color3").pink
                                 
                     .quantity.select-product-block 
                         .d-flex.items-center 
@@ -191,5 +175,6 @@ html(lang="uk")
                 .justify-center
                     a(href="#").catalog-cta в каталог 
 
-            
+        footer 
+            +footerNavigation(footerNav)
         script(src="js/scripts.js")
