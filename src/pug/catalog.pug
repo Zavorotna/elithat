@@ -224,13 +224,13 @@ html(lang="uk")
                                 a(href="#").cta до кошика
                     form(action="") 
                         .pagination-btns.d-flex.items-center 
-                            button.pagination-to-left  
-                            button.page-num.current-pagination-page 1
-                            button.page-num 2
-                            button.page-num 3
-                            button.page-num ...
-                            button.page-num 20
-                            button.pagination-to-right  
+                            button(type="submit" name="paginationLeft").pagination-to-left  
+                            button(type="submit" name="pagination").page-num.current-pagination-page 1
+                            button(type="submit" name="pagination").page-num 2
+                            button(type="submit" name="pagination").page-num 3
+                            button(type="submit" name="pagination").page-num ...
+                            button(type="submit" name="pagination").page-num 20
+                            button(type="submit" name="paginationRight").pagination-to-right  
 
         footer 
             +footerNavigation(footerNav)
