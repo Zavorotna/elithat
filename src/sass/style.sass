@@ -139,6 +139,7 @@ input
         background: rgb(33, 158, 188)
 
 .header-navigation
+    padding-bottom: 25rem
     transition: all .5s ease
     position: fixed
     top: 0
@@ -187,6 +188,11 @@ input
         left: 0
         border-left: 1px solid #000
         height: 100%
+    svg
+        transition: all .5s ease
+        stroke: #219EBC
+    &:hover > svg
+       stroke: rgb(188, 33, 95)
 .logo
     img
         width: 100%
@@ -345,7 +351,7 @@ a.phone-mobile
 .main-bgc
     position: relative
     background-color: #ccc
-    background: url("../img/main-bgc.webp") no-repeat center/cover
+    background: url("../img/main-bgc.svg") no-repeat center/cover
     margin-bottom: 90rem
     overflow-x: hidden
 
