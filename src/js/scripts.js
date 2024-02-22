@@ -205,57 +205,59 @@ document.addEventListener("DOMContentLoaded", function () {
     // document.addEventListener("resize", galleryImgHeight)
 
     // карусель на головний екран
+    if(document.querySelector('.carousel')) {
 
-    const carouselPartners = document.querySelector('.carousel')
-
-    let itemsImg = [...document.querySelectorAll(".carousel-img")],
-        itemImgWidth = itemsImg[0].offsetWidth,
-        isAnimatingImg = false
-
-    function updateCarouselImg() {
-
-        while (carouselPartners.firstChild) {
-            carouselPartners.removeChild(carouselPartners.firstChild)
+        const carouselPartners = document.querySelector('.carousel')
+    
+        let itemsImg = [...document.querySelectorAll(".carousel-img")],
+            itemImgWidth = itemsImg[0].offsetWidth,
+            isAnimatingImg = false
+    
+        function updateCarouselImg() {
+    
+            while (carouselPartners.firstChild) {
+                carouselPartners.removeChild(carouselPartners.firstChild)
+            }
+    
+            itemsImg.push(itemsImg.shift())
+    
+            const firstImg = itemsImg[itemsImg.length - 1].cloneNode(true)
+            firstImg.style.left = `${-itemImgWidth}rem`
+            carouselPartners.insertAdjacentElement("afterbegin", firstImg)
+    
+            for (let i = 0; i < itemsImg.length; i++) {
+                const cloneImg = itemsImg[i].cloneNode(true)
+                carouselPartners.appendChild(cloneImg)
+            }
         }
-
-        itemsImg.push(itemsImg.shift())
-
-        const firstImg = itemsImg[itemsImg.length - 1].cloneNode(true)
-        firstImg.style.left = `${-itemImgWidth}rem`
-        carouselPartners.insertAdjacentElement("afterbegin", firstImg)
-
-        for (let i = 0; i < itemsImg.length; i++) {
-            const cloneImg = itemsImg[i].cloneNode(true)
-            carouselPartners.appendChild(cloneImg)
+    
+        updateCarouselImg()
+    
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+    
+                let distanceImg = -itemImgWidth - 50
+    
+                carouselPartners.style.transition = "transform .5s cubic-bezier(0,.8,.45,1.19)"
+                carouselPartners.style.transform = `translateX(${distanceImg}rem)`
+    
+                isAnimatingImg = true
+    
+                setTimeout(() => {
+                    carouselPartners.style.transition = "none"
+                    carouselPartners.style.transform = `translateX(0)`
+                    isAnimatingImg = false
+                    updateCarouselImg()
+                }, 500)
+    
+            }, 2000)
         }
+    
+        startAutoScroll()
+    
+    
+    
     }
-
-    updateCarouselImg()
-
-    function startAutoScroll() {
-        autoScrollInterval = setInterval(() => {
-
-            let distanceImg = -itemImgWidth - 50
-
-            carouselPartners.style.transition = "transform .5s cubic-bezier(0,.8,.45,1.19)"
-            carouselPartners.style.transform = `translateX(${distanceImg}rem)`
-
-            isAnimatingImg = true
-
-            setTimeout(() => {
-                carouselPartners.style.transition = "none"
-                carouselPartners.style.transform = `translateX(0)`
-                isAnimatingImg = false
-                updateCarouselImg()
-            }, 500)
-
-        }, 2000)
-    }
-
-    startAutoScroll()
-
-
-
 })
 
 if (document.getElementById('min')) {
