@@ -6,10 +6,11 @@ html(lang="uk")
         link(rel="stylesheet", href="css/style.css")
         title Elithat admin
     body.admin-page-product
+        include components/mixins
         header 
             .wrapper 
                 .flex-between.admin-header.items-center
-                    .burger#burger.burger-fix
+                    .burger-admin#burgerAdmin.burger-fix
                         span.bord
                     .logo-admin
                         a(href="#up") 
@@ -32,36 +33,7 @@ html(lang="uk")
                                         input(type="text")
                                 button.change-curs
         main.flex-between.wrapper.main-admin
-            .aside-menu
-                .aside-items
-                    .aside-item
-                        a(href="#") 
-                        .aside-logo
-                            img(src="img/cap.svg", alt="")
-                        span Товари
-                    .aside-item
-                        a(href="#")
-                        .aside-logo
-                            img(src="img/category.svg", alt="")
-                        span Категорії
-                    .aside-item
-                        a(href="#")
-                        .aside-logo
-                            img(src="img/sub-categories.svg", alt="")
-                        span Підкатегорії
-                    .aside-item
-                        a(href="#")
-                        .aside-logo
-                            img(src="img/filters.svg", alt="")
-                        span Фільтри
-                    .aside-item
-                        a(href="#")
-                        .aside-logo
-                            img(src="img/modules.svg", alt="")
-                        span Модулі
-                .hashtag-developers-copy 
-                    span розробка
-                    img(src="img/hashtag-dev-copy.webp", alt="")
+            +asideMenu()
             .main-modul-info
                 h1.head-admin модулі
                 hr
@@ -149,3 +121,4 @@ html(lang="uk")
                                 input(type="text" id="footerModule" name="footerModule")
                         button.accept-module
                         button.delete-module
+        script(src="js/scripts.js")
