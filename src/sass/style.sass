@@ -22,6 +22,8 @@ ul > li
 select,
 input
     width: 100%
+    box-sizing: border-box
+    outline: none
 
 .header
     padding-top: 161rem
@@ -161,8 +163,6 @@ input
     input
         width: 100%
         padding: 7px 40px 7px 10px
-        box-sizing: border-box
-        outline: none
         border: 1rem solid #000
         border-radius: 5rem
     +media(1024)
@@ -1764,6 +1764,11 @@ h3.admin-prod-about
 
 //admin add product
 .admin-page-product
+    hr
+        margin: 20px 0 30px
+    input
+        border: 1px solid rgb(217, 217, 217)
+        border-radius: 5px
     .flex-between
         flex-wrap: wrap
         justify-content: center
@@ -1797,13 +1802,9 @@ h3.admin-prod-about
     height: 30rem
     input
         color: rgb(33, 158, 188)
-        font-family: Montserrat
         font-size: 12rem
         font-weight: 700
         padding: 8rem
-        box-sizing: border-box
-        border: 1px solid rgb(217, 217, 217)
-        border-radius: 5rem
         outline: none
 
 .change-curs
@@ -1882,10 +1883,8 @@ h3.admin-prod-about
     input
         padding: 11px 
         margin-bottom: 20rem
-        box-sizing: border-box
         border: 1px solid rgb(217, 217, 217)
         border-radius: 5px
-        outline: none
     select
         padding: 13rem 10rem
     .sort-select,
@@ -1912,7 +1911,9 @@ h3.admin-prod-about
         padding: 12px
 
 .addSize,
-.deleteSize
+.deleteSize,
+.delete-module,
+.accept-module
     position: relative
     width: 30px
     height: 30px
@@ -1931,13 +1932,14 @@ h3.admin-prod-about
     &::before
         width: 10px
         height: 10px
-        background: url(../img/add-admin.svg) no-repeat center/cover
+        background: url(../img/add-admin.svg) no-repeat
 
-.deleteSize
+.deleteSize,
+.delete-module
     &::before
         width: 15px
         height: 15px
-        background: url(../img/delete-admin.svg) no-repeat center/cover
+        background: url(../img/delete-admin.svg) no-repeat 
 
 .any-sizes
     input
@@ -1958,7 +1960,6 @@ h3.admin-prod-about
     border-radius: 25px
     cursor: pointer
 
-
 .w-100
     width: 100%
 
@@ -1978,7 +1979,6 @@ p.add-more
         margin-bottom: 10rem
     input
         width: 100%
-        box-sizing: border-box
         border: 1px solid rgb(217, 217, 217)
         border-radius: 5px
         padding: 10px
@@ -1993,3 +1993,130 @@ p.add-more
     position: absolute
     top: 20rem
     right: 20rem
+
+//module admin
+.slaider-module
+    padding-left: 66rem
+    margin-bottom: 20px
+    color: rgb(180, 180, 180)
+    font-size: 16px
+    font-weight: 500
+    line-height: 1.3em
+
+.module
+    position: relative
+    column-gap: 80rem
+    width: 100%
+    padding: 60px 20px 20px
+    margin-bottom: 10px
+    box-sizing: border-box
+    border: 1px solid rgb(30, 30, 30)
+    border-radius: 10px
+    background: rgb(255, 255, 255)
+    +media(1024)
+        padding: 20px
+
+.file-module
+    width: 250rem
+    height: 120rem
+    border: 1rem solid rgb(30, 30, 30)
+    border-radius: 5px
+    overflow: hidden
+    +media(425)
+        width: 300rem
+        height: 120rem
+    +media(1024)
+        border: none
+        border-radius: 0
+    input + label
+        position: relative
+        &::before
+            position: absolute
+            content: ""
+            top: 0
+            left: 0
+            width: 250rem
+            height: 120rem
+            +media(425)
+                width: 300rem
+                height: 120rem
+
+.summer-module
+    input + label
+        &::before
+            background: url(../img/summer.svg) no-repeat center/cover
+.fall-module
+    input + label
+        &::before
+            background: url(../img/fall.svg) no-repeat center/cover
+.winter-module
+    input + label
+        &::before
+            background: url(../img/winter.svg) no-repeat center/cover
+.spring-module
+    input + label
+        &::before
+            background: url(../img/spring.svg) no-repeat center/cover
+
+.text-module,
+.phone-module,
+.footer-text_module
+    padding-right: 0
+    +media(1440)
+        padding-right: 100px
+    p
+        max-width: 511rem
+        margin-bottom: 20rem
+        color: rgb(30, 30, 30)
+        font-size: 16px
+        font-weight: 600
+    label
+        display: inline-block
+        margin-bottom: 10rem
+    input
+        padding: 11rem
+
+.delete-module,
+.accept-module
+    position: absolute
+    top: 20px
+    right: 20px
+
+.accept-module
+    right: 60px
+    &::before
+        width: 20px
+        height: 15px
+        background: url(../img/accept.svg) no-repeat 
+.header-module,
+.footer-module
+    box-sizing: border-box
+    flex-wrap: wrap
+    row-gap: 30rem
+    +media(1440)
+        flex-wrap: nowrap
+        max-height: 135px
+    
+.footer-text_module,
+.phone-module
+    width: 100%
+    max-width: 511px
+
+.phone-module
+    max-width: 250px
+
+.icons-module,
+.logo-module
+    border: none
+    row-gap: 10rem
+    flex-direction: column
+    min-width: 250rem
+    +media(425)
+        min-width: 300rem
+    p
+        color: rgb(30, 30, 30)
+        font-size: 16px
+        font-weight: 600
+.icons-module
+    .social-icon
+        padding: 0
