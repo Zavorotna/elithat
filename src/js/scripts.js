@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    //прокрутка хедера доверху і донизу
 
     if (document.querySelector("#burgerAdmin")) {
         let adminBurger = document.querySelector("#burgerAdmin"),
             adminNav = document.querySelector(".aside-menu"),
             adminClose = document.querySelector(".close-aside-menu")
+
         function toggleAdminNav() {
             adminNav.classList.toggle("d-block")
         }
@@ -12,22 +12,46 @@ document.addEventListener("DOMContentLoaded", function () {
         adminClose.addEventListener("click", toggleAdminNav)
     }
 
-    let lastScrollTop = 0
+    //прокрутка хедера доверху і донизу
+    if (document.querySelector(".header-navigation")) {
+        // window.addEventListener("scroll", function () {
+        //     let currentScroll = window.pageYOffset || document.documentElement.scrollTop
+        //     const header = document.querySelector(".header-navigation")
+        //     if (currentScroll > 180) {
+        //         if (currentScroll > lastScrollTop) {
+        //             header.style.top = "-100%"
+        //         } else {
+        //             header.style.top = "0"
+        //         }
+        //     } else {
+        //         header.style.top = "0"
+        //     }
+        //     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll
+        // }, false)
+        let lastScrollTop = 0
+        const headerNavigation = document.querySelector(".header-navigation"),
+            burger = document.querySelector("#burger")
 
-    window.addEventListener("scroll", function () {
-        let currentScroll = window.pageYOffset || document.documentElement.scrollTop
-        const header = document.querySelector(".header-navigation")
-        if (currentScroll > 180) {
-            if (currentScroll > lastScrollTop) {
-                header.style.top = "-100%"
-            } else {
-                header.style.top = "0"
+        function handleScroll() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop
+            if (!burger.classList.contains("active")) {
+                if (currentScroll > 180) {
+                    if (currentScroll > lastScrollTop) {
+                        headerNavigation.style.top = "-100%"
+                    } else {
+                        headerNavigation.style.top = "0"
+                    }
+                } else {
+                    headerNavigation.style.top = "0"
+                }
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll
             }
-        } else {
-            header.style.top = "0"
         }
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll
-    }, false)
+        if (headerNavigation && burger) {
+            window.addEventListener("scroll", handleScroll, false)
+        }
+
+    }
 
 
     if (document.querySelector('.filter-item')) {
@@ -58,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let userPhoneInput = document.querySelector("#phoneValidation") //інпут для введення номеру телефону
 
-        userPhoneInput.addEventListener("change", function() {
+        userPhoneInput.addEventListener("change", function () {
             let validateNum = isValidPhoneNumber(userPhoneInput.value)
             console.log(validateNum);
             if (validateNum) {
@@ -82,16 +106,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (!document.querySelector(".incorrect-number")) {
                         userPhoneInput.classList.add("incorrect-number")
                     }
-                    
+
 
                 }
             }
 
         })
     }
-    
-
-
 
 
     if (document.querySelector(".product-gallery")) {
@@ -131,40 +152,44 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //бургер меню
-    const burger = document.querySelector(".burger"),
-        mobileMenu = document.querySelector(".main-navigation"),
-        sections = document.querySelectorAll(".scrollBurger"),
-        phoneMobile = document.querySelector(".phone-mobile"),
-        blurPage = document.querySelector(".blur-page")
+    if (document.querySelector("#burger")) {
+        const burger = document.querySelector(".burger"),
+            mobileMenu = document.querySelector(".main-navigation"),
+            sections = document.querySelectorAll(".scrollBurger"),
+            phoneMobile = document.querySelector(".phone-mobile"),
+            blurPage = document.querySelector(".blur-page")
 
 
-    burger.addEventListener('click', function () {
-        burger.classList.toggle('active'),
-            mobileMenu.classList.toggle('activemobile')
-        if (mobileMenu.classList.contains('activemobile') && burger.classList.contains("active")) {
-            mobileMenu.style.left = "0"
-            burger.style.left = "55%"
-            phoneMobile.style.left = "20px"
-            blurPage.style.display = "block"
-            blurPage.style.display = "block"
-        } else {
-            mobileMenu.style.left = "-100%"
-            burger.style.left = "0"
-            phoneMobile.style.left = "-100%"
-            blurPage.style.display = "none"
-        }
-    })
-
-    window.addEventListener('scroll', function () {
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect()
-
-            if (rect.top <= 0 && rect.bottom >= 0) {
-                burger.classList.remove('active')
-                mobileMenu.classList.remove('activemobile')
+        burger.addEventListener('click', function () {
+            burger.classList.toggle('active'),
+                mobileMenu.classList.toggle('activemobile')
+            if (mobileMenu.classList.contains('activemobile') && burger.classList.contains("active")) {
+                mobileMenu.style.left = "0"
+                burger.style.left = "55%"
+                phoneMobile.style.left = "20px"
+                blurPage.style.display = "block"
+                blurPage.style.display = "block"
+                burger.classList.remove("noactive")
+            } else {
+                burger.classList.add("noactive")
+                mobileMenu.style.left = "-100%"
+                burger.style.left = "0"
+                phoneMobile.style.left = "-100%"
+                blurPage.style.display = "none"
             }
         })
-    })
+
+        window.addEventListener('scroll', function () {
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect()
+
+                if (rect.top <= 0 && rect.bottom >= 0) {
+                    burger.classList.remove('active')
+                    mobileMenu.classList.remove('activemobile')
+                }
+            })
+        })
+    }
 
     // function galleryImgHeight () {
     //     if (document.querySelector(".products-sm")) {
