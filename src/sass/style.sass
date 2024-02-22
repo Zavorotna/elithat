@@ -286,7 +286,8 @@ a.phone-mobile
     +media(1023)
         display: none
 
-.burger
+.burger,
+.burger-admin
     position: relative
     display: block
     width: 40rem
@@ -338,6 +339,7 @@ a.phone-mobile
             bottom: 0
             transform: rotate(-45deg)
             box-shadow: 0 0 0 #fff
+
 
 .main-bgc
     position: relative
@@ -1525,8 +1527,7 @@ input[type="range"]
 
 .aside-menu
     position: fixed
-    display: none !important
-    display: flex
+    display: none
     flex-wrap: wrap
     justify-content: space-between
     width: 100vw
@@ -1540,12 +1541,16 @@ input[type="range"]
     padding: 70px 20px 30px 20px
     +media(700)
         position: static
-        display: block !important
+        display: flex
         padding: 0
         width: 25%
         height: auto
         flex-direction: column
         margin-bottom: 0
+
+.aside-menu.d-block 
+    display: block
+
 .close-aside-menu
     content: ''
     position: absolute
@@ -2130,3 +2135,7 @@ p.add-more
 .icons-module
     .social-icon
         padding: 0
+
+.justify-content-center
+    display: flex
+    justify-content: center

@@ -1,5 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
     //прокрутка хедера доверху і донизу
+
+    if (document.querySelector("#burgerAdmin")) {
+        let adminBurger = document.querySelector("#burgerAdmin"),
+            adminNav = document.querySelector(".aside-menu"),
+            adminClose = document.querySelector(".close-aside-menu")
+        function toggleAdminNav() {
+            adminNav.classList.toggle("d-block")
+        }
+        adminBurger.addEventListener("click", toggleAdminNav)
+        adminClose.addEventListener("click", toggleAdminNav)
+    }
+
     let lastScrollTop = 0
 
     window.addEventListener("scroll", function () {
