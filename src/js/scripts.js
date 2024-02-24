@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const carouselPartners = document.querySelector('.carousel')
     
         let itemsImg = [...document.querySelectorAll(".carousel-img")],
-            itemImgWidth = itemsImg[0].offsetWidth,
+            itemImgWidth = itemsImg[0].offsetWidth + 60,
             isAnimatingImg = false
     
         function updateCarouselImg() {
@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
             itemsImg.push(itemsImg.shift())
     
             const firstImg = itemsImg[itemsImg.length - 1].cloneNode(true)
-            firstImg.style.left = `${-itemImgWidth}rem`
+            firstImg.style.left = `${-itemImgWidth}px`
             carouselPartners.insertAdjacentElement("afterbegin", firstImg)
     
             for (let i = 0; i < itemsImg.length; i++) {
@@ -248,10 +248,10 @@ document.addEventListener("DOMContentLoaded", function () {
         function startAutoScroll() {
             autoScrollInterval = setInterval(() => {
     
-                let distanceImg = -itemImgWidth - 60
+                // let distanceImg = -itemImgWidth
     
                 carouselPartners.style.transition = "transform .5s cubic-bezier(0,.8,.45,1.19)"
-                carouselPartners.style.transform = `translateX(${distanceImg}rem)`
+                carouselPartners.style.transform = `translateX(${-itemImgWidth}px)`
     
                 isAnimatingImg = true
     
