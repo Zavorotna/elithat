@@ -8,6 +8,7 @@ html(lang="uk")
     body 
         include components/mixins
         header.header
+            +privacyPopup()
             .header-block#up
                 +headerNavigation(navigation)
                 .main-bgc
@@ -65,6 +66,8 @@ html(lang="uk")
                             img(src="img/card-image1.jpg", alt="")
                         figcaption 
                             h3 Зимова шапка-шолом дитяча 
+                            p.made-in країна-виробник: 
+                                    span Китай
                             .flex-between.product-sizes.items-center
                                 span розміри:
                                 form(action="") 
@@ -95,6 +98,8 @@ html(lang="uk")
                             img(src="img/card-image-2.jpg", alt="")
                         figcaption 
                             h3 літня шапка-панамка дитяча
+                            p.made-in країна-виробник: 
+                                    span Китай
                             .flex-between.product-sizes.items-center
                                 span розміри:
                                 form(action="") 
@@ -125,6 +130,8 @@ html(lang="uk")
                             img(src="img/card-image-3.jpg", alt="")
                         figcaption 
                             h3 Зимова шапка-шолом дитяча 
+                            p.made-in країна-виробник: 
+                                span Китай
                             .flex-between.product-sizes.items-center
                                 span розміри:
                                 form(action="") 
@@ -149,42 +156,43 @@ html(lang="uk")
                             a(href="#").cta до кошика
                 .justify-center
                     a(href="#").catalog-cta в каталог
-            section.propositions#propositions 
-                .summer.wrapper
-                    .images
-                        img(src="img/summer-proposition-1.webp", alt="")
-                        img(src="img/summer-proposition-2.webp", alt="")
-                    h2 А Ви вже готові до літа?
-                    p найкращі пропозиції від ElitHat
-                    .justify-center.propositions-btn
-                        a(href="#").catalog-cta в каталог
-            section.propositions#propositions 
-                .autumn.wrapper
-                    .images
-                        img(src="img/autumn-proposition1.webp", alt="")
-                        img(src="img/autumn-proposition2.webp", alt="")
-                    h2 А Ви вже готові до осені?
-                    p найкращі пропозиції від ElitHat
-                    .justify-center.propositions-btn
-                        a(href="#").catalog-cta в каталог
-            section.propositions#propositions 
-                .winter.wrapper
-                    .images
-                        img(src="img/winter-proposition-1.webp", alt="")
-                        img(src="img/winter-proposition-2.webp", alt="")
-                    h2 А Ви вже готові до зими?
-                    p найкращі пропозиції від ElitHat
-                    .justify-center.propositions-btn
-                        a(href="#").catalog-cta в каталог
-            section.propositions#propositions 
-                .spring.wrapper
-                    .images
-                        img(src="img/spring-proposition-1.webp", alt="")
-                        img(src="img/spring-proposition-2.webp", alt="")
-                    h2 А Ви вже готові до весни?
-                    p найкращі пропозиції від ElitHat
-                    .justify-center.propositions-btn
-                        a(href="#").catalog-cta в каталог
+            .overflow-x-propositions
+                section.propositions#propositions 
+                    .summer.wrapper
+                        .images
+                            img(src="img/summer-proposition-1.webp", alt="")
+                            img(src="img/summer-proposition-2.webp", alt="")
+                        h2 А Ви вже готові до літа?
+                        p найкращі пропозиції від ElitHat
+                        .justify-center.propositions-btn
+                            a(href="#").catalog-cta в каталог
+                section.propositions#propositions 
+                    .autumn.wrapper
+                        .images
+                            img(src="img/autumn-proposition1.webp", alt="")
+                            img(src="img/autumn-proposition2.webp", alt="")
+                        h2 А Ви вже готові до осені?
+                        p найкращі пропозиції від ElitHat
+                        .justify-center.propositions-btn
+                            a(href="#").catalog-cta в каталог
+                section.propositions#propositions 
+                    .winter.wrapper
+                        .images
+                            img(src="img/winter-proposition-1.webp", alt="")
+                            img(src="img/winter-proposition-2.webp", alt="")
+                        h2 А Ви вже готові до зими?
+                        p найкращі пропозиції від ElitHat
+                        .justify-center.propositions-btn
+                            a(href="#").catalog-cta в каталог
+                section.propositions#propositions 
+                    .spring.wrapper
+                        .images
+                            img(src="img/spring-proposition-1.webp", alt="")
+                            img(src="img/spring-proposition-2.webp", alt="")
+                        h2 А Ви вже готові до весни?
+                        p найкращі пропозиції від ElitHat
+                        .justify-center.propositions-btn
+                            a(href="#").catalog-cta в каталог
             .justify-center.wrapper.mobile-to-catalog
                 a(href="#").catalog-cta в каталог
             section.advantages.wrapper#advantages.items-center

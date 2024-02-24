@@ -1,5 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-
+    if (document.querySelector(".privacy")) {
+       let privacyBtn = document.querySelector(".privacy"),
+            popup = document.querySelector(".popup"),
+            closePopup = document.querySelector(".close-popup")
+        function privacyToggle () {
+            popup.classList.toggle("d-block")
+        }
+        privacyBtn.addEventListener("click", function(e) {
+            e.preventDefault()
+            privacyToggle()
+        })
+        closePopup.addEventListener("click", privacyToggle)
+    }
     if (document.querySelector("#burgerAdmin")) {
         let adminBurger = document.querySelector("#burgerAdmin"),
             adminNav = document.querySelector(".aside-menu"),
