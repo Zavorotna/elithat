@@ -437,17 +437,17 @@ a.phone-mobile
     +media(768)
         justify-content: space-between
         flex-wrap: nowrap
-    .for-girl,
-    .for-boy,
-    .universal
-        position: relative
-        width: 100%
-        height: 600rem
-        border-radius: 15px
-        background-color: #DDDAD4
-        overflow: hidden
-        +media(1024)
-            width: 33vw
+    // .for-girl,
+    // .for-boy,
+    // .universal
+    //     position: relative
+    //     width: 100%
+    //     height: 600rem
+    //     border-radius: 15px
+    //     background-color: #DDDAD4
+    //     overflow: hidden
+    //     +media(1024)
+    //         width: 33vw
 .category-name
     position: absolute
     top: 7%
@@ -466,6 +466,7 @@ a.phone-mobile
         font-size: 30rem
 .for-boy
     background: url(../img/boy.png) no-repeat bottom center
+    background-size: 70%
 
 .liquid
     position: relative
@@ -516,6 +517,17 @@ a.phone-mobile
         border-radius: 10px
         border: 2px solid #000
 
+.category-card
+    transition: all .5s ease
+    position: relative
+    width: 80%
+    height: 450rem
+    border-radius: 15px
+    background-color: #DDDAD4
+    overflow: hidden
+    +media(1024)
+        width: 25vw
+
 .click-category
     position: relative
     a
@@ -523,7 +535,7 @@ a.phone-mobile
         width: 100%
         height: 100%
         z-index: 3
-        &:hover ~ picture img
+        &:hover ~ .category-card
             transform: scale(1.05)
 
 // карточки товарів
