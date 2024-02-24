@@ -21,7 +21,6 @@ html(lang="uk")
                                 label Мобільний телефон*
                                 //- .correct-number - коректний номер телефону
                                 //- .incorrect-number - некоректний номер телефону
-
                                 input.phone-validation#phoneValidation(type="tel" name="phone")
                                 .incorect-number-test.d-none 
                                     p *невірний формат вводу даних 
@@ -42,7 +41,10 @@ html(lang="uk")
                                     label.style-label(for="nacladenyi") накладений платіж
                                 p 
                                     input.style-input(type="radio" name="payMethod" id="cash")
-                                    label.style-label(for="cash") готівкою при отримані
+                                    label.style-label(for="cash") безготівковий рахунок
+                                p 
+                                    input.style-input(type="radio" name="payMethod" id="cardPay")
+                                    label.style-label(for="cardPay") інший спосіб за домовленістю
                                 p 
                                     input.style-input(type="radio" name="payMethod" id="cardPay")
                                     label.style-label(for="cardPay") оплата на карту

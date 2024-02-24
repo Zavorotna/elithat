@@ -363,6 +363,7 @@ a.phone-mobile
     p
         margin: 0
         font-size: 44rem
+        line-height: 1em
         text-align: center
         text-transform: uppercase
         color: #219ebc
@@ -371,7 +372,7 @@ a.phone-mobile
             font-size: 64rem
     h1
         margin: 0
-        padding: 32rem 0 27rem
+        padding: 30rem 0
         font-size: 18px
         color: #1e1e1e
         text-align: center
@@ -404,11 +405,14 @@ a.phone-mobile
         color: #bc215f
 
 .carousel-picture
+    justify-content: center
     align-items: flex-end
     position: absolute
-    column-gap: 50rem
+    column-gap: 40rem
     bottom: 0
-    left: -400rem
+    left: -380rem
+    +media(1024)
+        justify-content: space-between
     img
         width: 400rem
         height: 100%
@@ -1341,7 +1345,6 @@ input[type=range]::-webkit-slider-runnable-track
     font-size: 18rem
     font-weight: 500
     line-height: 1.2em
-    text-align: center
     text-transform: uppercase
 
 .product-price
