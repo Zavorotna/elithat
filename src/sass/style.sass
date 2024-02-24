@@ -464,6 +464,7 @@ a.phone-mobile
         font-size: 25rem
     +media(1200)
         font-size: 30rem
+
 .for-boy
     background: url(../img/boy.png) no-repeat bottom center
     background-size: 70%
@@ -489,10 +490,10 @@ a.phone-mobile
         bottom: -13vh
 
 .right-vector
-    bottom: -14vh
-    right: -2vw
+    bottom: -20vh
+    right: -15vw
     +media(768)
-        bottom: -10vh
+        bottom: -22vh
 
 .category-block
     column-gap: 40rem
@@ -520,13 +521,18 @@ a.phone-mobile
 .category-card
     transition: all .5s ease
     position: relative
-    width: 80%
+    width: 100%
     height: 450rem
     border-radius: 15px
     background-color: #DDDAD4
     overflow: hidden
-    +media(1024)
+    +media(728)
         width: 25vw
+        height: 250rem
+    +media(1024)
+        height: 420rem
+    +media(1440)
+        height: 470rem
 
 .click-category
     position: relative
