@@ -26,20 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //прокрутка хедера доверху і донизу
     if (document.querySelector(".header-navigation")) {
-        // window.addEventListener("scroll", function () {
-        //     let currentScroll = window.pageYOffset || document.documentElement.scrollTop
-        //     const header = document.querySelector(".header-navigation")
-        //     if (currentScroll > 180) {
-        //         if (currentScroll > lastScrollTop) {
-        //             header.style.top = "-100%"
-        //         } else {
-        //             header.style.top = "0"
-        //         }
-        //     } else {
-        //         header.style.top = "0"
-        //     }
-        //     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll
-        // }, false)
         let lastScrollTop = 0
         const headerNavigation = document.querySelector(".header-navigation"),
             burger = document.querySelector("#burger")
@@ -118,8 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (!document.querySelector(".incorrect-number")) {
                         userPhoneInput.classList.add("incorrect-number")
                     }
-
-
                 }
             }
 
@@ -215,6 +199,57 @@ document.addEventListener("DOMContentLoaded", function () {
     // galleryImgHeight()
 
     // document.addEventListener("resize", galleryImgHeight)
+
+    if(document.querySelector(".sub-menu")) {
+        const subMenu = document.querySelector(".sub-menu"),
+            subMenuBlock = document.querySelector(".sub-menu-block"),
+            screenSize = window.innerWidth
+
+        if(screenSize < 1024) {
+            let clickCount = 0
+            subMenu.addEventListener('click', function (e) {
+                e.preventDefault()
+                clickCount++
+                if(clickCount == 1) {
+                    subMenuBlock.style.display = "block"
+                } else {
+                    subMenuBlock.style.display = "none"
+                    clickCount = 0
+                }
+            })
+
+        }
+
+        subMenu.addEventListener("mouseenter", function () {
+            subMenuBlock.style.display = "block"
+
+            if(screenSize >= 1024) {
+                subMenu.style.color = "#fff"
+                subMenu.style.backgroundColor = "rgb(33, 158, 188)"
+                subMenu.style.border = "1px solid rgb(33, 158, 188)"
+            }
+        })
+    
+        subMenu.addEventListener("mouseleave", function (e) {
+            if (!subMenuBlock.contains(e.relatedTarget)) {
+                subMenuBlock.style.display = "none"
+                subMenu.style.color = ""
+                subMenu.style.backgroundColor = ""
+                subMenu.style.border = ""
+            }
+        })
+        
+        subMenuBlock.addEventListener("mouseleave", function (e) {
+            if (!subMenu.contains(e.relatedTarget)) {
+                subMenuBlock.style.display = "none"
+                subMenu.style.color = ""
+                subMenu.style.backgroundColor = ""
+                subMenu.style.border = ""
+            }
+        })
+    }
+    
+    
 
     // карусель на головний екран
     if(document.querySelector('.carousel')) {

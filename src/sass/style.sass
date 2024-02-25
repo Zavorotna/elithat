@@ -234,7 +234,8 @@ input
         display: grid
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr
         width: 100%
-        a
+        max-height: 67px
+        .btn-nav
             display: block
             width: 100%
             padding: 15rem 0
@@ -249,12 +250,67 @@ input
                 color: #fff
                 border: 1px solid rgb(33, 158, 188)
                 background: rgb(33, 158, 188)
+
 .first-child
     +media(1024)
         border-left: 1px solid #1e1e1e
         border-radius: 10rem 0 0 10rem
+
 .last-child
     border-radius: 0 10rem 10rem 0
+
+.sub-menu
+    position: relative
+        
+ul.sub-menu-block
+    display: none
+    +media(1024)
+        position: absolute
+        top: calc(100% - px)
+        left: 50%
+        transform: translateX(-50%)
+        background-color: #fff
+        padding: 10px 25px
+        width: 100%
+        max-width: 145rem
+        max-height: 190rem
+        border-left: 1px solid #1E1E1E
+        border-right: 1px solid #1E1E1E
+        border-bottom: 1px solid #1E1E1E
+        box-sizing: border-box
+    li
+        padding: 0
+    a
+        position: relative
+        display: inline-block
+        padding: 0
+        font-size: 15rem
+        font-weight: 400
+        color: #1e1e1e
+        border: none
+        text-transform: lowercase
+        +media(1024)
+            text-transform: none
+            left: 50%
+            transform: translate(-50%)
+            font-size: 14rem
+            margin-bottom: 5rem
+        &::after
+            content: ""
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 100%
+            height: 1rem
+            border-bottom: 1rem solid rgb(33, 158, 188)
+            opacity: 0
+            transition: opacity 0.35s, transform 0.35s
+            transform: scale(0.1)
+        &:hover
+            color: rgb(33, 158, 188)
+        &:hover::after
+            opacity: 1
+            transform: scale(1)
 
 ul.activemobile
     position: absolute
@@ -268,22 +324,22 @@ ul.activemobile
     z-index: 4
     li
         border: none
-        a
-            position: relative
-            display: block
-            padding: 15rem 0
-            text-align: left
-            color: rgb(30, 30, 30)
-            font-size: 16px
-            font-weight: 500
-            line-height: 1.4em
-            &::before
-                content: ''
-                position: absolute
-                bottom: 0
-                left: 0
-                width: 100%
-                border-bottom: 1px solid rgb(180, 180, 180)
+    .btn-nav
+        position: relative
+        display: block
+        padding: 15rem 0
+        text-align: left
+        color: rgb(30, 30, 30)
+        font-size: 16px
+        font-weight: 500
+        line-height: 1.4em
+        &::before
+            content: ''
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 100%
+            border-bottom: 1px solid rgb(180, 180, 180)
 
 a.phone-mobile
     position: absolute
@@ -432,8 +488,9 @@ a.phone-mobile
         text-align: center
 
 .category-block-main
-    column-gap: 40rem
+    width: 100%
     row-gap: 30rem
+    column-gap: 40rem
     flex-wrap: wrap
     justify-content: center
     > div
@@ -474,8 +531,17 @@ a.phone-mobile
     background-size: 100%
 
 .liquid
+    display: inline-block
     position: relative
+    width: 100%
+    height: 120px
     z-index: 1
+    +media(768)
+        height: 70px
+    +media(1024)
+        height: 100px
+    +media(1200)
+        height: 150px
 
 .left-vector,
 .right-vector
@@ -488,26 +554,12 @@ a.phone-mobile
             width: 15vw
 
 .left-vector
-    left: -2vw
-    bottom: -18vh
-    +media(768)
-        bottom: -9vh
-    +media(1024)
-        bottom: -8vh
-    +media(1200)
-        left: -1vw
-        bottom: -15vh
+    left: -10%
+    top: 90%
 
 .right-vector
-    bottom: -14vh
-    right: -3vw
-    +media(768)
-        right: -3vw
-        bottom: -7vh
-    +media(1024)
-        bottom: -6vh
-    +media(1200)
-        bottom: -11vh
+    top: 90%
+    right: -10%
 
 .category-block
     column-gap: 40rem
@@ -536,15 +588,14 @@ a.phone-mobile
     transition: all .5s ease
     position: relative
     width: 100%
-    height: 450px
+    height: 470px
     border-radius: 15px
     background-color: #DDDAD4
     overflow: hidden
-    +media(425)
-        height: 550px
-    +media(728)
-        width: 25vw
-        height: 350rem
+    +media(475)
+        width: 30vw
+    +media(768)
+        height: 250rem
     +media(1024)
         height: 420rem
     +media(1440)
