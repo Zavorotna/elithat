@@ -1113,23 +1113,31 @@ a.phone-mobile
 .catalog-season-block
     position: relative
     width: 100%
-    min-width: 195rem
+    min-width: 250rem
     border-radius: 10px
     border: 2px solid rgba(1, 1, 1, 0)
     padding: 63rem 0rem 63rem 20%
     box-sizing: border-box
-    +media(1150)
-        min-width: 225rem
-    +media(1300)
-        min-width: 250rem
-    +media(1520)
-        min-width: 300rem
-    +media(1700)
-        min-width: 330rem
-    +media(1800)
-        min-width: 350rem
+    overflow: hidden
+    
     +media(1900)
         min-width: 360rem
+    +media(1800)
+        min-width: 350rem
+    +media(1700)
+        min-width: 330rem
+    +media(1520)
+        min-width: 300rem
+    +media(1300)
+        min-width: 250rem
+    +media(1150)
+        min-width: 225rem
+    +media(1100)
+        min-width: 380rem
+    +media(890)
+        min-width: 350rem
+    +media(760)
+        min-width: 300rem
     span
         position: relative
         color: rgb(255, 255, 255)
@@ -1145,6 +1153,12 @@ a.phone-mobile
         position: absolute
         bottom: 0
         right: 5%
+        +media(1150)
+            right: -5%
+        +media(1300)
+            right: 0
+        +media(1500)
+            right: 5%
 
 .catalog-summer,
 .catalog-autumn,
@@ -1154,16 +1168,16 @@ a.phone-mobile
     background-repeat: no-repeat
 
 .catalog-summer
-    background-image: url(../img/catalog-season-1.webp)
+    background-image: url(../img/catalog-season-1.svg)
 
 .catalog-autumn
-    background-image: url(../img/catalog-season-2.webp)
+    background-image: url(../img/catalog-season-2.svg)
 
 .catalog-winter
-    background-image: url(../img/catalog-season-3.webp)
+    background-image: url(../img/catalog-season-3.svg)
 
 .catalog-spring
-    background-image: url(../img/catalog-season-4.webp)
+    background-image: url(../img/catalog-season-4.svg)
 
 .sort
     column-gap: 20px
@@ -1407,6 +1421,8 @@ input[type=range]::-webkit-slider-runnable-track
         span
             color: rgb(188, 33, 95)
     h1
+        font-size: 48rem
+        padding: 0
         margin-bottom: 40rem
         +media(1024)
             margin-bottom: 0rem
@@ -1493,9 +1509,11 @@ input[type=range]::-webkit-slider-runnable-track
         text-align: center
 
 .advantages-bg
-    background-image: url(../img/about-us-advantage-banner.jpg)
+    background-image: url(../img/main-bgc.svg)
     background-size: cover
     background-repeat: no-repeat
+    background-position-y: -10vw
+    background-position-x: center
     padding: 100px 0
 
 .mobile-filter a
@@ -1512,7 +1530,7 @@ input[type=range]::-webkit-slider-runnable-track
     text-transform: uppercase
     background-color: #4e98b6
     border-radius: 3rem 0 0 3rem
-    z-index: 8
+    z-index: 1
     +media(913)
         display: none
 
@@ -1548,7 +1566,7 @@ input[type=range]::-webkit-slider-runnable-track
     img
         height: 70vw
         object-fit: cover
-        +media(1280)
+        +media(1285)
             height: 31.25vw
 .product-description
     h1
@@ -2474,3 +2492,6 @@ p.made-in
     top: 50rem
     right: 50px
     cursor: pointer
+
+.body-overflow-x
+    overflow-x: hidden
