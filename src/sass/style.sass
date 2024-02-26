@@ -1164,7 +1164,7 @@ a.phone-mobile
         width: 110px
         height: 146px
         position: absolute
-        bottom: 0
+        bottom: -6px
         right: 5%
         +media(1150)
             right: -5%
@@ -1197,15 +1197,23 @@ a.phone-mobile
         background-size: 210%
 
 .catalog-summer
+    border: 2px solid rgb(48, 188, 33)
+    border-bottom: none
     background-image: url(../img/catalog-season-1.svg)
 
 .catalog-autumn
+    border: 2px solid rgb(203, 199, 193)
+    border-bottom: none
     background-image: url(../img/catalog-season-2.svg)
 
 .catalog-winter
+    border: 2px solid rgb(33, 158, 188)
+    border-bottom: none
     background-image: url(../img/catalog-season-3.svg)
 
 .catalog-spring
+    border: 2px solid rgb(188, 33, 95)
+    border-bottom: none
     background-image: url(../img/catalog-season-4.svg)
 
 .sort
@@ -1294,12 +1302,12 @@ a.phone-mobile
     background-image: url(../img/filter-arrow.svg)
     background-repeat: no-repeat
     top: 50%
-    transform: translateY(-50%)
+    transform: translateY(-50%) rotate(-180deg)
     right: 0
     cursor: pointer
     transition: 0.5s
 .filter-arrow.active-filter
-    transform: translateY(-50%) rotate(180deg)
+    transform: translateY(-50%) rotate(0deg)
 
 .filter-and-catalog
     column-gap: 20px
@@ -2521,10 +2529,6 @@ p.made-in
     top: 50rem
     right: 50px
     cursor: pointer
-
-.body-overflow-x
-    width: 100vw
-    overflow-x: hidden
 
 .catalog-wrapper
     overflow: hidden

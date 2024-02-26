@@ -7,240 +7,239 @@ html(lang="uk")
         title Elithat
     body 
         include components/mixins
-        .body-overflow-x
-            header.header
-                +privacyPopup()
-                .header-block#up
-                    +headerNavigation(navigation)
-            main 
-                .mobile-filter 
-                    a(href="#") Фільтр
-                section.catalog
-                    h2 Каталог
-                    form(action="#" method="post") 
-                        .flex-between.category-block.flex-wrap.catalog-wrapper
-                            div 
-                                input(type="radio", name="season", id="summerSeason")
-                                label(for="summerSeason") 
-                                    .catalog-season-block.catalog-summer
-                                        span літо
-                                        img(src="img/catalog-season-summer.webp", alt="")
-                            div 
-                                input(type="radio", name="season", id="autumnSeason")
-                                label(for="autumnSeason") 
-                                    .catalog-season-block.catalog-autumn
-                                        span осінь
-                                        img(src="img/autumn-proposition2.webp", alt="")
-                            div 
-                                input(type="radio", name="season", id="winterSeason")
-                                label(for="winterSeason") 
-                                    .catalog-season-block.catalog-winter
-                                        span зима
-                                        img(src="img/winter-proposition-2.webp", alt="")
-                            div
-                                input(type="radio", name="season", id="springSeason")
-                                label(for="springSeason") 
-                                    .catalog-season-block.catalog-spring
-                                        span весна
-                                        img(src="img/spring-proposition-2.webp", alt="")
-                section.wrapper.d-flex.sort
-                    .filter 
-                    .sorting-filters.items-center
-                        .d-flex 
-                            a(href="#").green топ продажів
-                            a(href="#").blue новинки
-                            a(href="#").violet акції
-                        .sort-select.d-flex.items-center 
-                            span сортувати 
-                            .select-parent
-                                form(action="") 
-                                    select(name="")
-                                        option(value="actual") найактуальніші
-                section.wrapper.filter-and-catalog.flex-between 
+        header.header
+            +privacyPopup()
+            .header-block#up
+                +headerNavigation(navigation)
+        main 
+            .mobile-filter 
+                a(href="#") Фільтр
+            section.catalog
+                h2 Каталог
+                form(action="#" method="post") 
+                    .flex-between.category-block.flex-wrap.catalog-wrapper
+                        div 
+                            input(type="radio", name="season", id="summerSeason")
+                            label(for="summerSeason") 
+                                .catalog-season-block.catalog-summer
+                                    span літо
+                                    img(src="img/catalog-season-summer.webp", alt="")
+                        div 
+                            input(type="radio", name="season", id="autumnSeason")
+                            label(for="autumnSeason") 
+                                .catalog-season-block.catalog-autumn
+                                    span осінь
+                                    img(src="img/autumn-proposition2.webp", alt="")
+                        div 
+                            input(type="radio", name="season", id="winterSeason")
+                            label(for="winterSeason") 
+                                .catalog-season-block.catalog-winter
+                                    span зима
+                                    img(src="img/winter-proposition-2.webp", alt="")
+                        div
+                            input(type="radio", name="season", id="springSeason")
+                            label(for="springSeason") 
+                                .catalog-season-block.catalog-spring
+                                    span весна
+                                    img(src="img/spring-proposition-2.webp", alt="")
+            section.wrapper.d-flex.sort
+                .filter 
+                .sorting-filters.items-center
+                    .d-flex 
+                        a(href="#").green топ продажів
+                        a(href="#").blue новинки
+                        a(href="#").violet акції
+                    .sort-select.d-flex.items-center 
+                        span сортувати 
+                        .select-parent
+                            form(action="") 
+                                select(name="")
+                                    option(value="actual") найактуальніші
+            section.wrapper.filter-and-catalog.flex-between 
+                form(action="") 
+                    .filter#filter
+                        .close-filter-btn
+                        h3 Фільтр
+                        .filter-item
+                            .relative
+                                span Стать
+                                .filter-arrow
+                            .filter-inputs
+                                p
+                                    input.style-input(type="checkbox" name="gender" id="old")
+                                    label.style-label(for="old") Дівчинка  
+                                        span.how-many-products (140)
+                        hr
+                        .filter-item
+                            .relative
+                                span Виробник
+                                .filter-arrow
+                            .filter-inputs
+                                p
+                                    input.style-input(type="checkbox" name="brand" id="brand1")
+                                    label.style-label(for="brand1") Appaman   
+                                        span.how-many-products (140)
+                        hr
+                        .filter-item
+                            .relative
+                                span Країна виробник
+                                .filter-arrow
+                            .filter-inputs
+                                p
+                                    input.style-input(type="checkbox" name="country" id="ukraine")
+                                    label.style-label(for="ukraine") Україна    
+                                        span.how-many-products (140)
+                        hr
+                        .filter-item
+                            .relative
+                                span Розмір
+                                .filter-arrow
+                            .filter-inputs.product-sizes.sizes-inputs
+                                input(type="checkbox", name="size" id="product3-size38")
+                                label(for="product3-size38") 38
+                                
+                        hr
+                        .filter-item
+                            .relative
+                                span Ціна
+                                .filter-arrow
+                            .filter-inputs.relative
+                                section.range-slider
+                                    input#min.form-range(value='500' min='500' max='50000' step='500' type='range')
+                                    input#max.form-range(value='50000' min='500' max='50000' step='500' type='range')
+                                .range-info
+                                    label#min-lbl 0 грн
+                                    label#max-lbl 10000 грн
+                        hr
+                        .filter-item
+                            .relative
+                                span Вік
+                                .filter-arrow
+                            .filter-inputs
+                                p
+                                    input.style-input(type="checkbox" name="old" id="old1")
+                                    label.style-label(for="old1") 0-6 місяців 
+                                        span.how-many-products (140)
+                        hr
+                        .filter-item
+                            .relative
+                                span Вид
+                                .filter-arrow
+                            .filter-inputs
+                                p
+                                    input.style-input(type="checkbox" name="type" id="type1")
+                                    label.style-label(for="type1") Шапки  
+                                        span.how-many-products (140)
+                        hr
+                .catalog-products
+                    .products-list
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .girl-product 
+                                    span для дівчинки
+                                img(src="img/card-image1.jpg", alt="")
+                            figcaption 
+                                h3 Зимова шапка-шолом дитяча 
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="#" method="post") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product-size38")
+                                            label(for="product-size38") 38
+                                            input(type="checkbox", name="size" id="product-size39")
+                                            label(for="product-size39") 39
+                                            input(type="checkbox", name="size" id="product-size40")
+                                            label(for="product-size40") 40
+                                            input(type="checkbox", name="size" id="product-size41")
+                                            label(for="product-size41") 41
+                                            input(type="checkbox", name="size" id="product-size42")
+                                            label(for="product-size42") 42
+                                            input(type="checkbox", name="size" id="product-size43")
+                                            label(for="product-size43") 43
+                                            input(type="checkbox", name="size" id="product-size44")
+                                            label(for="product-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .boy-product
+                                    span для хлопчика
+                                img(src="img/card-image-2.jpg", alt="")
+                            figcaption 
+                                h3 літня шапка-панамка дитяча
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product2-size38")
+                                            label(for="product2-size38") 38
+                                            input(type="checkbox", name="size" id="product-size39")
+                                            label(for="product2-size39") 39
+                                            input(type="checkbox", name="size" id="product2-size40")
+                                            label(for="product2-size40") 40
+                                            input(type="checkbox", name="size" id="product2-size41")
+                                            label(for="product2-size41") 41
+                                            input(type="checkbox", name="size" id="product2-size42")
+                                            label(for="product2-size42") 42
+                                            input(type="checkbox", name="size" id="product2-size43")
+                                            label(for="product2-size43") 43
+                                            input(type="checkbox", name="size" id="product2-size44")
+                                            label(for="product2-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .universal-product
+                                    span універсальна
+                                img(src="img/card-image-3.jpg", alt="")
+                            figcaption 
+                                h3 Зимова шапка-шолом дитяча 
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product3-size38")
+                                            label(for="product3-size38") 38
+                                            input(type="checkbox", name="size" id="product3-size39")
+                                            label(for="product3-size39") 39
+                                            input(type="checkbox", name="size" id="product3-size40")
+                                            label(for="product3-size40") 40
+                                            input(type="checkbox", name="size" id="product3-size41")
+                                            label(for="product3-size41") 41
+                                            input(type="checkbox", name="size" id="product3-size42")
+                                            label(for="product3-size42") 42
+                                            input(type="checkbox", name="size" id="product3-size43")
+                                            label(for="product3-size43") 43
+                                            input(type="checkbox", name="size" id="product3-size44")
+                                            label(for="product3-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
                     form(action="") 
-                        .filter#filter
-                            .close-filter-btn
-                            h3 Фільтр
-                            .filter-item
-                                .relative
-                                    span Стать
-                                    .filter-arrow
-                                .filter-inputs
-                                    p
-                                        input.style-input(type="checkbox" name="gender" id="old")
-                                        label.style-label(for="old") Дівчинка  
-                                            span.how-many-products (140)
-                            hr
-                            .filter-item
-                                .relative
-                                    span Виробник
-                                    .filter-arrow
-                                .filter-inputs
-                                    p
-                                        input.style-input(type="checkbox" name="brand" id="brand1")
-                                        label.style-label(for="brand1") Appaman   
-                                            span.how-many-products (140)
-                            hr
-                            .filter-item
-                                .relative
-                                    span Країна виробник
-                                    .filter-arrow
-                                .filter-inputs
-                                    p
-                                        input.style-input(type="checkbox" name="country" id="ukraine")
-                                        label.style-label(for="ukraine") Україна    
-                                            span.how-many-products (140)
-                            hr
-                            .filter-item
-                                .relative
-                                    span Розмір
-                                    .filter-arrow
-                                .filter-inputs.product-sizes.sizes-inputs
-                                    input(type="checkbox", name="size" id="product3-size38")
-                                    label(for="product3-size38") 38
-                                    
-                            hr
-                            .filter-item
-                                .relative
-                                    span Ціна
-                                    .filter-arrow
-                                .filter-inputs.relative
-                                    section.range-slider
-                                        input#min.form-range(value='500' min='500' max='50000' step='500' type='range')
-                                        input#max.form-range(value='50000' min='500' max='50000' step='500' type='range')
-                                    .range-info
-                                        label#min-lbl 0 грн
-                                        label#max-lbl 10000 грн
-                            hr
-                            .filter-item
-                                .relative
-                                    span Вік
-                                    .filter-arrow
-                                .filter-inputs
-                                    p
-                                        input.style-input(type="checkbox" name="old" id="old1")
-                                        label.style-label(for="old1") 0-6 місяців 
-                                            span.how-many-products (140)
-                            hr
-                            .filter-item
-                                .relative
-                                    span Вид
-                                    .filter-arrow
-                                .filter-inputs
-                                    p
-                                        input.style-input(type="checkbox" name="type" id="type1")
-                                        label.style-label(for="type1") Шапки  
-                                            span.how-many-products (140)
-                            hr
-                    .catalog-products
-                        .products-list
-                            figure 
-                                .relative
-                                    a.product-redirect(href="product-card.html") 
-                                    .girl-product 
-                                        span для дівчинки
-                                    img(src="img/card-image1.jpg", alt="")
-                                figcaption 
-                                    h3 Зимова шапка-шолом дитяча 
-                                    p.made-in країна-виробник: 
-                                        span Китай
-                                    .flex-between.product-sizes.items-center
-                                        span розміри:
-                                        form(action="#" method="post") 
-                                            .sizes-inputs
-                                                input(type="checkbox", name="size" id="product-size38")
-                                                label(for="product-size38") 38
-                                                input(type="checkbox", name="size" id="product-size39")
-                                                label(for="product-size39") 39
-                                                input(type="checkbox", name="size" id="product-size40")
-                                                label(for="product-size40") 40
-                                                input(type="checkbox", name="size" id="product-size41")
-                                                label(for="product-size41") 41
-                                                input(type="checkbox", name="size" id="product-size42")
-                                                label(for="product-size42") 42
-                                                input(type="checkbox", name="size" id="product-size43")
-                                                label(for="product-size43") 43
-                                                input(type="checkbox", name="size" id="product-size44")
-                                                label(for="product-size44") 44
-                                    .price.d-flex.items-center
-                                        b 459 грн
-                                        span.old-price 560 грн
-                                    a(href="#").cta до кошика
-                            figure 
-                                .relative
-                                    a.product-redirect(href="product-card.html") 
-                                    .boy-product
-                                        span для хлопчика
-                                    img(src="img/card-image-2.jpg", alt="")
-                                figcaption 
-                                    h3 літня шапка-панамка дитяча
-                                    p.made-in країна-виробник: 
-                                        span Китай
-                                    .flex-between.product-sizes.items-center
-                                        span розміри:
-                                        form(action="") 
-                                            .sizes-inputs
-                                                input(type="checkbox", name="size" id="product2-size38")
-                                                label(for="product2-size38") 38
-                                                input(type="checkbox", name="size" id="product-size39")
-                                                label(for="product2-size39") 39
-                                                input(type="checkbox", name="size" id="product2-size40")
-                                                label(for="product2-size40") 40
-                                                input(type="checkbox", name="size" id="product2-size41")
-                                                label(for="product2-size41") 41
-                                                input(type="checkbox", name="size" id="product2-size42")
-                                                label(for="product2-size42") 42
-                                                input(type="checkbox", name="size" id="product2-size43")
-                                                label(for="product2-size43") 43
-                                                input(type="checkbox", name="size" id="product2-size44")
-                                                label(for="product2-size44") 44
-                                    .price.d-flex.items-center
-                                        b 459 грн
-                                        span.old-price 560 грн
-                                    a(href="#").cta до кошика
-                            figure 
-                                .relative
-                                    a.product-redirect(href="product-card.html") 
-                                    .universal-product
-                                        span універсальна
-                                    img(src="img/card-image-3.jpg", alt="")
-                                figcaption 
-                                    h3 Зимова шапка-шолом дитяча 
-                                    p.made-in країна-виробник: 
-                                        span Китай
-                                    .flex-between.product-sizes.items-center
-                                        span розміри:
-                                        form(action="") 
-                                            .sizes-inputs
-                                                input(type="checkbox", name="size" id="product3-size38")
-                                                label(for="product3-size38") 38
-                                                input(type="checkbox", name="size" id="product3-size39")
-                                                label(for="product3-size39") 39
-                                                input(type="checkbox", name="size" id="product3-size40")
-                                                label(for="product3-size40") 40
-                                                input(type="checkbox", name="size" id="product3-size41")
-                                                label(for="product3-size41") 41
-                                                input(type="checkbox", name="size" id="product3-size42")
-                                                label(for="product3-size42") 42
-                                                input(type="checkbox", name="size" id="product3-size43")
-                                                label(for="product3-size43") 43
-                                                input(type="checkbox", name="size" id="product3-size44")
-                                                label(for="product3-size44") 44
-                                    .price.d-flex.items-center
-                                        b 459 грн
-                                        span.old-price 560 грн
-                                    a(href="#").cta до кошика
-                        form(action="") 
-                            .pagination-btns.d-flex.items-center 
-                                button(type="submit" name="paginationLeft").pagination-to-left  
-                                button(type="submit" name="pagination").page-num.current-pagination-page 1
-                                button(type="submit" name="pagination").page-num 2
-                                button(type="submit" name="pagination").page-num 3
-                                button(type="submit" name="pagination").page-num ...
-                                button(type="submit" name="pagination").page-num 20
-                                button(type="submit" name="paginationRight").pagination-to-right  
+                        .pagination-btns.d-flex.items-center 
+                            button(type="submit" name="paginationLeft").pagination-to-left  
+                            button(type="submit" name="pagination").page-num.current-pagination-page 1
+                            button(type="submit" name="pagination").page-num 2
+                            button(type="submit" name="pagination").page-num 3
+                            button(type="submit" name="pagination").page-num ...
+                            button(type="submit" name="pagination").page-num 20
+                            button(type="submit" name="paginationRight").pagination-to-right  
 
-            footer 
-                +footerNavigation(footerNav)
+        footer 
+            +footerNavigation(footerNav)
             
         script(src="js/scripts.js")
