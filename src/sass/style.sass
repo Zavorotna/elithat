@@ -1127,7 +1127,8 @@ a.phone-mobile
     padding: 63rem 0rem 63rem 20%
     box-sizing: border-box
     overflow: hidden
-    background-position: -20px
+    background-position-x: -20px
+    background-position-y: -20px
     margin: auto
     +media(1900)
         min-width: 360rem
@@ -1176,8 +1177,24 @@ a.phone-mobile
 .catalog-autumn,
 .catalog-winter,
 .catalog-spring
-    background-size: cover
+    background-size: 160%
     background-repeat: no-repeat
+    +media(1800)
+        background-size: 140%
+    +media(1700)
+        background-size: 150%
+    +media(1520)
+        background-size: 170%
+    +media(1150)
+        background-size: 210%
+    +media(890)
+        background-size: 140%
+    +media(760)
+        background-size: 170%
+    +media(660)
+        background-size: 190%
+    +media(505)
+        background-size: 210%
 
 .catalog-summer
     background-image: url(../img/catalog-season-1.svg)
