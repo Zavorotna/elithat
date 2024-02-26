@@ -246,15 +246,23 @@ input
             border-top: 1px solid #1e1e1e
             border-bottom: 1px solid #1e1e1e
             border-right: 1px solid #1e1e1e
+            border-left: 1px solid transpatent
+            box-sizing: border-box
             &:hover
                 color: #fff
-                border: 1px solid rgb(33, 158, 188)
+                box-sizing: border-box
+                border-top: 1px solid rgb(33, 158, 188)
+                border-bottom: 1px solid rgb(33, 158, 188)
+                border-right: 1px solid rgb(33, 158, 188)
                 background: rgb(33, 158, 188)
 
 .first-child
     +media(1024)
         border-left: 1px solid #1e1e1e
         border-radius: 10rem 0 0 10rem
+        &:hover
+            border-left: 1px solid rgb(33, 158, 188)
+            
 
 .last-child
     border-radius: 0 10rem 10rem 0
