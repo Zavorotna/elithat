@@ -1120,7 +1120,7 @@ a.phone-mobile
 
 .catalog-season-block
     position: relative
-    width: 100%
+    width: 80%
     min-width: 250rem
     border-radius: 11px
     border: 2px solid rgba(1, 1, 1, 0)
@@ -1128,7 +1128,7 @@ a.phone-mobile
     box-sizing: border-box
     overflow: hidden
     background-position: -20px
-    
+    margin: auto
     +media(1900)
         min-width: 360rem
     +media(1800)
@@ -1147,6 +1147,9 @@ a.phone-mobile
         min-width: 350rem
     +media(760)
         min-width: 300rem
+    +media(505)
+        width: 100%
+        margin: 0
     span
         position: relative
         color: rgb(255, 255, 255)
@@ -2505,3 +2508,10 @@ p.made-in
 .body-overflow-x
     width: 100vw
     overflow-x: hidden
+
+.catalog-wrapper
+    overflow: hidden
+    +media(505)
+        margin: 0 auto
+        padding: 0 15rem
+        width: 81%
