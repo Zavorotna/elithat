@@ -586,6 +586,7 @@ a.phone-mobile
     input
         appearance: none
         position: absolute
+        width: 0
     label
         width: 100%
         border: 2px solid transparent
@@ -1231,7 +1232,7 @@ a.phone-mobile
         left: 0
         z-index: 15
         width: 25%
-        min-width: 310px
+        min-width: 310rem
         overflow-y: scroll
         overflow-x: hidden
         // box-sizing: border-box
@@ -1385,10 +1386,12 @@ input[type=range]::-webkit-slider-runnable-track
         justify-content: space-between
     a
         color: rgb(188, 33, 95)
-        font-size: 18rem
+        font-size: 15rem
         font-weight: 700
         line-height: 1.2em
         text-transform: uppercase
+        +media(365)
+            font-size: 18rem
     .green
         color: rgb(48, 188, 33)
     .blue
@@ -2536,3 +2539,19 @@ p.made-in
         margin: 0 auto
         padding: 0 15rem
         width: 81%
+
+
+.body-overflow-x
+    width: 100vw
+    overflow-x: hidden
+    +media(505)
+        width: auto
+        
+.filter-and-catalog__form--mobile-hidden
+    width: 0
+    height: 0
+    position: absolute
+    +media(912)
+        position: static
+        width: auto
+        height: auto
