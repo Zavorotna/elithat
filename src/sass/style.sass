@@ -1232,7 +1232,7 @@ a.phone-mobile
         left: 0
         z-index: 15
         width: 25%
-        min-width: 310px
+        min-width: 310rem
         overflow-y: scroll
         overflow-x: hidden
         // box-sizing: border-box
@@ -2545,3 +2545,9 @@ p.made-in
     +media(505)
         width: auto
         
+.filter-and-catalog__form--mobile-hidden
+    width: 0
+    height: 0
+    position: absolute
+    +media(912)
+        position: static
