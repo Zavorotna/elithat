@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    if (document.querySelector(".issue-order")) {
+    if (document.querySelector(".order-page")) {
         function isValidPhoneNumber(phoneNumber) {
             // Регулярний вираз для перевірки формату номеру телефону +380xxxxxxxxx
             const phoneRegex = /\+380[0-9]{9}$/;
