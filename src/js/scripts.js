@@ -154,11 +154,10 @@ document.addEventListener("DOMContentLoaded", function () {
             sections = document.querySelectorAll(".scrollBurger"),
             phoneMobile = document.querySelector(".phone-mobile"),
             blurPage = document.querySelector(".blur-page")
-
-
+    
         burger.addEventListener('click', function () {
-            burger.classList.toggle('active'),
-                mobileMenu.classList.toggle('activemobile')
+            burger.classList.add('active'),
+            mobileMenu.classList.add('activemobile')
             if (mobileMenu.classList.contains('activemobile') && burger.classList.contains("active")) {
                 mobileMenu.style.left = "0"
                 burger.style.left = "55%"
@@ -167,25 +166,36 @@ document.addEventListener("DOMContentLoaded", function () {
                 blurPage.style.display = "block"
                 burger.classList.remove("noactive")
             } else {
-                burger.classList.add("noactive")
-                mobileMenu.style.left = "-100%"
-                burger.style.left = "0"
-                phoneMobile.style.left = "-100%"
-                blurPage.style.display = "none"
+                closeMenu()
             }
         })
-
+        
+        blurPage.addEventListener("click", function () {
+            closeMenu()
+        })
+        
         window.addEventListener('scroll', function () {
             sections.forEach(section => {
                 const rect = section.getBoundingClientRect()
-
+                
                 if (rect.top <= 0 && rect.bottom >= 0) {
                     burger.classList.remove('active')
                     mobileMenu.classList.remove('activemobile')
                 }
             })
         })
+        
+        function closeMenu() {
+            burger.classList.remove('active'),
+            burger.classList.add("noactive")
+            mobileMenu.classList.remove('activemobile')
+            mobileMenu.style.left = "-100%"
+            burger.style.left = "0"
+            phoneMobile.style.left = "-100%"
+            blurPage.style.display = "none"
+        }
     }
+    
 
     // function galleryImgHeight () {
     //     if (document.querySelector(".products-sm")) {
