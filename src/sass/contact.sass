@@ -58,34 +58,25 @@
         left: 0
         transform: translateY(-50%)
 
-.phone-icon
-    &::before
+.phone-icon,
+.email-icon,
+.adress-name
+    position: relative
+    &:hover
+        path
+            fill: rgb(188, 33, 95)
+    path
         transition: all .5s ease
-        width: 20px
-        height: 20px
-        background: url(../img/phone-icon.svg) no-repeat
-    &:hover::before
-        background: url(../img/phone-icon-svg.svg) no-repeat
+    svg
+        position: absolute
+        top: 0
+        left: 0
 
-.email-icon
-    &::before
-        transition: all .5s ease
-        width: 20px
-        height: 15px
-        background: url(../img/email.svg) no-repeat
-    &:hover::before
-        background: url(../img/email-svg.svg) no-repeat
 
 p.adress-name
     font-size: 17rem
     padding-left: 20px
-    &::before
-        transition: all .5s ease
-        width: 15px
-        height: 20px
-        background: url(../img/map.svg) no-repeat
-    &:hover::before
-        background: url(../img/map-svg.svg) no-repeat
+
 
 .map
     position: relative
