@@ -713,6 +713,9 @@ a.phone-mobile
 .sizes-inputs
     display: flex
     input
+        width: 0
+        height: 0
+        position: absolute
         appearance: none
     input:checked + label
         border: 1px solid rgb(43, 45, 66)
@@ -1178,42 +1181,31 @@ a.phone-mobile
 .catalog-autumn,
 .catalog-winter,
 .catalog-spring
-    background-size: 160%
+    background-size: auto 120%
     background-repeat: no-repeat
-    +media(1800)
-        background-size: 140%
-    +media(1700)
-        background-size: 150%
-    +media(1520)
-        background-size: 170%
-    +media(1150)
-        background-size: 210%
-    +media(890)
-        background-size: 140%
-    +media(760)
-        background-size: 170%
-    +media(660)
-        background-size: 190%
-    +media(505)
-        background-size: 210%
+
 
 .catalog-summer
     border: 2px solid rgb(48, 188, 33)
+    background-color: rgb(48, 188, 33)
     border-bottom: none
     background-image: url(../img/catalog-season-1.svg)
 
 .catalog-autumn
     border: 2px solid rgb(203, 199, 193)
+    background-color: rgb(203, 199, 193)
     border-bottom: none
     background-image: url(../img/catalog-season-2.svg)
 
 .catalog-winter
     border: 2px solid rgb(33, 158, 188)
+    background-color: rgb(33, 158, 188)
     border-bottom: none
     background-image: url(../img/catalog-season-3.svg)
 
 .catalog-spring
     border: 2px solid rgb(188, 33, 95)
+    background-color: rgb(188, 33, 95)
     border-bottom: none
     background-image: url(../img/catalog-season-4.svg)
 
@@ -1227,7 +1219,8 @@ a.phone-mobile
         display: none
         background-color: #fff
         padding: 45px 15px
-        height: 90vh
+        height: 100vh
+        // padding-bottom: 100px
         top: 0
         left: 0
         z-index: 15
@@ -1235,7 +1228,7 @@ a.phone-mobile
         min-width: 310rem
         overflow-y: scroll
         overflow-x: hidden
-        // box-sizing: border-box
+        box-sizing: border-box
         +media(1520)
             min-width: 310px
         +media(1440)
@@ -1670,7 +1663,10 @@ input[type=range]::-webkit-slider-runnable-track
 
 .size.select-product-block
     input
+        position: absolute
         appearance: none
+        width: 0
+        height: 0
 
 .size-cell
     color: rgb(30, 30, 30)
