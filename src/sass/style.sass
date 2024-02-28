@@ -1608,10 +1608,19 @@ input[type=range]::-webkit-slider-runnable-track
         flex-direction: column
         justify-content: space-between
         width: 22%
+
         img
             height: 30%
+            min-height: 100px
             object-fit: cover
             border-radius: 5rem
+            +media(425)
+                min-height: 130px
+        &::-webkit-scrollbar
+            width: 2px
+            background-color: transparent
+        &::-webkit-scrollbar-thumb
+            background-color: #219ebc
 .general-img
     width: 75%
     img
@@ -2569,3 +2578,9 @@ p.made-in
         position: static
         width: auto
         height: auto
+
+
+.products-sm 
+    height: 459px
+    overflow-y: scroll
+    overflow-x: hidden

@@ -1,12 +1,30 @@
+function updateImgHeight() {
+    if (document.querySelector(".products-sm")) {
+        console.log(1);
+        let productSm = document.querySelector(".products-sm"),
+            productSmImages = document.querySelectorAll(".products-sm img"),
+            productSmImageHeight = productSmImages[0].clientHeight,
+            generalImg = document.querySelector(".general-img img")
+
+        productSm.style.height = generalImg.clientHeight + "px"
+        console.log(Math.floor(generalImg.clientHeight / productSmImageHeight));
+        let imagesMargin = (generalImg.clientHeight - (productSmImageHeight * Math.floor(generalImg.clientHeight / productSmImageHeight))) / Math.floor(generalImg.clientHeight / productSmImageHeight - 1)
+        console.log(imagesMargin);
+        productSm.style.rowGap = imagesMargin + "px"
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+    updateImgHeight()
     if (document.querySelector(".privacy")) {
-       let privacyBtn = document.querySelector(".privacy"),
+        let privacyBtn = document.querySelector(".privacy"),
             popup = document.querySelector(".popup"),
             closePopup = document.querySelector(".close-popup")
-        function privacyToggle () {
+
+        function privacyToggle() {
             popup.classList.toggle("d-block")
         }
-        privacyBtn.addEventListener("click", function(e) {
+        privacyBtn.addEventListener("click", function (e) {
             e.preventDefault()
             privacyToggle()
         })
@@ -154,10 +172,10 @@ document.addEventListener("DOMContentLoaded", function () {
             sections = document.querySelectorAll(".scrollBurger"),
             phoneMobile = document.querySelector(".phone-mobile"),
             blurPage = document.querySelector(".blur-page")
-    
+
         burger.addEventListener('click', function () {
             burger.classList.add('active'),
-            mobileMenu.classList.add('activemobile')
+                mobileMenu.classList.add('activemobile')
             if (mobileMenu.classList.contains('activemobile') && burger.classList.contains("active")) {
                 mobileMenu.style.left = "0"
                 burger.style.left = "55%"
@@ -169,25 +187,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 closeMenu()
             }
         })
-        
+
         blurPage.addEventListener("click", function () {
             closeMenu()
         })
-        
+
         window.addEventListener('scroll', function () {
             sections.forEach(section => {
                 const rect = section.getBoundingClientRect()
-                
+
                 if (rect.top <= 0 && rect.bottom >= 0) {
                     burger.classList.remove('active')
                     mobileMenu.classList.remove('activemobile')
                 }
             })
         })
-        
+
         function closeMenu() {
             burger.classList.remove('active'),
-            burger.classList.add("noactive")
+                burger.classList.add("noactive")
             mobileMenu.classList.remove('activemobile')
             mobileMenu.style.left = "-100%"
             burger.style.left = "0"
@@ -195,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
             blurPage.style.display = "none"
         }
     }
-    
+
 
     // function galleryImgHeight () {
     //     if (document.querySelector(".products-sm")) {
@@ -210,17 +228,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // document.addEventListener("resize", galleryImgHeight)
 
-    if(document.querySelector(".sub-menu")) {
+    if (document.querySelector(".sub-menu")) {
         const subMenu = document.querySelector(".sub-menu"),
             subMenuBlock = document.querySelector(".sub-menu-block"),
             screenSize = window.innerWidth
 
-        if(screenSize < 1024) {
+        if (screenSize < 1024) {
             let clickCount = 0
             subMenu.addEventListener('click', function (e) {
                 e.preventDefault()
                 clickCount++
-                if(clickCount == 1) {
+                if (clickCount == 1) {
                     subMenuBlock.style.display = "block"
                 } else {
                     subMenuBlock.style.display = "none"
@@ -233,13 +251,13 @@ document.addEventListener("DOMContentLoaded", function () {
         subMenu.addEventListener("mouseenter", function () {
             subMenuBlock.style.display = "block"
 
-            if(screenSize >= 1024) {
+            if (screenSize >= 1024) {
                 subMenu.style.color = "#fff"
                 subMenu.style.backgroundColor = "rgb(33, 158, 188)"
                 subMenu.style.border = "1px solid rgb(33, 158, 188)"
             }
         })
-    
+
         subMenu.addEventListener("mouseleave", function (e) {
             if (!subMenuBlock.contains(e.relatedTarget)) {
                 subMenuBlock.style.display = "none"
@@ -248,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 subMenu.style.border = ""
             }
         })
-        
+
         subMenuBlock.addEventListener("mouseleave", function (e) {
             if (!subMenu.contains(e.relatedTarget)) {
                 subMenuBlock.style.display = "none"
@@ -258,62 +276,62 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
     }
-    
-    
+
+
 
     // карусель на головний екран
-    if(document.querySelector('.carousel')) {
+    if (document.querySelector('.carousel')) {
 
         const carouselPartners = document.querySelector('.carousel')
-    
+
         let itemsImg = [...document.querySelectorAll(".carousel-img")],
             itemImgWidth = itemsImg[0].offsetWidth + 60,
             isAnimatingImg = false
-    
+
         function updateCarouselImg() {
-    
+
             while (carouselPartners.firstChild) {
                 carouselPartners.removeChild(carouselPartners.firstChild)
             }
-    
+
             itemsImg.push(itemsImg.shift())
-    
+
             const firstImg = itemsImg[itemsImg.length - 1].cloneNode(true)
             firstImg.style.left = `${-itemImgWidth}px`
             carouselPartners.insertAdjacentElement("afterbegin", firstImg)
-    
+
             for (let i = 0; i < itemsImg.length; i++) {
                 const cloneImg = itemsImg[i].cloneNode(true)
                 carouselPartners.appendChild(cloneImg)
             }
         }
-    
+
         updateCarouselImg()
-    
+
         function startAutoScroll() {
             autoScrollInterval = setInterval(() => {
-    
+
                 // let distanceImg = -itemImgWidth
-    
+
                 carouselPartners.style.transition = "transform .5s cubic-bezier(0,.8,.45,1.19)"
                 carouselPartners.style.transform = `translateX(${-itemImgWidth}px)`
-    
+
                 isAnimatingImg = true
-    
+
                 setTimeout(() => {
                     carouselPartners.style.transition = "none"
                     carouselPartners.style.transform = `translateX(0)`
                     isAnimatingImg = false
                     updateCarouselImg()
                 }, 500)
-    
+
             }, 2000)
         }
-    
+
         startAutoScroll()
-    
-    
-    
+
+
+
     }
 })
 
@@ -331,3 +349,5 @@ if (document.getElementById('min')) {
         max_l.innerText = max.value + " грн";
     }
 }
+
+window.addEventListener('resize', updateImgHeight)
