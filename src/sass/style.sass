@@ -1591,7 +1591,7 @@ input[type=range]::-webkit-slider-runnable-track
 .product-popup
     display: block
     // justify-content: space-between
-    column-gap: 20px
+    column-gap: 50px
     margin-bottom: 85rem
     padding-top: 50rem
     +media(1285)
@@ -1612,17 +1612,15 @@ input[type=range]::-webkit-slider-runnable-track
         width: 22%
 
         img
+            display: none
             height: 30%
-            min-height: 100px
             object-fit: cover
             border-radius: 5rem
-            +media(425)
-                min-height: 130px
+        .active-img
+            display: block
+
         &::-webkit-scrollbar
-            width: 2px
-            background-color: transparent
-        &::-webkit-scrollbar-thumb
-            background-color: #219ebc
+            display: none
 .general-img
     width: 75%
     img
@@ -2583,6 +2581,86 @@ p.made-in
 
 
 .products-sm 
+    overflow: hidden
     height: 459px
-    overflow-y: scroll
+
+.product-list-slider
+    position: relative
+    column-gap: 0px
+    display: flex
+    flex-wrap: nowrap
+    overflow-y: hidden
     overflow-x: hidden
+    scroll-behavior: smooth
+    &::-webkit-scrollbar
+        display: none
+    figure
+        min-width: 360px
+
+.similar-products 
+    position: relative
+    figure 
+        min-width: 250px
+        +media(390)
+            min-width: 300px
+        +media(810)
+            min-width: 320px
+            margin: 0
+        +media(905)
+            min-width: 360px
+
+.slider-to-left,
+.slider-to-right
+    display: none
+    position: absolute
+    width: 25px
+    height: 25px
+    top: 50%
+    transform: translateY(-50%)
+    background-color: #FFF
+    border: 2px solid #1E1E1E
+    border-radius: 3px
+    z-index: 1
+    transition: 0.5s
+    &::before
+        content: ''
+        position: absolute
+        width: 20px
+        height: 20px
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        background-image: url(../img/filter-arrow.svg)
+        background-repeat: no-repeat
+        background-position: center
+
+.slider-to-left
+    left: -20rem
+    transform: rotate(-90deg)
+    &:hover
+        transform: scale(1.1) rotate(-90deg)
+    +media(390)
+        left: -40rem
+
+.slider-to-right
+    right: -20rem
+    transform: rotate(90deg)
+    &:hover
+        transform: scale(1.1) rotate(90deg)
+    +media(390)
+        right: -40rem
+
+
+
+.gallery-wrapper
+    column-gap: 20px
+    +media(426)
+        column-gap: 40px
+    .slider-to-left
+        left: -15px
+        +media(426)
+            left: -35px
+    .slider-to-right
+        right: -15px
+        +media(426)
+            right: -35px

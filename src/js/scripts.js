@@ -4,15 +4,123 @@ function updateImgHeight() {
         let productSm = document.querySelector(".products-sm"),
             productSmImages = document.querySelectorAll(".products-sm img"),
             productSmImageHeight = productSmImages[0].clientHeight,
-            generalImg = document.querySelector(".general-img img")
+            generalImg = document.querySelector(".general-img img"),
+            slideLeftBtn = document.querySelector(".product-gallery .slider-to-left"), // кнопки перемикання
+            slideRightBtn = document.querySelector(".product-gallery .slider-to-right"), // кнопки перемикання
+            currIndex = 0
+        if (productSmImages.length > 3) {
+            slideLeftBtn.classList.add("d-block")
+            slideRightBtn.classList.add("d-block")
+            productSmImages.forEach(function (e) {
+                e.style.minHeight = generalImg.clientHeight / 3 - 10 + "px"
+                e.style.marginBottom = 15 + "px"
+            })
+        }
+
 
         productSm.style.height = generalImg.clientHeight + "px"
-        console.log(Math.floor(generalImg.clientHeight / productSmImageHeight));
-        let imagesMargin = (generalImg.clientHeight - (productSmImageHeight * Math.floor(generalImg.clientHeight / productSmImageHeight))) / Math.floor(generalImg.clientHeight / productSmImageHeight - 1)
-        console.log(imagesMargin);
-        productSm.style.rowGap = imagesMargin + "px"
+        // console.log(Math.floor(generalImg.clientHeight / productSmImageHeight));
+        // let imagesMargin = (generalImg.clientHeight - (productSmImageHeight * Math.floor(generalImg.clientHeight / productSmImageHeight))) / Math.floor(generalImg.clientHeight / productSmImageHeight - 1)
+        // console.log(imagesMargin);
+        // productSm.style.rowGap = imagesMargin + "px"
+
+        slideRightBtn.addEventListener('click', function () {
+            if (productSmImages[currIndex]) {
+                currIndex += 1
+            }
+            if (productSmImages[currIndex]) {
+                productSmImages[currIndex].click()
+            }
+            if (productSmImages[currIndex + 2]) {
+                productSmImages[currIndex - 1].classList.remove("active-img")
+                productSmImages[currIndex + 2].classList.add("active-img")
+
+            }
+
+        })
+        slideLeftBtn.addEventListener('click', function () {
+            if (productSmImages[currIndex - 1]) {
+                currIndex -= 1
+                console.log(productSmImages[currIndex]);
+                if (productSmImages[currIndex + 3]) {
+                    productSmImages[currIndex + 3].classList.remove("active-img")
+
+                }
+                productSmImages[currIndex].classList.add("active-img")
+            }
+            if (productSmImages[currIndex]) {
+                productSmImages[currIndex].click()
+
+            }
+            // if (productSmImages[currIndex - 2]) {
+                // console.log(productSmImages[currIndex]);
+                // productSmImages[currIndex + 1].classList.remove("active-img")
+                // productSmImages[currIndex - 2].classList.add("active-img")
+
+            // }
+
+
+        })
+
     }
 }
+
+function updateSliderImages() {
+    if (document.querySelector(".product-list-slider")) {
+        let sliderSimilar = document.querySelector(".product-list-slider"), // блок із overflow hidden
+            similarFigures = document.querySelectorAll(".product-list-slider figure"), // карточки в цьому блоці
+            similarFiguresWidth = similarFigures[0].offsetWidth, // ширина однієї карточки
+            howManyCardsToSlide = 1, // по скільки карточок перемикати
+            slideLeftBtn = document.querySelector(".similar-products  .slider-to-left"), // кнопки перемикання
+            slideRightBtn = document.querySelector(".similar-products .slider-to-right"), // кнопки перемикання
+            columnGap;
+        if (similarFigures.length > 3) {
+            slideLeftBtn.classList.add("d-block")
+            slideRightBtn.classList.add("d-block")
+            console.log(similarFiguresWidth);
+            if (window.innerWidth > 768) {
+                // обрахунок відступу між картками: батьківський блок мінус кількість карточок, що у нього вміщаються без скролу, поділений на кількість карток, що у нього вміщаються без скролу мінус 1
+                columnGap = (sliderSimilar.offsetWidth - (similarFiguresWidth * Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth))) / Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth - 1)
+            } else {
+                columnGap = (sliderSimilar.offsetWidth - similarFiguresWidth)
+                // відступ на мобільних девайсах (картка повинна стояти по центру блоку) 
+                similarFigures[0].style.marginLeft = columnGap / 2 + "px"
+            }
+            sliderSimilar.style.columnGap = columnGap + "px"
+
+            function slideRight() {
+                sliderSimilar.style.overflowX = "scroll"
+                sliderSimilar.scrollLeft += howManyCardsToSlide * (similarFiguresWidth + columnGap)
+            }
+
+            function slideLeft() {
+                sliderSimilar.style.overflowX = "scroll"
+                sliderSimilar.scrollLeft -= howManyCardsToSlide * (similarFiguresWidth + columnGap)
+
+            }
+
+            sliderSimilar.addEventListener('wheel', function (e) {
+                sliderSimilar.style.overflowX = "hidden"
+            })
+
+            
+
+            sliderSimilar.addEventListener('touchstart', function (e) {
+                sliderSimilar.style.overflowX = "hidden"
+            })
+
+            sliderSimilar.addEventListener('touchmove', function (e) {
+                sliderSimilar.style.overflowX = "hidden"
+            });
+
+            slideRightBtn.addEventListener('click', slideRight)
+            slideLeftBtn.addEventListener('click', slideLeft)
+        }
+
+    }
+}
+
+updateSliderImages()
 
 document.addEventListener("DOMContentLoaded", function () {
     updateImgHeight()
@@ -135,13 +243,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         productImages.forEach(function (image) {
             image.addEventListener('click', function () {
-                let clickedImageUrl = this.src,
-                    generalSrc = generalImg.src
+                let clickedImageUrl = this.src
+                // generalSrc = generalImg.src
 
 
                 generalImg.src = clickedImageUrl
 
-                this.src = generalSrc
             });
         });
     }
@@ -351,3 +458,4 @@ if (document.getElementById('min')) {
 }
 
 window.addEventListener('resize', updateImgHeight)
+window.addEventListener('resize', updateSliderImages)
