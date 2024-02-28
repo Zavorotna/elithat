@@ -2653,8 +2653,14 @@ p.made-in
 
 
 .gallery-wrapper
-    column-gap: 40px
+    column-gap: 20px
+    +media(426)
+        column-gap: 40px
     .slider-to-left
-        left: -35px
+        left: -15px
+        +media(426)
+            left: -35px
     .slider-to-right
-        right: -35px
+        right: -15px
+        +media(426)
+            right: -35px

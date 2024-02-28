@@ -41,17 +41,23 @@ function updateImgHeight() {
         slideLeftBtn.addEventListener('click', function () {
             if (productSmImages[currIndex - 1]) {
                 currIndex -= 1
+                console.log(productSmImages[currIndex]);
+                if (productSmImages[currIndex + 3]) {
+                    productSmImages[currIndex + 3].classList.remove("active-img")
+
+                }
+                productSmImages[currIndex].classList.add("active-img")
             }
             if (productSmImages[currIndex]) {
                 productSmImages[currIndex].click()
 
             }
-            if (productSmImages[currIndex - 2]) {
-                console.log(productSmImages[currIndex]);
-                productSmImages[currIndex + 1].classList.remove("active-img")
-                productSmImages[currIndex - 2].classList.add("active-img")
+            // if (productSmImages[currIndex - 2]) {
+                // console.log(productSmImages[currIndex]);
+                // productSmImages[currIndex + 1].classList.remove("active-img")
+                // productSmImages[currIndex - 2].classList.add("active-img")
 
-            }
+            // }
 
 
         })
@@ -97,19 +103,14 @@ function updateSliderImages() {
                 sliderSimilar.style.overflowX = "hidden"
             })
 
-            let startX;
+            
 
             sliderSimilar.addEventListener('touchstart', function (e) {
-                startX = e.touches[0].pageX
+                sliderSimilar.style.overflowX = "hidden"
             })
 
             sliderSimilar.addEventListener('touchmove', function (e) {
-                let currentX = e.touches[0].pageX
-                let deltaX = startX - currentX
-
-                if (Math.abs(deltaX) > 0) {
-                    e.preventDefault()
-                }
+                sliderSimilar.style.overflowX = "hidden"
             });
 
             slideRightBtn.addEventListener('click', slideRight)
