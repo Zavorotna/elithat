@@ -75,12 +75,14 @@ function updateSliderImages() {
             slideRightBtn = document.querySelector(".similar-products .slider-to-right"),
             columnGap;
 
+        let isClickAllowed = true
+
         if (similarFigures.length > 3) {
             slideLeftBtn.classList.add("d-block");
             slideRightBtn.classList.add("d-block");
             console.log("ширина картки" + similarFiguresWidth);
             if (window.innerWidth > 768) {
-                
+
                 columnGap = (sliderSimilar.offsetWidth - (similarFiguresWidth * Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth))) / Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth - 1);
             } else {
                 columnGap = (sliderSimilar.offsetWidth - similarFiguresWidth);
@@ -89,13 +91,23 @@ function updateSliderImages() {
             sliderSimilar.style.columnGap = columnGap + "px";
 
             function slideRight() {
-
-                sliderSimilar.scrollLeft += howManyCardsToSlide * (similarFiguresWidth + columnGap);
+                if (isClickAllowed) {
+                    isClickAllowed = false;
+                    sliderSimilar.scrollLeft += howManyCardsToSlide * (similarFiguresWidth + columnGap);
+                    setTimeout(() => {
+                        isClickAllowed = true;
+                    }, 1000); // блокування на 1 секунду
+                }
             }
 
             function slideLeft() {
-
-                sliderSimilar.scrollLeft -= howManyCardsToSlide * (similarFiguresWidth + columnGap);
+                if (isClickAllowed) {
+                    isClickAllowed = false;
+                    sliderSimilar.scrollLeft -= howManyCardsToSlide * (similarFiguresWidth + columnGap);
+                    setTimeout(() => {
+                        isClickAllowed = true;
+                    }, 1000); // блокування на 1 секунду
+                }
             }
 
             // function handleTouchStart(e) {
