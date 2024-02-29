@@ -1,7 +1,8 @@
 if (true) {
     const carousel = document.querySelector('.product-list-slider'),
         slideLeftBtn = document.querySelector(".similar-products .slider-to-left"),
-        slideRightBtn = document.querySelector(".similar-products .slider-to-right")
+        slideRightBtn = document.querySelector(".similar-products .slider-to-right"),
+        gap = 30
 
     let items = [...document.querySelectorAll(".product-list-slider figure")]
 
@@ -25,6 +26,43 @@ if (true) {
     // items.forEach(function(e) {
     //     e.style.marginRight = columnGap / 2 + "px";
     // })
+
+    let cardWidth = 0
+
+    console.log(cardWidth);
+    // document.addEventListener("resize", function() {
+
+
+    // })
+    function updateImagesWidth() {
+        // console.log(e);
+        [...document.querySelectorAll(".product-list-slider figure")].forEach(function (e) {
+            if (window.innerWidth > 950) {
+                cardWidth = (carousel.offsetWidth - 2 * gap) / 3
+            } else if (window.innerWidth > 545) {
+                cardWidth = (carousel.offsetWidth - 1 * gap) / 2
+            } else {
+                cardWidth = (carousel.offsetWidth)
+            }
+            console.log(cardWidth);
+            e.style.minWidth = cardWidth + "px";
+
+        })
+    }
+
+    updateImagesWidth()
+
+    let resizeTimer;
+
+    function resizeFunction() {
+        clearTimeout(resizeTimer)
+
+        resizeTimer = setTimeout(function () {
+            updateImagesWidth()
+        }, 100)
+    }
+
+    window.addEventListener('resize', resizeFunction)
 
 
     let currentIndex = 0,
