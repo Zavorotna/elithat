@@ -16,10 +16,16 @@ html(lang="uk")
                 .product-gallery
                     .gallery-wrapper.flex-between
                         .products-sm 
-                            img(src="img/card-image-3.jpg", alt="")
-                            img(src="img/card-image-2.jpg", alt="")
+                            img.active-img(src="img/product-image.jpg", alt="")
+                            img.active-img(src="img/bgc-kid2.png", alt="")
+                            img.active-img(src="img/bgc-kid3.png", alt="")
                             img(src="img/bgc-kid4.png", alt="")
-                        .general-img
+                            img(src="img/bgc-kid5.png", alt="")
+                            img(src="img/bgc-kid6.png", alt="")
+
+                        .general-img.relative
+                            .slider-to-left
+                            .slider-to-right
                             img(src="img/product-image.jpg", alt="")
                 .product-description.relative
                     .girl-product 
@@ -85,103 +91,426 @@ html(lang="uk")
                         a.catalog-cta.hover-cta(href="#") доставка та оплата
             section.wrapper.similar-products 
                 h2 схожі товари
-                .products-list 
-                    figure 
-                        .relative
-                            a.product-redirect(href="product-card.html") 
-                            .girl-product 
-                                span для дівчинки
-                            img(src="img/card-image1.jpg", alt="")
-                        figcaption 
-                            h3 Зимова шапка-шолом дитяча 
-                            p.made-in країна-виробник: 
-                                span Китай
-                            .flex-between.product-sizes.items-center
-                                span розміри:
-                                form(action="") 
-                                    .sizes-inputs
-                                        input(type="checkbox", name="size" id="product-size38")
-                                        label(for="product-size38") 38
-                                        input(type="checkbox", name="size" id="product-size39")
-                                        label(for="product-size39") 39
-                                        input(type="checkbox", name="size" id="product-size40")
-                                        label(for="product-size40") 40
-                                        input(type="checkbox", name="size" id="product-size41")
-                                        label(for="product-size41") 41
-                                        input(type="checkbox", name="size" id="product-size42")
-                                        label(for="product-size42") 42
-                                        input(type="checkbox", name="size" id="product-size43")
-                                        label(for="product-size43") 43
-                                        input(type="checkbox", name="size" id="product-size44")
-                                        label(for="product-size44") 44
-                            .price.d-flex.items-center
-                                b 459 грн
-                                span.old-price 560 грн
-                            a(href="#").cta до кошика
-                    figure 
-                        .relative
-                            a.product-redirect(href="product-card.html") 
-                            .boy-product
-                                span для хлопчика
-                            img(src="img/card-image-2.jpg", alt="")
-                        figcaption 
-                            h3 літня шапка-панамка дитяча
-                            p.made-in країна-виробник: 
-                                span Китай
-                            .flex-between.product-sizes.items-center
-                                span розміри:
-                                form(action="") 
-                                    .sizes-inputs
-                                        input(type="checkbox", name="size" id="product2-size38")
-                                        label(for="product2-size38") 38
-                                        input(type="checkbox", name="size" id="product-size39")
-                                        label(for="product2-size39") 39
-                                        input(type="checkbox", name="size" id="product2-size40")
-                                        label(for="product2-size40") 40
-                                        input(type="checkbox", name="size" id="product2-size41")
-                                        label(for="product2-size41") 41
-                                        input(type="checkbox", name="size" id="product2-size42")
-                                        label(for="product2-size42") 42
-                                        input(type="checkbox", name="size" id="product2-size43")
-                                        label(for="product2-size43") 43
-                                        input(type="checkbox", name="size" id="product2-size44")
-                                        label(for="product2-size44") 44
-                            .price.d-flex.items-center
-                                b 459 грн
-                                span.old-price 560 грн
-                            a(href="#").cta до кошика
-                    figure 
-                        .relative
-                            a.product-redirect(href="product-card.html") 
-                            .universal-product
-                                span універсальна
-                            img(src="img/card-image-3.jpg", alt="")
-                        figcaption 
-                            h3 Зимова шапка-шолом дитяча 
-                            p.made-in країна-виробник: 
-                                span Китай
-                            .flex-between.product-sizes.items-center
-                                span розміри:
-                                form(action="") 
-                                    .sizes-inputs
-                                        input(type="checkbox", name="size" id="product3-size38")
-                                        label(for="product3-size38") 38
-                                        input(type="checkbox", name="size" id="product3-size39")
-                                        label(for="product3-size39") 39
-                                        input(type="checkbox", name="size" id="product3-size40")
-                                        label(for="product3-size40") 40
-                                        input(type="checkbox", name="size" id="product3-size41")
-                                        label(for="product3-size41") 41
-                                        input(type="checkbox", name="size" id="product3-size42")
-                                        label(for="product3-size42") 42
-                                        input(type="checkbox", name="size" id="product3-size43")
-                                        label(for="product3-size43") 43
-                                        input(type="checkbox", name="size" id="product3-size44")
-                                        label(for="product3-size44") 44
-                            .price.d-flex.items-center
-                                b 459 грн
-                                span.old-price 560 грн
-                            a(href="#").cta до кошика
+                .relative
+                    .slider-to-left
+                    .slider-to-right
+                    .products-list.product-list-slider
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .girl-product 
+                                    span для дівчинки
+                                img(src="img/card-image1.jpg", alt="")
+                            figcaption 
+                                h3 Зимова шапка-шолом дитяча 
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product-size38")
+                                            label(for="product-size38") 38
+                                            input(type="checkbox", name="size" id="product-size39")
+                                            label(for="product-size39") 39
+                                            input(type="checkbox", name="size" id="product-size40")
+                                            label(for="product-size40") 40
+                                            input(type="checkbox", name="size" id="product-size41")
+                                            label(for="product-size41") 41
+                                            input(type="checkbox", name="size" id="product-size42")
+                                            label(for="product-size42") 42
+                                            input(type="checkbox", name="size" id="product-size43")
+                                            label(for="product-size43") 43
+                                            input(type="checkbox", name="size" id="product-size44")
+                                            label(for="product-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .girl-product 
+                                    span для дівчинки
+                                img(src="img/card-image1.jpg", alt="")
+                            figcaption 
+                                h3 Зимова шапка-шолом дитяча 
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product-size38")
+                                            label(for="product-size38") 38
+                                            input(type="checkbox", name="size" id="product-size39")
+                                            label(for="product-size39") 39
+                                            input(type="checkbox", name="size" id="product-size40")
+                                            label(for="product-size40") 40
+                                            input(type="checkbox", name="size" id="product-size41")
+                                            label(for="product-size41") 41
+                                            input(type="checkbox", name="size" id="product-size42")
+                                            label(for="product-size42") 42
+                                            input(type="checkbox", name="size" id="product-size43")
+                                            label(for="product-size43") 43
+                                            input(type="checkbox", name="size" id="product-size44")
+                                            label(for="product-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .girl-product 
+                                    span для дівчинки
+                                img(src="img/card-image1.jpg", alt="")
+                            figcaption 
+                                h3 Зимова шапка-шолом дитяча 
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product-size38")
+                                            label(for="product-size38") 38
+                                            input(type="checkbox", name="size" id="product-size39")
+                                            label(for="product-size39") 39
+                                            input(type="checkbox", name="size" id="product-size40")
+                                            label(for="product-size40") 40
+                                            input(type="checkbox", name="size" id="product-size41")
+                                            label(for="product-size41") 41
+                                            input(type="checkbox", name="size" id="product-size42")
+                                            label(for="product-size42") 42
+                                            input(type="checkbox", name="size" id="product-size43")
+                                            label(for="product-size43") 43
+                                            input(type="checkbox", name="size" id="product-size44")
+                                            label(for="product-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .girl-product 
+                                    span для дівчинки
+                                img(src="img/card-image1.jpg", alt="")
+                            figcaption 
+                                h3 Зимова шапка-шолом дитяча 
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product-size38")
+                                            label(for="product-size38") 38
+                                            input(type="checkbox", name="size" id="product-size39")
+                                            label(for="product-size39") 39
+                                            input(type="checkbox", name="size" id="product-size40")
+                                            label(for="product-size40") 40
+                                            input(type="checkbox", name="size" id="product-size41")
+                                            label(for="product-size41") 41
+                                            input(type="checkbox", name="size" id="product-size42")
+                                            label(for="product-size42") 42
+                                            input(type="checkbox", name="size" id="product-size43")
+                                            label(for="product-size43") 43
+                                            input(type="checkbox", name="size" id="product-size44")
+                                            label(for="product-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .girl-product 
+                                    span для дівчинки
+                                img(src="img/card-image1.jpg", alt="")
+                            figcaption 
+                                h3 Зимова шапка-шолом дитяча 
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product-size38")
+                                            label(for="product-size38") 38
+                                            input(type="checkbox", name="size" id="product-size39")
+                                            label(for="product-size39") 39
+                                            input(type="checkbox", name="size" id="product-size40")
+                                            label(for="product-size40") 40
+                                            input(type="checkbox", name="size" id="product-size41")
+                                            label(for="product-size41") 41
+                                            input(type="checkbox", name="size" id="product-size42")
+                                            label(for="product-size42") 42
+                                            input(type="checkbox", name="size" id="product-size43")
+                                            label(for="product-size43") 43
+                                            input(type="checkbox", name="size" id="product-size44")
+                                            label(for="product-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .girl-product 
+                                    span для дівчинки
+                                img(src="img/card-image1.jpg", alt="")
+                            figcaption 
+                                h3 Зимова шапка-шолом дитяча 
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product-size38")
+                                            label(for="product-size38") 38
+                                            input(type="checkbox", name="size" id="product-size39")
+                                            label(for="product-size39") 39
+                                            input(type="checkbox", name="size" id="product-size40")
+                                            label(for="product-size40") 40
+                                            input(type="checkbox", name="size" id="product-size41")
+                                            label(for="product-size41") 41
+                                            input(type="checkbox", name="size" id="product-size42")
+                                            label(for="product-size42") 42
+                                            input(type="checkbox", name="size" id="product-size43")
+                                            label(for="product-size43") 43
+                                            input(type="checkbox", name="size" id="product-size44")
+                                            label(for="product-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .boy-product
+                                    span для хлопчика
+                                img(src="img/card-image-2.jpg", alt="")
+                            figcaption 
+                                h3 літня шапка-панамка дитяча
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product2-size38")
+                                            label(for="product2-size38") 38
+                                            input(type="checkbox", name="size" id="product-size39")
+                                            label(for="product2-size39") 39
+                                            input(type="checkbox", name="size" id="product2-size40")
+                                            label(for="product2-size40") 40
+                                            input(type="checkbox", name="size" id="product2-size41")
+                                            label(for="product2-size41") 41
+                                            input(type="checkbox", name="size" id="product2-size42")
+                                            label(for="product2-size42") 42
+                                            input(type="checkbox", name="size" id="product2-size43")
+                                            label(for="product2-size43") 43
+                                            input(type="checkbox", name="size" id="product2-size44")
+                                            label(for="product2-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .girl-product 
+                                    span для дівчинки
+                                img(src="img/card-image1.jpg", alt="")
+                            figcaption 
+                                h3 Зимова шапка-шолом дитяча 
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product-size38")
+                                            label(for="product-size38") 38
+                                            input(type="checkbox", name="size" id="product-size39")
+                                            label(for="product-size39") 39
+                                            input(type="checkbox", name="size" id="product-size40")
+                                            label(for="product-size40") 40
+                                            input(type="checkbox", name="size" id="product-size41")
+                                            label(for="product-size41") 41
+                                            input(type="checkbox", name="size" id="product-size42")
+                                            label(for="product-size42") 42
+                                            input(type="checkbox", name="size" id="product-size43")
+                                            label(for="product-size43") 43
+                                            input(type="checkbox", name="size" id="product-size44")
+                                            label(for="product-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .girl-product 
+                                    span для дівчинки
+                                img(src="img/card-image1.jpg", alt="")
+                            figcaption 
+                                h3 Зимова шапка-шолом дитяча 
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product-size38")
+                                            label(for="product-size38") 38
+                                            input(type="checkbox", name="size" id="product-size39")
+                                            label(for="product-size39") 39
+                                            input(type="checkbox", name="size" id="product-size40")
+                                            label(for="product-size40") 40
+                                            input(type="checkbox", name="size" id="product-size41")
+                                            label(for="product-size41") 41
+                                            input(type="checkbox", name="size" id="product-size42")
+                                            label(for="product-size42") 42
+                                            input(type="checkbox", name="size" id="product-size43")
+                                            label(for="product-size43") 43
+                                            input(type="checkbox", name="size" id="product-size44")
+                                            label(for="product-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .boy-product
+                                    span для хлопчика
+                                img(src="img/card-image-2.jpg", alt="")
+                            figcaption 
+                                h3 літня шапка-панамка дитяча
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product2-size38")
+                                            label(for="product2-size38") 38
+                                            input(type="checkbox", name="size" id="product-size39")
+                                            label(for="product2-size39") 39
+                                            input(type="checkbox", name="size" id="product2-size40")
+                                            label(for="product2-size40") 40
+                                            input(type="checkbox", name="size" id="product2-size41")
+                                            label(for="product2-size41") 41
+                                            input(type="checkbox", name="size" id="product2-size42")
+                                            label(for="product2-size42") 42
+                                            input(type="checkbox", name="size" id="product2-size43")
+                                            label(for="product2-size43") 43
+                                            input(type="checkbox", name="size" id="product2-size44")
+                                            label(for="product2-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .universal-product
+                                    span універсальна
+                                img(src="img/card-image-3.jpg", alt="")
+                            figcaption 
+                                h3 Зимова шапка-шолом дитяча 
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product3-size38")
+                                            label(for="product3-size38") 38
+                                            input(type="checkbox", name="size" id="product3-size39")
+                                            label(for="product3-size39") 39
+                                            input(type="checkbox", name="size" id="product3-size40")
+                                            label(for="product3-size40") 40
+                                            input(type="checkbox", name="size" id="product3-size41")
+                                            label(for="product3-size41") 41
+                                            input(type="checkbox", name="size" id="product3-size42")
+                                            label(for="product3-size42") 42
+                                            input(type="checkbox", name="size" id="product3-size43")
+                                            label(for="product3-size43") 43
+                                            input(type="checkbox", name="size" id="product3-size44")
+                                            label(for="product3-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .universal-product
+                                    span універсальна
+                                img(src="img/card-image-3.jpg", alt="")
+                            figcaption 
+                                h3 Зимова шапка-шолом дитяча 
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product3-size38")
+                                            label(for="product3-size38") 38
+                                            input(type="checkbox", name="size" id="product3-size39")
+                                            label(for="product3-size39") 39
+                                            input(type="checkbox", name="size" id="product3-size40")
+                                            label(for="product3-size40") 40
+                                            input(type="checkbox", name="size" id="product3-size41")
+                                            label(for="product3-size41") 41
+                                            input(type="checkbox", name="size" id="product3-size42")
+                                            label(for="product3-size42") 42
+                                            input(type="checkbox", name="size" id="product3-size43")
+                                            label(for="product3-size43") 43
+                                            input(type="checkbox", name="size" id="product3-size44")
+                                            label(for="product3-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
+                        figure 
+                            .relative
+                                a.product-redirect(href="product-card.html") 
+                                .universal-product
+                                    span універсальна
+                                img(src="img/card-image-3.jpg", alt="")
+                            figcaption 
+                                h3 Зимова шапка-шолом дитяча 
+                                p.made-in країна-виробник: 
+                                    span Китай
+                                .flex-between.product-sizes.items-center
+                                    span розміри:
+                                    form(action="") 
+                                        .sizes-inputs
+                                            input(type="checkbox", name="size" id="product3-size38")
+                                            label(for="product3-size38") 38
+                                            input(type="checkbox", name="size" id="product3-size39")
+                                            label(for="product3-size39") 39
+                                            input(type="checkbox", name="size" id="product3-size40")
+                                            label(for="product3-size40") 40
+                                            input(type="checkbox", name="size" id="product3-size41")
+                                            label(for="product3-size41") 41
+                                            input(type="checkbox", name="size" id="product3-size42")
+                                            label(for="product3-size42") 42
+                                            input(type="checkbox", name="size" id="product3-size43")
+                                            label(for="product3-size43") 43
+                                            input(type="checkbox", name="size" id="product3-size44")
+                                            label(for="product3-size44") 44
+                                .price.d-flex.items-center
+                                    b 459 грн
+                                    span.old-price 560 грн
+                                a(href="#").cta до кошика
                 .justify-center
                     a(href="catalog.html").catalog-cta в каталог 
 
