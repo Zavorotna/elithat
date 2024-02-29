@@ -6,7 +6,19 @@ if (true) {
 
     let items = [...document.querySelectorAll(".product-list-slider figure")]
 
-    const itemWidth = items[0].offsetWidth + 30
+    let itemWidth = items[0].offsetWidth + 30
+
+    if (window.innerWidth > 1700) {
+        itemWidth = (carousel.offsetWidth - 3 * gap) / 4
+    } else if (window.innerWidth > 950) {
+        itemWidth = (carousel.offsetWidth - 2 * gap) / 3
+    } else if (window.innerWidth > 545) {
+        itemWidth = (carousel.offsetWidth - 1 * gap) / 2
+    } else {
+        itemWidth = (carousel.offsetWidth)
+    }
+    
+    // alert(itemWidth)
 
     // let borderWidth = 2 * Math.floor(carousel.offsetWidth / itemWidth)
 
@@ -93,12 +105,13 @@ if (true) {
     function goToIndex(index) {
         isAnimating = true
 
-        const distance = -index * itemWidth
-
+        const distance = -index * itemWidth,
+            scrollGap = index * gap
+        console.log(itemWidth);
         currentIndex = (currentIndex + items.length + index) % items.length
 
         carousel.style.transition = 'transform .5s ease-in-out'
-        carousel.style.transform = `translateX(${distance}px)`
+        carousel.style.transform = `translateX(${distance - scrollGap}px)`
 
         setTimeout(() => {
             carousel.style.transition = 'none'
