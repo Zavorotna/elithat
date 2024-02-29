@@ -65,85 +65,85 @@ function updateImgHeight() {
     }
 }
 
-function updateSliderImages() {
-    if (document.querySelector(".product-list-slider")) {
-        let sliderSimilar = document.querySelector(".product-list-slider"),
-            similarFigures = document.querySelectorAll(".product-list-slider figure"),
-            similarFiguresWidth = similarFigures[0].offsetWidth,
-            howManyCardsToSlide = 1,
-            slideLeftBtn = document.querySelector(".similar-products .slider-to-left"),
-            slideRightBtn = document.querySelector(".similar-products .slider-to-right"),
-            columnGap,
-            currentLastCard = Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth);
+// function updateSliderImages() {
+//     if (document.querySelector(".product-list-slider")) {
+//         let sliderSimilar = document.querySelector(".product-list-slider"),
+//             similarFigures = document.querySelectorAll(".product-list-slider figure"),
+//             similarFiguresWidth = similarFigures[0].offsetWidth,
+//             howManyCardsToSlide = 1,
+//             slideLeftBtn = document.querySelector(".similar-products .slider-to-left"),
+//             slideRightBtn = document.querySelector(".similar-products .slider-to-right"),
+//             columnGap,
+//             currentLastCard = Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth);
 
-        let isClickAllowed = true
+//         let isClickAllowed = true
 
-        if (similarFigures.length > 3) {
-            slideLeftBtn.classList.add("d-block");
-            slideRightBtn.classList.add("d-block");
-            console.log("ширина картки" + similarFiguresWidth);
-            if (window.innerWidth > 768) {
+//         if (similarFigures.length > 3) {
+//             slideLeftBtn.classList.add("d-block");
+//             slideRightBtn.classList.add("d-block");
+//             console.log("ширина картки" + similarFiguresWidth);
+//             if (window.innerWidth > 768) {
 
-                columnGap = (sliderSimilar.offsetWidth - (similarFiguresWidth * Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth))) / Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth - 1);
-            } else {
-                columnGap = (sliderSimilar.offsetWidth - similarFiguresWidth);
-                similarFigures[0].style.marginLeft = columnGap / 2 + "px";
-            }
-            sliderSimilar.style.columnGap = columnGap + "px";
+//                 columnGap = (sliderSimilar.offsetWidth - (similarFiguresWidth * Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth))) / Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth - 1);
+//             } else {
+//                 columnGap = (sliderSimilar.offsetWidth - similarFiguresWidth);
+//                 similarFigures[0].style.marginLeft = columnGap / 2 + "px";
+//             }
+//             sliderSimilar.style.columnGap = columnGap + "px";
 
-            function slideRight() {
+//             function slideRight() {
 
-                if (isClickAllowed && currentLastCard + howManyCardsToSlide < similarFigures.length) {
-                    currentLastCard += howManyCardsToSlide
-                    isClickAllowed = false;
-                    sliderSimilar.scrollLeft += howManyCardsToSlide * (similarFiguresWidth + columnGap);
-                    setTimeout(() => {
-                        isClickAllowed = true;
-                    }, 800); // блокування на 1 секунду
-                }
-            }
+//                 if (isClickAllowed && currentLastCard + howManyCardsToSlide < similarFigures.length) {
+//                     currentLastCard += howManyCardsToSlide
+//                     isClickAllowed = false;
+//                     sliderSimilar.scrollLeft += howManyCardsToSlide * (similarFiguresWidth + columnGap);
+//                     setTimeout(() => {
+//                         isClickAllowed = true;
+//                     }, 800); // блокування на 1 секунду
+//                 }
+//             }
 
-            function slideLeft() {
-                if (isClickAllowed && currentLastCard - howManyCardsToSlide > 0) {
-                    // alert(1)
-                    // console.log(similarFigures[currentLastCard - Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth) - 1]);
-                    currentLastCard -= howManyCardsToSlide
-                    isClickAllowed = false;
-                    sliderSimilar.scrollLeft -= howManyCardsToSlide * (similarFiguresWidth + columnGap);
-                    setTimeout(() => {
-                        isClickAllowed = true;
-                    }, 800); // блокування на 1 секунду
-                }
-            }
+//             function slideLeft() {
+//                 if (isClickAllowed && currentLastCard - howManyCardsToSlide > 0) {
+//                     // alert(1)
+//                     // console.log(similarFigures[currentLastCard - Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth) - 1]);
+//                     currentLastCard -= howManyCardsToSlide
+//                     isClickAllowed = false;
+//                     sliderSimilar.scrollLeft -= howManyCardsToSlide * (similarFiguresWidth + columnGap);
+//                     setTimeout(() => {
+//                         isClickAllowed = true;
+//                     }, 800); // блокування на 1 секунду
+//                 }
+//             }
 
-            // function handleTouchStart(e) {
-            //     touchStartX = e.touches[0].clientX;
-            // }
+//             // function handleTouchStart(e) {
+//             //     touchStartX = e.touches[0].clientX;
+//             // }
 
-            // function handleTouchMove(e) {
-            //     if (touchStartX - e.touches[0].clientX > 30) {
-            //         slideRight();
-            //     } else if (touchStartX - e.touches[0].clientX < -30) {
-            //         slideLeft();
-            //     }
-            // }
+//             // function handleTouchMove(e) {
+//             //     if (touchStartX - e.touches[0].clientX > 30) {
+//             //         slideRight();
+//             //     } else if (touchStartX - e.touches[0].clientX < -30) {
+//             //         slideLeft();
+//             //     }
+//             // }
 
-            // function handleTouchEnd() {
-            //     touchStartX = 0;
-            // }
+//             // function handleTouchEnd() {
+//             //     touchStartX = 0;
+//             // }
 
-            // sliderSimilar.addEventListener('touchstart', handleTouchStart);
-            // sliderSimilar.addEventListener('touchmove', handleTouchMove);
-            // sliderSimilar.addEventListener('touchend', handleTouchEnd);
+//             // sliderSimilar.addEventListener('touchstart', handleTouchStart);
+//             // sliderSimilar.addEventListener('touchmove', handleTouchMove);
+//             // sliderSimilar.addEventListener('touchend', handleTouchEnd);
 
-            slideRightBtn.addEventListener('click', slideRight);
-            slideLeftBtn.addEventListener('click', slideLeft);
-        }
-    }
-}
+//             slideRightBtn.addEventListener('click', slideRight);
+//             slideLeftBtn.addEventListener('click', slideLeft);
+//         }
+//     }
+// }
 
 
-updateSliderImages()
+// updateSliderImages()
 
 document.addEventListener("DOMContentLoaded", function () {
     updateImgHeight()
@@ -481,4 +481,4 @@ if (document.getElementById('min')) {
 }
 
 window.addEventListener('resize', updateImgHeight)
-window.addEventListener('resize', updateSliderImages)
+// window.addEventListener('resize', updateSliderImages)
