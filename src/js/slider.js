@@ -1,7 +1,7 @@
 if (true) {
     const carousel = document.querySelector('.product-list-slider'),
-        slideLeftBtn = document.querySelector(".similar-products .slider-to-left"),
-        slideRightBtn = document.querySelector(".similar-products .slider-to-right"),
+        slideLeftBtn = document.querySelector(".slider-navigation .slider-to-left"),
+        slideRightBtn = document.querySelector(".slider-navigation .slider-to-right"),
         gap = 30
 
     let items = [...document.querySelectorAll(".product-list-slider figure")]
@@ -37,7 +37,9 @@ if (true) {
     function updateImagesWidth() {
         // console.log(e);
         [...document.querySelectorAll(".product-list-slider figure")].forEach(function (e) {
-            if (window.innerWidth > 950) {
+            if (window.innerWidth > 1700) {
+                cardWidth = (carousel.offsetWidth - 3 * gap) / 4
+            } else if (window.innerWidth > 950) {
                 cardWidth = (carousel.offsetWidth - 2 * gap) / 3
             } else if (window.innerWidth > 545) {
                 cardWidth = (carousel.offsetWidth - 1 * gap) / 2
