@@ -99,7 +99,7 @@ function updateSliderImages() {
                     sliderSimilar.scrollLeft += howManyCardsToSlide * (similarFiguresWidth + columnGap);
                     setTimeout(() => {
                         isClickAllowed = true;
-                    }, 750); // блокування на 1 секунду
+                    }, 800); // блокування на 1 секунду
                 }
             }
 
@@ -112,7 +112,7 @@ function updateSliderImages() {
                     sliderSimilar.scrollLeft -= howManyCardsToSlide * (similarFiguresWidth + columnGap);
                     setTimeout(() => {
                         isClickAllowed = true;
-                    }, 750); // блокування на 1 секунду
+                    }, 800); // блокування на 1 секунду
                 }
             }
 
