@@ -53,9 +53,9 @@ function updateImgHeight() {
 
             }
             // if (productSmImages[currIndex - 2]) {
-                // console.log(productSmImages[currIndex]);
-                // productSmImages[currIndex + 1].classList.remove("active-img")
-                // productSmImages[currIndex - 2].classList.add("active-img")
+            // console.log(productSmImages[currIndex]);
+            // productSmImages[currIndex + 1].classList.remove("active-img")
+            // productSmImages[currIndex - 2].classList.add("active-img")
 
             // }
 
@@ -67,58 +67,63 @@ function updateImgHeight() {
 
 function updateSliderImages() {
     if (document.querySelector(".product-list-slider")) {
-        let sliderSimilar = document.querySelector(".product-list-slider"), // блок із overflow hidden
-            similarFigures = document.querySelectorAll(".product-list-slider figure"), // карточки в цьому блоці
-            similarFiguresWidth = similarFigures[0].offsetWidth, // ширина однієї карточки
-            howManyCardsToSlide = 1, // по скільки карточок перемикати
-            slideLeftBtn = document.querySelector(".similar-products  .slider-to-left"), // кнопки перемикання
-            slideRightBtn = document.querySelector(".similar-products .slider-to-right"), // кнопки перемикання
+        let sliderSimilar = document.querySelector(".product-list-slider"),
+            similarFigures = document.querySelectorAll(".product-list-slider figure"),
+            similarFiguresWidth = similarFigures[0].offsetWidth,
+            howManyCardsToSlide = 1,
+            slideLeftBtn = document.querySelector(".similar-products .slider-to-left"),
+            slideRightBtn = document.querySelector(".similar-products .slider-to-right"),
             columnGap;
+
         if (similarFigures.length > 3) {
-            slideLeftBtn.classList.add("d-block")
-            slideRightBtn.classList.add("d-block")
-            console.log(similarFiguresWidth);
+            slideLeftBtn.classList.add("d-block");
+            slideRightBtn.classList.add("d-block");
+            console.log("ширина картки" + similarFiguresWidth);
             if (window.innerWidth > 768) {
-                // обрахунок відступу між картками: батьківський блок мінус кількість карточок, що у нього вміщаються без скролу, поділений на кількість карток, що у нього вміщаються без скролу мінус 1
-                columnGap = (sliderSimilar.offsetWidth - (similarFiguresWidth * Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth))) / Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth - 1)
+                
+                columnGap = (sliderSimilar.offsetWidth - (similarFiguresWidth * Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth))) / Math.floor(sliderSimilar.offsetWidth / similarFiguresWidth - 1);
             } else {
-                columnGap = (sliderSimilar.offsetWidth - similarFiguresWidth)
-                // відступ на мобільних девайсах (картка повинна стояти по центру блоку) 
-                similarFigures[0].style.marginLeft = columnGap / 2 + "px"
+                columnGap = (sliderSimilar.offsetWidth - similarFiguresWidth);
+                similarFigures[0].style.marginLeft = columnGap / 2 + "px";
             }
-            sliderSimilar.style.columnGap = columnGap + "px"
+            sliderSimilar.style.columnGap = columnGap + "px";
 
             function slideRight() {
-                sliderSimilar.style.overflowX = "scroll"
-                sliderSimilar.scrollLeft += howManyCardsToSlide * (similarFiguresWidth + columnGap)
+
+                sliderSimilar.scrollLeft += howManyCardsToSlide * (similarFiguresWidth + columnGap);
             }
 
             function slideLeft() {
-                sliderSimilar.style.overflowX = "scroll"
-                sliderSimilar.scrollLeft -= howManyCardsToSlide * (similarFiguresWidth + columnGap)
 
+                sliderSimilar.scrollLeft -= howManyCardsToSlide * (similarFiguresWidth + columnGap);
             }
 
-            sliderSimilar.addEventListener('wheel', function (e) {
-                sliderSimilar.style.overflowX = "hidden"
-            })
+            // function handleTouchStart(e) {
+            //     touchStartX = e.touches[0].clientX;
+            // }
 
-            
+            // function handleTouchMove(e) {
+            //     if (touchStartX - e.touches[0].clientX > 30) {
+            //         slideRight();
+            //     } else if (touchStartX - e.touches[0].clientX < -30) {
+            //         slideLeft();
+            //     }
+            // }
 
-            sliderSimilar.addEventListener('touchstart', function (e) {
-                sliderSimilar.style.overflowX = "hidden"
-            })
+            // function handleTouchEnd() {
+            //     touchStartX = 0;
+            // }
 
-            sliderSimilar.addEventListener('touchmove', function (e) {
-                sliderSimilar.style.overflowX = "hidden"
-            });
+            // sliderSimilar.addEventListener('touchstart', handleTouchStart);
+            // sliderSimilar.addEventListener('touchmove', handleTouchMove);
+            // sliderSimilar.addEventListener('touchend', handleTouchEnd);
 
-            slideRightBtn.addEventListener('click', slideRight)
-            slideLeftBtn.addEventListener('click', slideLeft)
+            slideRightBtn.addEventListener('click', slideRight);
+            slideLeftBtn.addEventListener('click', slideLeft);
         }
-
     }
 }
+
 
 updateSliderImages()
 
