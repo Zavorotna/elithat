@@ -5,22 +5,22 @@ if (true) {
 
     let items = [...document.querySelectorAll(".product-list-slider figure")]
 
-    const itemWidth = items[0].offsetWidth
+    const itemWidth = items[0].offsetWidth + 30
 
-    let borderWidth = 2 * Math.floor(carousel.offsetWidth / itemWidth)
+    // let borderWidth = 2 * Math.floor(carousel.offsetWidth / itemWidth)
 
-    if (window.innerWidth > 768) {
+    // if (window.innerWidth > 768) {
 
-        columnGap = (carousel.offsetWidth - (itemWidth * Math.floor(carousel.offsetWidth / itemWidth))) / Math.floor(carousel.offsetWidth / itemWidth - 1) - borderWidth;
-    } else {
-        columnGap = (carousel.offsetWidth - itemWidth) - borderWidth;
-        items.forEach(function(e) {
-            e.style.marginLeft = columnGap / 2 + "px";
-        })
+    //     columnGap = (carousel.offsetWidth - (itemWidth * Math.floor(carousel.offsetWidth / itemWidth))) / Math.floor(carousel.offsetWidth / itemWidth - 1) - borderWidth;
+    // } else {
+    //     columnGap = (carousel.offsetWidth - itemWidth) - borderWidth;
+    //     items.forEach(function(e) {
+    //         e.style.marginLeft = columnGap / 2 + "px";
+    //     })
 
-    }
+    // }
 
-    carousel.style.columnGap = columnGap + "px"
+    // carousel.style.columnGap = columnGap + "px"
 
     // items.forEach(function(e) {
     //     e.style.marginRight = columnGap / 2 + "px";
@@ -39,12 +39,12 @@ if (true) {
         }
 
         const firstClone = items[items.length - 1].cloneNode(true)
-        firstClone.style.transform = `translateX: (-${itemWidth}px)`
+        firstClone.style.transform = `translateX: (-${itemWidth + 30}px)`
         carousel.insertAdjacentElement("afterbegin", firstClone)
 
         for (let i = 0; i < items.length; i++) {
             const item = items[i].cloneNode(true)
-            item.style.transform = `translateX: (${i} * ${itemWidth}px)`
+            item.style.transform = `translateX: (${i} * ${-itemWidth}px)`
             carousel.appendChild(item)
         }
 

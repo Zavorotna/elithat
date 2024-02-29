@@ -2586,11 +2586,9 @@ p.made-in
 
 .product-list-slider
     position: relative
-    column-gap: 0px
+    column-gap: 30px
     display: flex
     flex-wrap: nowrap
-    overflow-y: hidden
-    overflow-x: hidden
     scroll-behavior: smooth
     &::-webkit-scrollbar
         display: none
@@ -2599,8 +2597,9 @@ p.made-in
 
 .similar-products 
     position: relative
+    overflow: hidden
     figure 
-        transform: translateX(-100%)
+        transform: translateX(calc(-100% - 30px))
         min-width: 220px
         +media(390)
             min-width: 300px
@@ -2608,7 +2607,7 @@ p.made-in
             min-width: 320px
             margin: 0
         +media(905)
-            min-width: 360px
+            max-width: 360px
 
 .slider-to-left,
 .slider-to-right
@@ -2621,7 +2620,7 @@ p.made-in
     background-color: #FFF
     border: 2px solid #1E1E1E
     border-radius: 3px
-    z-index: 1
+    z-index: 4
     transition: 0.5s
     &::before
         content: ''
@@ -2640,14 +2639,13 @@ p.made-in
     transform: rotate(-90deg)
 
     +media(390)
-        left: -40rem
+        left: 40rem
 
 .slider-to-right
     right: -20rem
     transform: rotate(90deg)
-
     +media(390)
-        right: -40rem
+        right: 40rem
 
 
 
