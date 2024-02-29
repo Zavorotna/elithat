@@ -1,4 +1,5 @@
-if (true) {
+document.addEventListener("DOMContentLoaded", function() {
+
     const carousel = document.querySelector('.product-list-slider'),
         slideLeftBtn = document.querySelector(".slider-navigation .slider-to-left"),
         slideRightBtn = document.querySelector(".slider-navigation .slider-to-right"),
@@ -17,37 +18,13 @@ if (true) {
     } else {
         itemWidth = (carousel.offsetWidth)
     }
-    
-    // alert(itemWidth)
-
-    // let borderWidth = 2 * Math.floor(carousel.offsetWidth / itemWidth)
-
-    // if (window.innerWidth > 768) {
-
-    //     columnGap = (carousel.offsetWidth - (itemWidth * Math.floor(carousel.offsetWidth / itemWidth))) / Math.floor(carousel.offsetWidth / itemWidth - 1) - borderWidth;
-    // } else {
-    //     columnGap = (carousel.offsetWidth - itemWidth) - borderWidth;
-    //     items.forEach(function(e) {
-    //         e.style.marginLeft = columnGap / 2 + "px";
-    //     })
-
-    // }
-
-    // carousel.style.columnGap = columnGap + "px"
-
-    // items.forEach(function(e) {
-    //     e.style.marginRight = columnGap / 2 + "px";
-    // })
 
     let cardWidth = 0
 
     console.log(cardWidth);
-    // document.addEventListener("resize", function() {
 
-
-    // })
     function updateImagesWidth() {
-        // console.log(e);
+
         [...document.querySelectorAll(".product-list-slider figure")].forEach(function (e) {
             if (window.innerWidth > 1700) {
                 cardWidth = (carousel.offsetWidth - 3 * gap) / 4
@@ -147,7 +124,6 @@ if (true) {
         } else if (touchDiff < -50) {
             prevSlide()
         }
-        // startSliderInterval()
     }
 
     function startSliderInterval() {
@@ -182,5 +158,6 @@ if (true) {
         slideLeftBtn.addEventListener("click", prevSlide)
         slideRightBtn.addEventListener("click", nextSlide)
     }
+    
 
-}
+})
