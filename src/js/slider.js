@@ -1,4 +1,5 @@
-if (true) {
+document.addEventListener("DOMContentLoaded", function() {
+
     const carousel = document.querySelector('.product-list-slider'),
         slideLeftBtn = document.querySelector(".slider-navigation .slider-to-left"),
         slideRightBtn = document.querySelector(".slider-navigation .slider-to-right"),
@@ -6,36 +7,24 @@ if (true) {
 
     let items = [...document.querySelectorAll(".product-list-slider figure")]
 
-    const itemWidth = items[0].offsetWidth + 30
+    let itemWidth = items[0].offsetWidth + 30
 
-    // let borderWidth = 2 * Math.floor(carousel.offsetWidth / itemWidth)
-
-    // if (window.innerWidth > 768) {
-
-    //     columnGap = (carousel.offsetWidth - (itemWidth * Math.floor(carousel.offsetWidth / itemWidth))) / Math.floor(carousel.offsetWidth / itemWidth - 1) - borderWidth;
-    // } else {
-    //     columnGap = (carousel.offsetWidth - itemWidth) - borderWidth;
-    //     items.forEach(function(e) {
-    //         e.style.marginLeft = columnGap / 2 + "px";
-    //     })
-
-    // }
-
-    // carousel.style.columnGap = columnGap + "px"
-
-    // items.forEach(function(e) {
-    //     e.style.marginRight = columnGap / 2 + "px";
-    // })
+    if (window.innerWidth > 1700) {
+        itemWidth = (carousel.offsetWidth - 3 * gap) / 4
+    } else if (window.innerWidth > 950) {
+        itemWidth = (carousel.offsetWidth - 2 * gap) / 3
+    } else if (window.innerWidth > 545) {
+        itemWidth = (carousel.offsetWidth - 1 * gap) / 2
+    } else {
+        itemWidth = (carousel.offsetWidth)
+    }
 
     let cardWidth = 0
 
     console.log(cardWidth);
-    // document.addEventListener("resize", function() {
 
-
-    // })
     function updateImagesWidth() {
-        // console.log(e);
+
         [...document.querySelectorAll(".product-list-slider figure")].forEach(function (e) {
             if (window.innerWidth > 1700) {
                 cardWidth = (carousel.offsetWidth - 3 * gap) / 4
@@ -93,12 +82,13 @@ if (true) {
     function goToIndex(index) {
         isAnimating = true
 
-        const distance = -index * itemWidth
-
+        const distance = -index * itemWidth,
+            scrollGap = index * gap
+        console.log(itemWidth);
         currentIndex = (currentIndex + items.length + index) % items.length
 
         carousel.style.transition = 'transform .5s ease-in-out'
-        carousel.style.transform = `translateX(${distance}px)`
+        carousel.style.transform = `translateX(${distance - scrollGap}px)`
 
         setTimeout(() => {
             carousel.style.transition = 'none'
@@ -134,7 +124,6 @@ if (true) {
         } else if (touchDiff < -50) {
             prevSlide()
         }
-        // startSliderInterval()
     }
 
     function startSliderInterval() {
@@ -169,5 +158,6 @@ if (true) {
         slideLeftBtn.addEventListener("click", prevSlide)
         slideRightBtn.addEventListener("click", nextSlide)
     }
+    
 
-}
+})

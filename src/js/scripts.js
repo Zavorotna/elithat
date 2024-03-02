@@ -302,40 +302,44 @@ document.addEventListener("DOMContentLoaded", function () {
             sections = document.querySelectorAll(".scrollBurger"),
             phoneMobile = document.querySelector(".phone-mobile"),
             blurPage = document.querySelector(".blur-page")
-
+    
+        let isMenuOpen = false
+    
         burger.addEventListener('click', function () {
-            burger.classList.add('active'),
+            if (!isMenuOpen) {
+                burger.classList.add('active')
                 mobileMenu.classList.add('activemobile')
-            if (mobileMenu.classList.contains('activemobile') && burger.classList.contains("active")) {
                 mobileMenu.style.left = "0"
                 burger.style.left = "55%"
                 phoneMobile.style.left = "20px"
                 blurPage.style.display = "block"
-                blurPage.style.display = "block"
-                burger.classList.remove("noactive")
+                isMenuOpen = true
             } else {
                 closeMenu()
+                isMenuOpen = false
             }
         })
-
+    
         blurPage.addEventListener("click", function () {
             closeMenu()
+            isMenuOpen = false
         })
-
+    
         window.addEventListener('scroll', function () {
             sections.forEach(section => {
                 const rect = section.getBoundingClientRect()
-
+    
                 if (rect.top <= 0 && rect.bottom >= 0) {
                     burger.classList.remove('active')
                     mobileMenu.classList.remove('activemobile')
+                    isMenuOpen = false
                 }
             })
         })
-
+    
         function closeMenu() {
-            burger.classList.remove('active'),
-                burger.classList.add("noactive")
+            burger.classList.remove('active')
+            burger.classList.add("noactive")
             mobileMenu.classList.remove('activemobile')
             mobileMenu.style.left = "-100%"
             burger.style.left = "0"
@@ -343,6 +347,7 @@ document.addEventListener("DOMContentLoaded", function () {
             blurPage.style.display = "none"
         }
     }
+    
 
 
     // function galleryImgHeight () {
