@@ -1,78 +1,91 @@
 doctype html
 html(lang="uk")
     head
-        meta(charset="UTF-8")
-        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")   
         link(rel="stylesheet" href="css/style.css")
-        title Elithat
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=2.0")
+        title Elithat - хороший вибір для купівлі якісної та зручної шапки
+        meta(name="description" content="Потрібна зручна, якісна шапка по малій ціні? Elithat має широкий вибір стильних та зручних головних уборів для всієї сім'ї")
+        meta(name="keywords" content="Elithat, шапка, купити шапку, шапки Elithat, купити зручну шапку, дитячий одяг купити, дитяча шапка, шапка для дівчинки, шапка для хлопчика")
+        meta(name="author" content="Elithat")
+        meta(name="publisher" content="Elithat")
+        meta(name="robots" content="index follow")  
+        link(rel='icon' href='img/favicon.ico')
+        link(rel='canonical' href='#')
+        meta(property="og:title" content="Elithat - хороший вибір для купівлі якісної та зручної шапки")
+        meta(property="og:description" content="Elithat пропонує різноманітні та комфортні шапки за доступними цінами. Знайдіть ідеальний головний убір для всієї родини серед нашого широкого асортименту стильних виробів.")
+        meta(property="og:image" content="./img/logo.png")
+        meta(property="og:type" content="product")
+        meta(property="og:url" content="#")
     body
         include components/mixins
         .body-overflow-x
             header.header
                 +privacyPopup()
-                .header-block#up
+                .header-block#up(itemscope itemtype="http://schema.org/WPHeader")
                     +headerNavigation(navigation)
-                    .main-bgc
+                    .main-bgc(itemprop="mainEntityOfPage")
                         .main-info.flex-between
                             p зручно та стильно
-                            h1 Ми пишаємося широким вибором стильних та зручних головних уборів для всієї сім'ї. 
-                                span Знайдемо ідеальний аксесуар для кожного.
-                            a.catalog-cta(href="catalog.html") в каталог
+                            h1 Elithat пишається своїм широким вибором стильних та зручних головних уборів для всієї сім'ї. 
+                                span(itemprop="alternativeHeadline") Знайдемо ідеальний аксесуар для кожного.
+                            a.catalog-cta(href="catalog.html" itemprop="url") в каталог
                         .flex-between.carousel-picture.carousel 
-                            .carousel-img
+                            .carousel-img(itemscope itemtype="http://schema.org/ImageObject")
                                 picture 
-                                    img(src="img/bgc-kid.png" alt="")
-                            .carousel-img
+                                    img(src="img/bgc-kid.png" alt="" itemprop="image")
+                            .carousel-img(itemscope itemtype="http://schema.org/ImageObject")
                                 picture 
-                                    img(src="img/bgc-kid2.png" alt="")
-                            .carousel-img
+                                    img(src="img/bgc-kid2.png" alt="" itemprop="image")
+                            .carousel-img(itemscope itemtype="http://schema.org/ImageObject")
                                 picture 
-                                    img(src="img/bgc-kid3.png" alt="")
-                            .carousel-img
+                                    img(src="img/bgc-kid3.png" alt="" itemprop="image")
+                            .carousel-img(itemscope itemtype="http://schema.org/ImageObject")
                                 picture 
-                                    img(src="img/bgc-kid4.png" alt="")
-                            .carousel-img
+                                    img(src="img/bgc-kid4.png" alt="" itemprop="image")
+                            .carousel-img(itemscope itemtype="http://schema.org/ImageObject")
                                 picture 
-                                    img(src="img/bgc-kid5.png" alt="")
-                            .carousel-img
+                                    img(src="img/bgc-kid5.png" alt="" itemprop="image")
+                            .carousel-img(itemscope itemtype="http://schema.org/ImageObject")
                                 picture 
-                                    img(src="img/bgc-kid6.png" alt="")
-            main 
-                section.wrapper.category#category 
+                                    img(src="img/bgc-kid6.png" alt="" itemprop="image")
+            main(itemscope itemtype="http://schema.org/WebPage")
+                section.wrapper.category#category(itemscope itemtype="http://schema.org/SiteNavigationElement")
                     h2 категорії
                     .d-flex.category-block-main
-                        .click-category
-                            a(href="#")
-                            .category-card.for-girl
-                                p.category-name для дівчаток
-                                span.liquid 
+                        .click-category(itemscope itemtype="http://schema.org/SiteNavigationElement")
+                            a(href="#" itemprop="itemListElement")
+                            .category-card.for-girl(itemscope itemtype="http://schema.org/CollectionPage")
+                                p.category-name(itemprop="name") для дівчаток
+                                span.liquid(itemprop="additionalProperty" itemscope itemtype="http://schema.org/ImageObject") 
                                     svg(viewbox='0 0 479 227' fill='none' xmlns='http://www.w3.org/2000/svg')
                                         path(fill='#BC215F' d='M69.0721 168.965C49.0512 150.569 14.682 141.971 0 139.971V15C0 6.71573 6.71574 0 15 0H464C472.284 0 479 6.71574 479 15V168.965C465.986 161.633 430.349 147.869 391.909 151.469C343.859 155.968 354.87 159.967 307.821 193.96C260.772 227.953 202.211 229.952 159.667 224.953C117.122 219.954 94.0982 191.96 69.0721 168.965Z')
 
-                                    span.left-vector
-                                       svg(viewbox='0 0 188 122' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                    span.left-vector(itemprop="additionalProperty" itemscope itemtype="http://schema.org/ImageObject")
+                                        svg(viewbox='0 0 188 122' fill='none' xmlns='http://www.w3.org/2000/svg')
                                             path(d='M1 118.5C15.8333 119 46 110.7 48 73.5001C50.5 27.0001 2.68596 53.0001 24.5 69.0001C46.314 85.0001 64 60 74.5 40.5C85 21 108 20.5 128.5 26.5C149 32.5 157.5 46 174.5 33.5C188.1 23.5 185.5 8 182.5 1.5' stroke='#219EBC' stroke-width='5')
 
-                                    span.right-vector
-                                       svg(viewbox='0 0 209 109' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                    span.right-vector(itemprop="additionalProperty" itemscope itemtype="http://schema.org/ImageObject")
+                                        svg(viewbox='0 0 209 109' fill='none' xmlns='http://www.w3.org/2000/svg')
                                             path(d='M3 12.3599C7.83333 21.1932 21.7 38.7599 38.5 38.3599C59.5 37.8599 82.5 30.8599 81.5 12.3599C80.7508 -1.5 65.5 2.35989 62.5 7.35987C59.5 12.3599 54 32.3598 93.5 31.3598C133 30.3598 142 38.8598 149.5 54.3598C157 69.8598 155.096 89.7925 169 100.36C181.5 109.86 192.5 104.86 198 96.3598C202.4 89.5598 207.167 87.8598 209 87.8598' stroke='#30BC21' stroke-width='5')
 
                             //- picture 
                             //-     sourse(srcset="img/girl.webp" type="image/webp")
                             //-     img(src="img/girl.svg" alt="Купити шапку для дівчинки Elithat")
-                        .click-category
-                            a(href="#") 
-                            .category-card.for-boy
-                                p.category-name Для хлопчиків
-                                span.liquid 
+                        .click-category(itemscope itemtype="http://schema.org/ListItem")
+                            a(href="#" itemprop="url") 
+                            .category-card.for-boy(itemscope itemtype="http://schema.org/CollectionPage")
+                                p.category-name(itemprop="name") Для хлопчиків
+                                span.liquid(itemprop="additionalProperty" itemscope itemtype="http://schema.org/ImageObject") 
                                     <svg viewBox="0 0 479 227" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M69.0721 168.965C49.0512 150.569 14.682 141.971 0 139.971V15C0 6.71573 6.71574 0 15 0H464C472.284 0 479 6.71574 479 15V168.965C465.986 161.633 430.349 147.869 391.909 151.469C343.859 155.968 354.87 159.967 307.821 193.96C260.772 227.953 202.211 229.952 159.667 224.953C117.122 219.954 94.0982 191.96 69.0721 168.965Z" fill="#30BC21"/>
                                     </svg>
-                                    span.left-vector
+                                    span.left-vector(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
                                         <svg viewBox="0 0 188 122" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M1 118.5C15.8333 119 46 110.7 48 73.5001C50.5 27.0001 2.68596 53.0001 24.5 69.0001C46.314 85.0001 64 60 74.5 40.5C85 21 108 20.5 128.5 26.5C149 32.5 157.5 46 174.5 33.5C188.1 23.5 185.5 8 182.5 1.5" stroke="#219EBC" stroke-width="5"/>
                                         </svg>
-                                    span.right-vector
+                                    span.right-vector(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
                                         <svg viewBox="0 0 209 109" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M3 12.3599C7.83333 21.1932 21.7 38.7599 38.5 38.3599C59.5 37.8599 82.5 30.8599 81.5 12.3599C80.7508 -1.5 65.5 2.35989 62.5 7.35987C59.5 12.3599 54 32.3598 93.5 31.3598C133 30.3598 142 38.8598 149.5 54.3598C157 69.8598 155.096 89.7925 169 100.36C181.5 109.86 192.5 104.86 198 96.3598C202.4 89.5598 207.167 87.8598 209 87.8598" stroke="#BC215F" stroke-width="5"/>
                                         </svg>
@@ -83,192 +96,192 @@ html(lang="uk")
                             a(href="#")
                             .category-card.universal
                                 p.category-name Універсальні
-                                span.liquid 
+                                span.liquid(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
                                     <svg viewBox="0 0 479 227" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M69.0721 168.965C49.0512 150.569 14.682 141.971 0 139.971V15C0 6.71573 6.71574 0 15 0H464C472.284 0 479 6.71574 479 15V168.965C465.986 161.633 430.349 147.869 391.909 151.469C343.859 155.968 354.87 159.967 307.821 193.96C260.772 227.953 202.211 229.952 159.667 224.953C117.122 219.954 94.0982 191.96 69.0721 168.965Z" fill="#219EBC"/>
                                     </svg>
-                                    span.left-vector
+                                    span.left-vector(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
                                         <svg viewBox="0 0 188 122" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M1 118.5C15.8333 119 46 110.7 48 73.5001C50.5 27.0001 2.68596 53.0001 24.5 69.0001C46.314 85.0001 64 60 74.5 40.5C85 21 108 20.5 128.5 26.5C149 32.5 157.5 46 174.5 33.5C188.1 23.5 185.5 8 182.5 1.5" stroke="#30BC21" stroke-width="5"/>
                                         </svg>
-                                    span.right-vector
+                                    span.right-vector(itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject")
                                         <svg viewBox="0 0 209 109" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M3 12.3599C7.83333 21.1932 21.7 38.7599 38.5 38.3599C59.5 37.8599 82.5 30.8599 81.5 12.3599C80.7508 -1.5 65.5 2.35989 62.5 7.35987C59.5 12.3599 54 32.3598 93.5 31.3598C133 30.3598 142 38.8598 149.5 54.3598C157 69.8598 155.096 89.7925 169 100.36C181.5 109.86 192.5 104.86 198 96.3598C202.4 89.5598 207.167 87.8598 209 87.8598" stroke="#BC215F" stroke-width="5"/>
                                         </svg>
                             //- picture 
                             //-     sourse(srcset="img/universal.webp" type="image/webp")
                             //-     img(src="img/universal.svg" alt="Купити шапку універсальну Elithat")
-                section.wrapper.products#products
-                    h2 популярні товари
+                section.wrapper.products#products(itemscope itemtype="http://schema.org/Product")
+                    h2(itemprop="name") популярні товари
                     .products-list 
-                        figure 
+                        figure(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
                             .relative
-                                a.product-redirect(href="product-card.html") 
+                                a.product-redirect(href="product-card.html" itemprop="url") 
                                 .girl-product 
                                     span для дівчинки
-                                img(src="img/card-image1.jpg" alt="")
+                                img(src="img/card-image1.jpg" alt="" itemprop="image")
                             figcaption 
-                                h3 Зимова шапка-шолом дитяча 
-                                p.made-in країна-виробник: 
+                                h3(itemprop="name") Зимова шапка-шолом дитяча 
+                                p.made-in(itemprop="manufacturer") країна-виробник: 
                                     span Китай
-                                .flex-between.product-sizes.items-center
-                                    span розміри:
-                                    form(action="") 
+                                .flex-between.product-sizes.items-center(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+                                    span(itemprop="name") розміри:
+                                    form(action="#") 
                                         .sizes-inputs
-                                            input(type="checkbox" name="size" id="product-size38")
+                                            input(type="checkbox" name="size" itemprop="size" id="product-size38")
                                             label(for="product-size38") 38
-                                            input(type="checkbox" name="size" id="product-size39")
+                                            input(type="checkbox" name="size" itemprop="size" id="product-size39")
                                             label(for="product-size39") 39
-                                            input(type="checkbox" name="size" id="product-size40")
+                                            input(type="checkbox" name="size" itemprop="size" id="product-size40")
                                             label(for="product-size40") 40
-                                            input(type="checkbox" name="size" id="product-size41")
+                                            input(type="checkbox" name="size" itemprop="size" id="product-size41")
                                             label(for="product-size41") 41
-                                            input(type="checkbox" name="size" id="product-size42")
+                                            input(type="checkbox" name="size" itemprop="size" id="product-size42")
                                             label(for="product-size42") 42
-                                            input(type="checkbox" name="size" id="product-size43")
+                                            input(type="checkbox" name="size" itemprop="size" id="product-size43")
                                             label(for="product-size43") 43
-                                            input(type="checkbox" name="size" id="product-size44")
+                                            input(type="checkbox" name="size" itemprop="size" id="product-size44")
                                             label(for="product-size44") 44
-                                .price.d-flex.items-center
-                                    b 459 грн
-                                    span.old-price 560 грн
-                                a(href="#").cta до кошика
-                        figure 
+                                .price.d-flex.items-center(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+                                    b(itemprop="price") 459 грн
+                                    span.old-price(itemprop="priceValidUntil") 560 грн
+                                a(href="#" itemprop="url").cta до кошика
+                        figure(itemprop="offers" itemscope itemtype="http://schema.org/Product")
                             .relative
-                                a.product-redirect(href="product-card.html") 
+                                a.product-redirect(href="product-card.html" itemprop="url")  
                                 .boy-product
-                                    span для хлопчика
-                                img(src="img/card-image-2.jpg" alt="")
+                                    span(itemprop="audience") для хлопчика
+                                img(src="img/card-image-2.jpg" alt="" itemprop="image")
                             figcaption 
-                                h3 літня шапка-панамка дитяча
-                                p.made-in країна-виробник: 
+                                h3(itemprop="name") літня шапка-панамка дитяча
+                                p.made-in(itemprop="manufacturer") країна-виробник: 
                                     span Китай
-                                .flex-between.product-sizes.items-center
-                                    span розміри:
+                                .flex-between.product-sizes.items-center(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+                                    span(itemprop="name") розміри:
                                     form(action="") 
                                         .sizes-inputs
-                                            input(type="checkbox" name="size" id="product2-size38")
+                                            input(type="checkbox" name="size" itemprop="size" id="product2-size38")
                                             label(for="product2-size38") 38
-                                            input(type="checkbox" name="size" id="product-size39")
+                                            input(type="checkbox" name="size" itemprop="size" id="product-size39")
                                             label(for="product2-size39") 39
-                                            input(type="checkbox" name="size" id="product2-size40")
+                                            input(type="checkbox" name="size" itemprop="size" id="product2-size40")
                                             label(for="product2-size40") 40
-                                            input(type="checkbox" name="size" id="product2-size41")
+                                            input(type="checkbox" name="size" itemprop="size" id="product2-size41")
                                             label(for="product2-size41") 41
-                                            input(type="checkbox" name="size" id="product2-size42")
+                                            input(type="checkbox" name="size" itemprop="size" id="product2-size42")
                                             label(for="product2-size42") 42
-                                            input(type="checkbox" name="size" id="product2-size43")
+                                            input(type="checkbox" name="size" itemprop="size" id="product2-size43")
                                             label(for="product2-size43") 43
-                                            input(type="checkbox" name="size" id="product2-size44")
+                                            input(type="checkbox" name="size" itemprop="size" id="product2-size44")
                                             label(for="product2-size44") 44
-                                .price.d-flex.items-center
-                                    b 459 грн
-                                    span.old-price 560 грн
-                                a(href="#").cta до кошика
-                        figure 
+                                .price.d-flex.items-center(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+                                    b(itemprop="price") 459 грн
+                                    span.old-price(itemprop="priceValidUntil") 560 грн
+                                a(href="#" itemprop="url").cta до кошика
+                        figure(itemprop="offers" itemscope itemtype="http://schema.org/Product") 
                             .relative
-                                a.product-redirect(href="product-card.html") 
+                                a.product-redirect(href="product-card.html" itemprop="url") 
                                 .universal-product
-                                    span універсальна
-                                img(src="img/card-image-3.jpg" alt="")
+                                    span(itemprop="audience") універсальна
+                                img(src="img/card-image-3.jpg" alt="" itemprop="image") 
                             figcaption 
-                                h3 Зимова шапка-шолом дитяча 
-                                p.made-in країна-виробник: 
+                                h3(itemprop="name") Зимова шапка-шолом дитяча 
+                                p.made-in(itemprop="manufacturer") країна-виробник: 
                                     span Китай
                                 .flex-between.product-sizes.items-center
-                                    span розміри:
+                                    span(itemprop="name") розміри:
                                     form(action="") 
                                         .sizes-inputs
-                                            input(type="checkbox" name="size" id="product3-size38")
-                                            label(for="product3-size38") 38
-                                            input(type="checkbox" name="size" id="product3-size39")
-                                            label(for="product3-size39") 39
-                                            input(type="checkbox" name="size" id="product3-size40")
-                                            label(for="product3-size40") 40
-                                            input(type="checkbox" name="size" id="product3-size41")
-                                            label(for="product3-size41") 41
-                                            input(type="checkbox" name="size" id="product3-size42")
-                                            label(for="product3-size42") 42
-                                            input(type="checkbox" name="size" id="product3-size43")
-                                            label(for="product3-size43") 43
-                                            input(type="checkbox" name="size" id="product3-size44")
-                                            label(for="product3-size44") 44
-                                .price.d-flex.items-center
-                                    b 459 грн
-                                    span.old-price 560 грн
-                                a(href="#").cta до кошика
+                                            input(type="checkbox" name="size" itemprop="size" id="product2-size38")
+                                            label(for="product2-size38") 38
+                                            input(type="checkbox" name="size" itemprop="size" id="product-size39")
+                                            label(for="product2-size39") 39
+                                            input(type="checkbox" name="size" itemprop="size" id="product2-size40")
+                                            label(for="product2-size40") 40
+                                            input(type="checkbox" name="size" itemprop="size" id="product2-size41")
+                                            label(for="product2-size41") 41
+                                            input(type="checkbox" name="size" itemprop="size" id="product2-size42")
+                                            label(for="product2-size42") 42
+                                            input(type="checkbox" name="size" itemprop="size" id="product2-size43")
+                                            label(for="product2-size43") 43
+                                            input(type="checkbox" name="size" itemprop="size" id="product2-size44")
+                                            label(for="product2-size44") 44
+                                .price.d-flex.items-center(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+                                    b(itemprop="price") 459 грн
+                                    span.old-price(itemprop="priceValidUntil") 560 грн
+                                a(href="#" itemprop="url").cta до кошика
                     .justify-center
-                        a(href="catalog.html").catalog-cta в каталог
+                        a(href="catalog.html" itemprop="url").catalog-cta в каталог
                 .overflow-x-propositions
-                    section.propositions#propositions 
+                    section.propositions#propositions(itemscope itemtype="http://schema.org/Product")
                         .summer.wrapper
                             .images
-                                img(src="img/summer-proposition-1.webp" alt="")
-                                img(src="img/summer-proposition-2.webp" alt="")
-                            h2 А Ви вже готові до літа?
+                                img(src="img/summer-proposition-1.webp" alt="" itemprop="image")
+                                img(src="img/summer-proposition-2.webp" alt="" itemprop="image")
+                            h2(itemprop="name") А Ви вже готові до літа?
                             p найкращі пропозиції від ElitHat
                             .justify-center.propositions-btn
                                 a(href="catalog.html").catalog-cta в каталог
-                    section.propositions#propositions 
+                    section.propositions#propositions(itemscope itemtype="http://schema.org/Product")
                         .autumn.wrapper
                             .images
-                                img(src="img/autumn-proposition1.webp" alt="")
-                                img(src="img/autumn-proposition2.webp" alt="")
-                            h2 А Ви вже готові до осені?
-                            p найкращі пропозиції від ElitHat
+                                img(src="img/autumn-proposition1.webp" alt="" itemprop="image") 
+                                img(src="img/autumn-proposition2.webp" alt="" itemprop="image")
+                            h2(itemprop="name") А Ви вже готові до осені?
+                            p(itemprop="name") найкращі пропозиції від ElitHat
                             .justify-center.propositions-btn
-                                a(href="catalog.html").catalog-cta в каталог
+                                a(href="catalog.html" itemprop="url").catalog-cta в каталог
                     section.propositions#propositions 
                         .winter.wrapper
                             .images
-                                img(src="img/winter-proposition-1.webp" alt="")
-                                img(src="img/winter-proposition-2.webp" alt="")
-                            h2 А Ви вже готові до зими?
-                            p найкращі пропозиції від ElitHat
+                                img(src="img/winter-proposition-1.webp" alt="" itemprop="image")
+                                img(src="img/winter-proposition-2.webp" alt="" itemprop="image")
+                            h2(itemprop="name") А Ви вже готові до зими?
+                            p(itemprop="name") найкращі пропозиції від ElitHat
                             .justify-center.propositions-btn
-                                a(href="catalog.html").catalog-cta в каталог
-                    section.propositions#propositions 
+                                a(href="catalog.html" itemprop="url").catalog-cta в каталог
+                    section.propositions#propositions(itemtype="http://schema.org/Product" itemscope)
                         .spring.wrapper
                             .images
-                                img(src="img/spring-proposition-1.webp" alt="")
-                                img(src="img/spring-proposition-2.webp" alt="")
-                            h2 А Ви вже готові до весни?
-                            p найкращі пропозиції від ElitHat
+                                img(src="img/spring-proposition-1.webp" alt="" itemprop="image")
+                                img(src="img/spring-proposition-2.webp" alt="" itemprop="image")
+                            h2(itemprop="name") А Ви вже готові до весни?
+                            p(itemprop="name") найкращі пропозиції від ElitHat
                             .justify-center.propositions-btn
-                                a(href="catalog.html").catalog-cta в каталог
+                                a(href="catalog.html" itemprop="url").catalog-cta в каталог
                 .justify-center.wrapper.mobile-to-catalog
-                    a(href="catalog.html").catalog-cta в каталог
-                section.advantages.wrapper#advantages.items-center
+                    a(href="catalog.html" itemprop="url").catalog-cta в каталог
+                section.advantages.wrapper#advantages.items-center(itemtype="http://schema.org/Offer")
                     .advantages-first-block 
-                        h2 понад
-                            span 400 товарів
-                        p на усі сезони для Вашої малечі
-                        a(href="catalog.html").catalog-cta в каталог
+                        h2(itemprop="name") понад
+                            span(itemprop="name") 400 товарів
+                        p(item="description") на усі сезони для Вашої малечі
+                        a(href="catalog.html" itemprop="url").catalog-cta в каталог
                     .advantages-blocks 
                         .advantage-block
                             .d-flex 
-                                img(src="img/advantage-img1.svg" alt="")
-                                h3 широкий асортимент
+                                img(src="img/advantage-img1.svg" alt="" itemprop="image")
+                                h3(itemprop="name") широкий асортимент
                             hr
-                            p На нашому сайті ви знайдете вражаючий та різноманітний асортимент товарів, що відповідає різним потребам і смакам. Ми пишаємося тим, що пропонуємо настільки великий вибір продукції.
+                            p(itemprop="description") На нашому сайті ви знайдете вражаючий та різноманітний асортимент товарів, що відповідає різним потребам і смакам. Ми пишаємося тим, що пропонуємо настільки великий вибір продукції.
                         .advantage-block
                             .d-flex 
                                 img(src="img/advantage-img2.svg" alt="")
-                                h3 вигідні ціни
+                                h3(itemprop="name") вигідні ціни
                             hr
-                            p На нашому сайті ви знайдете вражаючий та різноманітний асортимент товарів, що відповідає різним потребам і смакам. Ми пишаємося тим, що пропонуємо настільки великий вибір продукції.
+                            p(itemprop="description") На нашому сайті ви знайдете вражаючий та різноманітний асортимент товарів, що відповідає різним потребам і смакам. Ми пишаємося тим, що пропонуємо настільки великий вибір продукції.
                         .advantage-block
                             .d-flex 
-                                img(src="img/advantage-img3.svg" alt="")
-                                h3 швидка доставка
+                                img(src="img/advantage-img3.svg" alt="" itemprop="name")
+                                h3(itemprop="name") швидка доставка
                             hr
-                            p На нашому сайті ви знайдете вражаючий та різноманітний асортимент товарів, що відповідає різним потребам і смакам. Ми пишаємося тим, що пропонуємо настільки великий вибір продукції.
+                            p(itemprop="description") На нашому сайті ви знайдете вражаючий та різноманітний асортимент товарів, що відповідає різним потребам і смакам. Ми пишаємося тим, що пропонуємо настільки великий вибір продукції.
                         .advantage-block
                             .d-flex 
-                                img(src="img/advantage-img4.svg" alt="")
-                                h3 система лояльності для постійних клієнтів
+                                img(src="img/advantage-img4.svg" alt="" itemprop="name")
+                                h3(itemprop="name") система лояльності для постійних клієнтів
                             hr
-                            p На нашому сайті ви знайдете вражаючий та різноманітний асортимент товарів, що відповідає різним потребам і смакам. Ми пишаємося тим, що пропонуємо настільки великий вибір продукції.
+                            p(itemprop="description") На нашому сайті ви знайдете вражаючий та різноманітний асортимент товарів, що відповідає різним потребам і смакам. Ми пишаємося тим, що пропонуємо настільки великий вибір продукції.
             footer 
                 +footerNavigation(footerNav)
     script(src="js/scripts.js")
