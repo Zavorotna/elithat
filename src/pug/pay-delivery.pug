@@ -1,55 +1,68 @@
 doctype html
 html(lang="uk")
     head
+        link(rel="stylesheet" href="css/style.css")
         meta(charset="UTF-8")
-        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")   
-        link(rel="stylesheet", href="css/style.css")
-        title Elithat delivery
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=2.0")
+        title Elithat - доставка та оплата вашого аксесуару
+        meta(name="description" content="ElitHat - надає велику кількість простих методів оплати та дешевої й швидкої доставки вашого товару в будь-яку точку України.")
+        meta(name="keywords" content="Elithat, шапка, купити шапку, шапки Elithat, купити зручну шапку, дитячий одяг купити, дитяча шапка, шапка для дівчинки, шапка для хлопчика")
+        meta(name="author" content="Elithat")
+        meta(name="publisher" content="Elithat")
+        meta(name="robots" content="index follow")  
+        link(rel='icon' href='img/favicon.ico')
+        link(rel='canonical' href='#')
+        meta(property="og:title" content="Elithat - хороший вибір для купівлі якісної та зручної шапки")
+        meta(property="og:description" content="Elithat пропонує різноманітні та комфортні шапки за доступними цінами. Знайдіть ідеальний головний убір для всієї родини серед нашого широкого асортименту стильних виробів.")
+        meta(property="og:image" content="./img/logo.png")
+        meta(property="og:type" content="product")
+        meta(property="og:url" content="#")
     body 
         include components/mixins
         header.header
             +privacyPopup()
             .header-block#up
                 +headerNavigation(navigation)
-        main.wrapper
-            h1.h1 Доставка та оплата
+        main.wrapper(itemscope itemtype="http://www.schema.org/WebPage")
+            h1.h1(itemtype="headline") Доставка та оплата
             .main-info_payDelivery
                 .info-delivery.flex-between
                     .text-block
-                        h2 обирайте зручний спосіб доставки:
-                        nav 
+                        h2(itemprop="headline") обирайте зручний спосіб доставки:
+                        nav(itemtype="https://schema.org/SiteNavigationElement" itemscope)
                             ul 
-                                li Нова пошта. &nbsp
+                                li(itemscope itemtype="https://schema.org/OfferShippingDetails") Нова пошта. &nbsp
                                     span Доставку сплачує покупець за тарифами транспортної компанії. Термін доставки 1-3 дні. Вартість доставки може змінюватись в залежності від тарифів перевізника.
-                                li Укрпошта. &nbsp
+                                li(itemscope itemtype="https://schema.org/OfferShippingDetails") Укрпошта. &nbsp
                                     span Доставку сплачує покупець за тарифами транспортної компанії. Термін доставки 1-3 дні. Вартість доставки може змінюватись в залежності від тарифів перевізника.
-                                li Meestexpres. &nbsp
+                                li(itemscope itemtype="https://schema.org/OfferShippingDetails") Meestexpres. &nbsp
                                     span Доставку сплачує покупець за тарифами транспортної компанії. Термін доставки 1-3 дні. Вартість доставки може змінюватись в залежності від тарифів перевізника.
-                                li Доставка по м. Хмельницький &nbsp
+                                li(itemscope itemtype="https://schema.org/OfferShippingDetails") Доставка по м. Хмельницький &nbsp
                                     span (по домовленості)
-                                li Самовивіз
-                                li Відправимо будь-яким транспортом &nbsp
+                                li(itemscope itemtype="https://schema.org/OfferShippingDetails") Самовивіз
+                                li(itemscope itemtype="https://schema.org/OfferShippingDetails") Відправимо будь-яким транспортом &nbsp
                                     span (автобус, потяг, маршрутне таксі)
-                    .img-block
-                        picture 
-                            source(srcset="img/delivery.jpg" type="image/jpg")
-                            img(src="img/delivery.webp", alt="")
+                .img-block(itemscope itemtype="http://www.schema.org/ImageObject")
+                    picture 
+                        source(srcset="img/delivery.jpg" type="image/jpg")
+                        img(src="img/delivery.webp", alt="Delivery Image", itemprop="image")
                 .info-pay.flex-between
-                    .img-block
+                    .img-block(itemscope itemtype="http://www.schema.org/ImageObject")
                         picture 
                             source(srcset="img/pay-block.webp" type="image/webp")
-                            img(src="img/pay-block.webp", alt="")
+                            img(src="img/pay-block.webp", alt="" itemprop="image")
                     .text-block
-                        h2 обирайте зручний спосіб оплати:
-                        nav 
+                        h2(itemprop="headline") обирайте зручний спосіб оплати:
+                        nav(itemscope itemtype="https://schema.org/SiteNavigationElement")
                             ul 
-                                li Оплата на рахунок ФОП. &nbsp
-                                    span Реквізити на оплату відправить менеджер після оформлення замовлення.
-                                li Оплата за реквізитами. &nbsp 
-                                    span Передоплата на картку Приватбанку (сума замовлення + 0,5% комісія за перерахунок коштів)
-                                li Накладений платіж. &nbsp
-                                    span Оплачуйте товар в момент його отримання на пошті. Нова пошта бере собі як комісію 20 грн+2% вартості товару.(обовʼязково предоплата)
-                                li Інший спосіб оплати за домовленістю.
+                                li(itemprop="headline") Оплата на рахунок ФОП. &nbsp
+                                    span(itemprop="description") Реквізити на оплату відправить менеджер після оформлення замовлення.
+                                li(itemprop="headline") Оплата за реквізитами. &nbsp 
+                                    span(itemprop="description") Передоплата на картку Приватбанку (сума замовлення + 0,5% комісія за перерахунок коштів)
+                                li(itemprop="headline") Накладений платіж. &nbsp
+                                    span(itemprop="description") Оплачуйте товар в момент його отримання на пошті. Нова пошта бере собі як комісію 20 грн+2% вартості товару.(обовʼязково предоплата)
+                                li(itemprop="headline") Інший спосіб оплати за домовленістю.
                 
         footer 
             +footerNavigation(footerNav)
