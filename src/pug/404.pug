@@ -23,8 +23,8 @@ html(lang="en")
         header 
             +headerNavigation(navigation)   
         .wrapper 
-            main.page404
-                h1 Помилка 404 - сторінка не знайдена
+            main.page404(itemscope itemtype="https://schema.org/Article")
+                h1(itemprop="headline") Помилка 404 - сторінка не знайдена
         footer 
             +footerNavigation(footerNav)
             
