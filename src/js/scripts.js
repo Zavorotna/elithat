@@ -301,34 +301,36 @@ document.addEventListener("DOMContentLoaded", function () {
             mobileMenu = document.querySelector(".main-navigation"),
             sections = document.querySelectorAll(".scrollBurger"),
             phoneMobile = document.querySelector(".phone-mobile"),
-            blurPage = document.querySelector(".blur-page")
+            blurPage = document.querySelector(".blur-page"),
+            headerNavigation = document.querySelector(".header-navigation")
     
         let isMenuOpen = false
     
         burger.addEventListener('click', function () {
-            if (!isMenuOpen) {
+            if (!isMenuOpen) { 
+                blurPage.style.display = "block"
                 burger.classList.add('active')
                 mobileMenu.classList.add('activemobile')
                 mobileMenu.style.left = "0"
                 burger.style.left = "55%"
                 phoneMobile.style.left = "20px"
-                blurPage.style.display = "block"
+                headerNavigation.style.backdropFilter = "none"
                 isMenuOpen = true
-            } else {
+            } else { 
                 closeMenu()
                 isMenuOpen = false
             }
         })
-    
+        
         blurPage.addEventListener("click", function () {
             closeMenu()
             isMenuOpen = false
         })
-    
+        
         window.addEventListener('scroll', function () {
             sections.forEach(section => {
                 const rect = section.getBoundingClientRect()
-    
+                
                 if (rect.top <= 0 && rect.bottom >= 0) {
                     burger.classList.remove('active')
                     mobileMenu.classList.remove('activemobile')
@@ -336,15 +338,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             })
         })
-    
+        
         function closeMenu() {
+            blurPage.style.display = "none"
             burger.classList.remove('active')
             burger.classList.add("noactive")
             mobileMenu.classList.remove('activemobile')
             mobileMenu.style.left = "-100%"
             burger.style.left = "0"
             phoneMobile.style.left = "-100%"
-            blurPage.style.display = "none"
+            headerNavigation.style.backdropFilter = "blur(5px)"
         }
     }
     
