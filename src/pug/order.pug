@@ -16,7 +16,7 @@ html(lang="uk")
                 .order-page(itemprop="mainEntity" iitemscope itemtype="http://schema.org/Order")
                     h1.h1(itemprop="name") оформлення замовлення
                     form.main-block_order.flex-between(action="#" method="post" itemprop="potentialAction" iitemscope itemtype="http://schema.org/CommunicateAction")  
-                        .contact-form(iitemscope itemtype="http://schema.org/Organization"))
+                        .contact-form(iitemscope itemtype="http://schema.org/Organization")
                             h2(itemprop="name") ваші контактні дані
                             p.d-flex.input-order(itemprop="name")
                                 label Мобільний телефон*
@@ -72,14 +72,14 @@ html(lang="uk")
                             .sum-block(itemscope itemtype="http://schema.org/CommunicateAction")
                                 .without-sale_price.flex-between.items-center
                                     p(itemprop="description") Сума без знижки:
-                                    p.price-order.all-price(itemprop="price") 1000 грн
+                                    p.price-order.all-price(itemprop="name") 1000 грн
                                 .sale_price.flex-between.items-center
                                     p(itemprop="description") Знижка: 
-                                    p.price-order.sale(itemprop="price") 200 грн
+                                    p.price-order.sale(itemprop="name") 200 грн
                             hr
                             .order-sum.flex-between.items-center
                                 p(itemprop="description") До сплати:
-                                p.order-price_sum(itemprop="price") 800 грн
+                                p.order-price_sum(itemprop="name") 800 грн
                             .flex-btn
                                 a.issue-order(href="#" itemprop="url") підтвердити
                                 a.back(href="cart.html" itemprop="url") повернутися у корзину
