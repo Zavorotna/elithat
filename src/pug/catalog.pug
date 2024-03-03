@@ -12,233 +12,238 @@ html(lang="uk")
                 +privacyPopup()
                 .header-block#up
                     +headerNavigation(navigation)
-            main 
-                .mobile-filter 
-                    a(href="#") Фільтр
-                section.catalog
-                    h2 Каталог
-                    form(action="#" method="post") 
-                        .flex-between.category-block.flex-wrap.catalog-wrapper
-                            div 
-                                input(type="radio", name="season", id="summerSeason")
-                                label(for="summerSeason") 
-                                    .catalog-season-block.catalog-summer
-                                        span літо
-                                        img(src="img/catalog-season-summer.webp", alt="")
-                            div 
-                                input(type="radio", name="season", id="autumnSeason")
-                                label(for="autumnSeason") 
-                                    .catalog-season-block.catalog-autumn
-                                        span осінь
-                                        img(src="img/autumn-proposition2.webp", alt="")
-                            div 
-                                input(type="radio", name="season", id="winterSeason")
-                                label(for="winterSeason") 
-                                    .catalog-season-block.catalog-winter
-                                        span зима
-                                        img(src="img/winter-proposition-2.webp", alt="")
-                            div
-                                input(type="radio", name="season", id="springSeason")
-                                label(for="springSeason") 
-                                    .catalog-season-block.catalog-spring
-                                        span весна
-                                        img(src="img/spring-proposition-2.webp", alt="")
-                section.wrapper.d-flex.sort
-                    .filter 
-                    .sorting-filters.items-center
-                        .d-flex 
-                            a(href="#").green топ продажів
-                            a(href="#").blue новинки
-                            a(href="#").violet акції
-                        .sort-select.d-flex.items-center 
-                            span сортувати 
+            main(itemscope itemtype="http://schema.org/WebPage") 
+                .mobile-filter(itemscope itemtype="http://schema.org/CreativeWork")
+                    a(href="#" itemprop="url") Фільтр
+                section.catalog(itemscope itemtype="http://schema.org/CreativeWork")
+                    h2(itemprop="name") Каталог
+                    form(action="#" method="post" itemscope itemtype="http://schema.org/CreativeWork") 
+                        .flex-between.category-block.flex-wrap.catalog-wrapper(itemscope itemtype="http://schema.org/Product")
+                            div(itemscope itemtype="http://schema.org/Product")
+                                input(type="radio", name="season", id="summerSeason"  itemprop="isRelatedTo")
+                                label(for="summerSeason"  itemprop="isRelatedTo") 
+                                    .catalog-season-block.catalog-summer(itemscope itemtype="http://schema.org/Offer")
+                                        span(itemprop="name") літо
+                                        img(src="img/catalog-season-summer.webp", alt="" itemprop="image")
+                            div(itemscope itemtype="http://schema.org/Product")
+                                input(type="radio", name="season", id="autumnSeason" itemprop="isRelatedTo")
+                                label(for="autumnSeason" itemprop="isRelatedTo") 
+                                    .catalog-season-block.catalog-autumn(itemscope itemtype="http://schema.org/Offer")
+                                        span(itemprop="name") осінь
+                                        img(src="img/autumn-proposition2.webp", alt="" itemprop="image")
+                            div(itemscope itemtype="http://schema.org/Product")
+                                input(type="radio", name="season", id="winterSeason" itemprop="isRelatedTo")
+                                label(for="winterSeason" itemprop="isRelatedTo") 
+                                    .catalog-season-block.catalog-winter(itemscope itemtype="http://schema.org/Offer")
+                                        span(itemprop="name") зима
+                                        img(src="img/winter-proposition-2.webp", alt="" itemprop="image")
+                            div(itemscope itemtype="http://schema.org/Product")
+                                input(type="radio", name="season", id="springSeason" itemprop="isRelatedTo")
+                                label(for="springSeason" itemprop="isRelatedTo") 
+                                    .catalog-season-block.catalog-spring(itemscope itemtype="http://schema.org/Offer")
+                                        span(itemprop="name") весна
+                                        img(src="img/spring-proposition-2.webp", alt="" itemprop="image")
+                section.wrapper.d-flex.sort(itemscope itemtype="http://schema.org/WebPageElement")
+                    .filter(itemscope itemtype="http://schema.org/ItemList")
+                    .sorting-filters.items-center(itemscope itemtype="http://schema.org/ItemList")
+                        .d-flex( itemscope itemtype="http://schema.org/ListItem")
+                            a(href="#" itemprop="url").green топ продажів
+                            a(href="#" itemprop="url").blue новинки
+                            a(href="#" itemprop="url").violet акції
+                        .sort-select.d-flex.items-center(itemscope itemtype="http://schema.org/ItemList")
+                            span(itemprop="name") сортувати 
                             .select-parent
                                 form(action="") 
                                     select(name="")
                                         option(value="actual") найактуальніші
-                section.wrapper.filter-and-catalog.flex-between 
-                    form(action="").filter-and-catalog__form--mobile-hidden
-                        .filter#filter
+                section.wrapper.filter-and-catalog.flex-between
+                    form(action="" itemscope itemtype="http://schema.org/WebPageElement").filter-and-catalog__form--mobile-hidden
+                        .filter#filter(itemscope itemtype="http://schema.org/WebPageElement")
                             .close-filter-btn
-                            h3 Фільтр
-                            .filter-item
-                                .relative
-                                    span Стать
+                            h3(itemprop="name")  Фільтр
+                            .filter-item(itemscope itemtype="http://schema.org/ItemList")
+                                .relative( itemscope itemtype="http://schema.org/ListItem")
+                                    span(itemprop="name") Стать
                                     .filter-arrow
-                                .filter-inputs
-                                    p
-                                        input.style-input(type="checkbox" name="gender" id="old")
-                                        label.style-label(for="old") Дівчинка  
-                                            span.how-many-products (140)
+                                .filter-inputs( itemscope itemtype="http://schema.org/ListItem")
+                                    p(itemprop="description")
+                                        input.style-input(type="checkbox" itemprop="item" name="gender" id="old")
+                                        label.style-label(for="old" itemprop="name") Дівчинка  
+                                            span.how-many-products(itemprop="item") (140)
                             hr
-                            .filter-item
-                                .relative
-                                    span Виробник
+                            .filter-item(itemscope itemtype="http://schema.org/ItemList")
+                                .relative( itemscope itemtype="http://schema.org/ListItem")
+                                    span(itemprop="name") Виробник
                                     .filter-arrow
-                                .filter-inputs
+                                .filter-inputs( itemscope itemtype="http://schema.org/ListItem")
                                     p
-                                        input.style-input(type="checkbox" name="brand" id="brand1")
-                                        label.style-label(for="brand1") Appaman   
-                                            span.how-many-products (140)
+                                        input.style-input(type="checkbox" name="brand" itemprop="item" id="brand1")
+                                        label.style-label(for="brand1" itemprop="name") Appaman   
+                                            span.how-many-products(itemprop="name") (140)
                             hr
-                            .filter-item
-                                .relative
-                                    span Країна виробник
+                            .filter-item(itemscope itemtype="http://schema.org/ItemList")
+                                .relative( itemscope itemtype="http://schema.org/ListItem")
+                                    span(itemprop="name") Країна виробник
                                     .filter-arrow
-                                .filter-inputs
+                                .filter-inputs( itemscope itemtype="http://schema.org/ListItem")
                                     p
-                                        input.style-input(type="checkbox" name="country" id="ukraine")
-                                        label.style-label(for="ukraine") Україна    
-                                            span.how-many-products (140)
+                                        input.style-input(type="checkbox" name="country" id="ukraine" itemprop="item")
+                                        label.style-label(for="ukraine" itemprop="name") Україна    
+                                            span.how-many-products(itemprop="name") (140)
                             hr
-                            .filter-item
-                                .relative
-                                    span Розмір
+                            .filter-item(itemscope itemtype="http://schema.org/ItemList")
+                                .relative( itemscope itemtype="http://schema.org/ListItem")
+                                    span(itemprop="name") Розмір
                                     .filter-arrow
-                                .filter-inputs.product-sizes.sizes-inputs
+                                .filter-inputs.product-sizes.sizes-inputs( itemscope itemtype="http://schema.org/ListItem")
                                     input(type="checkbox", name="size" id="product3-size38")
-                                    label(for="product3-size38") 38
+                                    label(for="product3-size38" itemprop="name") 38
                                     
                             hr
-                            .filter-item
-                                .relative
-                                    span Ціна
+                            .filter-item(itemscope itemtype="http://schema.org/ItemList")
+                                .relative( itemscope itemtype="http://schema.org/ListItem")
+                                    span(itemprop="name") Ціна
                                     .filter-arrow
-                                .filter-inputs.relative
+                                .filter-inputs.relative( itemscope itemtype="http://schema.org/ListItem")
                                     section.range-slider
                                         input#min.form-range(value='500' min='500' max='50000' step='500' type='range')
                                         input#max.form-range(value='50000' min='500' max='50000' step='500' type='range')
-                                    .range-info
-                                        label#min-lbl 0 грн
-                                        label#max-lbl 10000 грн
+                                    .range-info(itemscope itemtype="https://schema.org/PriceSpecification")
+                                        label#min-lbl(itemprop="price") 0 грн
+                                        label#max-lbl(itemprop="price") 10000 грн
                             hr
-                            .filter-item
-                                .relative
-                                    span Вік
+                            .filter-item(itemscope itemtype="http://schema.org/ItemList")
+                                .relative( itemscope itemtype="http://schema.org/ListItem")
+                                    span(itemprop="name") Вік
                                     .filter-arrow
-                                .filter-inputs
-                                    p
+                                .filter-inputs( itemscope itemtype="http://schema.org/ListItem")
+                                    p(itemprop="name")
                                         input.style-input(type="checkbox" name="old" id="old1")
-                                        label.style-label(for="old1") 0-6 місяців 
-                                            span.how-many-products (140)
+                                        label.style-label(for="old1" itemprop="name") 0-6 місяців 
+                                            span.how-many-products(itemprop="name") (140)
                             hr
-                            .filter-item
-                                .relative
-                                    span Вид
+                            .filter-item(itemscope itemtype="http://schema.org/ItemList")
+                                .relative( itemscope itemtype="http://schema.org/ListItem")
+                                    span(itemprop="name") Вид
                                     .filter-arrow
-                                .filter-inputs
-                                    p
+                                .filter-inputs( itemscope itemtype="http://schema.org/ListItem")
+                                    p(itemprop="name")
                                         input.style-input(type="checkbox" name="type" id="type1")
-                                        label.style-label(for="type1") Шапки  
-                                            span.how-many-products (140)
+                                        label.style-label(for="type1" itemprop="name") Шапки  
+                                            span.how-many-products(itemprop="name") (140)
                             hr
-                    .catalog-products
+                    .catalog-products( itemscope itemtype="http://schema.org/ItemList")
                         .products-list
-                            figure 
+                            figure( itemscope itemtype="http://schema.org/Product")
                                 .relative
-                                    a.product-redirect(href="product-card.html") 
+                                    a.product-redirect(href="product-card.html" itemprop="url") 
                                     .girl-product 
-                                        span для дівчинки
-                                    img(src="img/card-image1.jpg", alt="")
-                                figcaption 
-                                    h3 Зимова шапка-шолом дитяча 
-                                    p.made-in країна-виробник: 
-                                        span Китай
-                                    .flex-between.product-sizes.items-center
-                                        span розміри:
-                                        form(action="#" method="post") 
+                                        span(itemprop="name") для дівчинки
+                                    img(src="img/card-image1.jpg", alt="" itemprop="image")
+                                figcaption(itemprop="name")
+                                    h3(itemprop="name") Зимова шапка-шолом дитяча 
+                                    p(itemprop="name").made-in країна-виробник: 
+                                        span(itemprop="name") Китай
+                                    .flex-between.product-sizes.items-center(itemscope itemtype="http://schema.org/Offer")
+                                        span(itemprop="name") розміри:
+                                          form(action="#" method="post" itemscope itemtype="http://schema.org/Offer")
                                             .sizes-inputs
-                                                input(type="checkbox", name="size" id="product-size38")
-                                                label(for="product-size38") 38
-                                                input(type="checkbox", name="size" id="product-size39")
-                                                label(for="product-size39") 39
-                                                input(type="checkbox", name="size" id="product-size40")
-                                                label(for="product-size40") 40
-                                                input(type="checkbox", name="size" id="product-size41")
-                                                label(for="product-size41") 41
-                                                input(type="checkbox", name="size" id="product-size42")
-                                                label(for="product-size42") 42
-                                                input(type="checkbox", name="size" id="product-size43")
-                                                label(for="product-size43") 43
-                                                input(type="checkbox", name="size" id="product-size44")
-                                                label(for="product-size44") 44
-                                    .price.d-flex.items-center
-                                        b 459 грн
-                                        span.old-price 560 грн
-                                    a(href="#").cta до кошика
-                            figure 
+                                                input(type="checkbox", name="size" id="product-size38" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size38" itemscope itemtype="http://schema.org/ListItem") 38
+                                                input(type="checkbox", name="size" id="product-size39" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size39" itemscope itemtype="http://schema.org/ListItem") 39
+                                                input(type="checkbox", name="size" id="product-size40" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size40" itemscope itemtype="http://schema.org/ListItem") 40
+                                                input(type="checkbox", name="size" id="product-size41" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size41" itemscope itemtype="http://schema.org/ListItem") 41
+                                                input(type="checkbox", name="size" id="product-size42" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size42" itemscope itemtype="http://schema.org/ListItem") 42
+                                                input(type="checkbox", name="size" id="product-size43" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size43" itemscope itemtype="http://schema.org/ListItem") 43
+                                                input(type="checkbox", name="size" id="product-size44" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size44" itemscope itemtype="http://schema.org/ListItem") 44
+
+                                .price.d-flex.items-center(itemscope itemtype="http://schema.org/Offer")
+                                    b(itemprop="price") 459 грн
+                                    span.old-price(itemprop="priceCurrency") 560 грн
+                                    a.cta(href="#" itemprop="potentialAction") до кошика
+                            figure( itemscope itemtype="http://schema.org/Product")
                                 .relative
-                                    a.product-redirect(href="product-card.html") 
+                                    a.product-redirect(href="product-card.html" itemprop="url")
                                     .boy-product
-                                        span для хлопчика
-                                    img(src="img/card-image-2.jpg", alt="")
-                                figcaption 
-                                    h3 літня шапка-панамка дитяча
-                                    p.made-in країна-виробник: 
-                                        span Китай
-                                    .flex-between.product-sizes.items-center
-                                        span розміри:
-                                        form(action="") 
+                                        span(itemprop="name") для хлопчика
+                                    img(src="img/card-image-2.jpg", alt="" itemprop="image")
+                                figcaption(itemprop="name")
+                                    h3(itemprop="name") літня шапка-панамка дитяча
+                                    p.made-in
+                                        span(itemprop="name") країна-виробник:
+                                            span(itemprop="name") Китай
+                                    .flex-between.product-sizes.items-center(itemscope itemtype="http://schema.org/Offer")
+                                        span(itemprop="name") розміри:
+                                        form(action="#" method="post" itemscope itemtype="http://schema.org/Offer")
                                             .sizes-inputs
-                                                input(type="checkbox", name="size" id="product2-size38")
-                                                label(for="product2-size38") 38
-                                                input(type="checkbox", name="size" id="product-size39")
-                                                label(for="product2-size39") 39
-                                                input(type="checkbox", name="size" id="product2-size40")
-                                                label(for="product2-size40") 40
-                                                input(type="checkbox", name="size" id="product2-size41")
-                                                label(for="product2-size41") 41
-                                                input(type="checkbox", name="size" id="product2-size42")
-                                                label(for="product2-size42") 42
-                                                input(type="checkbox", name="size" id="product2-size43")
-                                                label(for="product2-size43") 43
-                                                input(type="checkbox", name="size" id="product2-size44")
-                                                label(for="product2-size44") 44
-                                    .price.d-flex.items-center
-                                        b 459 грн
-                                        span.old-price 560 грн
-                                    a(href="#").cta до кошика
+                                                input(type="checkbox", name="size" id="product-size38" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size38" itemscope itemtype="http://schema.org/ListItem") 38
+                                                input(type="checkbox", name="size" id="product-size39" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size39" itemscope itemtype="http://schema.org/ListItem") 39
+                                                input(type="checkbox", name="size" id="product-size40" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size40" itemscope itemtype="http://schema.org/ListItem") 40
+                                                input(type="checkbox", name="size" id="product-size41" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size41" itemscope itemtype="http://schema.org/ListItem") 41
+                                                input(type="checkbox", name="size" id="product-size42" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size42" itemscope itemtype="http://schema.org/ListItem") 42
+                                                input(type="checkbox", name="size" id="product-size43" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size43" itemscope itemtype="http://schema.org/ListItem") 43
+                                                input(type="checkbox", name="size" id="product-size44" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size44" itemscope itemtype="http://schema.org/ListItem") 44
+
+                                    .price.d-flex.items-center(itemscope itemtype="http://schema.org/Offer")
+                                        b(itemprop="price") 459 грн
+                                        span.old-price(itemprop="priceCurrency") 560 грн
+                                        a.cta(href="#" itemprop="potentialAction") до кошика
                             figure 
                                 .relative
-                                    a.product-redirect(href="product-card.html") 
+                                    a.product-redirect(href="product-card.html" itemprop="url")
                                     .universal-product
-                                        span універсальна
-                                    img(src="img/card-image-3.jpg", alt="")
-                                figcaption 
-                                    h3 Зимова шапка-шолом дитяча 
-                                    p.made-in країна-виробник: 
-                                        span Китай
-                                    .flex-between.product-sizes.items-center
-                                        span розміри:
-                                        form(action="") 
+                                        span(itemprop="name") універсальна
+                                    img(src="img/card-image-3.jpg", alt="" itemprop="image")
+                                figcaption(itemprop="name")
+                                    h3(itemprop="name") Зимова шапка-шолом дитяча
+                                    p(itemprop="name").made-in
+                                        span(itemprop="name") країна-виробник:
+                                            span(itemprop="name") Китай
+                                    .flex-between.product-sizes.items-center(itemscope itemtype="http://schema.org/Offer")
+                                        span(itemprop="name") розміри:
+                                         form(action="#" method="post" itemscope itemtype="http://schema.org/Offer")
                                             .sizes-inputs
-                                                input(type="checkbox", name="size" id="product3-size38")
-                                                label(for="product3-size38") 38
-                                                input(type="checkbox", name="size" id="product3-size39")
-                                                label(for="product3-size39") 39
-                                                input(type="checkbox", name="size" id="product3-size40")
-                                                label(for="product3-size40") 40
-                                                input(type="checkbox", name="size" id="product3-size41")
-                                                label(for="product3-size41") 41
-                                                input(type="checkbox", name="size" id="product3-size42")
-                                                label(for="product3-size42") 42
-                                                input(type="checkbox", name="size" id="product3-size43")
-                                                label(for="product3-size43") 43
-                                                input(type="checkbox", name="size" id="product3-size44")
-                                                label(for="product3-size44") 44
-                                    .price.d-flex.items-center
-                                        b 459 грн
-                                        span.old-price 560 грн
-                                    a(href="#").cta до кошика
-                        form(action="") 
+                                                input(type="checkbox", name="size" id="product-size38" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size38" itemscope itemtype="http://schema.org/ListItem") 38
+                                                input(type="checkbox", name="size" id="product-size39" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size39" itemscope itemtype="http://schema.org/ListItem") 39
+                                                input(type="checkbox", name="size" id="product-size40" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size40" itemscope itemtype="http://schema.org/ListItem") 40
+                                                input(type="checkbox", name="size" id="product-size41" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size41" itemscope itemtype="http://schema.org/ListItem") 41
+                                                input(type="checkbox", name="size" id="product-size42" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size42" itemscope itemtype="http://schema.org/ListItem") 42
+                                                input(type="checkbox", name="size" id="product-size43" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size43" itemscope itemtype="http://schema.org/ListItem") 43
+                                                input(type="checkbox", name="size" id="product-size44" itemscope itemtype="http://schema.org/ListItem")
+                                                label(for="product-size44" itemscope itemtype="http://schema.org/ListItem") 44
+
+                                .price.d-flex.items-center(itemscope itemtype="http://schema.org/Offer")
+                                    b(itemprop="price") 459 грн
+                                    span.old-price(itemprop="priceCurrency") 560 грн
+                                    a.cta(href="#" itemprop="potentialAction") до кошика
+                        form(action="" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction") 
                             .pagination-btns.d-flex.items-center 
-                                button(type="submit" name="paginationLeft").pagination-to-left  
-                                button(type="submit" name="pagination").page-num.current-pagination-page 1
-                                button(type="submit" name="pagination").page-num 2
-                                button(type="submit" name="pagination").page-num 3
-                                button(type="submit" name="pagination").page-num ...
-                                button(type="submit" name="pagination").page-num 20
-                                button(type="submit" name="paginationRight").pagination-to-right  
+                                button(type="submit" name="paginationLeft" itemprop="name").pagination-to-left  
+                                button(type="submit" name="pagination" itemprop="name").page-num.current-pagination-page 1
+                                button(type="submit" name="pagination" itemprop="name").page-num 2
+                                button(type="submit" name="pagination" itemprop="name").page-num 3
+                                button(type="submit" name="pagination" itemprop="name").page-num ...
+                                button(type="submit" name="pagination" itemprop="name").page-num 20
+                                button(type="submit" name="paginationRight" itemprop="name").pagination-to-right  
 
             footer 
                 +footerNavigation(footerNav)

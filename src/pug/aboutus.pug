@@ -54,19 +54,17 @@ html(lang="uk")
                         h2(itemprop="name") чому варто звернутися 
                             span до нас?
                         div( itemscope itemtype="http://schema.org/Offer")
-                        ul(itemprop="description" itemscope itemtype="http://schema.org/ItemList")
-                            li(itemprop="itemListElement")
-                                p(itemprop="description")
-                                    span Ввічливі і компетентні менеджери, 
-                                    | допомога у виборі розмірів, моделей;
-                            li(itemprop="itemListElement")
-                                p(itemprop="description")
-                                    span Зручні методи оплати товару, 
-                                    | можна оплатити як накладеним платежем, так і на карту;
-                            li(itemprop="itemListElement")
-                                p(itemprop="description")
-                                    span Регулярне проведення розпродажів, 
-                                    | що дозволяє ще більш вигідно замовити товар.
+                        ul(itemscope itemtype="http://schema.org/ItemList")
+                            li(itemscope itemtype="http://schema.org/ListItem")
+                                span(itemprop="name") Ввічливі і компетентні менеджери,
+                                | допомога у виборі розмірів, моделей;
+                            li(itemscope itemtype="http://schema.org/ListItem")
+                                span(itemprop="name") Зручні методи оплати товару,
+                                | можна оплатити як накладеним платежем, так і на карту;
+                            li(itemscope itemtype="http://schema.org/ListItem")
+                                span(itemprop="name") Регулярне проведення розпродажів,
+                                | що дозволяє ще більш вигідно замовити товар.
+
                         .btn
                             a(href="catalog.html").catalog-cta в каталог
 
