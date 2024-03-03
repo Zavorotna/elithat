@@ -1,98 +1,111 @@
 doctype html
 html(lang="uk")
     head
+        link(rel="stylesheet" href="css/style.css")
         meta(charset="UTF-8")
-        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")   
-        link(rel="stylesheet", href="css/style.css")
-        title Elithat contacts
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=2.0")
+        title Elithat - Корзина товарів на ElitHat
+        meta(name="description" content="Зберіть свій вишуканий стиль в корзині на ElitHat та насолоджуйтеся додатковими перевагами нашої системи лояльності для постійних клієнтів. ")
+        meta(name="keywords" content="Elithat, шапка, купити шапку, шапки Elithat, купити зручну шапку, дитячий одяг купити, дитяча шапка, шапка для дівчинки, шапка для хлопчика")
+        meta(name="author" content="Elithat")
+        meta(name="publisher" content="Elithat")
+        meta(name="robots" content="index follow")  
+        link(rel='icon' href='img/favicon.ico')
+        link(rel='canonical' href='#')
+        meta(property="og:title" content="Elithat - Корзина товарів на ElitHat")
+        meta(property="og:description" content="На ElitHat є безліч головних уборів, після довгого вибору ви додаєте ваш головний убор до корзини. Ви вже близькі до отримання своєї шапочки :).")
+        meta(property="og:image" content="./img/logo.png")
+        meta(property="og:type" content="product")
+        meta(property="og:url" content="#")
     body 
         include components/mixins
         header.header
             +privacyPopup()
             .header-block#up
                 +headerNavigation(navigation)
-        main
+        main(itemscope itemtype="http://schema.org/ItemList")
             section.wrapper
                 .cart-block 
-                    h.h1 корзина
+                    h1.h1(itemprop="name") корзина
                     .cart-box.flex-between
                         .product-block
                             .product-card.d-flex.items-center
-                                a.delete(href="#") 
+                                a.delete(href="#" itemprop="url") 
+                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1763 1.28027C14.5651 0.88794 15.1953 0.88794 15.584 1.28027C15.9727 1.6726 15.9727 2.3087 15.584 2.70103L9.90321 8.43474L15.7133 14.299C16.102 14.6913 16.102 15.3274 15.7133 15.7197C15.3246 16.1121 14.6944 16.1121 14.3057 15.7197L8.49558 9.8555L2.6855 15.7197C2.29679 16.1121 1.66657 16.1121 1.27786 15.7197C0.889151 15.3274 0.88915 14.6913 1.27786 14.299L7.08794 8.43474L1.40717 2.70103C1.01846 2.3087 1.01846 1.6726 1.40717 1.28027C1.79588 0.88794 2.4261 0.88794 2.81481 1.28027L8.49558 7.01398L14.1763 1.28027Z" fill="#D9D9D9"/>
+                                    </svg>
+                                .img-cart_block(itemscope itemtype="https://schema.org/ImageObject")
+                                    picture 
+                                        img(src="img/card-image1.jpg", alt="Купити зимову шапку" itemprop="image" title="Шапка з зимового каталогу")
+                                .info-cart_block(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+                                    h2(itemprop="name") Зимова шапка-шолом дитяча 
+                                    p.code(itemprop="sku") код 456789
+                                    p.size-cart(itemprop="name") розмір: 
+                                        span(itemprop="size") 48
+                                .count-cart_block.flex-between(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+                                    a.min(href="#") -
+                                    a.quantiti(href="#" itemprop="priceValidUntil" ) 1
+                                    a.plus(href="#" itemprop="url") +
+                                .sum-cart_block.flex-between.items-center
+                                    p.full-price(itemprop="price") 459 грн
+                                    p.sale-price(itemprop="price") 560 грн
+                            .product-card.d-flex.items-center(itemscope itemtype="http://schema.org/Product")
+                                a.delete(href="#" itemprop="url") 
                                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1763 1.28027C14.5651 0.88794 15.1953 0.88794 15.584 1.28027C15.9727 1.6726 15.9727 2.3087 15.584 2.70103L9.90321 8.43474L15.7133 14.299C16.102 14.6913 16.102 15.3274 15.7133 15.7197C15.3246 16.1121 14.6944 16.1121 14.3057 15.7197L8.49558 9.8555L2.6855 15.7197C2.29679 16.1121 1.66657 16.1121 1.27786 15.7197C0.889151 15.3274 0.88915 14.6913 1.27786 14.299L7.08794 8.43474L1.40717 2.70103C1.01846 2.3087 1.01846 1.6726 1.40717 1.28027C1.79588 0.88794 2.4261 0.88794 2.81481 1.28027L8.49558 7.01398L14.1763 1.28027Z" fill="#D9D9D9"/>
                                     </svg>
                                 .img-cart_block 
                                     picture 
-                                        img(src="img/card-image1.jpg", alt="")
-                                .info-cart_block 
-                                    h2 Зимова шапка-шолом дитяча 
-                                    p.code код 456789
-                                    p.size-cart розмір: 
+                                         img(src="img/card-image1.jpg", alt="Купити зимову шапку" itemprop="image" title="Шапка з зимового каталогу")
+                                .info-cart_block(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+                                    h2(itemprop="name") Зимова шапка-шолом дитяча 
+                                    p.code(itemprop="sku")  код 456789
+                                    p.size-cart(itemprop="size") розмір: 
                                         span 48
-                                .count-cart_block.flex-between
-                                    a.min(href="#") -
-                                    a.quantiti(href="#") 1
-                                    a.plus(href="#") +
-                                .sum-cart_block.flex-between.items-center
-                                    p.full-price 459 грн
-                                    p.sale-price 560 грн
-                            .product-card.d-flex.items-center
-                                a.delete(href="#") 
+                                .count-cart_block.flex-between(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+                                    a.min(href="#", itemprop="url") -
+                                    a.quantiti(href="#", itemprop="priceCurrency") 1
+                                    a.plus(href="#", itemprop="url") +
+                                .sum-cart_block.flex-between.items-center(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+                                    p.full-price(itemprop="price")  459 грн
+                                    p.sale-price(itemprop="price")  560 грн
+                            .product-card.d-flex.items-center(itemscope itemtype="http://schema.org/Product")
+                                a.delete(href="#" itemprop="url") 
                                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1763 1.28027C14.5651 0.88794 15.1953 0.88794 15.584 1.28027C15.9727 1.6726 15.9727 2.3087 15.584 2.70103L9.90321 8.43474L15.7133 14.299C16.102 14.6913 16.102 15.3274 15.7133 15.7197C15.3246 16.1121 14.6944 16.1121 14.3057 15.7197L8.49558 9.8555L2.6855 15.7197C2.29679 16.1121 1.66657 16.1121 1.27786 15.7197C0.889151 15.3274 0.88915 14.6913 1.27786 14.299L7.08794 8.43474L1.40717 2.70103C1.01846 2.3087 1.01846 1.6726 1.40717 1.28027C1.79588 0.88794 2.4261 0.88794 2.81481 1.28027L8.49558 7.01398L14.1763 1.28027Z" fill="#D9D9D9"/>
                                     </svg>
                                 .img-cart_block 
                                     picture 
-                                        img(src="img/card-image1.jpg", alt="")
-                                .info-cart_block 
-                                    h2 Зимова шапка-шолом дитяча 
-                                    p.code код 456789
-                                    p.size-cart розмір: 
+                                        img(src="img/card-image1.jpg", alt="Купити зимову шапку" itemprop="image" title="Шапка з зимового каталогу")
+                                .info-cart_block(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+                                    h2(itemprop="name") Зимова шапка-шолом дитяча 
+                                    p.code(itemprop="sku")  код 456789
+                                    p.size-cart(itemprop="size") розмір: 
                                         span 48
-                                .count-cart_block.flex-between
-                                    a.min(href="#") -
-                                    a.quantiti(href="#") 1
-                                    a.plus(href="#") +
-                                .sum-cart_block.flex-between.items-center
-                                    p.full-price 459 грн
-                                    p.sale-price 560 грн
-                            .product-card.d-flex.items-center
-                                a.delete(href="#") 
-                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1763 1.28027C14.5651 0.88794 15.1953 0.88794 15.584 1.28027C15.9727 1.6726 15.9727 2.3087 15.584 2.70103L9.90321 8.43474L15.7133 14.299C16.102 14.6913 16.102 15.3274 15.7133 15.7197C15.3246 16.1121 14.6944 16.1121 14.3057 15.7197L8.49558 9.8555L2.6855 15.7197C2.29679 16.1121 1.66657 16.1121 1.27786 15.7197C0.889151 15.3274 0.88915 14.6913 1.27786 14.299L7.08794 8.43474L1.40717 2.70103C1.01846 2.3087 1.01846 1.6726 1.40717 1.28027C1.79588 0.88794 2.4261 0.88794 2.81481 1.28027L8.49558 7.01398L14.1763 1.28027Z" fill="#D9D9D9"/>
-                                    </svg>
-                                .img-cart_block 
-                                    picture 
-                                        img(src="img/card-image1.jpg", alt="")
-                                .info-cart_block 
-                                    h2 Зимова шапка-шолом дитяча 
-                                    p.code код 456789
-                                    p.size-cart розмір: 
-                                        span 48
-                                .count-cart_block.flex-between
-                                    a.min(href="#") -
-                                    a.quantiti(href="#") 1
-                                    a.plus(href="#") +
-                                .sum-cart_block.flex-between.items-center
-                                    p.full-price 459 грн
-                                    p.sale-price 560 грн
-                        .order-block
-                            h2 Ваше замовлення:
-                            p 3 товари в корзині
-                            .sum-block 
+                                .count-cart_block.flex-between(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+                                    a.min(href="#", itemprop="url") -
+                                    a.quantiti(href="#", itemprop="priceCurrency") 1
+                                    a.plus(href="#", itemprop="url") +
+                                .sum-cart_block.flex-between.items-center(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+                                    p.full-price(itemprop="price")  459 грн
+                                    p.sale-price(itemprop="price")  560 грн
+                        .order-block(itemprop="order" itemscope itemtype="http://schema.org/Order")
+                            h2(itemprop="headline") Ваше замовлення:
+                            p(itemprop="orderNumber") 3 товари в корзині
+                            .sum-block(itemscope itemtype="http://schema.org/Offer") 
                                 .without-sale_price.flex-between.items-center
-                                    p Сума без знижки:
-                                    p.price-order.all-price 1000 грн
+                                    p(itemprop="name") Сума без знижки:
+                                    p.price-order.all-price(itemprop="price") 1000 грн
                                 .sale_price.flex-between.items-center
-                                    p Знижка: 
-                                    p.price-order.sale 200 грн
+                                    p(itemprop="name") Знижка: 
+                                    p.price-order.sale(itemprop="price") 200 грн
                             hr
                             .order-sum.flex-between.items-center
-                                p До сплати:
-                                p.order-price_sum 800 грн
+                                p(itemprop="name") До сплати:
+                                p.order-price_sum(itemprop="price") 800 грн
                             .flex-btn
-                                a.issue-order(href="order.html") оформити замовлення
+                                a.issue-order(href="order.html") оформити замовлення(itemprop="potentialAction" itemscope itemtype="http://schema.org/OrderAction")
                                 a.back(href="#") продовжити покупки
         footer 
             +footerNavigation(footerNav)
