@@ -1,10 +1,23 @@
 doctype html
 html(lang="uk")
     head
+        link(rel="stylesheet" href="css/style.css")
         meta(charset="UTF-8")
-        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")   
-        link(rel="stylesheet", href="css/style.css")
-        title Elithat
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=2.0")
+        title Elithat - інформація про компанію, яку потрібно знати
+        meta(name="description" content="Вам потрібна комфортна шапка за приємною ціною? У Elithat ви знайдете широкий вибір комфортних головних уборів для всієї родини.")
+        meta(name="keywords" content="Elithat, шапка, купити шапку, шапки Elithat, купити зручну шапку, дитячий одяг купити, дитяча шапка, шапка для дівчинки, шапка для хлопчика")
+        meta(name="author" content="Elithat")
+        meta(name="publisher" content="Elithat")
+        meta(name="robots" content="index follow")  
+        link(rel='icon' href='img/favicon.ico')
+        link(rel='canonical' href='#')
+        meta(property="og:title" content="Elithat - компанія, яка працює для вашого комфорту вже понад 20 років!")
+        meta(property="og:description" content="ElitHat - ми ті, хто старається для вас вже понад 20 років та маємо сотні задоволених клієнтів в Україні")
+        meta(property="og:image" content="./img/logo.png")
+        meta(property="og:type" content="product")
+        meta(property="og:url" content="#")
         
     body 
         include components/mixins
@@ -12,48 +25,46 @@ html(lang="uk")
             +privacyPopup()
             .header-block#up
                 +headerNavigation(navigation)
-        main 
+        main(itemscope itemtype="http://schema.org/Organization")
             section.wrapper.aboutus
-                h1.h1 про нас
+                h1.h1(itemprop="name") про нас
                 .flex-between.aboutus-gallery
                     .description 
-                        h2 обирайте найкраще для 
+                        h2(itemprop="name") обирайте найкраще для 
                             span ваших дітей
-                        p Компанія Elithat працює більше 20 років на ринку.  Маємо сотні задоволених клієнтів по Україні.
-                        p Elithat - інтернет-крамниця по оптовому продажу за доступними цінами. Широкий вибір головних уборів для дітей на будь-який сезон.
-                        p Цілодобове приймання замовлень через кошик сайту.
+                        p(itemprop="description") Компанія Elithat працює більше 20 років на ринку.  Маємо сотні задоволених клієнтів по Україні.
+                        p(itemprop="description") Elithat - інтернет-крамниця по оптовому продажу за доступними цінами. Широкий вибір головних уборів для дітей на будь-який сезон.
+                        p(itemprop="description") Цілодобове приймання замовлень через кошик сайту.
                         .btn
-                            a(href="catalog.html").catalog-cta в каталог
+                            a(href="catalog.html" itemprop="url").catalog-cta в каталог
                     .gallery.flex-between 
-                        img(src="img/about-us-gallery1.webp", alt="")
-                        img(src="img/about-us-gallery2.webp", alt="")
+                        img(src="img/about-us-gallery1.webp", alt="Купити шапку помаранчевого кольору" itemprop="image" title="Каталог помаранчових шапок на ElitHat")
+                        img(src="img/about-us-gallery2.webp", alt="Помаранчева шапка купити" itemprop="image" title="Каталог помаранчових шапок на ElitHat")
             section.advantages-bg 
                 .aboutus-advantage.wrapper
-                    h2 Наш магазин постійно оновлює асортимент
-                    p Наші менеджери допоможуть при виборі розмірів і моделей, нададуть докладну інформацію про склад тканини, зручні способи оплати і доставку.
+                    h2(itemprop="name") Наш магазин постійно оновлює асортимент
+                    p(itemprop="description") Наші менеджери допоможуть при виборі розмірів і моделей, нададуть докладну інформацію про склад тканини, зручні способи оплати і доставку.
             section.wrapper.aboutus
-                h2 про нас
+                h2(itemprop="name") про нас
                 .flex-between.aboutus-gallery
                     .gallery.flex-between 
-                        img(src="img/about-us-advantage-3.webp", alt="")
-                        img(src="img/about-us-advantage-4.webp", alt="")
+                        img(src="img/about-us-advantage-3.webp", alt="Купити шапку з українською символікою" itemprop="image")
+                        img(src="img/about-us-advantage-4.webp", alt="Шапка з текстом: Я люблю Україні" itemprop="image" title="Шапки з українською символікою на ElitHat")
                     .description 
-                        h2 чому варто звернутися 
+                        h2(itemprop="name") чому варто звернутися 
                             span до нас?
-                        
-                        ul
-                            li
-                                p
-                                    span Ввічливі і компетентні менеджери, 
-                                    | допомога у виборі розмірів, моделей;
-                            li
-                                p
-                                    span Зручні методи оплати товару, 
-                                    | можна оплатити як накладеним платежем, так і на карту;
-                            li
-                                p
-                                    span Регулярне проведення розпродажів, 
-                                    | що дозволяє ще більш вигідно замовити товар.
+                        div( itemscope itemtype="http://schema.org/Offer")
+                        ul(itemscope itemtype="http://schema.org/ItemList")
+                            li(itemscope itemtype="http://schema.org/ListItem")
+                                span(itemprop="name") Ввічливі і компетентні менеджери,
+                                | допомога у виборі розмірів, моделей;
+                            li(itemscope itemtype="http://schema.org/ListItem")
+                                span(itemprop="name") Зручні методи оплати товару,
+                                | можна оплатити як накладеним платежем, так і на карту;
+                            li(itemscope itemtype="http://schema.org/ListItem")
+                                span(itemprop="name") Регулярне проведення розпродажів,
+                                | що дозволяє ще більш вигідно замовити товар.
+
                         .btn
                             a(href="catalog.html").catalog-cta в каталог
 

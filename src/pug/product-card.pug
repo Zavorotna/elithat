@@ -1,10 +1,23 @@
 doctype html
 html(lang="uk")
     head
+        link(rel="stylesheet" href="css/style.css")
         meta(charset="UTF-8")
-        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")   
-        link(rel="stylesheet", href="css/style.css")
-        title Elithat
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=2.0")
+        title Elithat - ЗИМОВА ШАПКА-ШОЛОМ ДИТЯЧА
+        meta(name="description" content="ЗИМОВА ШАПКА-ШОЛОМ ДИТЯЧА - за малою ціною, розмірами 38-44, з простою оплатою та швидкою доставкою в усі точки України.")
+        meta(name="keywords" content="Elithat, шапка, купити шапку, шапки Elithat, купити зручну шапку, дитячий одяг купити, дитяча шапка, шапка для дівчинки, шапка для хлопчика")
+        meta(name="author" content="Elithat")
+        meta(name="publisher" content="Elithat")
+        meta(name="robots" content="index follow")  
+        link(rel='icon' href='img/favicon.ico')
+        link(rel='canonical' href='#')
+        meta(property="og:title" content="Elithat - ЗИМОВА ШАПКА-ШОЛОМ ДИТЯЧА")
+        meta(property="og:description" content="Дитячий комбінований головний убір (шапка-шолом) на зиму - доступний за низькою ціною, в розмірах 38-44, з легкою оплатою та швидкою доставкою по всій території України.")
+        meta(property="og:image" content="./img/logo.png")
+        meta(property="og:type" content="product")
+        meta(property="og:url" content="#")
     body 
         include components/mixins
         header.header 
@@ -12,286 +25,286 @@ html(lang="uk")
             .header-block#up
                 +headerNavigation(navigation)
         main 
-            section.wrapper.product-popup 
+            section.wrapper.product-popup(itemscope itemtype="http://schema.org/Product")
                 .product-gallery
-                    .gallery-wrapper.flex-between
-                        .products-sm 
-                            img.active-img(src="img/product-image.jpg", alt="")
-                            img.active-img(src="img/bgc-kid2.png", alt="")
-                            img.active-img(src="img/bgc-kid3.png", alt="")
-                            img(src="img/bgc-kid4.png", alt="")
-                            img(src="img/bgc-kid5.png", alt="")
-                            img(src="img/bgc-kid6.png", alt="")
+                    .gallery-wrapper.flex-between(itemscope itemtype="http://schema.org/ImageGallery")
+                        .products-sm(itemscope itemtype="https://schema.org/ImageObject")
+                            img.active-img(src="img/product-image.jpg", alt="Купити дитячу зимову шапку універсал" title="ЗИМОВА ШАПКА-ШОЛОМ ДИТЯЧА"  itemprop="image")
+                            img.active-img(src="img/bgc-kid2.png", alt="Купити дитячу універсальну шапку ElitHat" title="ЗИМОВА ШАПКА-ШОЛОМ ДИТЯЧА"  itemprop="image")
+                            img.active-img(src="img/bgc-kid3.png", alt="Купити дитячу шапку ElitHat" title="ЗИМОВА ШАПКА-ШОЛОМ ДИТЯЧА" itemprop="image")
+                            img(src="img/bgc-kid4.png", alt="ElitHat" title="ЗИМОВА ШАПКА-ШОЛОМ ДИТЯЧА"  itemprop="image")
+                            img(src="img/bgc-kid5.png", alt="Купити дитячу шапку з доставкою" title="ЗИМОВА ШАПКА-ШОЛОМ ДИТЯЧА"  itemprop="image")
+                            img(src="img/bgc-kid6.png", alt="Дитячі шапки купити дешево" title="ЗИМОВА ШАПКА-ШОЛОМ ДИТЯЧА"  itemprop="image")
 
-                        .general-img.relative
+                        .general-img.relative(itemscope itemtype="http://schema.org/ImageObject")
                             .slider-to-left
                             .slider-to-right
-                            img(src="img/product-image.jpg", alt="")
-                .product-description.relative
-                    .girl-product 
-                        span для дівчинки
+                            img(src="img/product-image.jpg", alt="Дитячі шапки ElitHat" itemprop="image")
+                .product-description.relative(itemscope itemtype="http://schema.org/Product")
+                    .girl-product
+                        span(itemprop="name") для дівчинки
                     //- .boy-product
                     //-     span для хлопчика
                     //- .universal-product
                     //-     span універсальна
-                    h1.h1 Зимова шапка-шолом дитяча 
-                    span.code код 456789
-                    .product-price 
-                        span.current-price 459 грн
-                        span.old-price 560 грн
-                    .characteristics.select-product-block.d-block.filter-item 
+                    h1.h1(itemprop="name") Зимова шапка-шолом дитяча 
+                    span.code(itemprop="productID") код 456789
+                    .product-price(itemtype="http://schema.org/Offer" )
+                        span.current-price(itemprop="name")     459 грн
+                        span.old-price(itemprop="name") 560 грн
+                    .characteristics.select-product-block.d-block.filter-item(itemscope itemtype="http://schema.org/Product")
                         .relative 
-                            b характеристики
-                        .characteristics-list.filter-inputs.d-block 
+                            b(itemprop="name") характеристики
+                        .characteristics-list.filter-inputs.d-block(itemscope itemtype="http://schema.org/ItemList")
                             ul
-                                li
-                                    p Країна - 
-                                        span Китай
-                                li
-                                    p Фабрика - 
-                                        span назва заводу
-                                li
-                                    p Матеріал - 
-                                        span матеріал
-                                li
-                                    p Сезонність - 
-                                        span холодна осінь, зима.
-                                li
-                                    p Кількість товарів в упаковці - 
-                                        span кількість
-                    .size.select-product-block.flex-between.items-center 
+                                li(itemscope itemtype="http://schema.org/ListItem")
+                                    p(itemprop="name") Країна - 
+                                        span(itemprop="name") Китай
+                                li(itemscope itemtype="http://schema.org/ListItem")
+                                    p(itemprop="name") Фабрика - 
+                                        span(itemprop="name") назва заводу
+                                li(itemscope itemtype="http://schema.org/ListItem")
+                                    p(itemprop="name") Матеріал - 
+                                        span(itemprop="name") матеріал
+                                li(itemscope itemtype="http://schema.org/ListItem")
+                                    p(itemprop="name") Сезонність - 
+                                        span(itemprop="name") холодна осінь, зима.
+                                li(itemscope itemtype="http://schema.org/ListItem")
+                                    p(itemprop="name") Кількість товарів в упаковці - 
+                                        span(itemprop="name") кількість
+                    .size.select-product-block.flex-between.items-center(itemscope itemtype="http://schema.org/Product")
                         .d-flex.items-center.flex-wrap.row-product-block 
-                            b оберіть розмір: &nbsp;
+                            b(itemprop="name") оберіть розмір: &nbsp;
                             form(action="") 
-                                .sizes-inputs
-                                    input(type="checkbox", name="size" id="product3-size38")
+                                .sizes-inputs(itemscope itemtype="http://schema.org/ItemList")
+                                    input(type="checkbox", name="size" id="product3-size38" itemprop="name")
                                     label(for="product3-size38") 38
-                                    input(type="checkbox", name="size" id="product3-size39")
+                                    input(type="checkbox", name="size" id="product3-size39" itemprop="name") 
                                     label(for="product3-size39") 39
-                                    input(type="checkbox", name="size" id="product3-size40")
+                                    input(type="checkbox", name="size" id="product3-size40" itemprop="name")
                                     label(for="product3-size40") 40
-                                    input(type="checkbox", name="size" id="product3-size41")
+                                    input(type="checkbox", name="size" id="product3-size41" itemprop="name")
                                     label(for="product3-size41") 41
-                                    input(type="checkbox", name="size" id="product3-size42")
+                                    input(type="checkbox", name="size" id="product3-size42" itemprop="name")
                                     label(for="product3-size42") 42
-                                    input(type="checkbox", name="size" id="product3-size43")
+                                    input(type="checkbox", name="size" id="product3-size43" itemprop="name")
                                     label(for="product3-size43") 43
-                                    input(type="checkbox", name="size" id="product3-size44")
+                                    input(type="checkbox", name="size" id="product3-size44" itemprop="name")
                                     label(for="product3-size44") 44
                                 
-                    .quantity.select-product-block 
+                    .quantity.select-product-block(itemscope itemtype="http://schema.org/Product")
                         .d-flex.items-center 
-                            b оберіть кількість: &nbsp;
+                            b(itemprop="name") оберіть кількість: &nbsp;
                             .quantity-btns.d-flex
-                                .change-quantity-btns.min -
-                                .quantity-num  1
-                                .change-quantity-btns.plus +
+                                .change-quantity-btns.min(itemtype="http://schema.org/DecreaseAction" ) -
+                                .quantity-num(itemscope itemtype="http://schema.org/Offer")  1
+                                .change-quantity-btns.plus(itemtype="http://schema.org/IncreaseAction") +
                     .buy-btns.flex-wrap.d-flex.row-product-block 
-                        a.catalog-cta(href="#") в корзину
-                        a.catalog-cta.hover-cta(href="#") доставка та оплата
+                        a.catalog-cta(href="#" itemprop="url") в корзину
+                        a.catalog-cta.hover-cta(href="#" itemprop="url") доставка та оплата
             .relative.slider-navigation 
                 .slider-to-left
                 .slider-to-right
-                section.wrapper.similar-products 
-                    h2 схожі товари
-                    .relative
-                        
-                        .products-list.product-list-slider
-                            figure 
+                section.wrapper.similar-products(itemscope itemtype="http://schema.org/Product")
+                    h2(itemprop="name") схожі товари
+                    .relative(itemscope itemtype="http://schema.org/ItemList")
+                        .products-list.product-list-slider(itemscope itemtype="http://schema.org/ListItem")
+                            figure(itemprop="name") 
                                 figcaption 
-                                    .relative
-                                        a.product-redirect(href="product-card.html") 
+                                    .relative(itemtype="http://schema.org/Product")
+                                        a.product-redirect(href="product-card.html" itemprop="url") 
                                         .girl-product 
-                                            span для дівчинки
-                                        img(src="img/card-image1.jpg", alt="")
-                                    h3 Зимова шапка-шолом дитяча 1
-                                    p.made-in країна-виробник: 
-                                        span Китай
+                                            span(itemprop="name") для дівчинки
+                                        img(src="img/card-image1.jpg", alt="Купити шапку на дівчинку онлайн" title="ЗИМОВА ШАПКА-ШОЛОМ ДИТЯЧА" itemprop="image")
+                                    h3(itemprop="name") Зимова шапка-шолом дитяча 1
+                                    p(itemprop="name").made-in країна-виробник: 
+                                        span(itemprop="name") Китай
                                     .flex-between.product-sizes.items-center
-                                        span розміри:
+                                        span(itemprop="name") розміри:
                                         form(action="") 
-                                            .sizes-inputs
-                                                input(type="checkbox", name="size" id="product-size38")
-                                                label(for="product-size38") 38
-                                                input(type="checkbox", name="size" id="product-size39")
-                                                label(for="product-size39") 39
-                                                input(type="checkbox", name="size" id="product-size40")
-                                                label(for="product-size40") 40
-                                                input(type="checkbox", name="size" id="product-size41")
-                                                label(for="product-size41") 41
-                                                input(type="checkbox", name="size" id="product-size42")
-                                                label(for="product-size42") 42
-                                                input(type="checkbox", name="size" id="product-size43")
-                                                label(for="product-size43") 43
-                                                input(type="checkbox", name="size" id="product-size44")
-                                                label(for="product-size44") 44
-                                    .price.d-flex.items-center
-                                        b 459 грн
-                                        span.old-price 560 грн
-                                    a(href="#").cta до кошика
-                            figure 
+                                            .sizes-inputs(itemscope itemtype="http://schema.org/ItemList")
+                                                input(type="checkbox", name="size" id="product3-size38" itemprop="name")
+                                                label(for="product3-size38") 38
+                                                input(type="checkbox", name="size" id="product3-size39" itemprop="name") 
+                                                label(for="product3-size39") 39
+                                                input(type="checkbox", name="size" id="product3-size40" itemprop="name")
+                                                label(for="product3-size40") 40
+                                                input(type="checkbox", name="size" id="product3-size41" itemprop="name")
+                                                label(for="product3-size41") 41
+                                                input(type="checkbox", name="size" id="product3-size42" itemprop="name")
+                                                label(for="product3-size42") 42
+                                                input(type="checkbox", name="size" id="product3-size43" itemprop="name")
+                                                label(for="product3-size43") 43
+                                                input(type="checkbox", name="size" id="product3-size44" itemprop="name")
+                                                label(for="product3-size44") 44
+                                .price.d-flex.items-center(itemscope itemtype="http://schema.org/Offer")
+                                    b(itemprop="name") 459 грн
+                                    span.old-price(itemprop="priceValidUntil") 560 грн
+                                a(href="#" itemprop="url").cta до кошика
+                            figure(itemprop="name") 
                                 figcaption 
-                                    .relative
-                                        a.product-redirect(href="product-card.html") 
+                                    .relative(itemtype="http://schema.org/Product")
+                                        a.product-redirect(href="product-card.html" itemprop="url") 
                                         .girl-product 
-                                            span для дівчинки
-                                        img(src="img/card-image1.jpg", alt="")
-                                    h3 Зимова шапка-шолом дитяча 2
-                                    p.made-in країна-виробник: 
-                                        span Китай
+                                            span(itemprop="name") для дівчинки
+                                        img(src="img/card-image1.jpg", alt="Купити шапку на дівчинку онлайн" title="ЗИМОВА ШАПКА-ШОЛОМ ДИТЯЧА" itemprop="image")
+                                    h3(itemprop="name") Зимова шапка-шолом дитяча 2
+                                    p(itemprop="name").made-in країна-виробник: 
+                                        span(itemprop="name") Китай
                                     .flex-between.product-sizes.items-center
-                                        span розміри:
+                                        span(itemprop="name") розміри:
                                         form(action="") 
-                                            .sizes-inputs
-                                                input(type="checkbox", name="size" id="product-size38")
-                                                label(for="product-size38") 38
-                                                input(type="checkbox", name="size" id="product-size39")
-                                                label(for="product-size39") 39
-                                                input(type="checkbox", name="size" id="product-size40")
-                                                label(for="product-size40") 40
-                                                input(type="checkbox", name="size" id="product-size41")
-                                                label(for="product-size41") 41
-                                                input(type="checkbox", name="size" id="product-size42")
-                                                label(for="product-size42") 42
-                                                input(type="checkbox", name="size" id="product-size43")
-                                                label(for="product-size43") 43
-                                                input(type="checkbox", name="size" id="product-size44")
-                                                label(for="product-size44") 44
-                                    .price.d-flex.items-center
-                                        b 459 грн
-                                        span.old-price 560 грн
-                                    a(href="#").cta до кошика
-                            figure 
+                                            .sizes-inputs(itemscope itemtype="http://schema.org/ItemList")
+                                                input(type="checkbox", name="size" id="product3-size38" itemprop="name")
+                                                label(for="product3-size38") 38
+                                                input(type="checkbox", name="size" id="product3-size39" itemprop="name") 
+                                                label(for="product3-size39") 39
+                                                input(type="checkbox", name="size" id="product3-size40" itemprop="name")
+                                                label(for="product3-size40") 40
+                                                input(type="checkbox", name="size" id="product3-size41" itemprop="name")
+                                                label(for="product3-size41") 41
+                                                input(type="checkbox", name="size" id="product3-size42" itemprop="name")
+                                                label(for="product3-size42") 42
+                                                input(type="checkbox", name="size" id="product3-size43" itemprop="name")
+                                                label(for="product3-size43") 43
+                                                input(type="checkbox", name="size" id="product3-size44" itemprop="name")
+                                                label(for="product3-size44") 44
+                                .price.d-flex.items-center( itemscope itemtype="http://schema.org/Offer")
+                                    b(itemprop="name") 459 грн
+                                    span.old-price(itemprop="priceValidUntil") 560 грн
+                                a(href="#" itemprop="url").cta до кошика
+                            figure(itemprop="name") 
                                 figcaption 
-                                    .relative
-                                        a.product-redirect(href="product-card.html") 
+                                    .relative(itemtype="http://schema.org/Product")
+                                        a.product-redirect(href="product-card.html" itemprop="url") 
                                         .girl-product 
-                                            span для дівчинки
-                                        img(src="img/card-image1.jpg", alt="")
-                                    h3 Зимова шапка-шолом дитяча 3
-                                    p.made-in країна-виробник: 
-                                        span Китай
+                                            span(itemprop="name") для дівчинки
+                                        img(src="img/card-image1.jpg", alt="Купити шапку на дівчинку онлайн" title="ЗИМОВА ШАПКА-ШОЛОМ ДИТЯЧА" itemprop="image")
+                                    h3(itemprop="name") Зимова шапка-шолом дитяча 3
+                                    p(itemprop="name").made-in країна-виробник: 
+                                        span(itemprop="name") Китай
                                     .flex-between.product-sizes.items-center
-                                        span розміри:
+                                        span(itemprop="name") розміри:
                                         form(action="") 
-                                            .sizes-inputs
-                                                input(type="checkbox", name="size" id="product-size38")
-                                                label(for="product-size38") 38
-                                                input(type="checkbox", name="size" id="product-size39")
-                                                label(for="product-size39") 39
-                                                input(type="checkbox", name="size" id="product-size40")
-                                                label(for="product-size40") 40
-                                                input(type="checkbox", name="size" id="product-size41")
-                                                label(for="product-size41") 41
-                                                input(type="checkbox", name="size" id="product-size42")
-                                                label(for="product-size42") 42
-                                                input(type="checkbox", name="size" id="product-size43")
-                                                label(for="product-size43") 43
-                                                input(type="checkbox", name="size" id="product-size44")
-                                                label(for="product-size44") 44
-                                    .price.d-flex.items-center
-                                        b 459 грн
-                                        span.old-price 560 грн
-                                    a(href="#").cta до кошика
-                            figure 
+                                            .sizes-inputs(itemscope itemtype="http://schema.org/ItemList")
+                                                input(type="checkbox", name="size" id="product3-size38" itemprop="name")
+                                                label(for="product3-size38") 38
+                                                input(type="checkbox", name="size" id="product3-size39" itemprop="name") 
+                                                label(for="product3-size39") 39
+                                                input(type="checkbox", name="size" id="product3-size40" itemprop="name")
+                                                label(for="product3-size40") 40
+                                                input(type="checkbox", name="size" id="product3-size41" itemprop="name")
+                                                label(for="product3-size41") 41
+                                                input(type="checkbox", name="size" id="product3-size42" itemprop="name")
+                                                label(for="product3-size42") 42
+                                                input(type="checkbox", name="size" id="product3-size43" itemprop="name")
+                                                label(for="product3-size43") 43
+                                                input(type="checkbox", name="size" id="product3-size44" itemprop="name")
+                                                label(for="product3-size44") 44
+                                .price.d-flex.items-center( itemscope itemtype="http://schema.org/Offer")
+                                    b(itemprop="name") 459 грн
+                                    span.old-price(itemprop="priceValidUntil") 560 грн
+                                a(href="#" itemprop="url").cta до кошика
+                            figure(itemprop="name") 
+                                    figcaption 
+                                        .relative(itemtype="http://schema.org/Product")
+                                            a.product-redirect(href="product-card.html" itemprop="url") 
+                                            .girl-product 
+                                                span(itemprop="name") для дівчинки
+                                            img(src="img/card-image1.jpg", alt="Купити шапку на дівчинку онлайн" title="ЗИМОВА ШАПКА-ШОЛОМ ДИТЯЧА" itemprop="image")
+                                        h3(itemprop="name") Зимова шапка-шолом дитяча 4
+                                        p(itemprop="name").made-in країна-виробник: 
+                                            span(itemprop="name") Китай
+                                        .flex-between.product-sizes.items-center
+                                            span(itemprop="name") розміри:
+                                            form(action="") 
+                                                .sizes-inputs(itemscope itemtype="http://schema.org/ItemList")
+                                                    input(type="checkbox", name="size" id="product3-size38" itemprop="name")
+                                                    label(for="product3-size38") 38
+                                                    input(type="checkbox", name="size" id="product3-size39" itemprop="name") 
+                                                    label(for="product3-size39") 39
+                                                    input(type="checkbox", name="size" id="product3-size40" itemprop="name")
+                                                    label(for="product3-size40") 40
+                                                    input(type="checkbox", name="size" id="product3-size41" itemprop="name")
+                                                    label(for="product3-size41") 41
+                                                    input(type="checkbox", name="size" id="product3-size42" itemprop="name")
+                                                    label(for="product3-size42") 42
+                                                    input(type="checkbox", name="size" id="product3-size43" itemprop="name")
+                                                    label(for="product3-size43") 43
+                                                    input(type="checkbox", name="size" id="product3-size44" itemprop="name")
+                                                    label(for="product3-size44") 44
+                                    .price.d-flex.items-center( itemscope itemtype="http://schema.org/Offer")
+                                        b(itemprop="name") 459 грн
+                                        span.old-price(itemprop="priceValidUntil") 560 грн
+                                    a(href="#" itemprop="url").cta до кошика
+                            figure(itemprop="name") 
                                 figcaption 
-                                    .relative
-                                        a.product-redirect(href="product-card.html") 
+                                    .relative(itemtype="http://schema.org/Product")
+                                        a.product-redirect(href="product-card.html" itemprop="url") 
                                         .girl-product 
-                                            span для дівчинки
-                                        img(src="img/card-image1.jpg", alt="")
-                                    h3 Зимова шапка-шолом дитяча 4
-                                    p.made-in країна-виробник: 
-                                        span Китай
+                                            span(itemprop="name") для дівчинки
+                                        img(src="img/card-image1.jpg", alt="Купити шапку на дівчинку онлайн" title="ЗИМОВА ШАПКА-ШОЛОМ ДИТЯЧА" itemprop="image")
+                                    h3(itemprop="name") Зимова шапка-шолом дитяча 5
+                                    p(itemprop="name").made-in країна-виробник: 
+                                        span(itemprop="name") Китай
                                     .flex-between.product-sizes.items-center
-                                        span розміри:
+                                        span(itemprop="name") розміри:
                                         form(action="") 
-                                            .sizes-inputs
-                                                input(type="checkbox", name="size" id="product-size38")
-                                                label(for="product-size38") 38
-                                                input(type="checkbox", name="size" id="product-size39")
-                                                label(for="product-size39") 39
-                                                input(type="checkbox", name="size" id="product-size40")
-                                                label(for="product-size40") 40
-                                                input(type="checkbox", name="size" id="product-size41")
-                                                label(for="product-size41") 41
-                                                input(type="checkbox", name="size" id="product-size42")
-                                                label(for="product-size42") 42
-                                                input(type="checkbox", name="size" id="product-size43")
-                                                label(for="product-size43") 43
-                                                input(type="checkbox", name="size" id="product-size44")
-                                                label(for="product-size44") 44
-                                    .price.d-flex.items-center
-                                        b 459 грн
-                                        span.old-price 560 грн
-                                    a(href="#").cta до кошика
-                            figure 
+                                            .sizes-inputs(itemscope itemtype="http://schema.org/ItemList")
+                                                input(type="checkbox", name="size" id="product3-size38" itemprop="name")
+                                                label(for="product3-size38") 38
+                                                input(type="checkbox", name="size" id="product3-size39" itemprop="name") 
+                                                label(for="product3-size39") 39
+                                                input(type="checkbox", name="size" id="product3-size40" itemprop="name")
+                                                label(for="product3-size40") 40
+                                                input(type="checkbox", name="size" id="product3-size41" itemprop="name")
+                                                label(for="product3-size41") 41
+                                                input(type="checkbox", name="size" id="product3-size42" itemprop="name")
+                                                label(for="product3-size42") 42
+                                                input(type="checkbox", name="size" id="product3-size43" itemprop="name")
+                                                label(for="product3-size43") 43
+                                                input(type="checkbox", name="size" id="product3-size44" itemprop="name")
+                                                label(for="product3-size44") 44
+                                .price.d-flex.items-center( itemscope itemtype="http://schema.org/Offer")
+                                    b(itemprop="name") 459 грн
+                                    span.old-price(itemprop="priceValidUntil") 560 грн
+                                a(href="#" itemprop="url").cta до кошика
+                            figure(itemprop="name") 
                                 figcaption 
-                                    .relative
-                                        a.product-redirect(href="product-card.html") 
+                                    .relative(itemtype="http://schema.org/Product")
+                                        a.product-redirect(href="product-card.html" itemprop="url") 
                                         .girl-product 
-                                            span для дівчинки
-                                        img(src="img/card-image1.jpg", alt="")
-                                    h3 Зимова шапка-шолом дитяча 5
-                                    p.made-in країна-виробник: 
-                                        span Китай
+                                            span(itemprop="name") для дівчинки
+                                        img(src="img/card-image1.jpg", alt="Купити шапку на дівчинку онлайн" title="ЗИМОВА ШАПКА-ШОЛОМ ДИТЯЧА" itemprop="image")
+                                    h3(itemprop="name") Зимова шапка-шолом дитяча 6
+                                    p(itemprop="name").made-in країна-виробник: 
+                                        span(itemprop="name") Китай
                                     .flex-between.product-sizes.items-center
-                                        span розміри:
+                                        span(itemprop="name") розміри:
                                         form(action="") 
-                                            .sizes-inputs
-                                                input(type="checkbox", name="size" id="product-size38")
-                                                label(for="product-size38") 38
-                                                input(type="checkbox", name="size" id="product-size39")
-                                                label(for="product-size39") 39
-                                                input(type="checkbox", name="size" id="product-size40")
-                                                label(for="product-size40") 40
-                                                input(type="checkbox", name="size" id="product-size41")
-                                                label(for="product-size41") 41
-                                                input(type="checkbox", name="size" id="product-size42")
-                                                label(for="product-size42") 42
-                                                input(type="checkbox", name="size" id="product-size43")
-                                                label(for="product-size43") 43
-                                                input(type="checkbox", name="size" id="product-size44")
-                                                label(for="product-size44") 44
-                                    .price.d-flex.items-center
-                                        b 459 грн
-                                        span.old-price 560 грн
-                                    a(href="#").cta до кошика
-                            figure 
-                                figcaption 
-                                    .relative
-                                        a.product-redirect(href="product-card.html") 
-                                        .girl-product 
-                                            span для дівчинки
-                                        img(src="img/card-image1.jpg", alt="")
-                                    h3 Зимова шапка-шолом дитяча 6
-                                    p.made-in країна-виробник: 
-                                        span Китай
-                                    .flex-between.product-sizes.items-center
-                                        span розміри:
-                                        form(action="") 
-                                            .sizes-inputs
-                                                input(type="checkbox", name="size" id="product-size38")
-                                                label(for="product-size38") 38
-                                                input(type="checkbox", name="size" id="product-size39")
-                                                label(for="product-size39") 39
-                                                input(type="checkbox", name="size" id="product-size40")
-                                                label(for="product-size40") 40
-                                                input(type="checkbox", name="size" id="product-size41")
-                                                label(for="product-size41") 41
-                                                input(type="checkbox", name="size" id="product-size42")
-                                                label(for="product-size42") 42
-                                                input(type="checkbox", name="size" id="product-size43")
-                                                label(for="product-size43") 43
-                                                input(type="checkbox", name="size" id="product-size44")
-                                                label(for="product-size44") 44
-                                    .price.d-flex.items-center
-                                        b 459 грн
-                                        span.old-price 560 грн
-                                    a(href="#").cta до кошика
+                                            .sizes-inputs(itemscope itemtype="http://schema.org/ItemList")
+                                                input(type="checkbox", name="size" id="product3-size38" itemprop="name")
+                                                label(for="product3-size38") 38
+                                                input(type="checkbox", name="size" id="product3-size39" itemprop="name") 
+                                                label(for="product3-size39") 39
+                                                input(type="checkbox", name="size" id="product3-size40" itemprop="name")
+                                                label(for="product3-size40") 40
+                                                input(type="checkbox", name="size" id="product3-size41" itemprop="name")
+                                                label(for="product3-size41") 41
+                                                input(type="checkbox", name="size" id="product3-size42" itemprop="name")
+                                                label(for="product3-size42") 42
+                                                input(type="checkbox", name="size" id="product3-size43" itemprop="name")
+                                                label(for="product3-size43") 43
+                                                input(type="checkbox", name="size" id="product3-size44" itemprop="name")
+                                                label(for="product3-size44") 44
+                                .price.d-flex.items-center( itemscope itemtype="http://schema.org/Offer")
+                                    b(itemprop="name") 459 грн
+                                    span.old-price(itemprop="priceValidUntil") 560 грн
+                                a(href="#" itemprop="url").cta до кошика
                                 
-            .justify-center.similar-margin.wrapper
-                a(href="catalog.html").catalog-cta в каталог 
+                        .justify-center.similar-margin.wrapper(itemscope itemtype="http://schema.org/WebPage")
+                                a(href="catalog.html", itemprop="url").catalog-cta В каталог
+
 
         footer 
             +footerNavigation(footerNav)

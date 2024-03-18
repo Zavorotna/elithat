@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+    head
+        link(rel="stylesheet" href="css/style.css")
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=2.0")
+        title Elithat - хороший вибір для купівлі якісної та зручної шапки
+        meta(name="description" content="Потрібна зручна, якісна шапка по малій ціні? Elithat має широкий вибір стильних та зручних головних уборів для всієї сім'ї")
+        meta(name="keywords" content="Elithat, шапка, купити шапку, шапки Elithat, купити зручну шапку, дитячий одяг купити, дитяча шапка, шапка для дівчинки, шапка для хлопчика")
+        meta(name="author" content="Elithat")
+        meta(name="publisher" content="Elithat")
+        meta(name="robots" content="index follow")  
+        link(rel='icon' href='img/favicon.ico')
+        link(rel='canonical' href='#')
+        meta(property="og:title" content="Elithat - хороший вибір для купівлі якісної та зручної шапки")
+        meta(property="og:description" content="Elithat пропонує різноманітні та комфортні шапки за доступними цінами. Знайдіть ідеальний головний убір для всієї родини серед нашого широкого асортименту стильних виробів.")
+        meta(property="og:image" content="./img/logo.png")
+        meta(property="og:type" content="product")
+        meta(property="og:url" content="#")
+    body 
+        include components/mixins
+        header 
+            +headerNavigation(navigation)   
+        .wrapper 
+            main.page404(itemscope itemtype="https://schema.org/Article")
+                h1(itemprop="headline") Помилка 404 - сторінка не знайдена
+        footer 
+            +footerNavigation(footerNav)
+            
