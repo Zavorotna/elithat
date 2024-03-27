@@ -16,7 +16,7 @@ a
     transition: all .25s ease
     text-decoration: none
 
-ul > li
+ul
     list-style: none
 
 select,
@@ -206,9 +206,9 @@ input
         width: 250rem
         justify-content: flex-end
     svg
-        width: 15
+        width: 15rem
         +media(1024)
-            width: 105
+            width: 105rem
 
 .cart
     position: relative
@@ -257,7 +257,6 @@ input
             border-top: 1px solid #1e1e1e
             border-bottom: 1px solid #1e1e1e
             border-right: 1px solid #1e1e1e
-            border-left: 1px solid transpatent
             box-sizing: border-box
             &:hover
                 color: #fff
@@ -285,7 +284,7 @@ ul.sub-menu-block
     display: none
     +media(1024)
         position: absolute
-        top: calc(100% - px)
+        top: 79%
         left: 50%
         transform: translateX(-50%)
         background-color: #fff
@@ -429,11 +428,10 @@ a.phone-mobile
             transform: rotate(-45deg)
             box-shadow: 0 0 0 #fff
 
-
 .main-bgc
     position: relative
     background-color: #ccc
-    background: url("../img/main-bgc.svg") no-repeat center/cover
+    background: url(../img/main-bgc.svg) no-repeat center/cover
     margin-bottom: 90rem
     overflow-x: hidden
 
@@ -945,7 +943,7 @@ a.phone-mobile
 .advantages,
 .aboutus
     .catalog-cta
-        box-shadow: border-box
+        box-sizing: border-box
         background: rgb(33, 158, 188)
         border: 2px solid transparent
         &:hover
@@ -1449,7 +1447,7 @@ input[type=range]::-webkit-slider-runnable-track
         align-items: center
         font-size: 12rem
         outline: none
-        background: url("../img/filter-arrow-rotated.svg") no-repeat right 10px center
+        background: url(../img/filter-arrow-rotated.svg) no-repeat right 10px center
 
 // .catalog-products
 //     .products-list
@@ -2579,7 +2577,6 @@ p.made-in
         width: auto
         height: auto
 
-
 .products-sm 
     overflow: hidden
     height: 459px
@@ -2645,8 +2642,6 @@ p.made-in
     transform: rotate(90deg)
     right: 20rem
 
-
-
 .gallery-wrapper
     column-gap: 20px
     +media(426)
@@ -2658,22 +2653,4 @@ p.made-in
     .slider-to-right
         right: -15px
         +media(426)
-<<<<<<< HEAD
             right: -35px
-
-
-
-
-
-
-
-    
-.page404
-    padding: 240px 0
-    text-align: center
-    h1
-        font-size: 50rem
-
-=======
-            right: -35px
->>>>>>> 63c082b06d0354d77a13be26665ad5be1c9125d3
