@@ -16,9 +16,6 @@ a
     transition: all .25s ease
     text-decoration: none
 
-ul
-    list-style: none
-
 select,
 input
     width: 100%
@@ -207,8 +204,6 @@ input
         justify-content: flex-end
     svg
         width: 15rem
-        +media(1024)
-            width: 105rem
 
 .cart
     position: relative
@@ -427,6 +422,7 @@ a.phone-mobile
             bottom: 0
             transform: rotate(-45deg)
             box-shadow: 0 0 0 #fff
+
 
 .main-bgc
     position: relative
@@ -824,10 +820,15 @@ a.phone-mobile
 
 .product-description
     padding-top: 40px
+    // ul
+    //     padding-left: 28rem
     .girl-product,
     .boy-product,
     .universal-product
         top: 0
+    // ::marker
+    //     font-size: 8rem
+   
 
 
 .overflow-x-propositions
@@ -2541,7 +2542,7 @@ p.made-in
     li
         position: relative
         list-style-type: disc
-        color: rgb(30, 30, 30)
+        color: rgb(2, 2, 2)
         font-size: 18rem
         font-weight: 400
         line-height: 1.3em
@@ -2576,6 +2577,7 @@ p.made-in
         position: static
         width: auto
         height: auto
+
 
 .products-sm 
     overflow: hidden
@@ -2641,6 +2643,8 @@ p.made-in
 .slider-to-right
     transform: rotate(90deg)
     right: 20rem
+
+
 
 .gallery-wrapper
     column-gap: 20px
